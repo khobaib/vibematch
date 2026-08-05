@@ -6,7 +6,17 @@ and scores every hostel in hostels.json against it.
 
 This file is intentionally standalone — no FastAPI imports — so you can
 test it directly with `python matching.py` before wiring it into main.py.
+
+KNOWN LIMITATION (tracked for Phase 4):
+Location matching uses a manually-curated `nearby_towns` list per hostel
+as a stopgap. This does NOT account for actual distance (a nearby_towns
+match scores the same whether the place is 2km or 18km away) and does
+not scale — it only recognizes place names someone thought to add by hand.
+The correct long-term fix is storing real lat/long coordinates per hostel
+(e.g. via Google Places API) and geocoding search terms on the fly to
+compute real distance. Deferred until Phase 4 data infrastructure work.
 """
+
 
 import json
 
@@ -72,11 +82,34 @@ def score_hostel(hostel: dict, intent: dict) -> dict:
         reasons.append(f"matches your vibe: {', '.join(sorted(matched_tags))}")
 
     # Also check partial/substring matches (vibe_tags are often multi-word)
+    # IMPORTANT: guard against negation prefixes (not_, non_, no_, anti_) —
+    # naive substring matching would otherwise score "social" as a match
+    # against "not_social", which is the exact opposite of what it means.
+    NEGATION_PREFIXES = ("not_", "non_", "no_", "anti_")
+
+    def is_negated(tag: str) -> bool:
+        return any(tag.startswith(p) for p in NEGATION_PREFIXES)
+
     for vt in vibe_tags:
         for ht in hostel_tags:
-            if vt != ht and (vt in ht or ht in vt):
-                score += 4
-                reasons.append(f"related vibe match: '{vt}' ~ '{ht}'")
+            if vt == ht:
+                continue  # already handled by the exact-match block above
+            ht_is_negated = is_negated(ht)
+            vt_is_negated = is_negated(vt)
+            # strip prefix for the actual comparison so "not_social" vs "social" is checked properly
+            ht_core = ht.split("_", 1)[1] if ht_is_negated and "_" in ht else ht
+            vt_core = vt.split("_", 1)[1] if vt_is_negated and "_" in vt else vt
+
+            if vt_core in ht_core or ht_core in vt_core:
+                if ht_is_negated != vt_is_negated:
+                    # one is negated and the other isn't, but the core concept matches
+                    # -> this is a genuine CONFLICT, not a match. Penalize it.
+                    score -= 8
+                    reasons.append(f"conflicting vibe: you want '{vt}' but this hostel is tagged '{ht}'")
+                else:
+                    # both positive, or both negated the same way -> genuine partial match
+                    score += 4
+                    reasons.append(f"related vibe match: '{vt}' ~ '{ht}'")
 
     # --- 4. Traveler profile overlap ---
     traveler_profile = set(t.lower() for t in intent.get("traveler_profile", []))
