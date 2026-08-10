@@ -156,6 +156,15 @@ Frendz Resort and Hostel, and Stamps Backpackers Hostel all have `price_range_us
 pricing wasn't surfaced in available search results.
 **Fix:** Needs either a targeted re-search pass or direct booking-site lookup per property.
 
+### 🟡 OPEN — No virtual environment for the backend
+All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
+globally on the system Python rather than in a project-specific virtual environment.
+`requirements.txt` (generated via `pip freeze`) therefore reflects everything installed
+system-wide, not just what VibeMatch actually needs — harmless for now, but could accumulate
+unrelated packages over time and make the dependency list noisy.
+**Fix:** create a `venv` for the backend (`py -m venv venv`), reinstall dependencies inside it,
+and regenerate a clean `requirements.txt` from that isolated environment.
+
 ### 🟡 OPEN — Matching score weights are hand-tuned, not validated
 Point values (city match = 30, region = 25, vibe tag = 10 each, etc.) were chosen by
 engineering judgment during initial build, not derived from any real user behavior or A/B data.
@@ -182,6 +191,35 @@ Coral's 3 Varkala branches, two separate "Hosteller Fort Kochi" properties, "Sun
 Hostel" vs. actual name "Sunny Hostel Garden", "No Name Hostel" likely renamed to "Nomads
 Hostel"). Resolved case-by-case using traveler-provided addresses or Google Maps pins, same
 pattern each time — a good reusable workflow for future ambiguous-name cases.
+
+### 🟢 RESOLVED — Partial vibe-tag matching didn't understand negation
+Found during real-variety testing after expanding to 116 hostels: a query for "social" party
+hostel scored a "not_social" quiet B&B as a top match, because naive substring matching saw
+"social" as a text-substring of "not_social" and counted it as a positive match. Fixed by
+detecting negation prefixes (`not_`, `non_`, `no_`, `anti_`) and treating a prefix mismatch on
+an otherwise-matching core concept as an active penalty ("conflicting vibe") rather than a
+false-positive match. Directly validated this was invisible on the smaller 66-hostel dataset
+and only surfaced once real vibe-tag diversity (explicitly-quiet properties) existed to expose it.
+
+### 🟢 RESOLVED — traveler_profile vs guest_type singular/plural vocabulary drift
+Found via manual inspection of a real search response: the intent parser's prompt was written
+with singular traveler_profile examples (e.g. "party_traveler"), while the hostel schema's
+`guest_type` controlled vocabulary — built at a different point in the project — uses plural
+forms (e.g. "party_travelers"). Exact-match scoring silently failed on every such pair, meaning
+a genuinely obvious match scored zero credit. Fixed with a partial-match fallback (same pattern
+as vibe_tags) that strips trailing "s" before comparing. Root cause was two schema vocabularies
+evolving independently without a shared source of truth — worth designing around if the schema
+grows further (e.g. a single shared enum/constants file both the prompt and hostel data draw from).
+
+### 🟢 RESOLVED — Missing price data scored as silently neutral instead of being flagged
+When a hostel has no `price_range_usd` on file, it received zero budget-related score either
+way — no reward, no penalty — with nothing in the response explaining why. This meant a hostel
+with genuinely unknown pricing could rank below a confirmed-affordable one for reasons the
+traveler couldn't see, even though the underlying issue was a data gap, not a real mismatch.
+Fixed by adding an explicit reason ("price not listed in our data — could not confirm this fits
+your budget, check the listing directly") whenever budget was specified but couldn't be checked.
+General principle worth carrying forward: anywhere the matching engine can't check something the
+traveler explicitly asked about, the response should say so rather than go quiet.
 
 ---
 
