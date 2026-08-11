@@ -182,6 +182,20 @@ rather than text matching — a meaningfully bigger feature, not a quick patch. 
 fixed now, but explicitly tracked so the matching engine's actual capability isn't overstated
 later.
 
+### 🟢 RESOLVED — Bangkok had no genuine party hostel, causing valid searches to return zero results
+Found via testing "party hostel in Bangkok, want the nightlife": `party_preference: "prefer_party"`
+correctly classified, and the scoring math was correct — but `total_matches: 0`. Root cause wasn't
+a scoring bug: both existing Bangkok entries (The Victory View, All Day Hostel) have
+`party_level: "low"`, and neither was ever meant to be a party hostel. The steep `prefer_party`
+penalty (target=6, steepness=15) correctly pushed both to a negative score and filtered them out
+— technically correct, but a real content gap, since Bangkok is one of Southeast Asia's best-known
+nightlife destinations and the dataset had nothing for it. Fixed by adding two genuine, well-reviewed
+party hostels on Khao San Road (Bangkok's classic backpacker party strip): Nomads Bangkok Khao San
+Road Hostel and Revolution Khao San by The Bliss, both `party_level: "high"`. Verified directly:
+the same query that previously returned 0 results now returns 2, both scoring well. Worth keeping
+in mind as a general lesson — a "zero results" outcome is sometimes a genuine data gap rather than
+a matching bug, and the fix is adding real content, not tweaking the formula.
+
 ### 🟡 OPEN — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
 globally on the system Python rather than in a project-specific virtual environment.

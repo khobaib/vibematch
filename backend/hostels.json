@@ -17432,5 +17432,336 @@
     ],
     "reviews_summary": "A charming, quieter guesthouse-style stay in the laidback, often-overlooked beach town of Sanur, a 30-minute scooter ride from Kuta's busier scene.",
     "source_note": "Populated from southeastasiabackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+  },
+  {
+    "id": 117,
+    "name": "Nomads Bangkok Khao San Road Hostel",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "region": null,
+    "accommodation_type": "hostel",
+    "has_dorm_beds": true,
+    "has_private_rooms": true,
+    "price_range_usd": {
+      "min": 7,
+      "max": 25
+    },
+    "building": {
+      "storeys": null,
+      "navigation": null
+    },
+    "parking": null,
+    "room_types": [
+      {
+        "type": "dormitory bed",
+        "price_usd": 7,
+        "occupancy": null,
+        "mixed_dorm": null,
+        "bathroom_type": "shared_external",
+        "shower_toilet_separate": null,
+        "hot_water": true,
+        "separate_urinals": null,
+        "air_flow": "ac",
+        "bunk_stair_quality": null,
+        "curtains_for_privacy": true,
+        "in_bunk_storage": true,
+        "in_bunk_shelf": null,
+        "sunlight": "average",
+        "bedsheet_quality": "clean, comfortable per multiple reviews",
+        "bedsheet_smell_issue": false,
+        "availability": {
+          "beds_left": null,
+          "last_updated": null
+        }
+      },
+      {
+        "type": "private room",
+        "price_usd": 25,
+        "occupancy": 2,
+        "mixed_dorm": false,
+        "bathroom_type": "attached",
+        "shower_toilet_separate": null,
+        "hot_water": true,
+        "separate_urinals": null,
+        "air_flow": "ac",
+        "bunk_stair_quality": null,
+        "curtains_for_privacy": false,
+        "in_bunk_storage": false,
+        "in_bunk_shelf": null,
+        "sunlight": "average",
+        "bedsheet_quality": "clean, comfortable",
+        "bedsheet_smell_issue": false,
+        "availability": {
+          "beds_left": null,
+          "last_updated": null
+        }
+      }
+    ],
+    "bathroom_general": {
+      "toilet_tissue_provided": null,
+      "hand_shower": null
+    },
+    "cleanliness_signal": {
+      "overall": "consistently described as clean and modern facilities across reviews",
+      "toilet_bathroom": null
+    },
+    "sleep_comfort": {
+      "mattress_quality": "good, comfortable beds specifically praised",
+      "pillow_quality": "average",
+      "sleeping_space_rating": "average"
+    },
+    "kitchen_food": {
+      "kitchen_available": null,
+      "kitchen_amenities": [],
+      "kitchen_cleanliness": null,
+      "free_breakfast": null,
+      "free_tea_coffee": null,
+      "free_drinking_water": null
+    },
+    "facilities": {
+      "swimming_pool": null,
+      "billiards_table": null,
+      "table_tennis": null,
+      "board_games": null,
+      "book_shelf": null,
+      "lounge_type": "common_area_and_bar",
+      "lounge_has_ac": null,
+      "lounge_sitting_size": "large, social hub atmosphere",
+      "smoking_zone": null,
+      "bar_onsite": true,
+      "restaurant_onsite": null,
+      "notes": "nightly events and lively organized activities specifically praised across reviews"
+    },
+    "services": {
+      "towel": null,
+      "towel_cleanliness": null,
+      "laundry_service": null,
+      "diy_iron": null,
+      "motorbike_rental": null,
+      "bicycle_rental": null,
+      "deposit_required": null,
+      "self_check_in": false,
+      "checkin_24_7": null,
+      "room_entry_method": null,
+      "communication_quality": "incredibly friendly and helpful, staff Marcus and Rachelle specifically named and praised across reviews"
+    },
+    "location": {
+      "nearby": [
+        "Khao San Road (on/immediately adjacent)",
+        "Rattanakosin Old City",
+        "Chao Phraya River"
+      ],
+      "distance_to_center_km": null,
+      "easy_to_find": true,
+      "near_metro": false,
+      "near_airport": false,
+      "nearby_towns": [],
+      "notes": "directly on the OG backpacker party strip - dive bars, street food, travelers everywhere"
+    },
+    "staff": {
+      "friendliness": "incredibly friendly and helpful, individual staff repeatedly named and praised",
+      "volunteer_program_available": null
+    },
+    "social_vibe": {
+      "guest_type": [
+        "party_travelers",
+        "solo_social_seekers",
+        "budget_backpackers"
+      ],
+      "social_activities": [
+        "lively organized events",
+        "bar crawls"
+      ],
+      "weekend_activities": [],
+      "party_level": "high",
+      "silent_hours": null,
+      "good_for_sleep": false,
+      "good_for_remote_work": null,
+      "notes": "ideal for solo travellers and groups looking for social atmosphere and lively events"
+    },
+    "views": {
+      "has_view": false,
+      "view_type": null,
+      "view_from": null
+    },
+    "exclusive_features": [
+      "located directly on/immediately by Khao San Road, the legendary backpacker party street",
+      "9.84/10 rating across reviews - one of the highest-rated Bangkok hostels found"
+    ],
+    "vibe_tags": [
+      "party_hostel",
+      "khao_san_road",
+      "high_energy",
+      "social",
+      "nightlife"
+    ],
+    "reviews_summary": "An exceptionally well-reviewed party hostel (9.84/10) directly on Khao San Road, Bangkok's legendary backpacker nightlife strip. Guests consistently praise the friendly, memorable staff, clean modern facilities, and genuinely lively social atmosphere - explicitly positioned for travelers who came to Bangkok to go out and meet people, not for a quiet stay.",
+    "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok despite it being one of Southeast Asia's best-known nightlife destinations, causing 'party hostel in Bangkok' searches to return zero results. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review."
+  },
+  {
+    "id": 118,
+    "name": "Revolution Khao San by The Bliss",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "region": null,
+    "accommodation_type": "hostel",
+    "has_dorm_beds": true,
+    "has_private_rooms": true,
+    "price_range_usd": {
+      "min": 6,
+      "max": 22
+    },
+    "building": {
+      "storeys": null,
+      "navigation": null
+    },
+    "parking": null,
+    "room_types": [
+      {
+        "type": "dormitory bed",
+        "price_usd": 6,
+        "occupancy": null,
+        "mixed_dorm": null,
+        "bathroom_type": "shared_external",
+        "shower_toilet_separate": null,
+        "hot_water": true,
+        "separate_urinals": null,
+        "air_flow": "ac",
+        "bunk_stair_quality": null,
+        "curtains_for_privacy": null,
+        "in_bunk_storage": null,
+        "in_bunk_shelf": null,
+        "sunlight": "average",
+        "bedsheet_quality": null,
+        "bedsheet_smell_issue": null,
+        "availability": {
+          "beds_left": null,
+          "last_updated": null
+        },
+        "notes": "property explicitly states an 18-35 age restriction and warns guests loudly ('WE ARE LOUD') not to expect a quiet stay"
+      },
+      {
+        "type": "private room",
+        "price_usd": 22,
+        "occupancy": 2,
+        "mixed_dorm": false,
+        "bathroom_type": "attached",
+        "shower_toilet_separate": null,
+        "hot_water": true,
+        "separate_urinals": null,
+        "air_flow": "ac",
+        "bunk_stair_quality": null,
+        "curtains_for_privacy": false,
+        "in_bunk_storage": false,
+        "in_bunk_shelf": null,
+        "sunlight": "average",
+        "bedsheet_quality": null,
+        "bedsheet_smell_issue": null,
+        "availability": {
+          "beds_left": null,
+          "last_updated": null
+        }
+      }
+    ],
+    "bathroom_general": {
+      "toilet_tissue_provided": null,
+      "hand_shower": null
+    },
+    "cleanliness_signal": {
+      "overall": "positively reviewed overall per aggregate ratings, though property leans hard into party positioning over polish",
+      "toilet_bathroom": null
+    },
+    "sleep_comfort": {
+      "mattress_quality": "average",
+      "pillow_quality": "average",
+      "sleeping_space_rating": "average - property explicitly warns of noise"
+    },
+    "kitchen_food": {
+      "kitchen_available": null,
+      "kitchen_amenities": [],
+      "kitchen_cleanliness": null,
+      "free_breakfast": null,
+      "free_tea_coffee": null,
+      "free_drinking_water": null
+    },
+    "facilities": {
+      "swimming_pool": null,
+      "billiards_table": null,
+      "table_tennis": null,
+      "board_games": null,
+      "book_shelf": null,
+      "lounge_type": "bar_and_common_area",
+      "lounge_has_ac": null,
+      "lounge_sitting_size": null,
+      "smoking_zone": null,
+      "bar_onsite": true,
+      "restaurant_onsite": null,
+      "notes": "operates pub crawls, boat trips, and exclusive deals with tour operators and restaurants"
+    },
+    "services": {
+      "towel": null,
+      "towel_cleanliness": null,
+      "laundry_service": null,
+      "diy_iron": null,
+      "motorbike_rental": null,
+      "bicycle_rental": null,
+      "deposit_required": null,
+      "self_check_in": false,
+      "checkin_24_7": null,
+      "room_entry_method": null,
+      "communication_quality": "self-described as taking hospitality seriously with 10 years of hostel experience; run by former backpackers themselves"
+    },
+    "location": {
+      "nearby": [
+        "Khao San Road (immediately adjacent)",
+        "Rattanakosin Old City"
+      ],
+      "distance_to_center_km": null,
+      "easy_to_find": true,
+      "near_metro": false,
+      "near_airport": false,
+      "nearby_towns": [],
+      "notes": "directly next to Khao San Road itself - property explicitly warns guests should not expect a quiet sleep"
+    },
+    "staff": {
+      "friendliness": "self-described as experienced and hospitality-focused, run by former backpackers",
+      "volunteer_program_available": null
+    },
+    "social_vibe": {
+      "guest_type": [
+        "party_travelers",
+        "solo_social_seekers"
+      ],
+      "social_activities": [
+        "pub crawls",
+        "boat trips",
+        "tour operator partnerships"
+      ],
+      "weekend_activities": [],
+      "party_level": "high",
+      "silent_hours": null,
+      "good_for_sleep": false,
+      "good_for_remote_work": null,
+      "notes": "explicit 18-35 age restriction; property brands itself as 'go hard, adventure hard'"
+    },
+    "views": {
+      "has_view": false,
+      "view_type": null,
+      "view_from": null
+    },
+    "exclusive_features": [
+      "explicit 18-35 age restriction, unusual for a hostel to state outright",
+      "self-branded 'go hard, adventure hard' positioning",
+      "organizes its own pub crawls and boat trips rather than just referring guests elsewhere"
+    ],
+    "vibe_tags": [
+      "party_hostel",
+      "khao_san_road",
+      "age_restricted_18_35",
+      "loud",
+      "pub_crawls"
+    ],
+    "reviews_summary": "A highly social party hostel immediately next to Khao San Road, notable for explicitly stating an 18-35 age restriction and warning guests upfront about noise levels ('WE ARE LOUD'). Runs its own pub crawls and boat trips rather than just booking through third parties. Unambiguously positioned for travelers seeking Bangkok's party scene, not a quiet stay.",
+    "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review."
   }
 ]
