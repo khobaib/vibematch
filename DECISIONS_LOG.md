@@ -156,6 +156,32 @@ Frendz Resort and Hostel, and Stamps Backpackers Hostel all have `price_range_us
 pricing wasn't surfaced in available search results.
 **Fix:** Needs either a targeted re-search pass or direct booking-site lookup per property.
 
+### 🔵 KNOWN CHARACTERISTIC (not a bug) — Intent parsing isn't perfectly deterministic
+Observed directly: the identical query "hostel near Weligama, Sri Lanka" run twice produced
+slightly different `vibe_tags` from Claude (`["surf town", "coastal", "beach"]` vs.
+`["beach", "surf"]`), which shifted the final match score (39 vs. 43) for the same top result —
+not because of any bug in the matching engine, but because the intent-parsing step upstream isn't
+guaranteed to tokenize identical input identically every call. The matching engine itself is
+fully deterministic given the same parsed intent; the variability lives entirely in the LLM step
+before it. Not something to "fix" so much as something to design around — e.g. don't assume
+score values are stable/comparable across repeated identical searches, and prefer testing
+matching logic directly with a fixed intent dict (as done throughout this log) over testing via
+the live API when reproducibility matters.
+
+### 🟡 OPEN — Vibe tag matching is pure text/substring comparison, not semantic understanding
+`matching.py` only scores a vibe_tag match when the actual text overlaps (exact match, or one
+string is a substring of the other) — it has no concept of related meaning. "calm surroundings"
+(query) vs "quiet" (hostel tag) are conceptually near-identical to a human but score zero,
+because neither string literally contains the other. Confirmed directly: a query with "calm
+surroundings" as a vibe tag scored a hostel tagged "quiet" as a pure location-only match (30
+points), with no credit at all for the clearly-related vibe. The semantic understanding only
+happens once, upstream, inside Claude's intent-parsing step — everything downstream in
+`matching.py` is deterministic string logic with no meaning attached. Proper fix would require
+genuine semantic similarity (e.g. embeddings, or a secondary LLM call to judge relatedness)
+rather than text matching — a meaningfully bigger feature, not a quick patch. Deferred; not
+fixed now, but explicitly tracked so the matching engine's actual capability isn't overstated
+later.
+
 ### 🟡 OPEN — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
 globally on the system Python rather than in a project-specific virtual environment.
@@ -220,6 +246,149 @@ Fixed by adding an explicit reason ("price not listed in our data — could not 
 your budget, check the listing directly") whenever budget was specified but couldn't be checked.
 General principle worth carrying forward: anywhere the matching engine can't check something the
 traveler explicitly asked about, the response should say so rather than go quiet.
+
+### 🟢 RESOLVED — Continent-level location searches returned zero results
+Found via real testing: a search for "Europe" returned nothing, even though the dataset has
+several European hostels — location matching only understood city/region/country, with no
+concept of continent. Fixed with a lightweight country→continent lookup table used only at
+query time (not stored redundantly on every hostel record), including proper handling for
+transcontinental countries like Turkey, which now correctly surfaces for both "Europe" and
+"Asia" searches.
+
+### 🟢 RESOLVED — Matching engine ignored structured location/remote-work fields
+The hostel schema has long included structured boolean fields (`near_metro`, `near_airport`,
+`good_for_remote_work`) that were never actually referenced by the scoring logic — a query like
+"near a train station" could only match by coincidence via free-text `vibe_tags`, not by
+checking the real structured data we already collected. Fixed by adding explicit keyword
+detection (transit-related and remote-work-related terms in the parsed vibe_tags) that scores
+against these structured fields directly. A good example of the gap between "we collected the
+data" and "the product actually uses the data" — worth double-checking for elsewhere in the
+schema as the matching engine keeps evolving.
+
+### 🟢 RESOLVED — "Cheap" / qualitative budget language was completely ignored in scoring
+Found via testing "cheap hostel in Sri Lanka": the intent parser correctly left `budget_max` as
+`null` (since "cheap" has no specific number), but the budget-scoring code only ran `if
+budget_max:` — so price played zero role in ranking whenever no exact number was given, even
+though the traveler clearly expressed a budget preference. The actual cheapest matching hostel
+ranked below a nearly 2x-more-expensive one purely because of an unrelated match. First fix used
+fixed dollar thresholds (e.g. ≤$8 → bonus). Superseded by the relative-scoring fix below.
+
+### 🟢 RESOLVED — Fixed-dollar "cheap" thresholds don't work across regions with different price levels
+The first fix for the above (fixed thresholds like "≤$8 = cheap") had its own flaw: $20/night is
+genuinely cheap for a hostel in Amsterdam but expensive in Bangkok, and no single global dollar
+table can reflect that without constant manual re-tuning per region. Replaced with **relative**
+scoring: `match_hostels()` computes the actual price spread of whatever candidate pool survived
+the location filter (already correctly scoped to city/region/country/continent, whatever grain
+was searched) and scores "cheap" relative to that pool's own min/max — the cheapest available
+option in *that specific search* scores highest, automatically adapting to local price levels
+with no region-specific code. A fixed absolute-dollar table is kept only as a fallback for the
+edge case where no price distribution can be computed (e.g. a single priced candidate). Validated
+directly: "cheap in Europe" surfaced $8-10 options as top matches, "cheap in Thailand" surfaced a
+$3 option as the top match — same code, correctly different absolute numbers per market.
+
+### 🟢 RESOLVED — Compound location strings ("City, Country") broke exact-city matching
+Found via testing "hostel near Weligama, Sri Lanka": the intent parser returned the location as
+`"Weligama, Sri Lanka"` (compound) rather than isolating just `"Weligama"`. All location matching
+used a one-directional substring check (`location in hostel_city`) — which fails when the search
+term is *longer* than the field being checked, since a longer string can never be "contained
+within" a shorter one. The actual Weligama hostel scored no better than any other Sri Lanka
+hostel, despite being the literal city match. Fixed by making city/region/country matching
+bidirectional (`location in hostel_city or hostel_city in location`) — the same pattern already
+used for `nearby_towns` matching, just never applied consistently to the primary location checks.
+General lesson: a fix pattern proven in one part of the matching logic should be audited across
+every other place with the same shape of comparison, not assumed to only apply where first found.
+
+### 🟢 RESOLVED — "Budget around $X" was scored identically to "budget under $X"
+Found via testing "budget around $10": the traveler correctly pointed out that "around $10" and
+"under $10" mean different things — approximate language should tolerate some overage (~20%) and,
+more importantly, shouldn't make fine price differences within that zone matter at all ($6 and
+$10 should score the same when the ask was "around $10", since the traveler said other criteria
+matter more once price is roughly in range). Added a `budget_flexibility` field to the intent
+parser ("strict" vs "approximate") and gave the matching engine two different budget-scoring
+paths: strict keeps the existing hard-ish ceiling behavior, approximate gives flat equal credit
+across a tolerance zone (target × 1.2) so vibe/social/other criteria — not tiny price gaps — drive
+the ranking, exactly as the traveler described wanting.
+
+### 🟢 RESOLVED — "Not a party place" didn't actually avoid party hostels
+Found via testing "peaceful hostel in Kerala... not a party place": a hostel with
+`party_level: "medium_to_high"` and a literal `party_hostel_branding` vibe tag scored the same as
+genuinely peaceful hostels, with zero acknowledgment of the conflict. Two compounding bugs: (1)
+Claude phrased the anti-party signal as `"non-party"` (hyphen), but the negation detector only
+recognized underscored prefixes (`non_`), so it silently failed to recognize the negation at all
+— same category of bug as the earlier "surf town" vs "surf_town" issue, now fixed generally by
+normalizing hyphens to underscores before checking; (2) more fundamentally, negation handling only
+ever compared *text tag against text tag* — it had no mechanism to check the structured
+`party_level` field hostels already carry, so a hostel could dodge the check entirely just by not
+happening to phrase its party-ness in a way that textually collided with the query. First fix used
+a keyword list + binary bucket (avoid-language triggers a flat penalty/reward). Superseded by the
+graded fix below.
+
+### 🟢 RESOLVED — Party preference detection didn't handle intensity or a graded party_level scale
+Follow-up question worth taking seriously: what should happen for softer phrasing like "not much
+a party place" or "priority is calmness" (milder than "not a party place"), against a hostel rated
+"low_to_medium" (milder than fully "low")? The keyword-list approach from the first fix couldn't
+reliably catch every paraphrase Claude might produce, and even when it did fire, it used a binary
+bucket — "low_to_medium" scored identically to "low", and a mild preference was scored identically
+to a strong one, with "medium" alone falling into neither bucket at all. Replaced with the same
+pattern used for `budget_flexibility`: Claude now classifies intent directly into a structured
+`party_preference` field (avoid / prefer_quiet / neutral / prefer_social / prefer_party) with
+explicit intensity guidance in the prompt, and matching scores by ORDINAL DISTANCE on a 1-5 party
+scale (low=1 ... high=5) rather than a binary bucket. Validated across all 25
+preference × party_level combinations before connecting to the real intent parser. General
+principle reinforced twice now: prefer a small structured field Claude fills in directly over
+inferring nuance from a fixed keyword list, whenever the concept has real gradations worth
+capturing.
+
+### 🟢 RESOLVED — "avoid" and "prefer_quiet" incorrectly targeted different ideal party levels
+Direct correction from the traveler on the fix above: the first version of ordinal scoring gave
+`avoid` a target of `low` (1) but `prefer_quiet` a target of `low_to_medium` (2) — treating a
+milder request as if it meant "aim for a slightly livelier result" rather than "still want quiet,
+just don't punish moderate levels as harshly." Traveler's framing was correct: "not much a party
+place" still means preferring low or near-zero party energy, not low-to-medium. First fix aligned
+both to target=1 (`low`) with different steepness. Refined further below.
+
+### 🟢 RESOLVED — "low" party_level was treated as a perfect match for "avoid", when it shouldn't be
+Second round of the same correction: the traveler pointed out that even "low" still has *some*
+party element, and a strong "avoid" request shouldn't treat it as a perfect match — a hostel with
+"low_to_medium" or higher shouldn't realistically show up at all for someone who explicitly wants
+to avoid parties. Fixed by shifting the target for `avoid`/`prefer_quiet` from 1 (`low`) to a
+*virtual* 0 — one step below the lowest value our schema actually tracks — so `low` is always
+scored as "closest available, not perfect" rather than a maximum. Combined with steepness: `avoid`
+now scores `low` at only +5 and `low_to_medium` at -10 (likely dropping it from results entirely,
+since the matching engine filters out any non-positive total score), while `prefer_quiet` scores
+`low` at +13 vs `low_to_medium` at +6 — both still positive but clearly differentiated, matching
+the traveler's exact description: "no party gets higher score, low gets some score too, low to
+medium gets less than low." The same logic was mirrored symmetrically on the opposite end
+(`prefer_social`/`prefer_party` target shifted from 5 to a virtual 6, one step above `high`) so a
+`high`-party hostel isn't treated as an unbeatable ceiling either — confirmed as the desired
+behavior rather than reverted. Validated numerically against the traveler's own description before
+being accepted, not just visually inspected.
+
+### 🟢 RESOLVED — Score was an opaque total with no per-factor breakdown, and result counts weren't reported
+Two product asks handled together since they touched the same code: (1) the API response had no
+way to tell how many hostels actually matched a query before truncating to the top 10 — a search
+returning "10 results" looked identical whether 10 or 400 hostels actually qualified; (2) the
+`reasons` field was plain text strings with no attached point values, so there was no way to see
+exactly how a final score was assembled without manually re-deriving it. Fixed by rewriting
+`score_hostel()` around a single `add(points, reason)` helper that records every contribution as
+a `{"points": int, "reason": str}` entry in a `breakdown` list, with the final score computed as
+their sum (rather than tracked separately and potentially drifting out of sync) — and by having
+`match_hostels()` return both `total_matches` (full candidate count before truncation) and the
+truncated `results` list, both surfaced in the `/search` API response.
+
+### 🟢 RESOLVED — Assuming Claude's response content[0] is always the text block crashed on some queries
+Found while testing whether `party_preference` generalizes correctly beyond party-related
+"avoid" language (e.g. "avoid traffic and crowded areas"): the query triggered a 500 error,
+`AttributeError: 'ThinkingBlock' object has no attribute 'text'`. Root cause: `parse_intent()`
+assumed `message.content[0]` is always the text response, but Claude's API can return multiple
+content blocks — including a `ThinkingBlock` (internal reasoning) ordered BEFORE the actual
+`TextBlock`, which appears to happen more often on queries with more nuanced or mixed signals
+(exactly the kind of query being used to stress-test the party_preference scoping). Fixed by
+looping through all content blocks and selecting whichever one has `type == "text"`, instead of
+assuming position — with a clear error listing the actual block types received if none is found,
+rather than a cryptic AttributeError. Unrelated to the party_preference logic itself, but only
+surfaced because more adversarial/edge-case queries were being tested deliberately before
+committing — a good argument for that habit continuing.
 
 ---
 
