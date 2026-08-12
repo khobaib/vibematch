@@ -195,7 +195,8 @@
     ],
     "reviews_summary": "Rated 8.0-8.1/10 (Very Good) across 1,600+ reviews. Known as the original and biggest Mad Monkey, praised for vibrant social atmosphere, friendly and memorable staff, and central BKK1 location. Great for meeting people and organized events/tours, but not ideal for guests wanting quiet nights.",
     "source_note": "Populated from Hostelworld, Tripadvisor, Kayak, and momondo listings (searched July 2026). Not independently verified by traveler; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 2,
@@ -373,7 +374,8 @@
     ],
     "reviews_summary": "Frequently cited as travelers' #1 choice among Indian hostels. Praised for genuinely warm staff, clean comfortable beds, strong social common areas, and fair prices relative to quality. A short walk from Palolem Beach in a converted traditional Goan house.",
     "source_note": "Populated from Hostelworld, Tripadvisor, Booking.com, MakeMyTrip listings (searched July 2026). Not independently verified by traveler; awaiting manual review.",
-    "region": "Goa"
+    "region": "Goa",
+    "research_depth": "deep"
   },
   {
     "id": 3,
@@ -571,7 +573,8 @@
     ],
     "reviews_summary": "Ratings vary significantly by source (5.9 to 9.6) suggesting inconsistent guest experience. Praised by some for clean private rooms, attentive hosts, and proximity to quieter Odayam Beach; criticized by others for pricing, service lapses, and humidity/mold in rooms during monsoon season.",
     "source_note": "Populated from Hostelworld, Tripadvisor, Hostelz, Planet of Hotels listings (searched July 2026), specifically the Odayam Beach property (address: Edava X1 392 Thekke Thgodi Odayam, near Bluewater Beach Resort). IMPORTANT: 'Cliff and Coral' is a small brand with 3 separate Varkala properties - North Cliff, Odayam, and Native - each with distinct character. This entry is the Odayam branch, confirmed via traveler's Google Maps pin. Ratings varying 5.9-9.6 in original search may partly reflect cross-contamination between branches in aggregator listings - treat with some caution. Not independently verified by traveler beyond location confirmation; awaiting manual review of amenities.",
-    "region": "Kerala"
+    "region": "Kerala",
+    "research_depth": "deep"
   },
   {
     "id": 4,
@@ -756,7 +759,8 @@
     ],
     "reviews_summary": "Modest ratings (5.9-7.6 depending on source) but standout praise for host hospitality and unbeatable central location just steps from Pai's bus station and night market. A no-frills, budget-friendly option best suited to travelers prioritizing location and friendliness over facilities.",
     "source_note": "Name corrected to 'Sunny Hostel Garden' per traveler (searched July 2026). Populated from Tripadvisor, Trip.com, Hostelz, Planet of Hotels, Booking.com listings. Located ~300m from Pai Night Market, near Le Reve De Pai and Fine Rice Thai Restaurant, walking distance to Chiang Mai minivan terminal. Note: Thailand has several similarly-named 'Sunny' hostels (Sunny House, Sunny Tayai, Sunny Hostel Chiangmai) - confirm this Pai property matches traveler's stay. Not independently verified by traveler; awaiting manual review.",
-    "region": "Northern Thailand"
+    "region": "Northern Thailand",
+    "research_depth": "deep"
   },
   {
     "id": 5,
@@ -958,7 +962,8 @@
     ],
     "reviews_summary": "Consistently rated Very Good (8.5/10 across 2,000+ reviews). Renamed from Wabi Sabi Hostel. Guests highlight exceptional cleanliness, comfortable beds, a standout rooftop terrace with city views and buffet breakfast, and staff (especially Talha) going above and beyond. Central Taksim location near metro. Marketed as laid-back and homely rather than party-oriented.",
     "source_note": "Populated from Hostelworld, momondo, Kayak, Hotels.com listings (searched July 2026). Confirmed by traveler: renamed from Wabi Sabi Hostel / Bunk Hostel Istanbul. Not independently verified by traveler beyond name history; awaiting manual review of amenities. LIGHT PASS (Agoda/Google Maps check): confirmed via Kayak aggregation (2,001 reviews, 8.5/10). Agoda page itself did not return accessible review content in search (JS-rendered). Important: a separate 'Central House Istanbul Galata' property exists and should not be confused with this Taksim entry - a negative Agoda-dispute review found in search belongs to the Galata property, not this one, and was correctly excluded.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 6,
@@ -1103,7 +1108,8 @@
     ],
     "reviews_summary": "A private entire-home villa (not a dorm-style hostel) in the heart of Canggu just off Shortcut Road, close to coffee shops, restaurants, and sports courts. Best suited for couples, families, or remote workers wanting privacy rather than a social hostel atmosphere.",
     "source_note": "This is a private villa/Airbnb-style listing, structurally different from the other hostels in this database (single room type, no dorm beds, no shared social spaces). Search results were limited and generic - most fields are unverified. Strongly flagged for traveler's own memory to fill in, since this listing type is hardest to verify via search. LIGHT PASS (Traveloka/Agoda check): search repeatedly surfaced a different, similarly-themed property ('Tropical Canggu Hostel', Jl. Nelayan No 9B) rather than this exact villa - important not to confuse the two. No reliable additional data found for Tropical Villa Barroso specifically via Traveloka in this pass. This entry remains the weakest-sourced in the dataset.",
-    "region": "Bali"
+    "region": "Bali",
+    "research_depth": "deep"
   },
   {
     "id": 7,
@@ -1277,7 +1283,8 @@
     ],
     "reviews_summary": "Well-located 600m from Palolem Beach with strong facilities (restaurant, cafe, games room, parking) and generally friendly staff. Rated highly on aggregator sites (8.5-9.6) though at least one detailed review flagged dishonest pricing practices and infrequent room cleaning - worth verifying against firsthand experience.",
     "source_note": "Populated from Goibibo, Booking.com, Hostelz, Planet of Hotels, Justdial, Hostelworld (searched July 2026). NOTE on the 'dishonest' review flagged earlier: only a partial snippet was captured ('Bibhitaki Hostel is dishonest...'), full context unavailable - treat as low-confidence single data point, not a verified pattern. Not independently verified; awaiting manual review.",
-    "region": "Goa"
+    "region": "Goa",
+    "research_depth": "deep"
   },
   {
     "id": 8,
@@ -1450,7 +1457,8 @@
     ],
     "reviews_summary": "Very Good rating (8.5-8.7/10, 800-900+ reviews) with guests repeatedly describing it as home-like with a strong community feel; the free yoga studio and home-cooked food are standout features. A small number of reviews report serious cleanliness and refund issues, appearing to be outliers against the broader very positive consensus.",
     "source_note": "Populated from Trip.com, Kayak, Hostelworld, Tripadvisor, momondo, EaseMyTrip (searched July 2026). One notably negative Tripadvisor review conflicts sharply with the broader consensus - worth traveler's own judgment on reliability. Not independently verified; awaiting manual review.",
-    "region": "Delhi"
+    "region": "Delhi",
+    "research_depth": "deep"
   },
   {
     "id": 9,
@@ -1625,7 +1633,8 @@
     ],
     "reviews_summary": "The plain 'Hosteller Fort Kochi' (distinct from the nearby 'Ocean Edge' branch), located on a quiet residential street in Fort Nagar, a 9-minute walk from Fort Kochi Beach and the Chinese Fishing Nets. Features a rooftop terrace with a movie projector, colourful exterior, and self-service cafe culture. Part of The Hosteller chain positioned for young backpackers.",
     "source_note": "CORRECTED per traveler-provided address (Fosse Rd, Fort Nagar, Kunnumupuram, Fort Kochi, Kochi, Kerala 682001) - this is 'The Hosteller Fort Kochi' (no 'Ocean Edge' suffix), a separate property from the similarly-named Ocean Edge branch also in Fort Kochi. Populated from Google Hotels, Tripadvisor, EaseMyTrip, thehosteller.com, Kerala Tourism, Orbitz (searched July 2026). Data is thinner than Ocean Edge branch had - review text was less detailed in search results. Not independently verified beyond address/location match; awaiting manual review of amenities and social vibe.",
-    "region": "Kerala"
+    "region": "Kerala",
+    "research_depth": "deep"
   },
   {
     "id": 10,
@@ -1803,7 +1812,8 @@
     ],
     "reviews_summary": "Rated 9.5/10 (Hostelz) and Very Good on Hostelworld/Booking.com. Consistently described as a calm, social-but-not-loud hostel ideal for digital nomads and long stays, with an exceptional shared kitchen, free breakfast, and a standout weekly cooking event. Staff (especially Amelia) repeatedly praised by name.",
     "source_note": "Populated from Hostelworld, Booking.com, Hostelz, Wanderlog, Tripadvisor, Klook (searched July 2026). Very consistent positive signal across sources - one of the stronger-verified entries in this batch. Not independently verified by traveler; awaiting manual review. LIGHT PASS (Traveloka check): no additional accessible content found via Traveloka for this specific property in this pass; existing sources (Hostelworld, Booking.com, Hostelz, Wanderlog) remain the primary basis for this entry.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 11,
@@ -1950,7 +1960,8 @@
     ],
     "reviews_summary": "A budget hotel/apart-hotel (not a hostel) in South Jakarta near Pacific Place. Strong location and value-for-price scores. Agoda's aggregated cleanliness score is 8.9/10 across 5,092 reviews, confirmed by traveler's own positive experience with no noise issues. An earlier-found review citing noise and a mismatched low cleanliness sub-score from another aggregator appears to be an outlier and is not representative.",
     "source_note": "Populated from ZenHotels, HotelsCombined, Trip.com, Tripadvisor, Voyerty, Kayak, and Agoda (searched July 2026). Traveler confirmed good cleanliness firsthand and no noise issues - corrected from initial flagged concerns which appear to have been outliers.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 12,
@@ -2109,7 +2120,8 @@
     ],
     "reviews_summary": "Exceptionally well-reviewed (9.1-9.6/10 across 1,200-1,800+ reviews) social hostel in the heart of Antalya's old town. Guests consistently highlight the vibrant events schedule, very clean facilities, and staff who go well beyond expectations. One of the strongest and most consistent review profiles in this dataset.",
     "source_note": "Populated from Booking.com, Hostelworld, Hostelz, Tripadvisor, Hotels.com (searched July 2026). Very strong, consistent signal across all sources. Private room availability unclear from search - flagged as unknown rather than assumed. Not independently verified; awaiting manual review. LIGHT PASS (Agoda/Enuygun check): Agoda listing confirmed to exist (agoda.com/be-bold-hostel) but did not return accessible review text in search results. New details found: resident hostel dog 'Boldy', strong/hot shower pressure specifically praised, under-bed storage confirmed.",
-    "region": "Antalya Province"
+    "region": "Antalya Province",
+    "research_depth": "deep"
   },
   {
     "id": 13,
@@ -2283,7 +2295,8 @@
     ],
     "reviews_summary": "Highly praised hostel in old Izmir (Basmane area) with an outstanding homemade vegan breakfast repeatedly called the best guests have had anywhere, and thoughtful personal touches from owner Ahmet. One guest planned a single night and stayed 8 days. Ratings range 8.1-8.9 across sources; one note flags the surrounding neighborhood as feeling a bit rough after dark.",
     "source_note": "Populated from Planet of Hotels, Tripadvisor, HotelsCombined, Hostelworld, Hostelz, Trip.com (searched July 2026). Very strong qualitative signal on breakfast and owner hospitality specifically. Not independently verified; awaiting manual review. LIGHT PASS (Agoda/Enuygun check): confirmed listed on both Agoda and Enuygun (enuygun.com/otel/detay/lotus-garden-hostel-izmir) but neither returned accessible review text in search. Found a breakfast pricing discrepancy across sources - see kitchen_food notes. CORRECTED per traveler's Q3 2022 stay: breakfast was not free during their visit.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 14,
@@ -2456,7 +2469,8 @@
     ],
     "reviews_summary": "A relaxed, family-run guesthouse in the heart of Selcuk, positioned as the gateway to ancient Ephesus. Consistently praised (4.5/5, 8.2-9.5 across sources, ~400 reviews) for the warmth of owners Candy and Huseyin, home-cooked Turkish food, and quiet cool rooms. Some guests are annual repeat visitors.",
     "source_note": "Populated from Tripadvisor, Planet of Hotels, momondo, Booking.com (searched July 2026). Listed as 'Boomerang Guesthouse Ephesus' on some platforms - confirmed same property given identical address. Not independently verified; awaiting manual review. LIGHT PASS (Agoda/Enuygun check): no significant new information surfaced beyond original sources; Agoda/Enuygun listings not confirmed as accessible in search results for this specific property.",
-    "region": "Izmir Province"
+    "region": "Izmir Province",
+    "research_depth": "deep"
   },
   {
     "id": 15,
@@ -2627,7 +2641,8 @@
     ],
     "reviews_summary": "Centrally located near Taksim/Istiklal with a genuinely well-loved breakfast veranda (cats included) and a deliberately small, quiet room design (max 4 beds/room). Reviews are mostly strong (8/10 on Tripkoli, praised on Trip.com/Hotels.com) though Tripadvisor shows more mixed results (3/5 from a smaller sample) with occasional maintenance/cleanliness complaints.",
     "source_note": "Populated from Hotels.com, Trip.com, Tripadvisor, Hostelworld, Booking.com, Tropki (searched July 2026). Rating varies more than most entries in this batch (3/5 on Tripadvisor vs strong scores elsewhere) - worth traveler's firsthand judgment. Not independently verified; awaiting manual review. LIGHT PASS (Agoda/Enuygun check): no significant new information surfaced beyond original sources; Agoda/Enuygun listings not confirmed as accessible in search results for this specific property.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 16,
@@ -2799,7 +2814,8 @@
     ],
     "reviews_summary": "A quiet, comfortable bed-and-breakfast-style hostel on the north edge of Chiang Mai's Old City, praised for exceptionally comfortable beds and a peaceful (not party) atmosphere - explicitly positioned as a relaxed retreat rather than a social hub. Located just steps from North Gate Jazz Co-op. Ratings mostly strong (8.5+ on multiple sites) with occasional maintenance complaints.",
     "source_note": "Populated from Planet of Hotels, Travelated, Hostelworld, Booking.com (searched July 2026). Consistent signal around comfort and quiet positioning. Not independently verified; awaiting manual review.",
-    "region": "Northern Thailand"
+    "region": "Northern Thailand",
+    "research_depth": "deep"
   },
   {
     "id": 17,
@@ -2946,7 +2962,8 @@
     ],
     "reviews_summary": "A design-forward hostel in a converted Peranakan-style building in Old Phuket Town, standing out for unusually spacious bunk beds with large individual lockers and curtains. Very strong ratings (9.0-9.4/10 across 500+ reviews). Rooftop lounge is a highlight for meeting both travelers and locals.",
     "source_note": "Populated from Facebook, Hostelworld, Tripadvisor, Hotels.com, Expedia, MakeMyTrip, Hostelz, Booking.com (searched July 2026). Strong and consistent positive signal. Private room availability unclear from search results - flagged as unknown. Not independently verified; awaiting manual review.",
-    "region": "Southern Thailand"
+    "region": "Southern Thailand",
+    "research_depth": "deep"
   },
   {
     "id": 18,
@@ -3121,7 +3138,8 @@
     ],
     "reviews_summary": "An exceptional family-run guesthouse in central Ubud, consistently rated 9.4-9.5/10 across 500+ reviews. Stands out for genuine cultural immersion - hosts Kadek and family regularly invite guests into Balinese traditions and daily rituals. Quiet despite being centrally located, set back from the main road.",
     "source_note": "Populated from momondo, MakeMyTrip, Booking.com, Tripadvisor, Kayak (searched July 2026). Exceptionally strong and consistent review signal, one of the best-reviewed properties in this dataset. Minor inconsistency noted on AC availability across sources. Not independently verified; awaiting manual review. LIGHT PASS (Traveloka check): no additional accessible content found via Traveloka for this specific property in this pass; existing sources remain the primary basis for this entry, which was already one of the strongest in the dataset.",
-    "region": "Bali"
+    "region": "Bali",
+    "research_depth": "deep"
   },
   {
     "id": 19,
@@ -3283,7 +3301,8 @@
     ],
     "reviews_summary": "A budget-to-midrange hotel (not a hostel) near Seminyak (Jl. Dewi Saraswati III No.53-55), with a pool as a consistent highlight and staff service repeatedly praised. Some older Tripadvisor reviews mentioned dated fittings, but traveler's own recent check of Google reviews found no such complaints - earlier concerns may be outdated rather than a current issue.",
     "source_note": "Populated from Tripadvisor, MakeMyTrip, Trip.com, Kayak (searched July 2026), cross-checked against traveler's own review of current Google listing. Also referred to as 'Kamarkoe Hotel Seminyak' in some listings - same property, general manager response confirms this. Address confirmed: Jl. Dewi Saraswati III No.53-55, Seminyak, Kec. Kuta, Kabupaten Badung, Bali 80361.",
-    "region": "Bali"
+    "region": "Bali",
+    "research_depth": "deep"
   },
   {
     "id": 20,
@@ -3436,7 +3455,8 @@
     ],
     "reviews_summary": "A warmly reviewed family homestay near Kovalam Beach (4.6-4.7/5 rating), standing out for genuine hospitality from hosts Sreekumar and Sushama and a delicious home-cooked Kerala breakfast. Consistently described by guests as feeling like being welcomed into a family rather than a transactional stay.",
     "source_note": "Populated from Justdial, Booking.com, homestaykovalam.com, Goibibo, Kerala Tourism board (searched July 2026), price confirmed by traveler: INR 2,448 total for 2 nights, 2 people in a standard double room (~INR 1,224/night \u2248 $14 USD at July 2026 rates). Not independently verified beyond price; awaiting manual review of amenities.",
-    "region": "Kerala"
+    "region": "Kerala",
+    "research_depth": "deep"
   },
   {
     "id": 21,
@@ -3629,7 +3649,8 @@
         "traveler_assessment": "did not disrupt sleep for traveler; common and expected in this neighborhood"
       }
     ],
-    "region": "Kerala"
+    "region": "Kerala",
+    "research_depth": "deep"
   },
   {
     "id": 22,
@@ -3781,7 +3802,8 @@
     ],
     "reviews_summary": "Very Good rating (8.9/10, 3,371 reviews on Kayak). Standout features are an outdoor pool (uncommon for the price point) and a strictly enforced quiet policy that guests specifically appreciate for good rest. Consistently praised for cleanliness and friendly staff (Louis mentioned repeatedly).",
     "source_note": "Populated from momondo, Trip.com, Hostelz, Tripadvisor, Booking.com, Kayak (searched July 2026). Strong, consistent signal across sources. Not independently verified by traveler; awaiting manual review.",
-    "region": "Catalonia"
+    "region": "Catalonia",
+    "research_depth": "deep"
   },
   {
     "id": 23,
@@ -3934,7 +3956,8 @@
     ],
     "reviews_summary": "A well-regarded backpacker hostel in Darjeeling, praised for its mountain views from the common area, good food, and standout hospitality from staff Rozar and Vivek (both named repeatedly across reviews). Considered one of the best options for solo travelers seeking a peaceful, nature-oriented stay.",
     "source_note": "CORRECTED per traveler: located in Darjeeling, not Kolkata. Populated from Hostelworld, Booking.com, Planet of Hotels, Kayak (searched July 2026). IMPORTANT: an unrelated, differently-named property 'Benus Darjeeling Home A Backpackers Hub' also exists in Darjeeling with intentionally scathing/satirical reviews - confirmed as a separate, different listing and excluded from this entry. Not independently verified beyond location; awaiting manual review of amenities.",
-    "region": "West Bengal"
+    "region": "West Bengal",
+    "research_depth": "deep"
   },
   {
     "id": 24,
@@ -4114,7 +4137,8 @@
     ],
     "reviews_summary": "This property appears to have been renamed from 'No Name Hostel' (traveler's November 2022 stay) to 'Nomads Hostel' at the same exact address (Village Chojh, Chojh Bridge, Kasol 175105). Recent reviews (2024-2025) are strongly positive (8.6-8.8/10), highlighting the riverside location, 360-degree rooftop views, and workation-friendly setup. One notably negative Hostelworld review describes poor cleanliness and a difficult, unmarked approach path - unclear whether this predates a possible renovation/rebrand or reflects inconsistent quality over time.",
     "source_note": "CORRECTED per traveler-provided address (Village Chojh, Kasol, Kullu, HP 175105) - exact address match with 'Nomads Hostel' found in earlier research, strongly suggesting a rename occurred after traveler's November 2022 stay. Populated from momondo, Kayak, Planet of Hotels, Hostelworld, Tripadvisor, Travelated, hotel.com.au, Booking.com (searched July 2026). IMPORTANT: reviews span multiple years with varying manager names (Jyoti, Abhishek, Vijay bhai) and one sharply negative review alongside mostly positive ones - given the likely rename/rebrand, older negative reviews may not reflect current conditions. Traveler's own 2022 memory is the most reliable source for that specific era; awaiting manual review to fill gaps and confirm the rename theory.",
-    "region": "Himachal Pradesh"
+    "region": "Himachal Pradesh",
+    "research_depth": "deep"
   },
   {
     "id": 25,
@@ -4289,7 +4313,8 @@
     ],
     "reviews_summary": "Exceptionally well-reviewed (9.7-10/10 across multiple sources including Booking.com and Hostelworld). The signature feature - being set in a working apple orchard with panoramic mountain views - is confirmed both by search data and the traveler's own memory. Standout hospitality and food are the most repeated praise points.",
     "source_note": "Populated from Hostelworld, Booking.com, Tripadvisor, Planet of Hotels, Goibibo, Hostelz (searched July 2026). Very strong, consistent signal - one of the best-reviewed properties in the dataset. Apple orchard + mountain view detail independently confirmed by traveler's own description.",
-    "region": "Himachal Pradesh"
+    "region": "Himachal Pradesh",
+    "research_depth": "deep"
   },
   {
     "id": 26,
@@ -4464,7 +4489,8 @@
     ],
     "reviews_summary": "Strongly rated (8.1-9.8 across sources, 797+ reviews) hostel near Varanasi's old town and ghats. Distinguishes itself through genuinely curated local experiences - sunrise Ganga boat rides, temple walks, Banarasi food tours - rather than generic tourist offerings. Staff (Nitin, Sonu) repeatedly praised by name for going beyond expectations.",
     "source_note": "Populated from Tripadvisor, Booking.com, Hostelz, Planet of Hotels, EaseMyTrip, hotel-mix.in (searched July 2026). Strong consistent signal. Not independently verified by traveler; awaiting manual review.",
-    "region": "Uttar Pradesh"
+    "region": "Uttar Pradesh",
+    "research_depth": "deep"
   },
   {
     "id": 27,
@@ -4641,7 +4667,8 @@
     ],
     "reviews_summary": "Outstandingly reviewed across every platform searched, with 'cleanest hostel in India' as a genuinely recurring, independent phrase from multiple reviewers rather than marketing language. Strong emphasis on community ('at least 53 new friends'), art, and hospitality. One of the most consistently praised properties in this entire dataset.",
     "source_note": "Populated from Planet of Hotels, Hostelz, Justdial, Tripadvisor, Hostelworld, Booking.com (searched July 2026). Exceptionally strong, consistent signal across 6 independent sources including 1,566 Justdial reviews. Not independently verified by traveler; awaiting manual review.",
-    "region": "Rajasthan"
+    "region": "Rajasthan",
+    "research_depth": "deep"
   },
   {
     "id": 28,
@@ -4794,7 +4821,8 @@
     ],
     "reviews_summary": "Very well-reviewed (8.7-8.9/10, 136+ reviews) hostel just 300m from Pushkar's Brahma Temple. Consistently praised for a relaxing, chilled atmosphere, spacious clean rooms, and a large peaceful rooftop overlooking the ghats. Multiple reviewers specifically call it one of the best/most relaxing stays they had in India.",
     "source_note": "Populated from Booking.com, Bedandbreakfast.eu, Airpaz, Planet of Hotels, Dorms.com, Hotelin (searched July 2026). Strong, consistent signal. Dorm bed availability unclear from search - flagged as unknown. Not independently verified by traveler; awaiting manual review.",
-    "region": "Rajasthan"
+    "region": "Rajasthan",
+    "research_depth": "deep"
   },
   {
     "id": 29,
@@ -4940,7 +4968,8 @@
     ],
     "reviews_summary": "A small, quiet adults-only hostel in Bangkok's Pratunam area near BTS access, rated 9.2/10 on Hotels.com. Generally praised as clean and well-located for solo travelers and backpackers, though Tripadvisor shows a much lower/thinner sample (3.3/5, 3 reviews) with one report of a sewage smell - worth weighing the larger positive sample against this outlier.",
     "source_note": "Populated from Tripadvisor, Hotels.com, Facebook, Klook, Trip.com, Booking.com, EaseMyTrip (searched July 2026). Notable rating variance between sources (Hotels.com 9.2 vs Tripadvisor 3.3 on a small sample) - flagged for traveler's own judgment. Dorm bed availability unclear. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 30,
@@ -5109,7 +5138,8 @@
     ],
     "reviews_summary": "Rebranded from 'Super OYO 426 All Day Hostel' to 'All Day Hostel @ BTS Bang Chak'. Consistently rated well (8.9-9.2/10 on Booking.com, 141 reviews) for cleanliness, comfort, and staff, though not centrally located (12.6km from city center, ~15-20 min from main tourist areas). One isolated report of a hostile front-desk incident stands out against otherwise strong reviews.",
     "source_note": "Populated from MakeMyTrip, Planet of Hotels, Booking.com, OYO Rooms, Tripadvisor, HotelsCombined (searched July 2026). IMPORTANT: property has been renamed since traveler likely visited - now 'All Day Hostel @ BTS Bang Chak', ex 'Super OYO 426 All Day Hostel'. Not independently verified beyond name history; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 31,
@@ -5283,7 +5313,8 @@
     ],
     "reviews_summary": "Very well-reviewed (9.0/10, 3,002 reviews on Hostelz) social hostel in Ao Nang, also known as K-Bunk. Strongly social atmosphere with staff-organized pub crawls and activities as the standout feature. One isolated complaint about a billing/receptionist dispute noted against an otherwise strongly positive review base.",
     "source_note": "Populated from Planet of Hotels, Hostelworld, Hostelz, Skyscanner, Trip.com, Tripadvisor (searched July 2026). Property also operates under 'K-Bunk Ao Nang' branding - same property confirmed via matching address. Not independently verified; awaiting manual review.",
-    "region": "Southern Thailand"
+    "region": "Southern Thailand",
+    "research_depth": "deep"
   },
   {
     "id": 32,
@@ -5427,7 +5458,8 @@
     ],
     "reviews_summary": "A budget hotel (not a hostel) in Patong, Phuket, close to Bangla Road and the beach. Solidly rated (7.2-7.6/10 across multiple sources, ~450-500 reviews), with staff service and value-for-price as the most consistently praised elements. Considered one of the better budget options in a pricier area of Phuket.",
     "source_note": "Populated from Tripadvisor, HotelsCombined, Booking.com, Priceline, MakeMyTrip, EaseMyTrip (searched July 2026). Consistent moderate-to-good ratings across sources. Not independently verified by traveler; awaiting manual review.",
-    "region": "Southern Thailand"
+    "region": "Southern Thailand",
+    "research_depth": "deep"
   },
   {
     "id": 33,
@@ -5582,7 +5614,8 @@
     ],
     "reviews_summary": "A beachfront party hostel in Koh Phangan (7.6-7.9/10, 1,300+ reviews), directly positioned for Full Moon Party access with free taxi transport included with ticket purchases. Guests consistently describe a strong sense of community, sometimes staying for weeks and getting to know staff and volunteers personally. Not aimed at travelers wanting quiet.",
     "source_note": "Populated from momondo, ZenHotels, HostelsClub, MakeMyTrip, Trip.com, Hostelworld, Kayak (searched July 2026). Strong consistent signal, also listed as 'Echo Beach Backpackers'. Not independently verified by traveler; awaiting manual review.",
-    "region": "Southern Thailand"
+    "region": "Southern Thailand",
+    "research_depth": "deep"
   },
   {
     "id": 34,
@@ -5756,7 +5789,8 @@
     ],
     "reviews_summary": "A distinctive eco-lodge in a coconut grove near Palolem, built from natural materials with each cabana individually designed. Beloved by nature/yoga-focused travelers as a 'jungle dream,' but explicitly not suited to guests uncomfortable with insects or a rustic, no-AC setting. Reviews note it can feel quiet/unsocial in the off-season, and one review flagged kitchen cleanliness concerns.",
     "source_note": "Populated from Hostelworld, Booking.com, ReadyToTrip, Magicpin (searched July 2026). Genuinely polarizing property by design - not a fit for all travelers, which is reflected honestly in reviews rather than smoothed over. Price data not found in search results. Not independently verified; awaiting manual review.",
-    "region": "Goa"
+    "region": "Goa",
+    "research_depth": "deep"
   },
   {
     "id": 35,
@@ -5928,7 +5962,8 @@
     ],
     "reviews_summary": "A community-focused budget hostel 2-5 minutes from Anjuna Beach, praised for its warm, home-like atmosphere and active volunteer program - guest-contributed wall art throughout captures this. Cleanliness reviews are somewhat mixed (one specific concern flagged) against an otherwise strongly positive social experience.",
     "source_note": "Populated from Hostelworld, Tripadvisor, Justdial, MakeMyTrip, Trip.com (searched July 2026). Not independently verified by traveler; awaiting manual review.",
-    "region": "Goa"
+    "region": "Goa",
+    "research_depth": "deep"
   },
   {
     "id": 36,
@@ -6078,7 +6113,8 @@
     ],
     "reviews_summary": "A pool-centered hostel in Vagator/Anjuna (8.4/10, 150 reviews), with the swimming pool and manager Raj's hospitality as the two most consistently praised elements across nearly every review found. Note: an unrelated similarly-named 'Mitra Hostel' also exists in Arambol - this entry is specifically the Vagator/Anjuna 'By The Pool' property.",
     "source_note": "Populated from HiChee, Hostelworld, Planet of Hotels, Klook, Hostelz, Goibibo, Guest Reservations (searched July 2026). IMPORTANT: a separate 'Mitra Hostel' exists in Arambol (no pool) - confirmed this entry is the Anjuna/Vagator 'By The Pool' branch matching the traveler's stated name. Not independently verified beyond name matching; awaiting manual review.",
-    "region": "Goa"
+    "region": "Goa",
+    "research_depth": "deep"
   },
   {
     "id": 37,
@@ -6253,7 +6289,8 @@
     ],
     "reviews_summary": "A uniquely designed hostel in a restored heritage building in Kozhikode, run by architects and rated #1 in the city on Hostelz (9.1/10, 153 reviews). Consistently praised for its charming courtyard, spacious clean dorms, exceptional hospitality, and its close proximity to Kozhikode Beach.",
     "source_note": "Populated from MakeMyTrip, Booking.com, Goibibo, Planet of Hotels, Hostelz, allkeralahotels.net (searched July 2026). Strong, consistent signal. Not independently verified by traveler; awaiting manual review.",
-    "region": "Kerala"
+    "region": "Kerala",
+    "research_depth": "deep"
   },
   {
     "id": 38,
@@ -6417,7 +6454,8 @@
     ],
     "reviews_summary": "IMPORTANT DATA QUALITY FLAG: this property has been rebranded at least twice (Hope Hostels -> The Lost Hostel -> currently 'The Hostel Stories' per Kayak) and reviews span very different eras with sharply different sentiment - a glowing 2018 review contrasts with a detailed, serious 2025-era complaint alleging a room bait-and-switch, poor conditions, and dismissive staff. The clifftop location itself is consistently praised throughout. Given the name changes, treat all non-location data here with real caution.",
     "source_note": "Populated from Adanione, MakeMyTrip, Yatra, Cleartrip, Hostelz, Trivago, Tripadvisor, Kayak (searched July 2026). SIGNIFICANT FLAG: property rebranding history makes it hard to know which reviews reflect current management/conditions. Strongly recommend traveler's own memory of stay dates to help calibrate which era of reviews is relevant. Not independently verified; awaiting manual review.",
-    "region": "Kerala"
+    "region": "Kerala",
+    "research_depth": "deep"
   },
   {
     "id": 39,
@@ -6592,7 +6630,8 @@
     ],
     "reviews_summary": "IMPORTANT DATA QUALITY FLAG: ratings vary dramatically by source, from 9.5-9.9/10 (Hostelz, Planet of Hotels) down to just 2.0/10 (Travelocity) - one of the largest rating discrepancies found across this entire dataset. The unique selling point (direct access to Varkala's distinctive charcoal-sand Black Beach) is consistently mentioned regardless of rating source. Given the spread, this entry needs careful traveler verification before being trusted.",
     "source_note": "Populated from Planet of Hotels, Hostelz, Goibibo, allkeralahotels.net, Travelocity (searched July 2026). SIGNIFICANT FLAG: 2.0/10 vs 9.9/10 rating spread across sources is highly unusual and suggests either a very recent quality collapse, review manipulation on one platform, or a data/listing mismatch. Strongly recommend traveler's firsthand account to resolve. Not independently verified; awaiting manual review.",
-    "region": "Kerala"
+    "region": "Kerala",
+    "research_depth": "deep"
   },
   {
     "id": 40,
@@ -6764,7 +6803,8 @@
     ],
     "reviews_summary": "A beachfront Mad Monkey property directly on Nacpan Beach in El Nido (7.8-9.0/10 across sources), praised for its stunning, remote beach location and staff (especially Jase). Trade-offs include no air conditioning, unreliable wifi/internet, loud music until around 1am, and inconsistent food quality. Best suited for travelers prioritizing beach beauty and social atmosphere over modern comforts or connectivity.",
     "source_note": "Populated from momondo, Planet of Hotels, Hostelworld, Tripadvisor, Kayak (searched July 2026). Note: this property is in El Nido, Philippines - part of the same Mad Monkey chain as the Phnom Penh property already in this database (id 1), but a geographically distinct location. Strong consistent signal. Not independently verified; awaiting manual review.",
-    "region": "Palawan"
+    "region": "Palawan",
+    "research_depth": "deep"
   },
   {
     "id": 41,
@@ -6938,7 +6978,8 @@
     ],
     "reviews_summary": "A quiet guesthouse (not a hostel) in Yogyakarta's Mantrijeron area, reachable via narrow alleys that give it a secluded, peaceful feel despite being fairly central. The small pool and delicious local-coffee breakfast are the most consistently praised features. One review found the budget room's facilities incomplete for the price (no TV).",
     "source_note": "Populated from MakeMyTrip, Skyscanner, Traveloka, Tripadvisor, Booking.com, Lokavilla (searched July 2026). Confirmed as a guesthouse/villa, not a hostel - accommodation_type set accordingly. Successfully found on Traveloka as planned in our sourcing standard. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 42,
@@ -7113,7 +7154,8 @@
     ],
     "reviews_summary": "Exceptionally located just steps from the Taj Mahal (4-8 minute walk), with a rooftop terrace offering direct views - repeatedly named the standout feature. Very well reviewed overall (4-5/5 across sources, 153+ reviews), with staff hospitality (especially Rajeev) as the second most consistent praise point. A minority of reviews mention basic facilities or occasional cleanliness lapses, but the location and views are close to universally loved.",
     "source_note": "Populated from Trip.com, Tripadvisor, Booking.com, Planet of Hotels (searched July 2026). Very strong, consistent signal, especially regarding location and staff. Not independently verified; awaiting manual review.",
-    "region": "Uttar Pradesh"
+    "region": "Uttar Pradesh",
+    "research_depth": "deep"
   },
   {
     "id": 43,
@@ -7283,7 +7325,8 @@
     ],
     "reviews_summary": "A long-running, well-known party hostel in Hanoi (899+ reviews on Tripadvisor) known for its nightly pub crawl and morning walking tours. Clean rooms and excellent showers stand out, with the downstairs bar creating a strong social atmosphere. Best for social travelers, not those seeking quiet.",
     "source_note": "Populated from Tripadvisor, Trip.com (searched July 2026). Not a personally-visited property - selected to add geographic diversity to the dataset per traveler's request to expand beyond personal travel history. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 44,
@@ -7432,7 +7475,8 @@
     ],
     "reviews_summary": "An exceptionally well-reviewed hostel in Ella (9.2/10, 369 reviews on Booking.com), tucked away near the scenic railway line and tea plantations just outside the busy town center. Host warmth is the single most consistent praise point across dozens of reviews, alongside a delicious breakfast and cleaner-than-expected facilities.",
     "source_note": "Populated from Tripadvisor, Booking.com (searched July 2026). Not a personally-visited property - added for geographic diversity per traveler's request. Not independently verified; awaiting manual review.",
-    "region": "Uva Province"
+    "region": "Uva Province",
+    "research_depth": "deep"
   },
   {
     "id": 45,
@@ -7575,7 +7619,8 @@
     ],
     "reviews_summary": "A well-regarded Thamel hostel in Kathmandu (251+ reviews), known for its rooftop cafe/bar with movie projections and a chill, comfortable atmosphere. Guests describe good airflow for sleep, ample space to work or socialize, and an owner who is personally and warmly engaged with the guest experience.",
     "source_note": "Populated from Tripadvisor (searched July 2026). Not a personally-visited property - added for geographic diversity. Price data not found in search results. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 46,
@@ -7721,7 +7766,8 @@
     ],
     "reviews_summary": "A well-known social/party hostel in central Cusco, part of a small chain also operating in Lima and Paracas. Notable for thoughtful climate adaptations (insulated rooms, wool mattress covers for the cold altitude wind) alongside hotel-quality service including an airport shuttle. Small dorm sizes are intentionally designed to foster guest interaction.",
     "source_note": "Populated from Trip101, Booking.com aggregator content (searched July 2026). Not a personally-visited property - added for geographic diversity. Price data not found in search results. Not independently verified; awaiting manual review.",
-    "region": "Cusco Region"
+    "region": "Cusco Region",
+    "research_depth": "deep"
   },
   {
     "id": 47,
@@ -7860,7 +7906,8 @@
     ],
     "reviews_summary": "A popular budget backpacker hostel in Medellin's El Poblado district, consistently named among the top social hostel options in the city across multiple travel blog roundups. The terrace/BBQ area is a standout social feature.",
     "source_note": "Populated from Booking.com, South America Backpacker blog (searched July 2026). Not a personally-visited property - added for geographic diversity. Data is thinner than other entries - detailed review text was not surfaced in search. Not independently verified; awaiting manual review.",
-    "region": "Antioquia"
+    "region": "Antioquia",
+    "research_depth": "deep"
   },
   {
     "id": 48,
@@ -8037,7 +8084,8 @@
     ],
     "reviews_summary": "One of Lisbon's most beloved backpacker hostels (795+ reviews on Tripadvisor), famous for 'Mamma's Dinners' - affordable communal meals cooked by the owner's mother. Set in a charming 200-year-old building in the historic center, consistently praised for its warmth and hospitality. The lack of a lift is the most commonly noted drawback.",
     "source_note": "Populated from Tripadvisor, The Broke Backpacker (searched July 2026). Not a personally-visited property - added for geographic diversity. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 49,
@@ -8183,7 +8231,8 @@
     ],
     "reviews_summary": "Rated #1 Best Value hostel in Morocco on Tripadvisor (4.7/5, 543 reviews), recently rebranded from 'Rodamon Riad' to 'The Central House Marrakech Medina' - part of the same Central House hostel brand as the Istanbul Taksim property already in this database. Praised for combining boutique-hotel aesthetics with genuine hostel warmth, set in a traditional riad with rooftop mountain views.",
     "source_note": "Populated from Tripadvisor, The Broke Backpacker, ThisHotel (searched July 2026). Not a personally-visited property - added for geographic diversity. NOTABLE: part of the same 'Central House' hostel brand as the already-catalogued Istanbul Taksim property (id 5) - worth knowing this is a small international chain, not a coincidence in naming. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 50,
@@ -8361,7 +8410,8 @@
     ],
     "reviews_summary": "One of Kathmandu's most consistently beloved hostels (ranked #17 of 240 on Tripadvisor with strong ratings across every platform searched), located right in the heart of Thamel. The rooftop terrace with panoramic Himalayan views and the exceptional staff are the two standout, most-repeated praise points - several reviewers are 4th or 5th time repeat guests specifically because of the staff and atmosphere.",
     "source_note": "Traveler-specified addition (may be located just beside Thamel rather than directly within it, per traveler's note). Populated from HotelsCombined, MakeMyTrip, Tripadvisor, Booking.com, Planet of Hotels, Hostelworld (searched July 2026). Very strong, consistent signal across all sources. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 51,
@@ -8533,7 +8583,8 @@
     ],
     "reviews_summary": "Part of the well-known Zostel hostel chain, praised for its outdoor pool, workstations, and rooftop sunset views over the Aravali hills (8.2/10, 400+ reviews). The most consistent criticism across reviews is its distance from Pushkar's main lake/market area, which some guests feel undermines the value relative to closer competitors at similar prices.",
     "source_note": "Traveler-specified addition. Populated from Kayak, ZenHotels, Planet of Hotels, Justdial, Booking.com, Hostelworld, Tripadvisor (searched July 2026). Not independently verified; awaiting manual review.",
-    "region": "Rajasthan"
+    "region": "Rajasthan",
+    "research_depth": "deep"
   },
   {
     "id": 52,
@@ -8702,7 +8753,8 @@
     ],
     "reviews_summary": "A centrally-located Zostel property near Thamel (Kathmandu), with strong overall ratings (8.9/10, 195+ reviews) and standout praise for staff warmth, cleanliness efforts, and food. However, reviews show a genuine split on atmosphere - most call it homely and friendly, but at least one detailed review describes poor common spaces leading to minimal guest mingling, a notable contrast worth weighing given how central 'social atmosphere' is to most hostel decisions.",
     "source_note": "Traveler-specified addition. Populated from Tripadvisor, Planet of Hotels, HotelsCombined, Hostelz, Trip.com, MakeMyTrip (searched July 2026). Genuine mixed signal on social atmosphere specifically - flagged for traveler's own judgment/memory. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 53,
@@ -8886,7 +8938,8 @@
     ],
     "reviews_summary": "Award-winning Pushkar hostel (voted India's Best Hostel 2019 by Hostelworld), known for its artsy Rajasthani-decorated building and three rooftop terraces (8.1-8.2/10, 651+ reviews). Most reviews are strongly positive, but two specific detailed complaints stand out and are worth serious attention: a reported nighttime safety incident involving a neighboring hostel's guest entering a female traveler's dorm, and a report of a bathroom going uncleaned across a multi-night stay. Both are treated here as isolated but noteworthy given their seriousness, not smoothed over by the otherwise strong aggregate rating.",
     "source_note": "Traveler-specified addition. Populated from Hostelworld, Tripadvisor, Booking.com, Kayak (searched July 2026). IMPORTANT: a genuine safety-related complaint was found and is prominently flagged rather than downplayed, per the flagged_issues framework established earlier in this project. Not independently verified; awaiting manual review.",
-    "region": "Rajasthan"
+    "region": "Rajasthan",
+    "research_depth": "deep"
   },
   {
     "id": 54,
@@ -9063,7 +9116,8 @@
     ],
     "reviews_summary": "A highly social, well-loved hostel in Pokhara's Lakeside district (9.2/10, 700+ reviews), positioned as an ideal base before or after Annapurna-area trekking. Rooftop hammocks with Himalayan views, morning yoga, and spontaneous community BBQs/cooking classes are the standout features. Recurring minor complaints include missing toilet paper (mentioned in 5+ reviews) and, in recent reviews, occasional bed bugs in certain rooms - worth noting despite the otherwise excellent overall rating.",
     "source_note": "Traveler-specified addition. Populated from momondo, Planet of Hotels, Hostelworld, Facebook, Tripadvisor, Kayak (searched July 2026). Strong, consistent signal overall with two recurring minor complaints noted honestly. Not independently verified; awaiting manual review.",
-    "region": "Gandaki Province"
+    "region": "Gandaki Province",
+    "research_depth": "deep"
   },
   {
     "id": 55,
@@ -9206,7 +9260,8 @@
     ],
     "reviews_summary": "A well-loved Siem Reap hostel where multiple reviewers describe a planned short stay turning into weeks, largely due to consistently kind and professional staff. The small pool is a valued bonus given Siem Reap's heat, and private rooms are specifically praised for being clean and bug-free despite modest size.",
     "source_note": "Populated from Wanderlog aggregating Google reviews (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity per traveler's request. Price data not found in search results. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 56,
@@ -9352,7 +9407,8 @@
     ],
     "reviews_summary": "A small, budget backpacker hostel in Luang Prabang defined almost entirely by its owner, known to guests as 'Mr Shampoo' - repeatedly described across reviews as going to extraordinary lengths for guests, including housing stranded travelers in his own home during Lao New Year and personally recovering money from an overcharging tuk-tuk driver. One of the cheapest options in town at the time of review, with free tubing trips and truck excursions included.",
     "source_note": "Populated from Tripadvisor (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 57,
@@ -9498,7 +9554,8 @@
     ],
     "reviews_summary": "A consistently well-reviewed party hostel in Vang Vieng, notable for management's genuine engagement - personally responding to nearly every review across multiple years. Guests repeatedly praise cleanliness, comfortable AC rooms, and staff (Mr. Mohammad at the pool bar specifically named), with the property helping arrange the town's famous tubing trips and other activities.",
     "source_note": "Populated from Booking.com, Tripadvisor (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 58,
@@ -9665,7 +9722,8 @@
     ],
     "reviews_summary": "A sister property to Vietnam Backpacker Hostels' Hanoi location (already in this database), openly marketed as a party hostel with a well-known 9th floor rooftop bar. Staff hospitality is consistently praised across years of reviews, though one detailed critical review flagged leaking AC and unchanged bedsheets - worth weighing against the otherwise strong pattern. Management explicitly acknowledges its party-hostel identity in review responses rather than downplaying it.",
     "source_note": "Populated from Tripadvisor, Booking.com (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Same chain (VBH) as the Hanoi entry (id 43) already in this database - a recurring pattern worth noting alongside Mad Monkey, Zostel, and Central House. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 59,
@@ -9834,7 +9892,8 @@
     ],
     "reviews_summary": "The third Vietnam Backpacker Hostels property in this database (alongside Hanoi and Saigon), distinguished by its unique setting - a deck overlooking rice paddies between Hoi An's historic old town and its beaches. Staff hospitality is exceptionally and specifically praised across many detailed reviews, with individual staff members (Dan, Andy, Ruby) repeatedly named for going well beyond expectations. At least one well-traveled reviewer calls it the best of the entire VBH chain.",
     "source_note": "Populated from Wanderlog, Tripadvisor, Road Affair (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Third entry in the VBH chain alongside ids 43 and this batch's Saigon entry - confirms this is a well-established multi-city Vietnamese hostel brand. Not independently verified; awaiting manual review.",
-    "region": "Quang Nam Province"
+    "region": "Quang Nam Province",
+    "research_depth": "deep"
   },
   {
     "id": 60,
@@ -9973,7 +10032,8 @@
     ],
     "reviews_summary": "A budget-friendly George Town hostel called out specifically for having unusually comfortable dorm beds - a detail reviewers rarely emphasize this strongly for a hostel at this price point. Central location and warm staff round out a consistently positive review profile.",
     "source_note": "Populated from Tripadvisor (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Price data not found in search results. Not independently verified; awaiting manual review.",
-    "region": "Penang"
+    "region": "Penang",
+    "research_depth": "deep"
   },
   {
     "id": 61,
@@ -10112,7 +10172,8 @@
     ],
     "reviews_summary": "Named the top overall hostel choice in Singapore by at least one dedicated backpacker travel guide, set in a restored 1950s shophouse with pod-style dorm bunks for added privacy. Small thoughtful touches like two pillows per bed and proximity to three separate MRT stations make it a standout for budget travelers in an otherwise expensive city.",
     "source_note": "Populated from The Broke Backpacker (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Price data not found in search results, likely higher than SEA mainland due to Singapore's cost of living. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 62,
@@ -10247,7 +10308,8 @@
     ],
     "reviews_summary": "Rated as the best overall hostel in Boracay by The Broke Backpacker's dedicated guide, and separately ranked 'Best for Hostel Newbies' on Hostelz (9.0 rating). Given Boracay's history of significant hostel closures following the island's 2018 environmental rehabilitation closure, this entry represents one of the more consistently well-regarded survivors.",
     "source_note": "Populated from The Broke Backpacker, Hostelz (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Data is genuinely thin - detailed review text was not surfaced in search, only aggregator rankings. Note: Boracay underwent a major 6-month island-wide closure in 2018 for environmental rehabilitation, which closed many hostels permanently - worth keeping in mind for data currency in this destination generally. Not independently verified; awaiting manual review.",
-    "region": "Visayas"
+    "region": "Visayas",
+    "research_depth": "deep"
   },
   {
     "id": 63,
@@ -10387,7 +10449,8 @@
     "exclusive_features_note": "Same M brand operates M Box Seminyak Bali - a sister property pattern similar to Mad Monkey, VBH, Zostel already noted in this dataset",
     "reviews_summary": "A near-perfectly reviewed Gili Trawangan hostel (9.6/10 per one aggregator, hundreds of reviews) from the same experienced operator behind M Box Seminyak in Bali. Deliberately positioned close to the beach but away from the island's loudest party strip, offering a social-but-not-overwhelming alternative. Staff are individually and repeatedly named across reviews as the primary reason guests extend their stays.",
     "source_note": "Populated from Hostelworld, Booking.com, Jones Around the World (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Same operator family as other M-branded properties (M Box Seminyak) - another recurring chain pattern in this dataset. Not independently verified; awaiting manual review.",
-    "region": "West Nusa Tenggara"
+    "region": "West Nusa Tenggara",
+    "research_depth": "deep"
   },
   {
     "id": 64,
@@ -10536,7 +10599,8 @@
     ],
     "reviews_summary": "One of Chiang Mai's most consistently celebrated social hostels, positioned minutes from Thapae Gate in the Old City. The defining feature is a genuinely different organized event every single night (karaoke, pub quizzes, pub crawls, family dinners) - an unusually high cadence of programming compared to most hostels. Pod-style dorm beds with privacy curtains balance this social intensity with personal space. Multiple staff members are individually and repeatedly praised by name across reviews.",
     "source_note": "Populated from Southeast Asia Backpacker, Hostelgeeks, Wanderlog (searched July 2026). Not a personally-visited property - added for Southeast Asia diversity. Price data not found in search results. Not independently verified; awaiting manual review.",
-    "region": "Northern Thailand"
+    "region": "Northern Thailand",
+    "research_depth": "deep"
   },
   {
     "id": 65,
@@ -10710,7 +10774,8 @@
     ],
     "reviews_summary": "A well-regarded riverside hostel directly on Sisowath Quay, defined by its 24-hour rooftop pool with unobstructed Tonle Sap River sunset views - independently described as offering backpacker prices with five-star scenery. Unusually, the dorm rooms (not the private rooms) get the coveted river-facing position. Staff hospitality (Lin specifically named) is a consistent strength, with only isolated service lapses noted among otherwise very strong reviews.",
     "source_note": "Traveler-specified addition, confirmed matches traveler's description (rooftop Tonle Sap view, pool, bar). Populated from Trip.com, Tripadvisor, Travelfish (independent review), easy-cambodia.com (searched July 2026). Address confirmed: 151 Sisowath Quay, near corner with Street 110, Phnom Penh. Strong, consistent, detailed signal across sources. Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 66,
@@ -10906,7 +10971,8 @@
     ],
     "reviews_summary": "One of Siem Reap's most highly praised hostels (9.2-9.6/10 across sources, 515+ reviews, ranked #11 of 325 Siem Reap specialty lodgings on Tripadvisor), distinguished by three separate swimming pools including a large 26-meter tropical pool - genuinely resort-like for hostel pricing. The property explicitly rejects a party-hostel identity, instead emphasizing cleanliness, comfort, and organized activities like bracelet-making. Staff friendliness is the single most consistently repeated praise point across every source searched.",
     "source_note": "Traveler-specified addition. Populated from Expedia, Tripadvisor, Hostelworld, Booking.com, EaseMyTrip (searched July 2026). Very strong, highly consistent signal - one of the best-reviewed properties in the entire dataset. Sister property to Onederz Phnom Penh (also just added) and part of a wider Onederz chain (5+ properties in Cambodia including Sihanoukville per one review). Not independently verified; awaiting manual review.",
-    "region": null
+    "region": null,
+    "research_depth": "deep"
   },
   {
     "id": 67,
@@ -11038,7 +11104,8 @@
       "bougie_budget"
     ],
     "reviews_summary": "A well-regarded Sri Lanka hostel known for incredibly comfy beds and an infinity pool overlooking rice paddies, offering resort-quality touches at backpacker prices.",
-    "source_note": "Populated from The Broke Backpacker (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from The Broke Backpacker (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 68,
@@ -11172,7 +11239,8 @@
       "close_to_beach"
     ],
     "reviews_summary": "A relaxed surf-town hostel in Weligama with river-view patios, sunrise yoga, and a cafe serving Sri Lankan, Indian, and Mediterranean dishes.",
-    "source_note": "Populated from theportuguesetraveler.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from theportuguesetraveler.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 69,
@@ -11299,7 +11367,8 @@
       "social"
     ],
     "reviews_summary": "A social beach-town hostel in Mirissa, part of Sri Lanka's popular southern coast backpacker circuit.",
-    "source_note": "Populated from Tripadvisor (searched July 2026). Thinner data - name appeared in aggregator listings without detailed review text. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor (searched July 2026). Thinner data - name appeared in aggregator listings without detailed review text. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 70,
@@ -11428,7 +11497,8 @@
       "central"
     ],
     "reviews_summary": "A well-known Colombo hostel commonly used as a 1-night arrival/departure base before heading to the coast or hill country.",
-    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 71,
@@ -11558,7 +11628,8 @@
       "walking_distance_center"
     ],
     "reviews_summary": "A distinctive jungle-set hostel in Ella with a strong backpacker social vibe, walking distance from the town center.",
-    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 72,
@@ -11688,7 +11759,8 @@
       "rooftop"
     ],
     "reviews_summary": "Sydney's most iconic hostel, offering rooftop views over the Opera House and Harbour Bridge, combining heritage architecture with modern facilities.",
-    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 73,
@@ -11815,7 +11887,8 @@
       "budget_friendly"
     ],
     "reviews_summary": "A centrally-located Melbourne hostel popular with backpackers doing the East Coast/Melbourne circuit.",
-    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 74,
@@ -11948,7 +12021,8 @@
       "personal_training"
     ],
     "reviews_summary": "Widely rated the best overall hostel in Byron Bay, known for an unusually generous list of free extras - personal training, BBQ nights, pancake breakfast - alongside a solar-heated pool.",
-    "source_note": "Populated from thebrokebackpacker.com, hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com, hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 75,
@@ -12079,7 +12153,8 @@
       "nightly_entertainment"
     ],
     "reviews_summary": "A resort-style party hostel in Cairns with a massive pool and nightly entertainment, popular as a diving/reef-trip base.",
-    "source_note": "Populated from Average Joe Down Under blog (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Average Joe Down Under blog (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 76,
@@ -12206,7 +12281,8 @@
       "backpacker_hub"
     ],
     "reviews_summary": "A well-known Airlie Beach backpacker hub, commonly used as a base for Whitsunday Islands sailing trips.",
-    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 77,
@@ -12337,7 +12413,8 @@
       "great_dorms"
     ],
     "reviews_summary": "An award-winning hostel in Prague's Old Town, praised for thoughtfully designed dorm beds and an unbeatable location near Charles Bridge.",
-    "source_note": "Populated from nomadicmick.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from nomadicmick.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 78,
@@ -12468,7 +12545,8 @@
       "nightlife_hub"
     ],
     "reviews_summary": "A stylish, design-led hostel chain location in central Berlin, well-positioned amid Mitte's bars, restaurants, and nightclubs.",
-    "source_note": "Populated from nomadicmick.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from nomadicmick.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 79,
@@ -12598,7 +12676,8 @@
       "boutique_hostel"
     ],
     "reviews_summary": "A boutique-feeling hostel on Amsterdam's northern edge across the IJ River, offering a calmer alternative to the city's more hedonistic hostel scene while staying close to cultural sights.",
-    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 80,
@@ -12728,7 +12807,8 @@
       "central_budapest"
     ],
     "reviews_summary": "A striking hostel in a converted Habsburg-era mansion in central Budapest, praised for its unique architecture just steps from the Danube.",
-    "source_note": "Populated from europebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from europebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 81,
@@ -12860,7 +12940,8 @@
       "cozy"
     ],
     "reviews_summary": "A long-running, family-run Vienna hostel with a cosy onsite bar and secret garden, often cited as the city's classic backpacker choice since 1968.",
-    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 82,
@@ -12990,7 +13071,8 @@
       "social"
     ],
     "reviews_summary": "The Pokhara branch of the Zostel chain, in the Lakeside area near Fewa Lake, popular with backpackers before/after Annapurna treks.",
-    "source_note": "Populated from Booking.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Booking.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 83,
@@ -13119,7 +13201,8 @@
       "warm_hosts"
     ],
     "reviews_summary": "A warm, friendly hostel in Sauraha positioned as a base for exploring Chitwan National Park's wildlife.",
-    "source_note": "Populated from Tripoto (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripoto (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 84,
@@ -13248,7 +13331,8 @@
       "historical_sites"
     ],
     "reviews_summary": "A family-friendly guesthouse in the hilltop heritage town of Bandipur, offering easy access to the town's viewpoints and historical sites.",
-    "source_note": "Populated from cozycozy.com (searched July 2026). Thin data - specific distances to landmarks not confirmed in source. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cozycozy.com (searched July 2026). Thin data - specific distances to landmarks not confirmed in source. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 85,
@@ -13375,7 +13459,8 @@
       "quiet"
     ],
     "reviews_summary": "A hostel in the hill-station town of Nagarkot, known primarily for Himalayan sunrise viewpoints just outside Kathmandu.",
-    "source_note": "Populated from Travelocity aggregation (searched July 2026). Thin data. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Travelocity aggregation (searched July 2026). Thin data. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 86,
@@ -13502,7 +13587,8 @@
       "social"
     ],
     "reviews_summary": "A budget backpacker hostel in Kathmandu's Thamel tourist district, popular with the trekking-prep crowd.",
-    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). Thin data - name appeared in listings without detailed review text. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). Thin data - name appeared in listings without detailed review text. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 87,
@@ -13634,7 +13720,8 @@
       "mad_monkey_chain"
     ],
     "reviews_summary": "Chiang Mai branch of the Mad Monkey chain (already represented in this database via Phnom Penh and El Nido properties), offering a saltwater pool, gym, and yoga space alongside its trademark party programming.",
-    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 88,
@@ -13765,7 +13852,8 @@
       "free_breakfast"
     ],
     "reviews_summary": "A highly praised Old City hostel balancing social engagement with quiet, spotless spaces - frequently named Chiang Mai's best pick for solo travelers who don't want a hard-party scene.",
-    "source_note": "Populated from airportels.asia, hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from airportels.asia, hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 89,
@@ -13896,7 +13984,8 @@
       "slow_boat_stopover"
     ],
     "reviews_summary": "An affordable, centrally-located Chiang Rai hostel popular with backpackers en route to Laos via the slow boat to Luang Prabang.",
-    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 90,
@@ -14026,7 +14115,8 @@
       "night_bazaar_close"
     ],
     "reviews_summary": "A design-conscious Chiang Rai hostel right next to the bus station and Night Bazaar, praised for changing newcomers' expectations of what a hostel can look like.",
-    "source_note": "Populated from abrokenbackpack.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from abrokenbackpack.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 91,
@@ -14156,7 +14246,8 @@
       "near_bus_station"
     ],
     "reviews_summary": "A social-but-not-party hostel in Chiang Rai geared toward solo backpackers, with a rooftop terrace for meeting fellow travelers.",
-    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 92,
@@ -14290,7 +14381,8 @@
       "pool"
     ],
     "reviews_summary": "A social, digital-nomad-friendly beach hostel in Da Nang's An Thuong area, offering a pool and rooftop terrace with a chilled beach-town vibe distinct from Vietnam's more chaotic party hostels.",
-    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 93,
@@ -14422,7 +14514,8 @@
       "billiards"
     ],
     "reviews_summary": "A social dorm-only hostel in Da Lat with mountain-view balconies, positioned in a nature-and-coffee focused town explicitly without Vietnam's typical party hostel scene.",
-    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 94,
@@ -14553,7 +14646,8 @@
       "clean_modern"
     ],
     "reviews_summary": "A clean, modern, family-run hostel in Trang An, Ninh Binh - a common base for exploring the region's limestone karst boat tours.",
-    "source_note": "Populated from Hostelworld (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Hostelworld (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 95,
@@ -14685,7 +14779,8 @@
       "pool_parties"
     ],
     "reviews_summary": "A high-energy party hostel on Nha Trang's beach strip, known for a packed events calendar including pool parties and beach parties.",
-    "source_note": "Populated from hostelz.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelz.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 96,
@@ -14818,7 +14913,8 @@
       "unesco_national_park"
     ],
     "reviews_summary": "The classic backpacker hub in Phong Nha, base camp for exploring the UNESCO-listed Phong Nha-Ke Bang National Park and its cave systems, with a strong social scene including nightly free beer hour.",
-    "source_note": "Populated from Hostelworld reviews, junglebosstours.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Hostelworld reviews, junglebosstours.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 97,
@@ -14951,7 +15047,8 @@
       "yoga_crowd"
     ],
     "reviews_summary": "A chilled North Goa hostel in Morjim, notable as reportedly the only hostel in the area with a pool, popular with the yoga and long-stay crowd.",
-    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 98,
@@ -15081,7 +15178,8 @@
       "large_common_areas"
     ],
     "reviews_summary": "A clean, spacious Candolim property from the fast-growing Backpacker Panda chain, 100m from the beach with large outdoor common areas for socializing.",
-    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 99,
@@ -15215,7 +15313,8 @@
       "workspace_cafe"
     ],
     "reviews_summary": "An Arambol hostel matching the area's hippie/yoga character, with sea-view private rooms, a dedicated yoga studio, and a workspace cafe for digital nomads.",
-    "source_note": "Populated from cozycozy.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cozycozy.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 100,
@@ -15347,7 +15446,8 @@
       "club_themed_common_areas"
     ],
     "reviews_summary": "One of India's largest luxury hostels, set on a quiet street just off the busy Baga-Calangute strip, with an amphitheatre and club-themed common spaces.",
-    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 101,
@@ -15477,7 +15577,8 @@
       "close_to_beach"
     ],
     "reviews_summary": "A clean, digital-nomad-friendly hostel just 100m from Calangute Beach, commonly recommended as a starting point for a North Goa beach-hopping trip.",
-    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 102,
@@ -15607,7 +15708,8 @@
       "eco_tours"
     ],
     "reviews_summary": "Reportedly the only dedicated hostel in Munnar, set in the tea plantation hills with a strong slate of cultural and wellness activities.",
-    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 103,
@@ -15737,7 +15839,8 @@
       "social"
     ],
     "reviews_summary": "The Alleppey branch of the Zostel chain, positioned as a base for exploring Kerala's famous backwaters.",
-    "source_note": "Populated from flashpackingkerala.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from flashpackingkerala.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 104,
@@ -15867,7 +15970,8 @@
       "wildlife_sanctuary_nearby"
     ],
     "reviews_summary": "A Wayanad hill-station property from The Hosteller chain (already represented elsewhere in this database), notable as one of few Kerala hostels with a swimming pool.",
-    "source_note": "Populated from cozycozy.com, Tripadvisor (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cozycozy.com, Tripadvisor (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 105,
@@ -16000,7 +16104,8 @@
       "hammocks"
     ],
     "reviews_summary": "A genuinely distinctive eco-friendly, rustic-chic backpacker resort set on an island in the Kerala backwaters, reachable only by the hostel's own boat service.",
-    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 106,
@@ -16131,7 +16236,8 @@
       "waterfalls_nearby"
     ],
     "reviews_summary": "A Zostel property in the underrated hill station of Vagamon, praised for its scenic setting and manager Vinu's activity organizing.",
-    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 107,
@@ -16261,7 +16367,8 @@
       "unesco_heritage_city"
     ],
     "reviews_summary": "A well-located hostel right on Melaka's famous Jonker Street, in this UNESCO World Heritage-listed city, with a personally engaged owner.",
-    "source_note": "Populated from theworldtrippers.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from theworldtrippers.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 108,
@@ -16391,7 +16498,8 @@
       "entertaining_evenings"
     ],
     "reviews_summary": "A highly social hostel in the Cameron Highlands tea-plantation region, known for staff-organized evening entertainment and tours.",
-    "source_note": "Populated from theworldtrippers.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from theworldtrippers.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 109,
@@ -16522,7 +16630,8 @@
       "coworking_space"
     ],
     "reviews_summary": "A minimalist, industrial-design budget hotel in KL's vibrant Bukit Bintang area, with a small in-lobby co-working space for digital nomads.",
-    "source_note": "Populated from twomonkeystravelgroup.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from twomonkeystravelgroup.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 110,
@@ -16654,7 +16763,8 @@
       "free_breakfast"
     ],
     "reviews_summary": "A design-forward, spacious-dorm hostel in Langkawi's popular Pantai Cenang beach area, just a 5-minute walk from the sand.",
-    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 111,
@@ -16781,7 +16891,8 @@
       "beach_hostel"
     ],
     "reviews_summary": "A beach hostel option on the Perhentian Islands, a popular diving and snorkeling getaway off Malaysia's east coast.",
-    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Malaysia backpacker knowledge rather than a specific, verified search result in this session. Flagged for closer verification before being treated as reliable data - amenities and pricing should be confirmed directly before use. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Malaysia backpacker knowledge rather than a specific, verified search result in this session. Flagged for closer verification before being treated as reliable data - amenities and pricing should be confirmed directly before use. NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 112,
@@ -16911,7 +17022,8 @@
       "shared_kitchen"
     ],
     "reviews_summary": "A quiet, budget-friendly Uluwatu hostel in Pecatu, close to Bingin and Impossible Beach surf breaks, with friendly staff and a garden common space.",
-    "source_note": "Populated from finnsbeachclub.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from finnsbeachclub.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 113,
@@ -17040,7 +17152,8 @@
       "easy_access_to_other_areas"
     ],
     "reviews_summary": "A cheap, well-positioned Kuta hostel useful as a central base for exploring Canggu, Seminyak, Denpasar, and Uluwatu.",
-    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 114,
@@ -17170,7 +17283,8 @@
       "300m_to_beach"
     ],
     "reviews_summary": "A family-friendly hostel on Nusa Lembongan island, with the owners personally organizing day trips and activities for guests.",
-    "source_note": "Populated from southeastasiabackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southeastasiabackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 115,
@@ -17301,7 +17415,8 @@
       "spotless_bathrooms"
     ],
     "reviews_summary": "A charming, tropical-feeling hostel on Nusa Penida with spotless bathrooms and a short walk to Mentigi Beach.",
-    "source_note": "Populated from southeastasiabackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southeastasiabackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 116,
@@ -17431,7 +17546,8 @@
       "quiet_beach_town"
     ],
     "reviews_summary": "A charming, quieter guesthouse-style stay in the laidback, often-overlooked beach town of Sanur, a 30-minute scooter ride from Kuta's busier scene.",
-    "source_note": "Populated from southeastasiabackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southeastasiabackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 117,
@@ -17596,7 +17712,8 @@
       "nightlife"
     ],
     "reviews_summary": "An exceptionally well-reviewed party hostel (9.84/10) directly on Khao San Road, Bangkok's legendary backpacker nightlife strip. Guests consistently praise the friendly, memorable staff, clean modern facilities, and genuinely lively social atmosphere - explicitly positioned for travelers who came to Bangkok to go out and meet people, not for a quiet stay.",
-    "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok despite it being one of Southeast Asia's best-known nightlife destinations, causing 'party hostel in Bangkok' searches to return zero results. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review."
+    "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok despite it being one of Southeast Asia's best-known nightlife destinations, causing 'party hostel in Bangkok' searches to return zero results. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review.",
+    "research_depth": "deep"
   },
   {
     "id": 118,
@@ -17762,7 +17879,8 @@
       "pub_crawls"
     ],
     "reviews_summary": "A highly social party hostel immediately next to Khao San Road, notable for explicitly stating an 18-35 age restriction and warning guests upfront about noise levels ('WE ARE LOUD'). Runs its own pub crawls and boat trips rather than just booking through third parties. Unambiguously positioned for travelers seeking Bangkok's party scene, not a quiet stay.",
-    "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review."
+    "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review.",
+    "research_depth": "deep"
   },
   {
     "id": 119,
@@ -17897,7 +18015,8 @@
       "party_hostel"
     ],
     "reviews_summary": "A large, amenity-rich hostel in Florence often ranked among the top 3 in Europe for solo travelers - features a genuine indoor/outdoor pool, sauna, and gym alongside a lively bar/restaurant.",
-    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 120,
@@ -18029,7 +18148,8 @@
       "central"
     ],
     "reviews_summary": "A design-led hostel between Rome's Termini station and the Trevi Fountain, with a social enterprise ethos and thoughtful bed-level amenities (lighting, charging) at every bunk.",
-    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 121,
@@ -18158,7 +18278,8 @@
       "near_termini"
     ],
     "reviews_summary": "Rome's best-known party hostel option near Termini station, long-running under its former name 'The Yellow' before rebranding to YellowSquare.",
-    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 122,
@@ -18288,7 +18409,8 @@
       "central_piazza"
     ],
     "reviews_summary": "A well-located Naples hostel in the historic centre with a rooftop terrace and private bathrooms even in dorm rooms.",
-    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 123,
@@ -18416,7 +18538,8 @@
       "highly_rated"
     ],
     "reviews_summary": "The most consistently recommended hostel in Athens across independent backpacker guides, praised for its central location and atmosphere.",
-    "source_note": "Populated from worldonawhim.com, hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from worldonawhim.com, hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 124,
@@ -18547,7 +18670,8 @@
       "cliff_views"
     ],
     "reviews_summary": "A hostel inside a 400-year-old building within Dubrovnik's Old Town walls, with a terrace overlooking the city's iconic red rooftops and organized cliff jumping/kayaking activities.",
-    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 125,
@@ -18675,7 +18799,8 @@
       "charming"
     ],
     "reviews_summary": "A well-regarded Paris hostel in the charming, hilltop Montmartre neighbourhood, part of a small collection of Paris hostels under the same ownership.",
-    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 126,
@@ -18807,7 +18932,8 @@
       "party_hostel_chain"
     ],
     "reviews_summary": "A modern, purpose-built hostel on a Paris canal, part of the St Christopher's Inns chain known for onsite Belushi's bars and a party-leaning atmosphere across multiple European cities.",
-    "source_note": "Populated from toeuropeandbeyond.com, cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from toeuropeandbeyond.com, cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 127,
@@ -18937,7 +19063,8 @@
       "historic_house"
     ],
     "reviews_summary": "A long-running, exceptional-value Sofia hostel in a 19th-century house, notable for including both breakfast and an evening meal free - one of the best deals found across all of Europe.",
-    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 128,
@@ -19068,7 +19195,8 @@
       "cinema_room"
     ],
     "reviews_summary": "A cozy, well-located hostel steps from Edinburgh Castle, with a piano lounge, fireplace, and cinema room - adults-only (18+).",
-    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 129,
@@ -19198,7 +19326,8 @@
       "reliable"
     ],
     "reviews_summary": "London branch of the well-known Wombat's hostel chain, offering an onsite bar with happy hour and dorms capped at 8 beds for a more manageable social scale.",
-    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 130,
@@ -19329,7 +19458,8 @@
       "party_hostel"
     ],
     "reviews_summary": "One of the most consistently praised hostels in Europe, in central Krakow, famous for a free beer hour that fuels an especially lively, social atmosphere plus organized pub crawls.",
-    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 131,
@@ -19459,7 +19589,8 @@
       "daily_activities"
     ],
     "reviews_summary": "A sociable Riga hostel between the Old Town and city centre, with a free breakfast buffet and daily organized activities.",
-    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 132,
@@ -19592,7 +19723,8 @@
       "resident_cats"
     ],
     "reviews_summary": "A small, deliberately non-party boutique hostel in Belgrade's bohemian Skadarlija district, with resident cats and a rooftop terrace - one of the city's top solo-traveller picks for a quieter stay.",
-    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 133,
@@ -19723,7 +19855,8 @@
       "pool"
     ],
     "reviews_summary": "A striking, design-forward Copenhagen hostel with custom Danish-designed pod beds, a gym, pool, and large kitchen/bar - among the priciest but most design-conscious hostels in Europe.",
-    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). Copenhagen/Nordic Europe dorms run notably higher (\u20ac30-55) than the rest of the continent per regional pricing data found. NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). Copenhagen/Nordic Europe dorms run notably higher (\u20ac30-55) than the rest of the continent per regional pricing data found. NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 134,
@@ -19853,7 +19986,8 @@
       "onsite_bar"
     ],
     "reviews_summary": "Dublin branch of the Generator Hostels chain, independently rated among the best hostel chains in Europe for style, space, and social atmosphere.",
-    "source_note": "Populated from toeuropeandbeyond.com, hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from toeuropeandbeyond.com, hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 135,
@@ -19981,7 +20115,8 @@
       "near_alexanderplatz"
     ],
     "reviews_summary": "A well-located Berlin hostel minutes from Alexanderplatz and the iconic Fernsehturm TV tower.",
-    "source_note": "Populated from toeuropeandbeyond.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from toeuropeandbeyond.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 136,
@@ -20111,7 +20246,8 @@
       "iconic"
     ],
     "reviews_summary": "One of Amsterdam's most iconic and long-standing party hostel brands, frequently cited as a top choice for travelers specifically seeking Amsterdam's party scene.",
-    "source_note": "Populated from hostelgeeks.com hostel chains guide (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com hostel chains guide (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 137,
@@ -20240,7 +20376,8 @@
       "long_running"
     ],
     "reviews_summary": "A long-established Interlaken hostel serving as a classic base for Swiss Alps adventure sports like paragliding and canyoning.",
-    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general European backpacker knowledge rather than a specific verified search result in this session. Flagged for closer verification before being treated as reliable data. NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general European backpacker knowledge rather than a specific verified search result in this session. Flagged for closer verification before being treated as reliable data. NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 138,
@@ -20368,7 +20505,8 @@
       "well_kept"
     ],
     "reviews_summary": "A quiet, well-kept Krakow hostel between the Old Town and the Kazimierz district, positioned as the calmer alternative to the city's more party-oriented options.",
-    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from cityvoyagerhub.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 139,
@@ -20497,7 +20635,8 @@
       "chilled"
     ],
     "reviews_summary": "A relaxed, homely Perth hostel praised for its chilled vibe and consistently friendly staff.",
-    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 140,
@@ -20626,7 +20765,8 @@
       "working_holiday_friendly"
     ],
     "reviews_summary": "A social, budget-friendly hostel in Perth's Northbridge nightlife district, popular with working holidaymakers.",
-    "source_note": "Populated from Hostelworld (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Hostelworld (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 141,
@@ -20755,7 +20895,8 @@
       "resort_style"
     ],
     "reviews_summary": "One of Perth's newer hostels and the only one in Western Australia to receive a 4-star AAA Tourism rating, well-located near the CBD and Northbridge.",
-    "source_note": "Populated from Hostelworld (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Hostelworld (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 142,
@@ -20883,7 +21024,8 @@
       "solo_friendly"
     ],
     "reviews_summary": "Rated the best Adelaide hostel for solo travelers and digital nomads in a dedicated city guide.",
-    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 143,
@@ -21011,7 +21153,8 @@
       "homestay_feel"
     ],
     "reviews_summary": "A small, cosy Adelaide hostel with a homestay feel right in the city centre - rated best for budget backpackers specifically.",
-    "source_note": "Populated from hostelgeeks.com, travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com, travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 144,
@@ -21141,7 +21284,8 @@
       "quality_bedding"
     ],
     "reviews_summary": "A boutique-feeling Adelaide hostel in a historic home, notable for the unusual level of detail put into mattress and bedding quality.",
-    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 145,
@@ -21271,7 +21415,8 @@
       "cinema_lounge"
     ],
     "reviews_summary": "A centrally-located Brisbane hostel near the river and main transit station, notable for a massive rooftop terrace with pool and city views plus an indoor cinema lounge.",
-    "source_note": "Populated from nomadicmatt.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from nomadicmatt.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 146,
@@ -21402,7 +21547,8 @@
       "resort_feel"
     ],
     "reviews_summary": "A distinctive Brisbane hostel in a traditional Queenslander house with verandahs, large gardens, and a pool - a resort feel rather than a typical hostel.",
-    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 147,
@@ -21532,7 +21678,8 @@
       "helpful_staff"
     ],
     "reviews_summary": "A well-located, clean YHA hostel in central Hobart, praised as an ideal base for exploring the wider Tasmania region.",
-    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 148,
@@ -21662,7 +21809,8 @@
       "rooftop"
     ],
     "reviews_summary": "A modern Cairns hostel directly on the Esplanade with a sociable rooftop area.",
-    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 149,
@@ -21791,7 +21939,8 @@
       "garden"
     ],
     "reviews_summary": "A relaxed, house-like Cairns hostel with a garden pool and terrace, embracing North Queensland's tropical climate at a slower pace than the city's party hostels.",
-    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 150,
@@ -21922,7 +22071,8 @@
       "party"
     ],
     "reviews_summary": "The best-value Broome hostel option, with free inclusions and a party-friendly atmosphere built around happy hour and beach events.",
-    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 151,
@@ -22050,7 +22200,8 @@
       "private_rooms"
     ],
     "reviews_summary": "A more upscale, resort-feeling hostel in Broome, particularly well-regarded for its private room options.",
-    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from travelaustraliatoday.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 152,
@@ -22179,7 +22330,8 @@
       "beach_town"
     ],
     "reviews_summary": "An elevated 'flashpacker' hostel in the beach town of Noosa, offering higher-end amenities while staying budget-accessible.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 153,
@@ -22309,7 +22461,8 @@
       "social"
     ],
     "reviews_summary": "Bondi Beach branch of the Wake Up! hostel chain, steps from one of Sydney's most famous beaches.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). Same chain as Wake Up! Byron Bay already in this database. NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). Same chain as Wake Up! Byron Bay already in this database. NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 154,
@@ -22439,7 +22592,8 @@
       "chain"
     ],
     "reviews_summary": "Airlie Beach branch of the Nomads chain, a popular base for booking Whitsunday Islands sailing trips alongside Magnums in the same town.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 155,
@@ -22567,7 +22721,8 @@
       "reliable_chain"
     ],
     "reviews_summary": "The YHA chain's Adelaide property, specifically rated as the best option in the city for families and groups.",
-    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from hostelgeeks.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 156,
@@ -22697,7 +22852,8 @@
       "nature_immersion"
     ],
     "reviews_summary": "A distinctive eco-lodge hostel set within the Daintree Rainforest itself, offering genuine rainforest immersion rather than a typical city or beach hostel setting.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 157,
@@ -22825,7 +22981,8 @@
       "reliable_chain"
     ],
     "reviews_summary": "The YHA chain's central Brisbane property, a reliable budget option in the heart of the city.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 158,
@@ -22955,7 +23112,8 @@
       "hiking_base"
     ],
     "reviews_summary": "An eco-lodge style hostel in Bright, Victoria, positioned as a base for exploring the alpine High Country region - popular with hikers and adventure travelers rather than city-hoppers.",
-    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Australia backpacker knowledge (a known Bright/Alpine region hostel brand) rather than a specific verified search result in this session. Flagged for closer verification. NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Australia backpacker knowledge (a known Bright/Alpine region hostel brand) rather than a specific verified search result in this session. Flagged for closer verification. NOTE: added as part of a broad continental-diversity batch (Australia), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 159,
@@ -23083,7 +23241,8 @@
       "highly_rated"
     ],
     "reviews_summary": "Independently rated the best hostel in South America for solo female travelers, in Buenos Aires.",
-    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 160,
@@ -23213,7 +23372,8 @@
       "central_ba"
     ],
     "reviews_summary": "Part of the well-known Milhouse hostel chain in Buenos Aires, widely considered South America's premier backpacker party destination.",
-    "source_note": "LOWER CONFIDENCE: chain name recognized from general South America backpacker knowledge rather than a specific verified search result this session. Populated from hostelgeeks.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE: chain name recognized from general South America backpacker knowledge rather than a specific verified search result this session. Populated from hostelgeeks.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 161,
@@ -23341,7 +23501,8 @@
       "chain"
     ],
     "reviews_summary": "Independently rated the single best party hostel in South America, part of the Wild Rover chain in La Paz.",
-    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 162,
@@ -23473,7 +23634,8 @@
       "rooftop_bar"
     ],
     "reviews_summary": "A flashpacker-style Selina property directly on Copacabana Beach, with a rooftop cocktail bar and dedicated coworking space for digital nomads.",
-    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 163,
@@ -23600,7 +23762,8 @@
       "digital_nomad_friendly"
     ],
     "reviews_summary": "Independently rated the best South American hostel for digital nomads, in the Afro-Brazilian cultural hub of Salvador.",
-    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 164,
@@ -23729,7 +23892,8 @@
       "chain"
     ],
     "reviews_summary": "Florianopolis branch of the Che Lagarto chain, in one of Brazil's standout beach-hostel destinations.",
-    "source_note": "LOWER CONFIDENCE: chain name recognized from general South America backpacker knowledge rather than a specific verified search result this session. Populated from hostelz.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE: chain name recognized from general South America backpacker knowledge rather than a specific verified search result this session. Populated from hostelz.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 165,
@@ -23862,7 +24026,8 @@
       "top_rated"
     ],
     "reviews_summary": "A genuinely unique mountain hideaway with sweeping Cotopaxi Volcano views, offering hobbit-home and birdhouse-style rooms and all-inclusive meals - voted into the top 1% of hostels worldwide on TripAdvisor.",
-    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 166,
@@ -23990,7 +24155,8 @@
       "central_quito"
     ],
     "reviews_summary": "A well-regarded, socially-oriented hostel in Quito suited to couples, small groups, and solo travelers alike.",
-    "source_note": "LOWER CONFIDENCE: name recognized from general South America backpacker knowledge rather than a specific verified search result this session. Populated from budgetyourtrip.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE: name recognized from general South America backpacker knowledge rather than a specific verified search result this session. Populated from budgetyourtrip.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 167,
@@ -24119,7 +24285,8 @@
       "activities"
     ],
     "reviews_summary": "Lima branch of the Kokopelli hostel chain, known across Peru for a strong activities program and social common areas.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 168,
@@ -24251,7 +24418,8 @@
       "activities"
     ],
     "reviews_summary": "A clean, well-located hostel near the beach in Palomino, Colombia's laid-back Caribbean coast backpacker stop, with a pool and organized activities.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 169,
@@ -24381,7 +24549,8 @@
       "chain"
     ],
     "reviews_summary": "Bogota branch of the Selina flashpacker chain in the trendy Chapinero district, with onsite coworking space for remote workers.",
-    "source_note": "LOWER CONFIDENCE: specific branch name inferred from Selina's known regional presence rather than a directly verified search result this session. Populated from hostelgeeks.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE: specific branch name inferred from Selina's known regional presence rather than a directly verified search result this session. Populated from hostelgeeks.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 170,
@@ -24510,7 +24679,8 @@
       "social"
     ],
     "reviews_summary": "A well-known hostel with a rooftop pool inside Cartagena's UNESCO-listed walled city, popular with the Colombian Caribbean coast backpacker circuit.",
-    "source_note": "LOWER CONFIDENCE: name recognized from general Colombia backpacker knowledge rather than a specific verified search result this session. Populated from budgetyourtrip.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE: name recognized from general Colombia backpacker knowledge rather than a specific verified search result this session. Populated from budgetyourtrip.com regional context (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 171,
@@ -24638,7 +24808,8 @@
       "large_social_hostel"
     ],
     "reviews_summary": "A large, well-established Santiago hostel popular enough that guests commonly extend multi-night stays.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 172,
@@ -24767,7 +24938,8 @@
       "adventure_tours"
     ],
     "reviews_summary": "A hostel positioned as a base for exploring the Atacama Desert's geysers, salt flats, and world-class stargazing.",
-    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Chile/Atacama backpacker knowledge rather than a specific verified search result this session. Flagged for closer verification. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Chile/Atacama backpacker knowledge rather than a specific verified search result this session. Flagged for closer verification. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 173,
@@ -24897,7 +25069,8 @@
       "colonial_city"
     ],
     "reviews_summary": "Sucre branch of the Wild Rover party hostel chain, set in Bolivia's picturesque white colonial capital.",
-    "source_note": "LOWER CONFIDENCE ENTRY: specific branch existence inferred from Wild Rover's known multi-city Bolivia presence rather than a directly verified search result this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: specific branch existence inferred from Wild Rover's known multi-city Bolivia presence rather than a directly verified search result this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 174,
@@ -25025,7 +25198,8 @@
       "budget_friendly"
     ],
     "reviews_summary": "A well-established, centrally-located Montevideo hostel, a common stop for travelers moving between Argentina and Brazil.",
-    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Uruguay backpacker knowledge rather than a specific verified search result this session. Flagged for closer verification. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: name recognized from general Uruguay backpacker knowledge rather than a specific verified search result this session. Flagged for closer verification. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 175,
@@ -25154,7 +25328,8 @@
       "near_plaza"
     ],
     "reviews_summary": "Cusco branch of the Wild Rover party hostel chain, offering a livelier alternative to the city's more design-focused, quieter hostel options.",
-    "source_note": "LOWER CONFIDENCE ENTRY: specific branch existence inferred from Wild Rover's known multi-city presence rather than a directly verified search result this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: specific branch existence inferred from Wild Rover's known multi-city presence rather than a directly verified search result this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 176,
@@ -25282,7 +25457,8 @@
       "machu_picchu_base"
     ],
     "reviews_summary": "Cusco branch of the Kokopelli chain, commonly used as a base for organizing Machu Picchu and Sacred Valley excursions.",
-    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "Populated from Tripadvisor aggregation (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 177,
@@ -25412,7 +25588,8 @@
       "surf_town"
     ],
     "reviews_summary": "Mancora branch of the Loki hostel chain, a beach-party stop on Peru's northern coast surf circuit.",
-    "source_note": "LOWER CONFIDENCE ENTRY: chain name recognized from general South America backpacker knowledge (Loki has verified presence in Cusco, La Paz, San Pedro de Atacama per general knowledge) rather than a specific verified search result for this branch this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: chain name recognized from general South America backpacker knowledge (Loki has verified presence in Cusco, La Paz, San Pedro de Atacama per general knowledge) rather than a specific verified search result for this branch this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   },
   {
     "id": 178,
@@ -25542,6 +25719,7 @@
       "flashpacker"
     ],
     "reviews_summary": "A Selina flashpacker property in Valparaiso's iconic colorful hillside streets, popular with digital nomads and travelers exploring Chile's street-art capital.",
-    "source_note": "LOWER CONFIDENCE ENTRY: specific branch existence inferred from Selina's known Chile presence rather than a directly verified search result this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review."
+    "source_note": "LOWER CONFIDENCE ENTRY: specific branch existence inferred from Selina's known Chile presence rather than a directly verified search result this session. NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
+    "research_depth": "light"
   }
 ]

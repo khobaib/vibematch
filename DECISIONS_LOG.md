@@ -91,6 +91,13 @@ verified listing) with a `"LOWER CONFIDENCE ENTRY"` marker in `source_note`.
 needed for realistic matching-engine testing (tens of hostels per region). The tradeoff is made
 explicit and auditable rather than pretending every entry has equal confidence — every entry's
 `source_note` states plainly which tier it was researched at.
+**Follow-up:** initially this distinction only lived in free-text `source_note`, requiring a text
+search to find (e.g. `if "lighter-touch" in source_note`) — the same fragile pattern already
+identified as a problem elsewhere in this project (see the `near_metro`/`good_for_remote_work`
+matching fix). Added a proper structured `research_depth: "deep" | "light"` field to every hostel
+instead, backfilled across all 178 entries (68 deep, 110 light) and spot-checked for correctness.
+The finer-grained "LOWER CONFIDENCE ENTRY" flag (14 hostels, a subset of "light") remains
+text-only for now — a natural candidate for its own structured field later if needed.
 
 ### Schema: room-level vs. hostel-level fields
 Fields that vary by room type (price, bathroom type, air conditioning, etc.) live in a
