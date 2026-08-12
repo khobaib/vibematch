@@ -241,6 +241,23 @@ is missing from the lookup table (cheap, catches the problem automatically going
 replace the hand-maintained dict with a proper country→continent library (e.g. `pycountry` +
 a continent-mapping package) so it's never manually maintained at all.
 
+### 🟢 RESOLVED — flagged_issues had no severity signal, only frequency — AI explanation risked softening serious issues
+Found via testing the new "why we matched this" AI explanation feature with "safe hostel in
+Pushkar": Madpackers Pushkar's genuine safety incident (a report of someone entering a female
+traveler's dorm at night) was correctly surfaced, but the explanation's closing tone — "just
+something to keep in mind if extra vigilance matters to you" — read more like a minor
+preference caveat than an appropriately weighted safety concern. Root cause: `flagged_issues`
+only ever tracked `frequency` (how often something happens), with no signal for `severity` (how
+much it matters if it does) — the AI had to infer severity purely from reading raw issue text,
+with nothing stopping "isolated" framing from softening even a serious concern. Same lesson as
+`budget_flexibility`/`party_preference`/`near_metro`: inferring nuance from unstructured text is
+fragile, an explicit structured field is reliable. Fixed by adding `severity: "minor" |
+"moderate" | "serious"` to all 4 existing flagged_issues entries (backfilled by hand given the
+small count) and updating the explanation prompt with an explicit rule: severity must drive tone
+regardless of frequency — a "serious" issue gets real weight even if it's a single isolated
+report, while a "minor" issue can be softened by its rarity. Frequency and severity are
+explicitly separated as two different axes the model must reason about independently.
+
 ### 🟡 OPEN — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
 globally on the system Python rather than in a project-specific virtual environment.

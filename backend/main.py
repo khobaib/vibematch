@@ -1,6 +1,7 @@
 import os
 import json
-from fastapi import FastAPI
+from typing import Any, Dict, List
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -27,10 +28,39 @@ client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 # Load hostels once at startup, not on every request
 HOSTELS = load_hostels("hostels.json")
+HOSTELS_BY_ID = {h["id"]: h for h in HOSTELS}
+
+
+def extract_text(message) -> str:
+    """
+    Don't assume content[0] is the text block. Claude's response can
+    include multiple content blocks (e.g. a ThinkingBlock with internal
+    reasoning before the actual TextBlock, especially for queries with
+    more nuanced/mixed signals that trigger extended thinking). Search
+    for the block that actually has text rather than assuming position.
+    """
+    for block in message.content:
+        if getattr(block, "type", None) == "text":
+            return block.text
+    raise ValueError(
+        f"No text block found in Claude's response. Content block types received: "
+        f"{[getattr(b, 'type', type(b).__name__) for b in message.content]}"
+    )
 
 
 class SearchRequest(BaseModel):
     query: str
+
+
+class BreakdownEntry(BaseModel):
+    points: int
+    reason: str
+
+
+class ExplainRequest(BaseModel):
+    intent: Dict[str, Any]
+    hostel_id: int
+    breakdown: List[BreakdownEntry]
 
 
 @app.get("/")
@@ -92,23 +122,7 @@ Use this exact structure:
         messages=[{"role": "user", "content": prompt}]
     )
 
-    # Don't assume content[0] is the text block. Claude's response can
-    # include multiple content blocks (e.g. a ThinkingBlock with internal
-    # reasoning before the actual TextBlock, especially for queries with
-    # more nuanced/mixed signals that trigger extended thinking). Search
-    # for the block that actually has text rather than assuming position.
-    raw = None
-    for block in message.content:
-        if getattr(block, "type", None) == "text":
-            raw = block.text
-            break
-
-    if raw is None:
-        raise ValueError(
-            f"No text block found in Claude's response. Content block types received: "
-            f"{[getattr(b, 'type', type(b).__name__) for b in message.content]}"
-        )
-
+    raw = extract_text(message)
     clean = raw.strip()
     if clean.startswith("```"):
         clean = clean.split("```")[1]
@@ -116,6 +130,59 @@ Use this exact structure:
             clean = clean[4:]
 
     return json.loads(clean.strip())
+
+
+def generate_explanation(intent: dict, hostel: dict, breakdown: list) -> str:
+    reasons_text = "\n".join(f"- {b['reason']}" for b in breakdown)
+
+    flagged_issues = hostel.get("flagged_issues", [])
+    flagged_text = ""
+    if flagged_issues:
+        flagged_lines = "\n".join(
+            f"- {f['issue']} (frequency: {f.get('frequency', 'unknown')}, severity: {f.get('severity', 'unknown')})"
+            for f in flagged_issues
+        )
+        flagged_text = f"""
+
+Known flagged issues from past guest reviews:
+{flagged_lines}
+
+Mention the ONE most relevant flagged issue for this traveler's specific search, briefly and
+honestly. IMPORTANT: weight your tone by SEVERITY, not just frequency. A "minor" issue (e.g.
+occasional cleanliness annoyance) can be mentioned lightly, softened by its rarity. A "serious"
+issue (e.g. a genuine safety concern) must be treated with real weight and clear caution
+REGARDLESS of how rare/isolated it is — do not minimize a serious issue just because it's a
+single report. Frequency tells you how often something happens; severity tells you how much it
+matters if it does. Never let "isolated" language soften a serious issue into sounding like a
+minor inconvenience."""
+
+    prompt = f"""You are a friendly, well-traveled assistant explaining to a traveler why a specific
+hostel was recommended for their search. Be warm and conversational, like a friend giving a
+genuine recommendation — not a robotic restatement of a scoring system.
+
+Traveler's search intent:
+{json.dumps(intent, indent=2)}
+
+Hostel: {hostel.get('name')} in {hostel.get('city')}, {hostel.get('country')}
+Exclusive features: {', '.join(hostel.get('exclusive_features', [])) or 'none listed'}
+Vibe tags: {', '.join(hostel.get('vibe_tags', [])) or 'none listed'}
+Reviews summary: {hostel.get('reviews_summary', 'not available')}
+
+Why the matching engine scored this hostel well for this search:
+{reasons_text}
+{flagged_text}
+
+Write a warm, natural 2-4 sentence explanation of why this hostel is a good match for what the
+traveler is looking for. Synthesize the reasons above into a narrative — don't just list them
+mechanically. Plain text only, no markdown formatting."""
+
+    message = client.messages.create(
+        model="claude-sonnet-5",
+        max_tokens=300,
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return extract_text(message).strip()
 
 
 @app.post("/search")
@@ -129,3 +196,15 @@ def search(request: SearchRequest):
         "results_returned": len(outcome["results"]),
         "results": outcome["results"],
     }
+
+
+@app.post("/explain")
+def explain(request: ExplainRequest):
+    hostel = HOSTELS_BY_ID.get(request.hostel_id)
+    if hostel is None:
+        raise HTTPException(status_code=404, detail="Hostel not found")
+
+    breakdown = [{"points": b.points, "reason": b.reason} for b in request.breakdown]
+    explanation = generate_explanation(request.intent, hostel, breakdown)
+
+    return {"explanation": explanation}

@@ -3640,13 +3640,15 @@
         "issue": "sand and insects reported in one guest's bed",
         "frequency": "isolated (1 report found against hundreds of reviews)",
         "most_recent_report": "date not specified in source",
-        "traveler_assessment": "considered a likely one-off incident, not a pattern, per traveler who stayed there"
+        "traveler_assessment": "considered a likely one-off incident, not a pattern, per traveler who stayed there",
+        "severity": "minor"
       },
       {
         "issue": "early morning (~5am) mosque call to prayer audible from the property",
         "frequency": "structural/environmental - applies to this part of Varkala generally, not hostel-specific",
         "most_recent_report": "ongoing/recurring by nature",
-        "traveler_assessment": "did not disrupt sleep for traveler; common and expected in this neighborhood"
+        "traveler_assessment": "did not disrupt sleep for traveler; common and expected in this neighborhood",
+        "severity": "minor"
       }
     ],
     "region": "Kerala",
@@ -8927,13 +8929,15 @@
         "issue": "a guest reported someone associated with the neighboring Zostel hostel entered a female guest's dorm at approximately 3am and woke her; the review states little immediate action was taken by Madpackers staff",
         "frequency": "isolated (1 detailed report found)",
         "most_recent_report": "date not specified, review appears on 2024 Hostelworld listing",
-        "traveler_assessment": "not independently verified; a serious safety allegation that deserves weight despite being a single report - flagged prominently rather than buried"
+        "traveler_assessment": "not independently verified; a serious safety allegation that deserves weight despite being a single report - flagged prominently rather than buried",
+        "severity": "serious"
       },
       {
         "issue": "bathroom reportedly not cleaned during a 4-night stay",
         "frequency": "isolated (1 detailed report) against a majority of reviews calling the property clean",
         "most_recent_report": "date not specified",
-        "traveler_assessment": "unclear if isolated lapse or pattern; contrasts with generally strong reviews"
+        "traveler_assessment": "unclear if isolated lapse or pattern; contrasts with generally strong reviews",
+        "severity": "moderate"
       }
     ],
     "reviews_summary": "Award-winning Pushkar hostel (voted India's Best Hostel 2019 by Hostelworld), known for its artsy Rajasthani-decorated building and three rooftop terraces (8.1-8.2/10, 651+ reviews). Most reviews are strongly positive, but two specific detailed complaints stand out and are worth serious attention: a reported nighttime safety incident involving a neighboring hostel's guest entering a female traveler's dorm, and a report of a bathroom going uncleaned across a multi-night stay. Both are treated here as isolated but noteworthy given their seriousness, not smoothed over by the otherwise strong aggregate rating.",

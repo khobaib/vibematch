@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-const API_URL = 'http://127.0.0.1:8000/search';
+const SEARCH_URL = 'http://127.0.0.1:8000/search';
+const EXPLAIN_URL = 'http://127.0.0.1:8000/explain';
 
 function ScoreBreakdown({ breakdown }) {
   return (
@@ -18,7 +19,67 @@ function ScoreBreakdown({ breakdown }) {
   );
 }
 
-function HostelCard({ hostel }) {
+function AiExplanation({ intent, hostelId, breakdown }) {
+  // All local to THIS card — same reasoning as showBreakdown below.
+  // Each card's AI explanation is fetched and shown independently.
+  const [explanation, setExplanation] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [visible, setVisible] = useState(false);
+
+  async function handleClick() {
+    // Already fetched once? Just toggle visibility, don't call the API again.
+    if (explanation) {
+      setVisible(!visible);
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(EXPLAIN_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ intent, hostel_id: hostelId, breakdown }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const result = await response.json();
+      setExplanation(result.explanation);
+      setVisible(true);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div style={{ marginTop: 8 }}>
+      <button
+        onClick={handleClick}
+        disabled={loading}
+        style={{ fontSize: 13, padding: '4px 10px', cursor: 'pointer' }}
+      >
+        {loading ? 'Thinking...' : visible ? 'Hide AI explanation' : 'Get AI explanation'}
+      </button>
+
+      {error && <p style={{ color: '#b33', fontSize: 13, marginTop: 6 }}>Error: {error}</p>}
+
+      {visible && explanation && (
+        <p style={{ marginTop: 8, fontSize: 14, fontStyle: 'italic', color: '#333', lineHeight: 1.5 }}>
+          {explanation}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function HostelCard({ hostel, intent }) {
   const [showBreakdown, setShowBreakdown] = useState(false);
   const price = hostel.price_range_usd;
 
@@ -33,14 +94,18 @@ function HostelCard({ hostel }) {
         {price && ` — $${price.min}${price.max && price.max !== price.min ? `-$${price.max}` : ''}/night`}
       </p>
 
-      <button
-        onClick={() => setShowBreakdown(!showBreakdown)}
-        style={{ fontSize: 13, padding: '4px 10px', cursor: 'pointer' }}
-      >
-        {showBreakdown ? 'Hide' : 'Why this match?'}
-      </button>
+      <div style={{ display: 'flex', gap: 8 }}>
+        <button
+          onClick={() => setShowBreakdown(!showBreakdown)}
+          style={{ fontSize: 13, padding: '4px 10px', cursor: 'pointer' }}
+        >
+          {showBreakdown ? 'Hide scoring details' : 'Show scoring details'}
+        </button>
+      </div>
 
       {showBreakdown && <ScoreBreakdown breakdown={hostel.breakdown} />}
+
+      <AiExplanation intent={intent} hostelId={hostel.id} breakdown={hostel.breakdown} />
     </div>
   );
 }
@@ -89,7 +154,7 @@ function Results({ loading, error, data }) {
         {data.total_matches} total matches — showing top {data.results_returned}
       </p>
       {data.results.map((hostel) => (
-        <HostelCard key={hostel.id} hostel={hostel} />
+        <HostelCard key={hostel.id} hostel={hostel} intent={data.parsed_intent} />
       ))}
     </div>
   );
@@ -105,7 +170,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(SEARCH_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
