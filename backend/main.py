@@ -1,6 +1,7 @@
 import os
 import json
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import anthropic
@@ -10,6 +11,17 @@ from matching import load_hostels, match_hostels
 load_dotenv()
 
 app = FastAPI()
+
+# Allow the React dev server (different origin: localhost:5173 vs 127.0.0.1:8000)
+# to call this API. Without this, the browser blocks every request before it
+# even reaches FastAPI - this is a browser security rule (CORS), not optional.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 

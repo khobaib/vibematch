@@ -1,124 +1,135 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-const hostels = [
-  { id: 1, name: 'Mad Monkey', city: 'Bangkok', price: 12, tags: ['social', 'party', 'rooftop'] },
-  { id: 2, name: 'Tribal Hostel', city: 'Goa', price: 8, tags: ['beach', 'chill', 'social'] },
-  { id: 3, name: 'Zostel', city: 'Manali', price: 10, tags: ['mountain', 'adventure', 'quiet'] },
-  { id: 4, name: 'Bodhi Hostel', city: 'Kathmandu', price: 5, tags: ['rooftop', 'budget', 'view'] },
-  { id: 5, name: 'Submarine', city: 'Bali', price: 15, tags: ['beach', 'pool', 'social'] },
-  { id: 6, name: 'The Hive', city: 'Lisbon', price: 18, tags: ['social', 'workcation', 'wifi'] },
-  { id: 7, name: 'Dreamcatcher', city: 'Medellín', price: 14, tags: ['social', 'rooftop', 'party'] },
-  { id: 8, name: 'Jungle House', city: 'Chiang Mai', price: 9, tags: ['nature', 'quiet', 'adventure'] },
-  { id: 9, name: 'Cox Nomad', city: 'Dhaka', price: 5, tags: ['cheap', 'local', 'beach'] },
-];
+const API_URL = 'http://127.0.0.1:8000/search';
 
-function searchHostels(query) {
-  if (!query.trim()) {
-    return [];
-  }
-
-  const keywords = query.toLowerCase().split(' ');
-  return hostels.filter(hostel => 
-    keywords.every(keyword => hostel.tags.some(tag => tag.includes(keyword)))
+function ScoreBreakdown({ breakdown }) {
+  return (
+    <ul style={{ marginTop: 8, paddingLeft: 20, fontSize: 14, color: '#444' }}>
+      {breakdown.map((entry, i) => (
+        <li key={i}>
+          <strong style={{ color: entry.points >= 0 ? '#2a7a2a' : '#b33' }}>
+            {entry.points >= 0 ? `+${entry.points}` : entry.points}
+          </strong>
+          {'  '}
+          {entry.reason}
+        </li>
+      ))}
+    </ul>
   );
 }
 
 function HostelCard({ hostel }) {
+  const [showBreakdown, setShowBreakdown] = useState(false);
+  const price = hostel.price_range_usd;
+
   return (
-    <div style={{ border: '1px solid #ccc', padding: 15, marginBottom: 10, borderRadius: 8 }}>
-      <h3>{hostel.name}</h3>
-      <p>{hostel.city}</p>
-      <p>${hostel.price} per night</p>
-      <div>
-        {hostel.tags.map((tag) => (
-          <span
-            key={tag}
-            style={{
-              background: '#e0f0ff',
-              padding: '2px 8px',
-              borderRadius: 12,
-              marginRight: 6,
-              fontSize: 12,
-            }}
-          >
-            {tag}
-          </span>
-        ))}
+    <div style={{ border: '1px solid #ddd', borderRadius: 8, padding: 16, marginBottom: 12 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+        <h3 style={{ margin: 0 }}>{hostel.name}</h3>
+        <span style={{ fontSize: 14, color: '#666' }}>Score: {hostel.score}</span>
       </div>
+      <p style={{ margin: '4px 0', color: '#666' }}>
+        {hostel.city}, {hostel.country}
+        {price && ` — $${price.min}${price.max && price.max !== price.min ? `-$${price.max}` : ''}/night`}
+      </p>
+
+      <button
+        onClick={() => setShowBreakdown(!showBreakdown)}
+        style={{ fontSize: 13, padding: '4px 10px', cursor: 'pointer' }}
+      >
+        {showBreakdown ? 'Hide' : 'Why this match?'}
+      </button>
+
+      {showBreakdown && <ScoreBreakdown breakdown={hostel.breakdown} />}
     </div>
   );
 }
 
-function SearchBox({ onSearch, onClear, query }) {
-  const [localQuery, setLocalQuery] = useState('');
+function SearchBox({ onSearch, loading }) {
+  const [query, setQuery] = useState('');
 
   function handleSearch() {
-    onSearch(localQuery.trim());  // updates App's query state → shows results
-  };
-
-  function handleClear() {
-    setLocalQuery('');    // clears the input box
-    onClear();            // clears App's query state → hides results
+    const trimmed = query.trim();
+    if (trimmed) onSearch(trimmed);
   }
 
   return (
-    <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10}}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
       <input
-        value={localQuery}
-        onChange={(e) => setLocalQuery(e.target.value)}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-        placeholder="Describe your ideal hostel... (e.g. beach social)"
+        placeholder="Describe your ideal hostel... (e.g. quiet hostel in Goa under $15)"
         style={{ flex: 1, padding: 10, fontSize: 16 }}
+        disabled={loading}
       />
       <button
         onClick={handleSearch}
-        style={{ padding: '10px 20px', whiteSpace: 'nowrap', fontSize: 16 }}
+        disabled={loading}
+        style={{ padding: '10px 20px', fontSize: 16, whiteSpace: 'nowrap' }}
       >
-        Search
+        {loading ? 'Searching...' : 'Search'}
       </button>
-      {query.length > 0 && (
-      <button
-        onClick={handleClear}
-        style={{ padding: '10px 20px', whiteSpace: 'nowrap', fontSize: 16 }}
-      >
-        Clear
-      </button>
-      )}
     </div>
   );
 }
 
-function Results({ query }) {
-  if (!query) {
-    return <p>Type a vibe above and hit Search.</p>;
-  }
+function Results({ loading, error, data }) {
+  if (loading) return <p>Searching real hostels...</p>;
+  if (error) return <p style={{ color: '#b33' }}>Error: {error}</p>;
+  if (!data) return <p>Type a vibe above and hit Search.</p>;
 
-  const results = searchHostels(query);
-
-  if (results.length === 0) {
-    return <p>No hostels found for "{query}". Try "beach", "social", or "mountain".</p>;
+  if (data.total_matches === 0) {
+    return <p>No hostels matched that search. Try a different location or vibe.</p>;
   }
 
   return (
     <div>
-      <p>{results.length} hostel(s) found for "{query}"</p>
-      {results.map((hostel) => (
+      <p style={{ color: '#666', fontSize: 14 }}>
+        {data.total_matches} total matches — showing top {data.results_returned}
+      </p>
+      {data.results.map((hostel) => (
         <HostelCard key={hostel.id} hostel={hostel} />
       ))}
     </div>
   );
 }
 
-
 function App() {
-  const [query, setQuery] = useState('');
- 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+
+  async function handleSearch(query) {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const result = await response.json();
+      setData(result);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div style={{ padding: 30, maxWidth: 700, margin: '0 auto' }}>
       <h1>VibeMatch</h1>
-      <p>Find your perfect hostel by vibe.</p>
-      <SearchBox onSearch={setQuery} onClear={() => setQuery('')} query={query} />
-      <Results query={query} />
+      <p>Find your perfect hostel by vibe — now powered by real search.</p>
+      <SearchBox onSearch={handleSearch} loading={loading} />
+      <Results loading={loading} error={error} data={data} />
     </div>
   );
 }
