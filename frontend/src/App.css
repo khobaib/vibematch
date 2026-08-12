@@ -1,184 +1,388 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+:root {
+  --paper: #EDE6D6;
+  --paper-dark: #E1D6BE;
+  --ink: #2B2620;
+  --ink-soft: #5A5347;
+  --petrol: #1B4B43;
+  --petrol-dark: #123531;
+  --airmail-red: #C1432E;
+  --stamp-gold: #C89B3C;
+  --positive-green: #3F6B4F;
+  --border: #C7BBA0;
+
+  --display: 'Oswald', sans-serif;
+  --body: 'Lora', serif;
+  --mono: 'IBM Plex Mono', monospace;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+* {
+  box-sizing: border-box;
 }
 
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
+.vm-app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
   text-align: left;
+}
 
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
+/* ---------- Header ---------- */
+
+.vm-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 28px;
+  border-bottom: 3px double var(--border);
+}
+
+.vm-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--petrol);
+  margin: 0 0 6px;
+}
+
+@media (max-width: 480px) {
+  .vm-title {
+    font-size: 30px;
+    letter-spacing: 2px;
   }
 
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
+  .vm-title::before,
+  .vm-title::after {
+    font-size: 16px;
+    margin: 0 6px;
   }
 
-  @media (max-width: 1024px) {
+  .vm-app {
+    padding: 32px 16px 60px;
+  }
+
+  .vm-card {
     flex-direction: column;
-    text-align: center;
+  }
+
+  .vm-card-stub {
+    width: 100%;
+    border-left: none;
+    border-top: 2px dashed var(--border);
+    padding: 12px 0;
+  }
+
+  .vm-card-stub::before,
+  .vm-card-stub::after {
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .vm-card-stub::after {
+    top: auto;
+    bottom: -7px;
   }
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.vm-title::before,
+.vm-title::after {
+  content: '✈';
+  font-size: 20px;
+  color: var(--stamp-gold);
+  margin: 0 14px;
+  vertical-align: middle;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+.vm-tagline {
+  font-family: var(--body);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ---------- Search box ---------- */
+
+.vm-search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.vm-input {
+  flex: 1;
+  padding: 14px 16px;
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+}
+
+.vm-input:focus {
+  outline: none;
+  border-color: var(--petrol);
+}
+
+.vm-input::placeholder {
+  color: #a89f8c;
+  font-style: italic;
+}
+
+.vm-input:disabled {
+  background: var(--paper-dark);
+  cursor: not-allowed;
+}
+
+.vm-search-btn {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0 26px;
+  background: var(--petrol);
+  color: var(--paper);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.vm-search-btn:hover:not(:disabled) {
+  background: var(--petrol-dark);
+}
+
+.vm-search-btn:disabled {
+  background: var(--border);
+  cursor: not-allowed;
+}
+
+/* ---------- Results summary ---------- */
+
+.vm-summary {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.vm-status {
+  font-family: var(--body);
+  font-style: italic;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 40px 0;
+}
+
+.vm-status.vm-error {
+  color: var(--airmail-red);
+  font-style: normal;
+}
+
+/* ---------- Hostel card: boarding pass ---------- */
+
+.vm-card {
+  display: flex;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(43, 38, 32, 0.06);
+  overflow: hidden;
+}
+
+.vm-card-main {
+  flex: 1;
+  padding: 18px 20px;
+}
+
+.vm-card-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 0.3px;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+.vm-card-location {
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.vm-card-price {
+  font-family: var(--mono);
+  color: var(--petrol);
+  font-weight: 500;
+}
+
+.vm-card-actions {
   display: flex;
   gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  flex-wrap: wrap;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.vm-btn-ghost {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--petrol);
+  border: 1px solid var(--petrol);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.ticks {
+.vm-btn-ghost:hover:not(:disabled) {
+  background: var(--petrol);
+  color: #fff;
+}
+
+.vm-btn-ghost:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- The perforated ticket stub with the score stamp ---------- */
+
+.vm-card-stub {
+  width: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  border-left: 2px dashed var(--border);
   position: relative;
-  width: 100%;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+.vm-card-stub::before,
+.vm-card-stub::after {
+  content: '';
+  position: absolute;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  background: var(--paper);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+.vm-card-stub::before { top: -7px; }
+.vm-card-stub::after { bottom: -7px; }
+
+.vm-stamp {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2.5px solid var(--airmail-red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-9deg);
+  color: var(--airmail-red);
+  font-family: var(--mono);
+}
+
+.vm-stamp-score {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.vm-stamp-label {
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ---------- Score breakdown ---------- */
+
+.vm-breakdown {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 10px 0 0;
+  border-top: 1px dashed var(--border);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.9;
+}
+
+.vm-breakdown li {
+  color: var(--ink-soft);
+}
+
+.vm-points-positive { color: var(--positive-green); font-weight: 600; }
+.vm-points-negative { color: var(--airmail-red); font-weight: 600; }
+
+/* ---------- AI explanation (structured: verdict + highlights + heads-ups) ---------- */
+
+.vm-ai-explanation {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--paper);
+  border-left: 3px solid var(--stamp-gold);
+}
+
+.vm-ai-verdict {
+  font-family: var(--body);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14.5px;
+  color: var(--petrol);
+  margin: 0 0 8px;
+}
+
+.vm-ai-list {
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0;
+  font-family: var(--body);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.vm-ai-highlight::before {
+  content: '✓  ';
+  color: var(--positive-green);
+  font-weight: 700;
+}
+
+.vm-ai-headsup {
+  color: var(--ink-soft);
+}
+
+.vm-ai-headsup::before {
+  content: '⚠  ';
+  color: var(--airmail-red);
+  font-weight: 700;
+}
+
+.vm-ai-error {
+  color: var(--airmail-red);
+  font-size: 13px;
+  margin-top: 8px;
+  font-family: var(--body);
 }

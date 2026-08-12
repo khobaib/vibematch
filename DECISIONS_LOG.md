@@ -466,6 +466,92 @@ rather than a cryptic AttributeError. Unrelated to the party_preference logic it
 surfaced because more adversarial/edge-case queries were being tested deliberately before
 committing — a good argument for that habit continuing.
 
+### 🟢 RESOLVED — AI explanation as one dense paragraph didn't fit the actual use case
+Raised directly by the traveler: backpackers often check search results while walking, standing,
+or otherwise not in a position to read a full paragraph — a wall of prose is the wrong format for
+that moment. Redesigned the `/explain` response from free text into structured JSON: a short
+`verdict` headline (under 10 words), a variable-length `highlights` list (1-4 short fragments, not
+full sentences), and a variable-length `heads_ups` list (0+ fragments, only present when genuinely
+relevant). Explicitly designed to NOT force every explanation into a rigid fixed shape — highlight
+count and heads_up count both flex based on what's actually true for that hostel, rather than
+being padded or truncated to hit an expected number. Frontend renders this as a scannable
+checkmark/warning-icon list instead of a paragraph. The existing raw score-breakdown button was
+kept as-is for anyone who wants the fuller technical detail — this format is specifically the
+fast-glance layer, not a replacement for depth.
+
+### 🟢 RESOLVED — heads_ups instruction said "the most relevant one" but real behavior (and validated as correct) surfaces multiple
+During testing of the redesigned format above, "safe hostel in Pushkar" surfaced BOTH of
+Madpackers Pushkar's flagged issues (the serious safety report AND the moderate cleanliness
+report), even though the original prompt instruction said to include only "the most relevant
+one" (singular). Confirmed this was actually the better behavior, not a bug — for a
+safety-focused query, showing every genuinely relevant issue (not just the top one) gives more
+complete due diligence, and the two issues were already correctly ordered most-severe-first.
+Updated the prompt instruction to explicitly match this: "include EVERY flagged issue that's
+genuinely relevant... not just one," with an explicit ordering rule (most severe first), so this
+becomes documented intended behavior rather than a lucky one-off result.
+
+### 🟢 RESOLVED — Vite's default index.css text-align: center leaked into the styled UI
+Found via screenshot review after the structured AI-note redesign: hostel names, locations, and
+buttons were unexpectedly center-aligned instead of left-aligned as designed. Root cause: Vite's
+default project scaffold ships `#root { text-align: center; }` in `index.css`, which had never
+been cleaned up and was silently overriding the new design system once real content made the
+misalignment visible enough to notice. Fixed defensively — rather than hunting through and
+editing `index.css` (risk of missing something else hiding there), added an explicit
+`text-align: left` directly on `.vm-app`, which wins regardless of whatever `index.css` contains
+because it's more specific to the actual component tree.
+
+### 🟢 RESOLVED — "safety_concern_flagged" vibe tag ironically boosted score for "safe hostel" searches
+Found via screenshot review: Madpackers Pushkar's own `vibe_tags` included `"safety_concern_flagged"`
+— a tag added specifically to signal its dorm-entry safety incident. A "safe hostel in Pushkar"
+search then matched `"safety"` as a substring of `"safety_concern_flagged"` and awarded +4
+positive points, treating the tag that exists to WARN about a safety problem as evidence of
+safety — backwards. Same root cause as the earlier `not_social` negation bug (naive substring
+matching, no semantic understanding), but a new variant: not a negation prefix, but a word
+embedded in a compound tag carrying the opposite real-world meaning from the isolated word.
+Rather than attempting to generically teach the matching code to detect this class of irony
+(fragile), fixed at the data level by renaming the tag to `"guest_incident_reported"`, which
+shares no misleading substring with common positive search terms. Verified directly: the same
+search no longer produces the false-positive match. Worth remembering as a naming discipline
+going forward — avoid tag names containing words that could read as positive in isolation when
+the tag's actual meaning is a warning.
+
+### 🟢 RESOLVED — No hostel had a genuine positive safety signal after removing the false one
+Direct follow-up to the fix above: after removing the false `safety_concern_flagged` match, a
+check confirmed ZERO hostels in the entire 178-hostel dataset had any tag containing "safe" or
+"safety" — meaning a genuine "safe hostel" search had nothing real left to match against at all,
+only location and coincidental unrelated overlaps. This was a real gap distinct from the bug just
+fixed: removing a wrong signal isn't the same as having a correct one. Searched existing
+structured data (`guest_type` containing `female_solo_friendly`, `exclusive_features` mentioning
+CCTV/locks/secure storage) for hostels with already-documented, genuine safety-relevant evidence,
+and added an honest positive vibe tag to 10 hostels based specifically on what each one's own data
+already supported — e.g. `female_solo_safe` for hostels with documented female-solo-friendly
+status, `cctv_secure` for a hostel with actual CCTV mentioned, `secure_storage` for one with
+documented lockable storage. Deliberately did NOT add a tag to Madpackers Pushkar despite it also
+surfacing in this search — it has a genuine documented safety incident, so a positive safety tag
+there would be actively misleading. Tag names were chosen to contain "safe"/"secur" specifically
+so they work with the existing substring-matching logic without requiring any code changes — a
+pure data enrichment, verified directly against a live "safe" search.
+
+### 🟢 RESOLVED — Initial safety-signal search was too narrow; a full sweep found 3 more real cases
+Directly prompted by the traveler asking whether guest review text (not just structured fields
+like `guest_type`) could also reveal safety signal. The first pass only searched a narrow phrase
+set (`"solo female"`, `"female traveler"`) across a couple of fields. A broader keyword sweep
+(`safe`, `secure`, `sketchy`, `unsafe`, `gated`, etc. across `reviews_summary`,
+`cleanliness_signal`, `staff.friendliness`, `location.notes`) surfaced 5 hits, one of which
+(Tendean Residence, "gated") turned out to be a false positive from the search itself — matching
+inside the word "agg**regated**", the same substring-matching trap this whole investigation was
+about, now caught in the checking process itself. Of the 4 genuine hits: added positive tags to
+2 hostels with real evidence (`safe_residential_area` for All Day Hostel @ BTS Bang Chak,
+"quiet and safe residential-feeling area"; `guests_feel_safe` for Onederz Phnom Penh, "guests
+report feeling safe" despite the area being "somewhat seedy at night"); converted a genuine
+negative finding for Lotus Garden Hostel ("area can feel a bit sketchy at night") from a vibe_tag
+that already existed but was invisible to the AI explanation feature into a proper structured
+`flagged_issue` with severity/frequency, so it can actually be surfaced and reasoned about by that
+feature going forward. General lesson: an initial "comprehensive" search is often narrower than it
+feels at the time — worth periodically widening the net rather than assuming the first sweep
+caught everything, and worth being just as skeptical of one's own verification searches as of the
+original bug.
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data

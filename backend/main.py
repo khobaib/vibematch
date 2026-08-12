@@ -132,7 +132,7 @@ Use this exact structure:
     return json.loads(clean.strip())
 
 
-def generate_explanation(intent: dict, hostel: dict, breakdown: list) -> str:
+def generate_explanation(intent: dict, hostel: dict, breakdown: list) -> dict:
     reasons_text = "\n".join(f"- {b['reason']}" for b in breakdown)
 
     flagged_issues = hostel.get("flagged_issues", [])
@@ -147,18 +147,17 @@ def generate_explanation(intent: dict, hostel: dict, breakdown: list) -> str:
 Known flagged issues from past guest reviews:
 {flagged_lines}
 
-Mention the ONE most relevant flagged issue for this traveler's specific search, briefly and
-honestly. IMPORTANT: weight your tone by SEVERITY, not just frequency. A "minor" issue (e.g.
-occasional cleanliness annoyance) can be mentioned lightly, softened by its rarity. A "serious"
-issue (e.g. a genuine safety concern) must be treated with real weight and clear caution
-REGARDLESS of how rare/isolated it is — do not minimize a serious issue just because it's a
-single report. Frequency tells you how often something happens; severity tells you how much it
-matters if it does. Never let "isolated" language soften a serious issue into sounding like a
-minor inconvenience."""
+Include EVERY flagged issue that's genuinely relevant to this traveler's specific search — not
+just one. If the traveler asked about safety and there's a safety-related flag, that's relevant;
+a flagged issue about something the traveler didn't ask about (e.g. unrelated to their search)
+can be left out. When multiple issues are included, order them most severe first. Weight tone by
+SEVERITY, not just frequency — a "serious" issue must be treated with real weight regardless of
+how rare it is; a "minor" issue can be phrased lightly."""
 
-    prompt = f"""You are a friendly, well-traveled assistant explaining to a traveler why a specific
-hostel was recommended for their search. Be warm and conversational, like a friend giving a
-genuine recommendation — not a robotic restatement of a scoring system.
+    prompt = f"""You are a fast, honest travel assistant. A backpacker is scanning search results
+quickly — often on their phone, sometimes standing on a street with a bag on their back, not
+sitting down to read a paragraph. Respond with SHORT, SCANNABLE fragments, not full sentences
+joined into prose.
 
 Traveler's search intent:
 {json.dumps(intent, indent=2)}
@@ -168,21 +167,35 @@ Exclusive features: {', '.join(hostel.get('exclusive_features', [])) or 'none li
 Vibe tags: {', '.join(hostel.get('vibe_tags', [])) or 'none listed'}
 Reviews summary: {hostel.get('reviews_summary', 'not available')}
 
-Why the matching engine scored this hostel well for this search:
+Why the matching engine scored this hostel for this search:
 {reasons_text}
 {flagged_text}
 
-Write a warm, natural 2-4 sentence explanation of why this hostel is a good match for what the
-traveler is looking for. Synthesize the reasons above into a narrative — don't just list them
-mechanically. Plain text only, no markdown formatting."""
+Respond ONLY with a JSON object, no markdown, no explanation outside the JSON. Use this exact
+structure:
+{{
+  "verdict": "one short, honest phrase (under 10 words) judging overall fit — can be lukewarm or mixed if that's accurate, never just positive spin for its own sake",
+  "highlights": ["1 to 4 short fragments, each a specific concrete reason this hostel fits — NOT full sentences"],
+  "heads_ups": ["0 or more short fragments for genuine caveats or flagged issues relevant to THIS search — return an empty list if there's nothing worth flagging, never pad this to hit a count"]
+}}
+
+Each highlight and heads_up must be a short scannable fragment (roughly 5-12 words), written like
+a label a tired person can read in half a second — not a grammatically complete sentence."""
 
     message = client.messages.create(
         model="claude-sonnet-5",
-        max_tokens=300,
+        max_tokens=400,
         messages=[{"role": "user", "content": prompt}]
     )
 
-    return extract_text(message).strip()
+    raw = extract_text(message)
+    clean = raw.strip()
+    if clean.startswith("```"):
+        clean = clean.split("```")[1]
+        if clean.startswith("json"):
+            clean = clean[4:]
+
+    return json.loads(clean.strip())
 
 
 @app.post("/search")
@@ -205,6 +218,7 @@ def explain(request: ExplainRequest):
         raise HTTPException(status_code=404, detail="Hostel not found")
 
     breakdown = [{"points": b.points, "reason": b.reason} for b in request.breakdown]
-    explanation = generate_explanation(request.intent, hostel, breakdown)
+    result = generate_explanation(request.intent, hostel, breakdown)
 
-    return {"explanation": explanation}
+    # result is already {"verdict": ..., "highlights": [...], "heads_ups": [...]}
+    return result

@@ -1,16 +1,17 @@
 import { useState } from 'react';
+import './App.css';
 
 const SEARCH_URL = 'http://127.0.0.1:8000/search';
 const EXPLAIN_URL = 'http://127.0.0.1:8000/explain';
 
 function ScoreBreakdown({ breakdown }) {
   return (
-    <ul style={{ marginTop: 8, paddingLeft: 20, fontSize: 14, color: '#444' }}>
+    <ul className="vm-breakdown">
       {breakdown.map((entry, i) => (
         <li key={i}>
-          <strong style={{ color: entry.points >= 0 ? '#2a7a2a' : '#b33' }}>
+          <span className={entry.points >= 0 ? 'vm-points-positive' : 'vm-points-negative'}>
             {entry.points >= 0 ? `+${entry.points}` : entry.points}
-          </strong>
+          </span>
           {'  '}
           {entry.reason}
         </li>
@@ -20,16 +21,13 @@ function ScoreBreakdown({ breakdown }) {
 }
 
 function AiExplanation({ intent, hostelId, breakdown }) {
-  // All local to THIS card — same reasoning as showBreakdown below.
-  // Each card's AI explanation is fetched and shown independently.
-  const [explanation, setExplanation] = useState(null);
+  const [data, setData] = useState(null); // { verdict, highlights, heads_ups }
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [visible, setVisible] = useState(false);
 
   async function handleClick() {
-    // Already fetched once? Just toggle visibility, don't call the API again.
-    if (explanation) {
+    if (data) {
       setVisible(!visible);
       return;
     }
@@ -49,7 +47,7 @@ function AiExplanation({ intent, hostelId, breakdown }) {
       }
 
       const result = await response.json();
-      setExplanation(result.explanation);
+      setData(result);
       setVisible(true);
     } catch (err) {
       setError(err.message);
@@ -59,23 +57,35 @@ function AiExplanation({ intent, hostelId, breakdown }) {
   }
 
   return (
-    <div style={{ marginTop: 8 }}>
-      <button
-        onClick={handleClick}
-        disabled={loading}
-        style={{ fontSize: 13, padding: '4px 10px', cursor: 'pointer' }}
-      >
-        {loading ? 'Thinking...' : visible ? 'Hide AI explanation' : 'Get AI explanation'}
+    <>
+      <button onClick={handleClick} disabled={loading} className="vm-btn-ghost">
+        {loading ? 'Thinking…' : visible ? 'Hide AI note' : 'Get AI note'}
       </button>
 
-      {error && <p style={{ color: '#b33', fontSize: 13, marginTop: 6 }}>Error: {error}</p>}
+      {error && <p className="vm-ai-error">Error: {error}</p>}
 
-      {visible && explanation && (
-        <p style={{ marginTop: 8, fontSize: 14, fontStyle: 'italic', color: '#333', lineHeight: 1.5 }}>
-          {explanation}
-        </p>
+      {visible && data && (
+        <div className="vm-ai-explanation">
+          <p className="vm-ai-verdict">{data.verdict}</p>
+
+          {data.highlights?.length > 0 && (
+            <ul className="vm-ai-list">
+              {data.highlights.map((h, i) => (
+                <li key={i} className="vm-ai-highlight">{h}</li>
+              ))}
+            </ul>
+          )}
+
+          {data.heads_ups?.length > 0 && (
+            <ul className="vm-ai-list">
+              {data.heads_ups.map((h, i) => (
+                <li key={i} className="vm-ai-headsup">{h}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
@@ -84,28 +94,37 @@ function HostelCard({ hostel, intent }) {
   const price = hostel.price_range_usd;
 
   return (
-    <div style={{ border: '1px solid #ddd', borderRadius: 8, padding: 16, marginBottom: 12 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-        <h3 style={{ margin: 0 }}>{hostel.name}</h3>
-        <span style={{ fontSize: 14, color: '#666' }}>Score: {hostel.score}</span>
+    <div className="vm-card">
+      <div className="vm-card-main">
+        <h3 className="vm-card-name">{hostel.name}</h3>
+        <p className="vm-card-location">
+          {hostel.city}, {hostel.country}
+          {price && (
+            <>
+              {' — '}
+              <span className="vm-card-price">
+                ${price.min}{price.max && price.max !== price.min ? `–$${price.max}` : ''}/night
+              </span>
+            </>
+          )}
+        </p>
+
+        <div className="vm-card-actions">
+          <button onClick={() => setShowBreakdown(!showBreakdown)} className="vm-btn-ghost">
+            {showBreakdown ? 'Hide scoring' : 'Show scoring'}
+          </button>
+          <AiExplanation intent={intent} hostelId={hostel.id} breakdown={hostel.breakdown} />
+        </div>
+
+        {showBreakdown && <ScoreBreakdown breakdown={hostel.breakdown} />}
       </div>
-      <p style={{ margin: '4px 0', color: '#666' }}>
-        {hostel.city}, {hostel.country}
-        {price && ` — $${price.min}${price.max && price.max !== price.min ? `-$${price.max}` : ''}/night`}
-      </p>
 
-      <div style={{ display: 'flex', gap: 8 }}>
-        <button
-          onClick={() => setShowBreakdown(!showBreakdown)}
-          style={{ fontSize: 13, padding: '4px 10px', cursor: 'pointer' }}
-        >
-          {showBreakdown ? 'Hide scoring details' : 'Show scoring details'}
-        </button>
+      <div className="vm-card-stub">
+        <div className="vm-stamp">
+          <span className="vm-stamp-score">{hostel.score}</span>
+          <span className="vm-stamp-label">match</span>
+        </div>
       </div>
-
-      {showBreakdown && <ScoreBreakdown breakdown={hostel.breakdown} />}
-
-      <AiExplanation intent={intent} hostelId={hostel.id} breakdown={hostel.breakdown} />
     </div>
   );
 }
@@ -119,38 +138,34 @@ function SearchBox({ onSearch, loading }) {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
+    <div className="vm-search">
       <input
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-        placeholder="Describe your ideal hostel... (e.g. quiet hostel in Goa under $15)"
-        style={{ flex: 1, padding: 10, fontSize: 16 }}
+        placeholder="Describe your ideal hostel… quiet hostel in Goa under $15"
+        className="vm-input"
         disabled={loading}
       />
-      <button
-        onClick={handleSearch}
-        disabled={loading}
-        style={{ padding: '10px 20px', fontSize: 16, whiteSpace: 'nowrap' }}
-      >
-        {loading ? 'Searching...' : 'Search'}
+      <button onClick={handleSearch} disabled={loading} className="vm-search-btn">
+        {loading ? 'Searching…' : 'Search'}
       </button>
     </div>
   );
 }
 
 function Results({ loading, error, data }) {
-  if (loading) return <p>Searching real hostels...</p>;
-  if (error) return <p style={{ color: '#b33' }}>Error: {error}</p>;
-  if (!data) return <p>Type a vibe above and hit Search.</p>;
+  if (loading) return <p className="vm-status">Searching real hostels…</p>;
+  if (error) return <p className="vm-status vm-error">Error: {error}</p>;
+  if (!data) return <p className="vm-status">Type a vibe above and hit Search.</p>;
 
   if (data.total_matches === 0) {
-    return <p>No hostels matched that search. Try a different location or vibe.</p>;
+    return <p className="vm-status">No hostels matched that search. Try a different location or vibe.</p>;
   }
 
   return (
     <div>
-      <p style={{ color: '#666', fontSize: 14 }}>
+      <p className="vm-summary">
         {data.total_matches} total matches — showing top {data.results_returned}
       </p>
       {data.results.map((hostel) => (
@@ -190,9 +205,12 @@ function App() {
   }
 
   return (
-    <div style={{ padding: 30, maxWidth: 700, margin: '0 auto' }}>
-      <h1>VibeMatch</h1>
-      <p>Find your perfect hostel by vibe — now powered by real search.</p>
+    <div className="vm-app">
+      <header className="vm-header">
+        <h1 className="vm-title">VibeMatch</h1>
+        <p className="vm-tagline">find your next stay, matched to your vibe</p>
+      </header>
+
       <SearchBox onSearch={handleSearch} loading={loading} />
       <Results loading={loading} error={error} data={data} />
     </div>

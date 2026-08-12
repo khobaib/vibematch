@@ -2116,7 +2116,8 @@
       "central_old_town",
       "solo_friendly",
       "female_solo_friendly",
-      "good_for_remote_work"
+      "good_for_remote_work",
+      "female_solo_safe"
     ],
     "reviews_summary": "Exceptionally well-reviewed (9.1-9.6/10 across 1,200-1,800+ reviews) social hostel in the heart of Antalya's old town. Guests consistently highlight the vibrant events schedule, very clean facilities, and staff who go well beyond expectations. One of the strongest and most consistent review profiles in this dataset.",
     "source_note": "Populated from Booking.com, Hostelworld, Hostelz, Tripadvisor, Hotels.com (searched July 2026). Very strong, consistent signal across all sources. Private room availability unclear from search - flagged as unknown rather than assumed. Not independently verified; awaiting manual review. LIGHT PASS (Agoda/Enuygun check): Agoda listing confirmed to exist (agoda.com/be-bold-hostel) but did not return accessible review text in search results. New details found: resident hostel dog 'Boldy', strong/hot shower pressure specifically praised, under-bed storage confirmed.",
@@ -2296,7 +2297,15 @@
     "reviews_summary": "Highly praised hostel in old Izmir (Basmane area) with an outstanding homemade vegan breakfast repeatedly called the best guests have had anywhere, and thoughtful personal touches from owner Ahmet. One guest planned a single night and stayed 8 days. Ratings range 8.1-8.9 across sources; one note flags the surrounding neighborhood as feeling a bit rough after dark.",
     "source_note": "Populated from Planet of Hotels, Tripadvisor, HotelsCombined, Hostelworld, Hostelz, Trip.com (searched July 2026). Very strong qualitative signal on breakfast and owner hospitality specifically. Not independently verified; awaiting manual review. LIGHT PASS (Agoda/Enuygun check): confirmed listed on both Agoda and Enuygun (enuygun.com/otel/detay/lotus-garden-hostel-izmir) but neither returned accessible review text in search. Found a breakfast pricing discrepancy across sources - see kitchen_food notes. CORRECTED per traveler's Q3 2022 stay: breakfast was not free during their visit.",
     "region": null,
-    "research_depth": "deep"
+    "research_depth": "deep",
+    "flagged_issues": [
+      {
+        "issue": "surrounding area (Basmane, old Izmir) can feel a bit sketchy at night, per one review summary",
+        "frequency": "single review note, not clearly quantified against the wider review base",
+        "severity": "minor",
+        "traveler_assessment": "reads as general neighborhood-feel caution rather than a specific incident - worth knowing for late-night arrivals, not indicative of a serious problem with the hostel itself"
+      }
+    ]
   },
   {
     "id": 14,
@@ -2810,7 +2819,8 @@
       "not_social",
       "comfortable_beds",
       "near_jazz_bar",
-      "old_city_location"
+      "old_city_location",
+      "cctv_secure"
     ],
     "reviews_summary": "A quiet, comfortable bed-and-breakfast-style hostel on the north edge of Chiang Mai's Old City, praised for exceptionally comfortable beds and a peaceful (not party) atmosphere - explicitly positioned as a relaxed retreat rather than a social hub. Located just steps from North Gate Jazz Co-op. Ratings mostly strong (8.5+ on multiple sites) with occasional maintenance complaints.",
     "source_note": "Populated from Planet of Hotels, Travelated, Hostelworld, Booking.com (searched July 2026). Consistent signal around comfort and quiet positioning. Not independently verified; awaiting manual review.",
@@ -3800,7 +3810,8 @@
       "outdoor_pool",
       "central_gracia",
       "budget_friendly",
-      "secure"
+      "secure",
+      "secure_entry"
     ],
     "reviews_summary": "Very Good rating (8.9/10, 3,371 reviews on Kayak). Standout features are an outdoor pool (uncommon for the price point) and a strictly enforced quiet policy that guests specifically appreciate for good rest. Consistently praised for cleanliness and friendly staff (Louis mentioned repeatedly).",
     "source_note": "Populated from momondo, Trip.com, Hostelz, Tripadvisor, Booking.com, Kayak (searched July 2026). Strong, consistent signal across sources. Not independently verified by traveler; awaiting manual review.",
@@ -4665,7 +4676,8 @@
       "female_friendly",
       "great_common_area",
       "artsy",
-      "central_jaipur"
+      "central_jaipur",
+      "female_solo_safe"
     ],
     "reviews_summary": "Outstandingly reviewed across every platform searched, with 'cleanest hostel in India' as a genuinely recurring, independent phrase from multiple reviewers rather than marketing language. Strong emphasis on community ('at least 53 new friends'), art, and hospitality. One of the most consistently praised properties in this entire dataset.",
     "source_note": "Populated from Planet of Hotels, Hostelz, Justdial, Tripadvisor, Hostelworld, Booking.com (searched July 2026). Exceptionally strong, consistent signal across 6 independent sources including 1,566 Justdial reviews. Not independently verified by traveler; awaiting manual review.",
@@ -5136,7 +5148,8 @@
       "family_friendly",
       "calm_not_party",
       "hotel_like_rooms",
-      "good_value"
+      "good_value",
+      "safe_residential_area"
     ],
     "reviews_summary": "Rebranded from 'Super OYO 426 All Day Hostel' to 'All Day Hostel @ BTS Bang Chak'. Consistently rated well (8.9-9.2/10 on Booking.com, 141 reviews) for cleanliness, comfort, and staff, though not centrally located (12.6km from city center, ~15-20 min from main tourist areas). One isolated report of a hostile front-desk incident stands out against otherwise strong reviews.",
     "source_note": "Populated from MakeMyTrip, Planet of Hotels, Booking.com, OYO Rooms, Tripadvisor, HotelsCombined (searched July 2026). IMPORTANT: property has been renamed since traveler likely visited - now 'All Day Hostel @ BTS Bang Chak', ex 'Super OYO 426 All Day Hostel'. Not independently verified beyond name history; awaiting manual review.",
@@ -6111,7 +6124,8 @@
       "solo_friendly",
       "female_friendly",
       "beach_lovers_retreat",
-      "vagator"
+      "vagator",
+      "female_solo_safe"
     ],
     "reviews_summary": "A pool-centered hostel in Vagator/Anjuna (8.4/10, 150 reviews), with the swimming pool and manager Raj's hospitality as the two most consistently praised elements across nearly every review found. Note: an unrelated similarly-named 'Mitra Hostel' also exists in Arambol - this entry is specifically the Vagator/Anjuna 'By The Pool' property.",
     "source_note": "Populated from HiChee, Hostelworld, Planet of Hotels, Klook, Hostelz, Goibibo, Guest Reservations (searched July 2026). IMPORTANT: a separate 'Mitra Hostel' exists in Arambol (no pool) - confirmed this entry is the Anjuna/Vagator 'By The Pool' branch matching the traveler's stated name. Not independently verified beyond name matching; awaiting manual review.",
@@ -8082,7 +8096,8 @@
       "central_lisbon",
       "backpacker_favorite",
       "warm_hospitality",
-      "no_lift"
+      "no_lift",
+      "female_solo_safe"
     ],
     "reviews_summary": "One of Lisbon's most beloved backpacker hostels (795+ reviews on Tripadvisor), famous for 'Mamma's Dinners' - affordable communal meals cooked by the owner's mother. Set in a charming 200-year-old building in the historic center, consistently praised for its warmth and hospitality. The lack of a lift is the most commonly noted drawback.",
     "source_note": "Populated from Tripadvisor, The Broke Backpacker (searched July 2026). Not a personally-visited property - added for geographic diversity. Not independently verified; awaiting manual review.",
@@ -8229,7 +8244,8 @@
       "digital_nomad_friendly",
       "female_solo_friendly",
       "mountain_views",
-      "traditional_architecture"
+      "traditional_architecture",
+      "female_solo_safe"
     ],
     "reviews_summary": "Rated #1 Best Value hostel in Morocco on Tripadvisor (4.7/5, 543 reviews), recently rebranded from 'Rodamon Riad' to 'The Central House Marrakech Medina' - part of the same Central House hostel brand as the Istanbul Taksim property already in this database. Praised for combining boutique-hotel aesthetics with genuine hostel warmth, set in a traditional riad with rooftop mountain views.",
     "source_note": "Populated from Tripadvisor, The Broke Backpacker, ThisHotel (searched July 2026). Not a personally-visited property - added for geographic diversity. NOTABLE: part of the same 'Central House' hostel brand as the already-catalogued Istanbul Taksim property (id 5) - worth knowing this is a small international chain, not a coincidence in naming. Not independently verified; awaiting manual review.",
@@ -8922,7 +8938,7 @@
       "artsy_rajasthani_decor",
       "rooftop_focused",
       "mixed_cleanliness_reports",
-      "safety_concern_flagged"
+      "guest_incident_reported"
     ],
     "flagged_issues": [
       {
@@ -10774,7 +10790,8 @@
       "sunset_spot",
       "riverside",
       "24hr_pool",
-      "helpful_staff"
+      "helpful_staff",
+      "guests_feel_safe"
     ],
     "reviews_summary": "A well-regarded riverside hostel directly on Sisowath Quay, defined by its 24-hour rooftop pool with unobstructed Tonle Sap River sunset views - independently described as offering backpacker prices with five-star scenery. Unusually, the dorm rooms (not the private rooms) get the coveted river-facing position. Staff hospitality (Lin specifically named) is a consistent strength, with only isolated service lapses noted among otherwise very strong reviews.",
     "source_note": "Traveler-specified addition, confirmed matches traveler's description (rooftop Tonle Sap view, pool, bar). Populated from Trip.com, Tripadvisor, Travelfish (independent review), easy-cambodia.com (searched July 2026). Address confirmed: 151 Sisowath Quay, near corner with Street 110, Phnom Penh. Strong, consistent, detailed signal across sources. Not independently verified; awaiting manual review.",
@@ -12414,7 +12431,8 @@
     "vibe_tags": [
       "award_winning",
       "old_town_prague",
-      "great_dorms"
+      "great_dorms",
+      "secure_storage"
     ],
     "reviews_summary": "An award-winning hostel in Prague's Old Town, praised for thoughtfully designed dorm beds and an unbeatable location near Charles Bridge.",
     "source_note": "Populated from nomadicmick.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
@@ -18016,7 +18034,8 @@
       "sauna",
       "gym",
       "social",
-      "party_hostel"
+      "party_hostel",
+      "female_solo_safe"
     ],
     "reviews_summary": "A large, amenity-rich hostel in Florence often ranked among the top 3 in Europe for solo travelers - features a genuine indoor/outdoor pool, sauna, and gym alongside a lively bar/restaurant.",
     "source_note": "Populated from thebrokebackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (Europe), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
@@ -23242,7 +23261,8 @@
     ],
     "vibe_tags": [
       "female_solo_friendly",
-      "highly_rated"
+      "highly_rated",
+      "female_solo_safe"
     ],
     "reviews_summary": "Independently rated the best hostel in South America for solo female travelers, in Buenos Aires.",
     "source_note": "Populated from southamericabackpacker.com (searched August 2026). NOTE: added as part of a broad continental-diversity batch (South America), not personally visited, researched via broader regional searches rather than deep multi-source verification. Treat as lighter-touch/lower-confidence data pending manual review.",
