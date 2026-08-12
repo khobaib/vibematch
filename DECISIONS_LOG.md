@@ -78,6 +78,20 @@ ranker would be a black box at this stage, with no training data to justify the 
 
 ## Data Decisions
 
+### Two-tier research depth: deep-dive for personal/testing-critical hostels, lighter-touch for broad diversity batches
+Formalizing a pattern used three times now (a 50-hostel diversity batch, a 10-hostel Southeast
+Asia batch, and a 60-hostel Europe/Australia/South America batch): personally-visited hostels and
+ones added to fix a specific tested gap (e.g. the Bangkok party hostel fix) get full multi-source
+research per property. Large-scale geographic diversity batches instead use one or two broader
+"best hostels in X" searches per region, populate leaner entries (more `null` fields where the
+broader search didn't surface specifics), and explicitly flag lower-confidence inferences (e.g. a
+specific chain branch inferred from the chain's known regional presence rather than a directly
+verified listing) with a `"LOWER CONFIDENCE ENTRY"` marker in `source_note`.
+**Why:** Full deep-dive research per hostel doesn't scale to filling geographic gaps at the volume
+needed for realistic matching-engine testing (tens of hostels per region). The tradeoff is made
+explicit and auditable rather than pretending every entry has equal confidence — every entry's
+`source_note` states plainly which tier it was researched at.
+
 ### Schema: room-level vs. hostel-level fields
 Fields that vary by room type (price, bathroom type, air conditioning, etc.) live in a
 `room_types[]` array; fields true for the whole property (staff friendliness, kitchen, location)
@@ -195,6 +209,30 @@ Road Hostel and Revolution Khao San by The Bliss, both `party_level: "high"`. Ve
 the same query that previously returned 0 results now returns 2, both scoring well. Worth keeping
 in mind as a general lesson — a "zero results" outcome is sometimes a genuine data gap rather than
 a matching bug, and the fix is adding real content, not tweaking the formula.
+
+### 🟢 RESOLVED — COUNTRY_TO_CONTINENTS lookup fell out of sync after a large data expansion
+Found via self-check (not user-reported) after adding 60 new hostels across Europe, Australia, and
+South America to close known geographic gaps: the `COUNTRY_TO_CONTINENTS` static lookup in
+`matching.py` only covered the ~22 countries present *before* the expansion. 18 newly-added
+countries (Argentina, Italy, France, Brazil, Chile, etc.) were completely missing from the table,
+which would have silently broken every continent-level search ("hostel in Europe", "hostel in
+South America") for most of the new data — the hard location filter would have excluded these
+hostels entirely, with no error or warning. Caught by explicitly diffing the dataset's country set
+against the lookup table's keys before considering the batch done, rather than assuming the earlier
+table would "just still work." Fixed by adding all missing countries; verified directly — a "South
+America" search went from 2 total matches (before this batch existed) to 22 after both the data
+and the lookup fix.
+
+### 🟡 OPEN — Country-to-continent mapping requires manual sync on every new country added
+`COUNTRY_TO_CONTINENTS` in `matching.py` is a hand-maintained dictionary, not derived from any
+external source. Already caused one real gap (18 countries missing after the Europe/Australia/
+South America batch, caught before commit — see resolved section above). The risk isn't gone,
+just currently patched: every future country added to `hostels.json` requires a matching manual
+update to this table, with nothing enforcing that the two stay in sync.
+**Fix:** Either add a startup check that errors/warns if any country in the loaded hostel dataset
+is missing from the lookup table (cheap, catches the problem automatically going forward), or
+replace the hand-maintained dict with a proper country→continent library (e.g. `pycountry` +
+a continent-mapping package) so it's never manually maintained at all.
 
 ### 🟡 OPEN — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
