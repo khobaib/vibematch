@@ -34,13 +34,20 @@ personal hostel stays across Asia and Europe, which then became the requirements
   into structured product data (location, budget, vibe, traveler type), including *inferred*
   signals a naive keyword search would miss — e.g. reading "wants to shop at the local market"
   as a signal for a longer stay, not just a tourist visit
-- **A real matching engine** — scores a hand-curated database of 100+ hostels against that
-  intent, with hard constraints (location) kept separate from soft ranking signals (budget,
-  vibe) — a distinction that took real product judgment to get right, documented below
-- **A React frontend** — search box, results, loading/error states
+- **A real matching engine** — scores a hand-curated database of 228 hostels across 40 countries
+  against that intent, with hard constraints (location) kept separate from soft ranking signals
+  (budget, vibe) — a distinction that took real product judgment to get right, documented below.
+  Every point in the final score is individually auditable, never an opaque number.
+- **AI-generated "why we matched this" explanations** — a second Claude call turns the raw score
+  breakdown into a scannable verdict + highlights + heads-ups format, honest by design (a weak or
+  mismatched result says so plainly instead of being spun positive), including calibrated
+  disclosure of genuine flagged safety/quality issues from past guest reports
+- **A React frontend, connected end-to-end to the real backend** — live search, live scoring,
+  live AI explanations, with proper loading/error/data states and a custom "boarding pass /
+  travel stamp" visual design system
 
 ```
-User query → Claude intent parser → matching engine → ranked results + reasons
+User query → Claude intent parser → matching engine → ranked results + reasons → AI explanation
 ```
 
 ---
@@ -76,9 +83,9 @@ A few examples of the judgment calls captured there:
 | Layer | Tech |
 |---|---|
 | Backend | Python, FastAPI |
-| AI | Claude (Anthropic API) — intent parsing, structured extraction |
+| AI | Claude (Anthropic API) — intent parsing, structured extraction, AI-generated match explanations |
 | Frontend | React, Vite |
-| Data | Hand-curated JSON dataset (100+ hostels), migration path to PostgreSQL planned |
+| Data | Hand-curated JSON dataset (228 hostels, 40 countries), migration path to PostgreSQL planned |
 
 Hands-on across the full stack was a deliberate choice, not incidental — it's the fastest way I
 know to pressure-test a product idea against reality instead of a slide.
@@ -87,13 +94,26 @@ know to pressure-test a product idea against reality instead of a slide.
 
 ## Status
 
-Actively in progress. Currently working: intent parsing → matching → ranked results with
-explanations, tested against a 100+ hostel dataset spanning Asia, Europe, and Australia.
+The core loop is live and working end-to-end: real query → real intent parsing → real matching
+against 228 hostels → real AI-generated explanations, all connected through an actual frontend,
+not mocked data. ~18-20 real bugs were found and fixed through deliberate adversarial testing
+before this was considered stable (full list in the decision log).
 
-**Not yet built:** frontend connected to the real backend (currently uses mock data),
-AI-generated "why we matched this" explanations, and a production data pipeline for hostels
-beyond the personally-curated seed set — scoped and reasoned through in the decision log, not
-just left as a TODO.
+**Actively being extended right now:**
+- **Semantic vibe matching** — replacing pure text/substring vibe-tag matching with
+  embeddings-based similarity, so a query like "calm surroundings" correctly matches a hostel
+  tagged "quiet" instead of scoring zero for not sharing literal text. A known, self-diagnosed
+  limitation being fixed deliberately, not discovered by a user.
+- **An automated eval suite** — turning the ~20 adversarial test cases already documented in the
+  decision log into a repeatable regression suite, so future prompt/scoring changes can be
+  checked automatically instead of only by hand.
+- **Native structured outputs** — moving intent parsing and explanation generation off manual
+  JSON-string parsing onto Claude's tool-use/forced-schema output for guaranteed-valid responses.
+
+**Not yet built:** public deployment/hosting, real OTA data integration (live pricing/availability
+from Hostelworld/Booking.com — outreach in progress, both require partner approval rather than a
+self-serve API key), and user accounts (out of scope for this stage) — each scoped and reasoned
+through in the decision log, not left as a bare TODO.
 
 See [`DECISIONS_LOG.md`](./DECISIONS_LOG.md) for the full record.
 
