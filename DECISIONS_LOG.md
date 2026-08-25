@@ -189,19 +189,44 @@ score values are stable/comparable across repeated identical searches, and prefe
 matching logic directly with a fixed intent dict (as done throughout this log) over testing via
 the live API when reproducibility matters.
 
-### 🟡 OPEN — Vibe tag matching is pure text/substring comparison, not semantic understanding
-`matching.py` only scores a vibe_tag match when the actual text overlaps (exact match, or one
-string is a substring of the other) — it has no concept of related meaning. "calm surroundings"
-(query) vs "quiet" (hostel tag) are conceptually near-identical to a human but score zero,
-because neither string literally contains the other. Confirmed directly: a query with "calm
+### 🟢 RESOLVED — Vibe tag matching was pure text/substring comparison, not semantic understanding
+`matching.py` only scored a vibe_tag match when the actual text overlapped (exact match, or one
+string a substring of the other) — it had no concept of related meaning. "calm surroundings"
+(query) vs "quiet" (hostel tag) are conceptually near-identical to a human but scored zero,
+because neither string literally contained the other. Confirmed directly: a query with "calm
 surroundings" as a vibe tag scored a hostel tagged "quiet" as a pure location-only match (30
-points), with no credit at all for the clearly-related vibe. The semantic understanding only
-happens once, upstream, inside Claude's intent-parsing step — everything downstream in
-`matching.py` is deterministic string logic with no meaning attached. Proper fix would require
-genuine semantic similarity (e.g. embeddings, or a secondary LLM call to judge relatedness)
-rather than text matching — a meaningfully bigger feature, not a quick patch. Deferred; not
-fixed now, but explicitly tracked so the matching engine's actual capability isn't overstated
-later.
+points), with no credit at all for the clearly-related vibe. Fixed by adding a genuine semantic
+layer: Claude (Haiku 4.5) writes a natural-language `vibe_profile` paragraph per hostel from its
+existing structured fields (228 hostels, ~$0.35 total), each profile is embedded via Voyage AI
+(`voyage-4`), and at search time the traveler's raw query is embedded the same way and compared
+via cosine similarity — added to `matching.py` as a new, auditable breakdown line
+(`compute_semantic_entries()`), scored relative to the current candidate pool (same pattern as
+the relative-cheapness budget fix below). Validated directly: querying "a quiet peaceful place
+great for remote work, not a party scene" surfaced hostels whose profiles explicitly said
+"quiet," "peaceful," or "low-key" at the top, entirely via vector similarity — no tag overlap
+required. Separately validated that a known party hostel's nearest neighbors were all other
+party hostels, with a meaningfully lower cross-similarity to the calm cluster (0.66) than either
+cluster's internal similarity (~0.80+) — confirming the embedding space genuinely separates
+"vibe" as a concept. See the new open item below for what's *not* yet validated about this.
+
+### 🟡 OPEN — Semantic similarity and structured signals can disagree, not yet validated across many real cases
+The new semantic layer (see resolved item above) and the existing structured scoring
+(`party_preference`, exact/partial `vibe_tags` matching) are deliberately independent sources of
+evidence — each reasons about the query in its own way and can legitimately reach different
+conclusions about the same hostel. Observed directly in a real live search ("a chill hostel in
+Goa good for remote work, not too partyish"): several results received both a `-1` penalty for
+"party vibe (medium) doesn't closely match your stated preference" *and* a positive semantic
+bonus (e.g. +9, +8) for matching "chill/remote work" — each signal being independently honest
+about what it measures, not a bug, but also not yet stress-tested against the kind of adversarial
+cases already logged elsewhere in this file (the "calm vs quiet" case above, the Weligama
+non-determinism case, etc.). Specifically not yet known: how often the two systems disagree, in
+which direction, and whether the current point weighting (semantic capped at 15, comparable to a
+single vibe-tag category) is actually well-calibrated or just a reasonable-sounding starting
+guess.
+**Fix:** Task #6 (validate semantic matching against known tech-debt cases) — run the semantic
+layer against a broad set of real queries, including the existing documented adversarial cases in
+this log, and specifically log cases where semantic and structured scoring disagree so the
+pattern (if any) becomes visible rather than anecdotal.
 
 ### 🟢 RESOLVED — Bangkok had no genuine party hostel, causing valid searches to return zero results
 Found via testing "party hostel in Bangkok, want the nightlife": `party_preference: "prefer_party"`

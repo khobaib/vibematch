@@ -80,7 +80,7 @@ def load_hostels(path="hostels.json"):
         return json.load(f)
 
 
-def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None) -> dict:
+def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, semantic_entry: dict = None) -> dict:
     """
     Returns a dict: {"score": int, "breakdown": [{"points": int, "reason": str}, ...]}
 
@@ -97,6 +97,14 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None) -
     fixed table can't know that. Whatever geographic grain the traveler
     searched at (city/region/country/continent), the candidate pool is
     already scoped correctly by the time this function runs.
+
+    semantic_entry: optional, pre-computed breakdown entry (see
+    compute_semantic_entries()) capturing how well this hostel's
+    LLM-written vibe_profile semantically matches the traveler's raw
+    free-text query, via Voyage embeddings + cosine similarity. Computed
+    once per search (not per hostel) in match_hostels() and passed in
+    here so this function stays a pure "given the facts, score them"
+    step — it doesn't know or care that an API call happened upstream.
     """
     breakdown = []
 
@@ -345,11 +353,101 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None) -
             # transparency principle as the missing-price case earlier.
             add(0, "party level not specified for this hostel — could not confirm how well it matches your social/quiet preference")
 
+    # --- 9. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
+    # Complements the exact/partial vibe_tags matching above (#3): tags catch
+    # explicit keyword overlap, this catches nuance a tag vocabulary can't
+    # enumerate (e.g. "somewhere I can focus in the mornings but still meet
+    # people at night" has no single matching tag, but embeds close to
+    # hostels whose vibe_profile actually describes that balance).
+    if semantic_entry:
+        add(semantic_entry["points"], semantic_entry["reason"])
+
     total_score = sum(entry["points"] for entry in breakdown)
     return {"score": total_score, "breakdown": breakdown}
 
 
-def match_hostels(intent: dict, hostels: list, top_n: int = 10) -> dict:
+# Max points the semantic-similarity bonus can contribute to a single
+# hostel's score. Kept modest relative to location (30) and budget (30) so
+# it acts as a nuance layer on top of the existing signals, not a
+# replacement for them — deliberately tunable, see Task #6 (validation
+# against known tech-debt cases) before this weight is considered final.
+MAX_SEMANTIC_POINTS = 15
+
+
+def compute_semantic_entries(hostels: list, raw_query: str, hostel_embeddings: dict = None) -> dict:
+    """
+    Returns {hostel_id: {"points": int, "reason": str}} for hostels in the
+    given (already location-filtered) candidate pool that have a
+    precomputed vibe_profile embedding, using RELATIVE normalization
+    within this candidate pool — the single best semantic match in the
+    pool gets close to MAX_SEMANTIC_POINTS, the worst gets close to 0.
+
+    This mirrors the relative-cheapness pattern already used for
+    budget-conscious scoring above (see score_hostel, step 2): cosine
+    similarity from Voyage's query/document embeddings doesn't have a
+    fixed, universally-meaningful absolute scale (empirically, relevant
+    query<->document pairs in this dataset land somewhere around 0.5-0.6,
+    but that's not a documented guarantee), so ranking relative to what's
+    actually in the current search is more robust than picking a magic
+    absolute threshold.
+
+    KNOWN LIMITATION (same tradeoff already accepted for relative
+    cheapness): because normalization is relative to the current pool,
+    the single best match always gets close to full credit even if
+    nothing in that location is a great vibe fit, and the worst gets
+    ~0 even if it's a decent fit. A future improvement could calibrate
+    against a fixed reference distribution instead of pool-relative
+    min/max. Tracked for revisit alongside Task #6.
+
+    Degrades gracefully to {} (no semantic scoring, rest of matching
+    proceeds normally) if: no raw_query was given, hostel_embeddings.json
+    doesn't exist yet, or the live Voyage query-embedding call fails for
+    any reason (network, missing/invalid API key, rate limit, etc.).
+    Semantic matching is a bonus layer, not a hard dependency — it should
+    never be able to take down search.
+    """
+    if not raw_query:
+        return {}
+
+    if hostel_embeddings is None:
+        try:
+            from semantic_similarity import load_hostel_embeddings
+            hostel_embeddings = load_hostel_embeddings()
+        except Exception:
+            return {}
+
+    try:
+        from semantic_similarity import embed_query, cosine_similarity
+        query_vec = embed_query(raw_query)
+    except Exception:
+        return {}
+
+    similarities = {}
+    for h in hostels:
+        vec = hostel_embeddings.get(h["id"])
+        if vec is not None:
+            similarities[h["id"]] = cosine_similarity(query_vec, vec)
+
+    if not similarities:
+        return {}
+
+    sim_min = min(similarities.values())
+    sim_max = max(similarities.values())
+    spread = sim_max - sim_min
+
+    entries = {}
+    for hostel_id, sim in similarities.items():
+        relative = ((sim - sim_min) / spread) if spread > 0 else 1.0
+        points = round(relative * MAX_SEMANTIC_POINTS)
+        if points > 0:
+            entries[hostel_id] = {
+                "points": points,
+                "reason": f"vibe profile semantically matches how you described what you're looking for (similarity {sim:.2f})",
+            }
+    return entries
+
+
+def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str = None, hostel_embeddings: dict = None) -> dict:
     """
     STEP 1 — Hard filter: if a location was specified, only consider
     hostels that are actually in that city/region/country. Location is
@@ -359,6 +457,18 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10) -> dict:
     STEP 2 — Soft ranking: among the location-filtered hostels (or all
     hostels, if no location was given), score by budget/vibe/profile
     and sort descending.
+
+    raw_query: the traveler's original free-text search string (before
+    Claude's intent parsing). Optional — pass it to enable semantic vibe
+    matching (see compute_semantic_entries). Omit it (e.g. in tests, or
+    the __main__ block below) and matching falls back to the original
+    structured-fields-only scoring, unchanged.
+
+    hostel_embeddings: optional pre-loaded {hostel_id: vector} dict (see
+    semantic_similarity.load_hostel_embeddings). Pass this in from the
+    caller (e.g. loaded once at FastAPI startup, like HOSTELS itself) to
+    avoid re-reading hostel_embeddings.json from disk on every request.
+    If omitted, it's loaded lazily on first use.
 
     Returns a dict: {
         "total_matches": int,   # how many hostels scored > 0, before truncation
@@ -392,9 +502,16 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10) -> dict:
     ]
     local_price_bounds = (min(candidate_price_mins), max(candidate_price_mins)) if candidate_price_mins else None
 
+    # Semantic entries are computed ONCE for the whole candidate pool (one
+    # Voyage API call for the query embedding, not one per hostel), then
+    # looked up per-hostel inside the scoring loop below. See
+    # compute_semantic_entries() for the relative-normalization approach
+    # and its known limitation.
+    semantic_entries = compute_semantic_entries(hostels, raw_query, hostel_embeddings) if raw_query else {}
+
     all_results = []
     for hostel in hostels:
-        result = score_hostel(hostel, intent, local_price_bounds)
+        result = score_hostel(hostel, intent, local_price_bounds, semantic_entries.get(hostel["id"]))
         if result["score"] > 0:  # drop zero/negative matches entirely
             all_results.append({
                 "id": hostel["id"],

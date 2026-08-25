@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 import anthropic
 
 from matching import load_hostels, match_hostels
+from semantic_similarity import load_hostel_embeddings
 
 load_dotenv()
 
@@ -29,6 +30,19 @@ client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 # Load hostels once at startup, not on every request
 HOSTELS = load_hostels("hostels.json")
 HOSTELS_BY_ID = {h["id"]: h for h in HOSTELS}
+
+# Load precomputed vibe-profile embeddings once at startup too, for
+# semantic matching (see matching.compute_semantic_entries). This is
+# genuinely optional infrastructure: if hostel_embeddings.json hasn't
+# been generated yet (or Voyage isn't reachable at request time later),
+# search should still work — just without the semantic bonus score. Never
+# let a missing/broken embeddings file take down the whole API.
+try:
+    HOSTEL_EMBEDDINGS = load_hostel_embeddings()
+    print(f"Loaded {len(HOSTEL_EMBEDDINGS)} hostel vibe-profile embeddings for semantic matching.")
+except Exception as e:
+    HOSTEL_EMBEDDINGS = None
+    print(f"WARNING: could not load hostel embeddings, semantic matching disabled: {e}")
 
 
 def extract_text(message) -> str:
@@ -201,7 +215,11 @@ a label a tired person can read in half a second — not a grammatically complet
 @app.post("/search")
 def search(request: SearchRequest):
     intent = parse_intent(request.query)
-    outcome = match_hostels(intent, HOSTELS, top_n=10)
+    outcome = match_hostels(
+        intent, HOSTELS, top_n=10,
+        raw_query=request.query,
+        hostel_embeddings=HOSTEL_EMBEDDINGS,
+    )
 
     return {
         "parsed_intent": intent,
