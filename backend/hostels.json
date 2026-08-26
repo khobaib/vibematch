@@ -557,8 +557,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "balcony views, cliff-adjacent",
-      "view_from": "room"
+      "view_type": [
+        "cliff",
+        "ocean"
+      ],
+      "view_from": [
+        "room",
+        "balcony"
+      ],
+      "original_free_text": {
+        "view_type": "balcony views, cliff-adjacent",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "80m from Odayam Beach",
@@ -946,8 +956,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rooftop city views",
-      "view_from": "rooftop_terrace"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "rooftop city views",
+        "view_from": "rooftop_terrace"
+      }
     },
     "exclusive_features": [
       "fully renovated historic building",
@@ -1449,8 +1467,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rooftop views",
-      "view_from": "rooftop_garden"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "rooftop views",
+        "view_from": "rooftop_garden"
+      }
     },
     "exclusive_features": [
       "free in-house yoga studio and classes",
@@ -1625,8 +1651,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rooftop terrace with mural",
-      "view_from": "rooftop"
+      "view_type": [
+        "other"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "rooftop terrace with mural",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "rooftop terrace with movie projector and funky mural",
@@ -2827,8 +2861,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city view balcony in some rooms",
-      "view_from": "room"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "room",
+        "balcony"
+      ],
+      "original_free_text": {
+        "view_type": "city view balcony in some rooms",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "30 seconds from North Gate Jazz Co-op live music bar",
@@ -3156,8 +3199,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "garden and temple views",
-      "view_from": "terrace"
+      "view_type": [
+        "garden",
+        "temple"
+      ],
+      "view_from": [
+        "terrace"
+      ],
+      "original_free_text": {
+        "view_type": "garden and temple views",
+        "view_from": "terrace"
+      }
     },
     "exclusive_features": [
       "faces an active temple with nightly live Balinese music",
@@ -3326,8 +3378,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "pool view from some rooms/balconies",
-      "view_from": "room"
+      "view_type": [
+        "pool"
+      ],
+      "view_from": [
+        "room",
+        "balcony"
+      ],
+      "original_free_text": {
+        "view_type": "pool view from some rooms/balconies",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [],
     "vibe_tags": [
@@ -3657,8 +3718,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "garden views",
-      "view_from": "room_and_common_area"
+      "view_type": [
+        "garden"
+      ],
+      "view_from": [
+        "room",
+        "common_area"
+      ],
+      "original_free_text": {
+        "view_type": "garden views",
+        "view_from": "room_and_common_area"
+      }
     },
     "exclusive_features": [
       "lush garden with hammocks and badminton",
@@ -3828,8 +3898,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city views from some rooms",
-      "view_from": "room"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "city views from some rooms",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "outdoor pool - relatively rare for a budget Barcelona hostel",
@@ -3984,8 +4062,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain views from common area",
-      "view_from": "common_area"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "common_area"
+      ],
+      "original_free_text": {
+        "view_type": "mountain views from common area",
+        "view_from": "common_area"
+      }
     },
     "exclusive_features": [
       "karaoke club on-site",
@@ -4166,8 +4252,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "360-degree rooftop view, mountain/river views from rooms",
-      "view_from": "rooftop_and_room"
+      "view_type": [
+        "mountain",
+        "river"
+      ],
+      "view_from": [
+        "rooftop",
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "360-degree rooftop view, mountain/river views from rooms",
+        "view_from": "rooftop_and_room"
+      }
     },
     "exclusive_features": [
       "directly beside the Parvati River with mountain range views",
@@ -4343,8 +4439,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "apple orchard and 360-degree mountain views",
-      "view_from": "room_and_common_area"
+      "view_type": [
+        "mountain",
+        "other"
+      ],
+      "view_from": [
+        "room",
+        "common_area"
+      ],
+      "original_free_text": {
+        "view_type": "apple orchard and 360-degree mountain views",
+        "view_from": "room_and_common_area"
+      }
     },
     "exclusive_features": [
       "set in the middle of an active apple orchard with 360-degree mountain views (confirmed by traveler)",
@@ -4521,8 +4627,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city views from some rooms, cozy rooftop",
-      "view_from": "room_and_rooftop"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "room",
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "city views from some rooms, cozy rooftop",
+        "view_from": "room_and_rooftop"
+      }
     },
     "exclusive_features": [
       "deeply local curated tours (Ganga sunrise boat, temple walks, Banarasi food)",
@@ -4855,8 +4970,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "views of Pushkar ghats from rooftop",
-      "view_from": "rooftop"
+      "view_type": [
+        "temple",
+        "other"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "views of Pushkar ghats from rooftop",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "big peaceful rooftop with ghat views",
@@ -5005,8 +5129,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city views in some rooms",
-      "view_from": "room"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "city views in some rooms",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "adults-only, quieter positioning",
@@ -5657,8 +5789,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "beachfront",
-      "view_from": "property"
+      "view_type": [
+        "ocean"
+      ],
+      "view_from": [
+        "property_grounds",
+        "common_area"
+      ],
+      "original_free_text": {
+        "view_type": "beachfront",
+        "view_from": "property"
+      }
     },
     "exclusive_features": [
       "directly on the beach",
@@ -5834,8 +5975,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "coconut grove canopy, night sky through jungle",
-      "view_from": "cabana"
+      "view_type": [
+        "jungle",
+        "other"
+      ],
+      "view_from": [
+        "cabana"
+      ],
+      "original_free_text": {
+        "view_type": "coconut grove canopy, night sky through jungle",
+        "view_from": "cabana"
+      }
     },
     "exclusive_features": [
       "unique cabanas built from rice straw and bamboo, each structure individually designed",
@@ -6160,8 +6310,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "pool views from some rooms",
-      "view_from": "room"
+      "view_type": [
+        "pool"
+      ],
+      "view_from": [
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "pool views from some rooms",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "well-maintained swimming pool as the centerpiece feature",
@@ -6339,8 +6497,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "garden and courtyard views",
-      "view_from": "courtyard"
+      "view_type": [
+        "garden"
+      ],
+      "view_from": [
+        "courtyard"
+      ],
+      "original_free_text": {
+        "view_type": "garden and courtyard views",
+        "view_from": "courtyard"
+      }
     },
     "exclusive_features": [
       "housed in a beautifully restored historic building run by a team of architects",
@@ -6509,8 +6675,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "Varkala Cliff and sea views",
-      "view_from": "property"
+      "view_type": [
+        "cliff",
+        "ocean"
+      ],
+      "view_from": [
+        "property_grounds",
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "Varkala Cliff and sea views",
+        "view_from": "property"
+      }
     },
     "exclusive_features": [
       "prime location directly on Varkala Cliff, steps from the beach"
@@ -6683,8 +6859,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "Black Beach sea views from some rooms",
-      "view_from": "room"
+      "view_type": [
+        "ocean"
+      ],
+      "view_from": [
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "Black Beach sea views from some rooms",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "direct access to Varkala's distinctive Black Beach (charcoal-colored sand)",
@@ -6856,8 +7040,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "beachfront, direct ocean views",
-      "view_from": "property"
+      "view_type": [
+        "ocean"
+      ],
+      "view_from": [
+        "property_grounds",
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "beachfront, direct ocean views",
+        "view_from": "property"
+      }
     },
     "exclusive_features": [
       "located directly on Nacpan Beach, one of Palawan's most beautiful 4km stretches",
@@ -7034,8 +7227,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "pool and garden views",
-      "view_from": "room"
+      "view_type": [
+        "pool",
+        "garden"
+      ],
+      "view_from": [
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "pool and garden views",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "small pool in the middle of the city, uncommon for the price point",
@@ -7210,8 +7412,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "Taj Mahal views from rooftop and some rooms",
-      "view_from": "rooftop_and_room"
+      "view_type": [
+        "temple"
+      ],
+      "view_from": [
+        "rooftop",
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "Taj Mahal views from rooftop and some rooms",
+        "view_from": "rooftop_and_room"
+      }
     },
     "exclusive_features": [
       "one of the closest hostels to the Taj Mahal (as close as 200m / 4-minute walk)",
@@ -7534,8 +7745,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "tea plantations and railway",
-      "view_from": "room_and_terrace"
+      "view_type": [
+        "other"
+      ],
+      "view_from": [
+        "room",
+        "terrace"
+      ],
+      "original_free_text": {
+        "view_type": "tea plantations and railway",
+        "view_from": "room_and_terrace"
+      }
     },
     "exclusive_features": [
       "located right next to Ella's scenic railway line, with trains passing rarely enough to not disturb sleep",
@@ -8297,8 +8517,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain range views from rooftop",
-      "view_from": "rooftop_veranda"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "mountain range views from rooftop",
+        "view_from": "rooftop_veranda"
+      }
     },
     "exclusive_features": [
       "housed in a traditional Moroccan riad with authentic architecture",
@@ -8477,8 +8705,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "180-degree panoramic city and Himalayan mountain views",
-      "view_from": "rooftop"
+      "view_type": [
+        "city",
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "180-degree panoramic city and Himalayan mountain views",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "180-degree panoramic rooftop views of Kathmandu with the Himalayas as backdrop",
@@ -8652,8 +8889,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "Aravali hills sunset views from rooftop",
-      "view_from": "rooftop"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "Aravali hills sunset views from rooftop",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "outdoor swimming pool - relatively rare among Pushkar budget hostels",
@@ -8823,8 +9068,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain views from some private rooms",
-      "view_from": "room"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "room",
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "mountain views from some private rooms",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "rooftop bakery, distinct from most hostel offerings",
@@ -8995,8 +9249,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rooftop sunset views, breathtaking per property description",
-      "view_from": "rooftop"
+      "view_type": [
+        "other"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "rooftop sunset views, breathtaking per property description",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "voted India's Best Hostel 2019 by Hostelworld",
@@ -9189,8 +9451,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "stunning Himalayan mountain views from rooftop hammocks and some rooms",
-      "view_from": "rooftop_and_room"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop",
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "stunning Himalayan mountain views from rooftop hammocks and some rooms",
+        "view_from": "rooftop_and_room"
+      }
     },
     "exclusive_features": [
       "rooftop hammocks with direct Himalayan mountain views",
@@ -9800,8 +10071,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "park views from rooftop",
-      "view_from": "rooftop"
+      "view_type": [
+        "park"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "park views from rooftop",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "9th floor rooftop bar, described as the premier party spot in the city",
@@ -9971,8 +10250,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rice paddy views from the deck",
-      "view_from": "deck"
+      "view_type": [
+        "rice_paddy"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "rice paddy views from the deck",
+        "view_from": "deck"
+      }
     },
     "exclusive_features": [
       "deck overlooking lush rice paddies - a distinctive setting among Vietnam's hostels",
@@ -10859,8 +11146,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "unobstructed Tonle Sap River sunset views from rooftop pool, bar, and some dorm rooms",
-      "view_from": "rooftop_and_some_dorms"
+      "view_type": [
+        "river"
+      ],
+      "view_from": [
+        "rooftop",
+        "room",
+        "pool_area"
+      ],
+      "original_free_text": {
+        "view_type": "unobstructed Tonle Sap River sunset views from rooftop pool, bar, and some dorm rooms",
+        "view_from": "rooftop_and_some_dorms"
+      }
     },
     "exclusive_features": [
       "24-hour rooftop pool directly overlooking the Tonle Sap River, called 'backpacker prices with five-star views' by an independent reviewer",
@@ -11058,8 +11355,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city views from rooms",
-      "view_from": "room"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "city views from rooms",
+        "view_from": "room"
+      }
     },
     "exclusive_features": [
       "three separate swimming pools across the property, including a newest 26-meter tropical pool",
@@ -26096,8 +26401,19 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain/river valley",
-      "view_from": "rooftop cafe"
+      "view_type": [
+        "mountain",
+        "river"
+      ],
+      "view_from": [
+        "rooftop",
+        "balcony",
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "mountain/river valley",
+        "view_from": "rooftop cafe"
+      }
     },
     "exclusive_features": [
       "rooftop cafe with Himalayan foothill views",
@@ -26265,8 +26581,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "lake",
-      "view_from": "rooftop"
+      "view_type": [
+        "lake"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "lake",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "rooftop with stunning Lake Pichola views"
@@ -26444,8 +26768,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rural/farmland",
-      "view_from": "common area"
+      "view_type": [
+        "countryside",
+        "rice_paddy"
+      ],
+      "view_from": [
+        "common_area"
+      ],
+      "original_free_text": {
+        "view_type": "rural/farmland",
+        "view_from": "common area"
+      }
     },
     "exclusive_features": [
       "hut-style accommodation set in a peaceful rural/farm setting away from central Hampi's crowds"
@@ -26979,8 +27312,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain",
-      "view_from": "rooftop"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "mountain",
+        "view_from": "rooftop"
+      }
     },
     "exclusive_features": [
       "rooftop gathering area",
@@ -27175,8 +27516,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "sea/cliff",
-      "view_from": "dorms and common areas"
+      "view_type": [
+        "ocean",
+        "cliff"
+      ],
+      "view_from": [
+        "room",
+        "common_area"
+      ],
+      "original_free_text": {
+        "view_type": "sea/cliff",
+        "view_from": "dorms and common areas"
+      }
     },
     "exclusive_features": [
       "perched on cliffs directly overlooking Gokarna Main Beach",
@@ -27352,8 +27703,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain",
-      "view_from": "rooftop terrace"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop",
+        "terrace"
+      ],
+      "original_free_text": {
+        "view_type": "mountain",
+        "view_from": "rooftop terrace"
+      }
     },
     "exclusive_features": [
       "rooftop terrace with Himalayan mountain views",
@@ -27902,8 +28262,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city",
-      "view_from": "rooftop terrace and some open-air balcony rooms"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "rooftop",
+        "balcony"
+      ],
+      "original_free_text": {
+        "view_type": "city",
+        "view_from": "rooftop terrace and some open-air balcony rooms"
+      }
     },
     "exclusive_features": [
       "twelve rooms with private open-air balconies",
@@ -28068,8 +28437,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain",
-      "view_from": "rooftop terrace restaurant"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop",
+        "restaurant"
+      ],
+      "original_free_text": {
+        "view_type": "mountain",
+        "view_from": "rooftop terrace restaurant"
+      }
     },
     "exclusive_features": [
       "rooftop terrace restaurant with mountain views",
@@ -28382,8 +28760,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city",
-      "view_from": "rooftop terrace"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "city",
+        "view_from": "rooftop terrace"
+      }
     },
     "exclusive_features": [
       "named after Mount Everest's elevation (8,848m)",
@@ -28548,8 +28934,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain",
-      "view_from": "rooftop terrace with continental breakfast service"
+      "view_type": [
+        "mountain",
+        "lake"
+      ],
+      "view_from": [
+        "rooftop",
+        "common_area"
+      ],
+      "original_free_text": {
+        "view_type": "mountain",
+        "view_from": "rooftop terrace with continental breakfast service"
+      }
     },
     "exclusive_features": [
       "free continental breakfast served on the rooftop with mountain views",
@@ -28699,8 +29095,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "lake",
-      "view_from": "on-site restaurant"
+      "view_type": [
+        "lake"
+      ],
+      "view_from": [
+        "restaurant"
+      ],
+      "original_free_text": {
+        "view_type": "lake",
+        "view_from": "on-site restaurant"
+      }
     },
     "exclusive_features": [
       "four distinct dorm types including an 'underground' dorm, 21 beds total",
@@ -28840,8 +29244,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "lake_and_mountain",
-      "view_from": "rooftop hangout area, lakeside grounds"
+      "view_type": [
+        "lake",
+        "mountain"
+      ],
+      "view_from": [
+        "rooftop",
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "lake_and_mountain",
+        "view_from": "rooftop hangout area, lakeside grounds"
+      }
     },
     "exclusive_features": [
       "directly on the banks of Phewa Lake at the quieter north end of Lakeside",
@@ -29296,8 +29710,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city",
-      "view_from": "roof terrace"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "rooftop"
+      ],
+      "original_free_text": {
+        "view_type": "city",
+        "view_from": "roof terrace"
+      }
     },
     "exclusive_features": [
       "among the cheapest dorm beds in Thamel (roughly 250-300 NPR/night)",
@@ -29476,8 +29898,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "ocean",
-      "view_from": "property grounds"
+      "view_type": [
+        "ocean"
+      ],
+      "view_from": [
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "ocean",
+        "view_from": "property grounds"
+      }
     },
     "exclusive_features": [
       "beachfront surf hostel designed around Arugam Bay's surf scene",
@@ -29650,8 +30080,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "ocean",
-      "view_from": "some private rooms/balconies"
+      "view_type": [
+        "ocean"
+      ],
+      "view_from": [
+        "balcony",
+        "terrace"
+      ],
+      "original_free_text": {
+        "view_type": "ocean",
+        "view_from": "some private rooms/balconies"
+      }
     },
     "exclusive_features": [
       "on-site restaurant serving hummus and Middle Eastern-inspired food",
@@ -29869,8 +30308,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "city",
-      "view_from": "double rooms"
+      "view_type": [
+        "city"
+      ],
+      "view_from": [
+        "room"
+      ],
+      "original_free_text": {
+        "view_type": "city",
+        "view_from": "double rooms"
+      }
     },
     "exclusive_features": [
       "coworking space on site",
@@ -30055,8 +30502,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "lake_and_rock_fortress",
-      "view_from": "hostel grounds"
+      "view_type": [
+        "lake",
+        "cliff"
+      ],
+      "view_from": [
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "lake_and_rock_fortress",
+        "view_from": "hostel grounds"
+      }
     },
     "exclusive_features": [
       "family-run guesthouse-style hostel near Sigiriya Rock with organized sunrise/sunset tours",
@@ -30204,8 +30660,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountains_and_tea_plantations",
-      "view_from": "hostel grounds"
+      "view_type": [
+        "mountain",
+        "rice_paddy"
+      ],
+      "view_from": [
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "mountains_and_tea_plantations",
+        "view_from": "hostel grounds"
+      }
     },
     "exclusive_features": [
       "highland tea-country hostel with complimentary family dinners",
@@ -30367,8 +30832,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "lagoon_and_greenery",
-      "view_from": "property grounds"
+      "view_type": [
+        "lake"
+      ],
+      "view_from": [
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "lagoon_and_greenery",
+        "view_from": "property grounds"
+      }
     },
     "exclusive_features": [
       "small four-bedroom guesthouse-style hideaway near a quiet lagoon village",
@@ -30519,8 +30992,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "garden",
-      "view_from": "property grounds"
+      "view_type": [
+        "garden"
+      ],
+      "view_from": [
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "garden",
+        "view_from": "property grounds"
+      }
     },
     "exclusive_features": [
       "120-year-old colonial house with a large green garden near Galle Fort",
@@ -31083,8 +31564,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "natural_garden_setting",
-      "view_from": "outdoor garden seating"
+      "view_type": [
+        "garden"
+      ],
+      "view_from": [
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "natural_garden_setting",
+        "view_from": "outdoor garden seating"
+      }
     },
     "exclusive_features": [
       "on-site safari booking desk positioned as a Yala National Park gateway hostel",
@@ -31662,8 +32151,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "mountain",
-      "view_from": "infinity pool"
+      "view_type": [
+        "mountain"
+      ],
+      "view_from": [
+        "pool_area"
+      ],
+      "original_free_text": {
+        "view_type": "mountain",
+        "view_from": "infinity pool"
+      }
     },
     "exclusive_features": [
       "infinity pool with mountain views",
@@ -33403,8 +33900,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "sunset over Labuan Bajo harbor",
-      "view_from": "rooftop lagoon-style pool"
+      "view_type": [
+        "ocean"
+      ],
+      "view_from": [
+        "rooftop",
+        "pool_area"
+      ],
+      "original_free_text": {
+        "view_type": "sunset over Labuan Bajo harbor",
+        "view_from": "rooftop lagoon-style pool"
+      }
     },
     "exclusive_features": [
       "rooftop lagoon-style swimming pool with sunset views",
@@ -33581,8 +34087,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rainforest and river views, private waterfall from some rooms",
-      "view_from": "private balconies"
+      "view_type": [
+        "jungle",
+        "river"
+      ],
+      "view_from": [
+        "balcony"
+      ],
+      "original_free_text": {
+        "view_type": "rainforest and river views, private waterfall from some rooms",
+        "view_from": "private balconies"
+      }
     },
     "exclusive_features": [
       "riverside rooms opposite Mt. Leuser National Park",
@@ -33751,8 +34266,18 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "Lake Toba lake and mountain views",
-      "view_from": "cottage rooms and pool area"
+      "view_type": [
+        "lake",
+        "mountain"
+      ],
+      "view_from": [
+        "room",
+        "pool_area"
+      ],
+      "original_free_text": {
+        "view_type": "Lake Toba lake and mountain views",
+        "view_from": "cottage rooms and pool area"
+      }
     },
     "exclusive_features": [
       "Batak ethnic architecture design",
@@ -33944,8 +34469,16 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "volcano view from deluxe female dormitory",
-      "view_from": "private terrace"
+      "view_type": [
+        "volcano"
+      ],
+      "view_from": [
+        "terrace"
+      ],
+      "original_free_text": {
+        "view_type": "volcano view from deluxe female dormitory",
+        "view_from": "private terrace"
+      }
     },
     "exclusive_features": [
       "free dormitory lodging included with dive package bookings",
@@ -34437,8 +34970,17 @@
     },
     "views": {
       "has_view": true,
-      "view_type": "rice field and clove farm countryside views",
-      "view_from": "hostel grounds"
+      "view_type": [
+        "rice_paddy",
+        "countryside"
+      ],
+      "view_from": [
+        "property_grounds"
+      ],
+      "original_free_text": {
+        "view_type": "rice field and clove farm countryside views",
+        "view_from": "hostel grounds"
+      }
     },
     "exclusive_features": [
       "set among rice fields and clove farms near Munduk's waterfalls",

@@ -652,17 +652,37 @@ intent schema (e.g. splitting "daytime vibe" from "evening vibe" as separate pre
 rebalancing pass across all scoring categories' point budgets, both real design work rather than a
 quick patch.
 
-### 🟡 OPEN — `views` field (`has_view`, `view_type`, `view_from`) is collected but never used in scoring
+### 🟢 RESOLVED — `views` field (`has_view`, `view_type`, `view_from`) was collected but never used in scoring, and the underlying data wasn't clean enough to match against reliably
 Found via direct product review while testing "I want to hear some sound of waves in a calm
-surroundings" — confirmed via code search that `matching.py` never references the `views` field
-anywhere. A hostel can be genuinely oceanfront with real wave/view data on file, but a query about
-that experience can only score via incidental `vibe_tags` overlap (e.g. if a hostel happens to be
-tagged "beachfront") or the semantic layer — the structured, already-collected view data itself
-contributes nothing. Same category of gap as the already-resolved "matching engine ignored
-`near_metro`/`good_for_remote_work`" issue above — a case of "we collected the data" not implying
-"the product uses the data." **Fix:** add explicit keyword detection (ocean/wave/view-related terms
-in `vibe_tags`, mirroring the transit/remote-work pattern already in `score_hostel`) that checks
-`views.has_view`/`views.view_type` directly.
+surroundings" — confirmed via code search that `matching.py` never referenced the `views` field
+anywhere. A hostel could be genuinely oceanfront with real wave/view data on file, but a query about
+that experience could only score via incidental `vibe_tags` overlap or the semantic layer — the
+structured, already-collected view data contributed nothing. Same category of gap as the
+already-resolved "matching engine ignored `near_metro`/`good_for_remote_work`" issue above. **A
+second, deeper problem surfaced while investigating the first:** `view_type`/`view_from` were
+originally free-text with no controlled vocabulary — inconsistent formatting (`"rooftop terrace"`
+vs `"rooftop_terrace"`), multi-concept strings joined together (`"balcony views, cliff-adjacent"`),
+and values mixing `view_from`-style info into `view_type` (`"city view balcony in some rooms"`).
+Wiring the field into scoring without fixing this first would have produced unreliable matches.
+**Fixed with two changes, done together:** (a) `normalize_views.py` re-read each of the 62
+`has_view: true` hostels' *existing* free-text values (plus `vibe_profile`/`reviews_summary` for
+context — no new web research) and normalized both fields into fixed controlled vocabularies, as
+lists rather than single strings (so a hostel with two view types, e.g. `"garden and temple
+views"`, correctly becomes `["garden", "temple"]` instead of one lossy string). The initial
+vocabulary (16 view types, 10 view-from locations) was expanded by 3 after the first real run
+surfaced genuine gaps — `park`, `volcano`, and `courtyard` — categories the model correctly refused
+to force into a lossy "other" bucket. Original free-text values are preserved in a new
+`original_free_text` field for auditability. (b) `matching.py` step 9 now checks
+`views.has_view`/`views.view_type` directly: a query naming a specific view type (e.g. "mountain
+view") that matches a hostel's actual `view_type` list earns +12 per matched type; a generic
+"scenic view" style query against any hostel with a real view earns a smaller +6, naming the actual
+view(s) in the reason so it stays auditable. Verified directly: "hostel with a mountain view"
+correctly surfaced hostels with `mountain` in their normalized `view_type` list with a +12
+breakdown entry; the original "sound of waves" query correctly surfaced 9 real oceanfront hostels
+across the full (unfiltered) 228-hostel pool with a `+12 has an ocean view` entry — they didn't
+crack the top 5 in that particular unconstrained search only because other signals (calm/peaceful
+tag matches, party-level scoring) outweighed the view bonus for that specific query, not because
+the fix failed.
 
 ### 🟡 OPEN — Schema is missing several fields real travelers consistently care about
 Prompted directly by the traveler's own travel experience, cross-checked against hostel-booking

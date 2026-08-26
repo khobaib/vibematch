@@ -372,7 +372,61 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
             # transparency principle as the missing-price case earlier.
             add(0, "party level not specified for this hostel — could not confirm how well it matches your social/quiet preference")
 
-    # --- 9. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
+    # --- 9. Views (structured field, previously collected but never scored) ---
+    # DECISIONS_LOG.md OPEN item resolved: the `views` field (has_view,
+    # view_type, view_from) existed for 62 hostels with zero scoring logic
+    # ever referencing it — a query about "ocean view" or "sound of waves"
+    # could only match by coincidence via vibe_tags text overlap. Also
+    # required normalize_views.py first: view_type/view_from were originally
+    # free-text with no controlled vocabulary (inconsistent formatting,
+    # multi-concept strings) — unreliable to match against directly. Both
+    # fixed together; see DECISIONS_LOG.md for the full writeup.
+    VIEW_TYPE_KEYWORDS = {
+        "ocean": ("ocean", "sea view", "seaview", "beachfront", "wave", "coastal view"),
+        "mountain": ("mountain", "himalay", "hill view", "alpine"),
+        "lake": ("lake",),
+        "river": ("river",),
+        "valley": ("valley",),
+        "city": ("city view", "cityscape", "skyline"),
+        "garden": ("garden view",),
+        "jungle": ("jungle view", "rainforest view", "forest view"),
+        "pool": ("pool view",),
+        "temple": ("temple view",),
+        "cliff": ("cliff",),
+        "rooftop_skyline": ("rooftop view",),
+        "countryside": ("countryside view", "rural view", "farmland view"),
+        "rice_paddy": ("rice paddy", "rice field"),
+        "desert": ("desert view",),
+        "park": ("park view",),
+        "volcano": ("volcano",),
+    }
+    GENERIC_VIEW_KEYWORDS = ("view", "scenic", "overlooking", "vista")
+
+    hostel_view_types = set(hostel.get("views", {}).get("view_type") or [])
+    if hostel.get("views", {}).get("has_view") and hostel_view_types:
+        # Specific-type match: query names a particular kind of view the hostel actually has.
+        matched_types = set()
+        for view_type, keywords in VIEW_TYPE_KEYWORDS.items():
+            if view_type in hostel_view_types and any(
+                any(kw in vt.lower() for kw in keywords) for vt in vibe_tags
+            ):
+                matched_types.add(view_type)
+
+        if matched_types:
+            types_str = ", ".join(sorted(matched_types))
+            article = "an" if types_str[0].lower() in "aeiou" else "a"
+            add(12 * len(matched_types), f"has {article} {types_str} view, matching what you're looking for")
+        else:
+            # Generic "I want a view" language, without naming a specific type —
+            # still real credit, just less than a precise type match, and the
+            # reason names the actual view(s) so it stays auditable/specific.
+            query_mentions_view_generically = any(
+                any(kw in vt.lower() for kw in GENERIC_VIEW_KEYWORDS) for vt in vibe_tags
+            )
+            if query_mentions_view_generically:
+                add(6, f"has a view ({', '.join(sorted(hostel_view_types))}), matching your interest in a scenic stay")
+
+    # --- 10. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
     # Complements the exact/partial vibe_tags matching above (#3): tags catch
     # explicit keyword overlap, this catches nuance a tag vocabulary can't
     # enumerate (e.g. "somewhere I can focus in the mornings but still meet
