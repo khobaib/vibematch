@@ -303,7 +303,7 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     if query_mentions_remote_work and hostel.get("social_vibe", {}).get("good_for_remote_work"):
         add(10, "confirmed good for remote work")
 
-    # --- 8. Party level preference (structured field + ordinal-distance scoring) ---
+    # --- 8. Party level preference (structured field + explicit per-preference score table) ---
     # A keyword list on the query side (e.g. "peaceful", "non-party") can never
     # enumerate every way Claude might phrase "I don't want a party hostel" —
     # softer phrasing like "not much a party place" or "priority is calmness"
@@ -311,37 +311,56 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     # budget_flexibility: have Claude classify intent into a small structured
     # field directly, then do graded (not binary) scoring against it.
     #
-    # IMPORTANT DESIGN POINT: the true ideal for "avoid" and "prefer_quiet" is
-    # a virtual target of 0 — BELOW "low" — not "low" itself. Our 5-point
-    # scale starts at low=1 because we don't track a true "zero party"
-    # category, but that doesn't mean "low" should be treated as a perfect
-    # match: a low-party hostel still has some social/party element, and a
-    # traveler who says "avoid" wants less than that. Using target=0 means
-    # "low" always scores as "closest available, not perfect" for both
-    # preferences, and steepness alone controls how forgiving each is of
-    # drifting further away from that ideal. Mirrored on the high end:
-    # "prefer_social"/"prefer_party" target 6 — one step ABOVE "high" — for
-    # the same reason, so "high" is never treated as an unbeatable maximum.
-    PARTY_LEVEL_SCALE = {"low": 1, "low_to_medium": 2, "medium": 3, "medium_to_high": 4, "high": 5}
-    PARTY_PREFERENCE_CONFIG = {
-        "avoid":         {"target": 0, "steepness": 15},
-        "prefer_quiet":  {"target": 0, "steepness": 7},
+    # HISTORY / WHY THIS IS A TABLE, NOT A FORMULA: earlier versions used a
+    # single distance x steepness formula against a virtual target below the
+    # scale's floor (since party_level had no true "zero" category — "low"
+    # was the lowest value that existed). Direct product review surfaced two
+    # real problems with that: (1) party_level's real-world floor conflated
+    # two genuinely different things — a hostel with truly NO social/party
+    # element, vs. one with occasional light activity — and a traveler who
+    # says "avoid party" wants the former, not "the closest available
+    # option, mildly rewarded" (which the old formula gave "low": +5). (2) a
+    # single formula can't express asymmetric curve shapes for different
+    # strictness levels ("avoid" should punish "low" hard; "prefer_quiet"
+    # should barely penalize it) without genuinely different math per case,
+    # which a table expresses directly and a shared formula can't. Fixed by
+    # adding a real "none" tier to party_level (see
+    # reclassify_party_level.py — 13 of 49 "low"-tagged hostels were
+    # reclassified to "none" using their own existing review/vibe data, 36
+    # correctly stayed "low"), and replacing the formula with this explicit,
+    # hand-tuned table (values set via direct product discussion, not
+    # derived from a formula — see DECISIONS_LOG.md for the full reasoning).
+    #
+    # This also depends on match_hostels() no longer dropping score <= 0
+    # results entirely (see that function's docstring) — that's what makes
+    # it safe to score "avoid" + "high" as sharply negative (-50) without
+    # risking an empty result set: a badly-scoring hostel now just ranks
+    # near the bottom instead of vanishing.
+    PARTY_LEVEL_SCALE = {"none": 0, "low": 1, "low_to_medium": 2, "medium": 3, "medium_to_high": 4, "high": 5}
+    PARTY_SCORE_TABLE = {
+        # Strict "avoid party/noise" — ideal is genuinely no social element;
+        # even "low" (some light activity) is a real miss, not a near-match.
+        "avoid":         {"none": 20, "low": -10, "low_to_medium": -20, "medium": -30, "medium_to_high": -40, "high": -50},
+        # Softer "no party preferred" — still wants quiet, but "low" is a
+        # genuinely acceptable outcome (occasional light activity is fine),
+        # just not the ideal.
+        "prefer_quiet":  {"none": 10, "low": 0, "low_to_medium": -5, "medium": -10, "medium_to_high": -15, "high": -20},
         "neutral":       None,
-        "prefer_social": {"target": 6, "steepness": 7},
-        "prefer_party":  {"target": 6, "steepness": 15},
+        # Mirror image of prefer_quiet: "high" is ideal, "medium_to_high" is
+        # genuinely fine, quieter levels are increasingly a miss.
+        "prefer_social": {"none": -20, "low": -15, "low_to_medium": -10, "medium": -5, "medium_to_high": 0, "high": 10},
+        # Mirror image of avoid: "high" is the strict ideal, anything short
+        # of that is a real miss for someone who explicitly wants the party.
+        "prefer_party":  {"none": -50, "low": -40, "low_to_medium": -30, "medium": -20, "medium_to_high": -10, "high": 20},
     }
 
     party_preference = intent.get("party_preference")
-    config = PARTY_PREFERENCE_CONFIG.get(party_preference) if party_preference else None
-    if config is not None:
-        target = config["target"]
-        steepness = config["steepness"]
+    score_table = PARTY_SCORE_TABLE.get(party_preference) if party_preference else None
+    if score_table is not None:
         hostel_party_level = (hostel.get("social_vibe", {}).get("party_level") or "").lower()
-        hostel_level_num = PARTY_LEVEL_SCALE.get(hostel_party_level)
-        if hostel_level_num is not None:
-            distance = abs(target - hostel_level_num)
-            bonus = 20 - (distance * steepness)
-            if distance == 0:
+        if hostel_party_level in score_table:
+            bonus = score_table[hostel_party_level]
+            if bonus == max(score_table.values()):
                 add(bonus, f"party vibe ({hostel_party_level}) matches your preference perfectly")
             elif bonus > 0:
                 add(bonus, f"party vibe ({hostel_party_level}) is reasonably close to your preference")
@@ -509,24 +528,55 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
     # and its known limitation.
     semantic_entries = compute_semantic_entries(hostels, raw_query, hostel_embeddings) if raw_query else {}
 
+    # DESIGN NOTE (changed after direct product review — see DECISIONS_LOG.md):
+    # previously any hostel scoring <= 0 was dropped ENTIRELY, not just
+    # ranked low. That was a real problem: a traveler who explicitly said
+    # "avoid party" deserved to see the closest available options even if
+    # every candidate has some social element and scores negative — showing
+    # nothing is worse than honestly showing "here's the best we've got,
+    # though nothing here is a great fit." It also forced party-preference
+    # scoring to stay artificially gentle (see score_hostel step 8) purely
+    # to avoid the empty-results risk, which is the wrong reason to soften a
+    # score.
+    #
+    # Now: a hostel is only excluded if it has NO breakdown entries at all
+    # (i.e. nothing about the search criteria applied to it whatsoever —
+    # e.g. a broad, unconstrained query against a hostel with no location
+    # match and no vibe/profile overlap). Anything that was genuinely
+    # evaluated against the traveler's criteria is shown, regardless of
+    # whether the net score came out negative — ranking (not gating) is
+    # what handles quality now. `is_recommended` marks the score > 0 line so
+    # callers (frontend, AI explanation) can still distinguish "a real
+    # match" from "the least-bad option we had," rather than presenting a
+    # negative-scoring result with the same confidence as a strong one.
     all_results = []
+    genuine_match_count = 0
     for hostel in hostels:
         result = score_hostel(hostel, intent, local_price_bounds, semantic_entries.get(hostel["id"]))
-        if result["score"] > 0:  # drop zero/negative matches entirely
-            all_results.append({
-                "id": hostel["id"],
-                "name": hostel["name"],
-                "city": hostel["city"],
-                "country": hostel["country"],
-                "score": result["score"],
-                "breakdown": result["breakdown"],
-                "price_range_usd": hostel.get("price_range_usd"),
-            })
+        if not result["breakdown"]:  # nothing about this hostel was actually evaluated — no signal to show
+            continue
+        if result["score"] > 0:
+            genuine_match_count += 1
+        all_results.append({
+            "id": hostel["id"],
+            "name": hostel["name"],
+            "city": hostel["city"],
+            "country": hostel["country"],
+            "score": result["score"],
+            "is_recommended": result["score"] > 0,
+            "breakdown": result["breakdown"],
+            "price_range_usd": hostel.get("price_range_usd"),
+        })
 
     all_results.sort(key=lambda r: r["score"], reverse=True)
 
     return {
-        "total_matches": len(all_results),
+        # "total_matches" keeps its original meaning — genuine (score > 0)
+        # matches — so existing callers/tests that treat this as "how many
+        # real hits were there" aren't silently redefined. "results" below
+        # can still include more than this many entries (up to top_n),
+        # since it now also surfaces the closest available non-matches.
+        "total_matches": genuine_match_count,
         "results": all_results[:top_n],
     }
 

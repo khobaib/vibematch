@@ -742,7 +742,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The data explicitly lists 'quiet' as a vibe tag and describes 'low-key evening entertainment rather than party vibes,' along with the presence of solo social seekers and budget backpackers as guest types, indicating some light social activity but no party element."
     },
     "views": {
       "has_view": null,
@@ -1089,10 +1090,11 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": true
+      "good_for_remote_work": true,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): This is explicitly a private entire-home villa (not a hostel) with no social activities or communal spaces, designed for privacy-seeking couples, families, and remote workers in a quiet setting away from hostel socializing."
     },
     "views": {
       "has_view": null,
@@ -1799,7 +1801,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": true,
-      "notes": "explicitly designed for calm vibes and long stays, not a party hostel; social without being loud"
+      "notes": "explicitly designed for calm vibes and long stays, not a party hostel; social without being loud",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel explicitly features organized social activities (weekly Saturday cooking nights) and welcomes social-seeking guests, but is deliberately designed as calm and non-loud with strong emphasis on peaceful long-term stays, clearly positioning itself as the opposite of a party hostel."
     },
     "views": {
       "has_view": false,
@@ -1953,7 +1956,8 @@
       "silent_hours": null,
       "good_for_sleep": null,
       "good_for_remote_work": null,
-      "notes": "Traveler did not experience noise issues despite one earlier review flagging road/mosque noise - that report does not appear representative."
+      "notes": "Traveler did not experience noise issues despite one earlier review flagging road/mosque noise - that report does not appear representative.",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): While this is technically a budget hotel (not hostel) with no bar, restaurant, or organized social activities and a residential vibe, the default classification is 'low' since there's no explicit statement that it's silent/peaceful or designed to eliminate social interaction—it's simply described as quiet and low-key, which implies minimal but not zero social element."
     },
     "views": {
       "has_view": false,
@@ -2286,7 +2290,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": true,
-      "notes": "described as having both a lively communal space and a quiet retreat space - unusually well-balanced for both social and quiet travelers"
+      "notes": "described as having both a lively communal space and a quiet retreat space - unusually well-balanced for both social and quiet travelers",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly described as having a 'quiet_and_social_balance' with both 'lively communal space' and 'quiet retreat space,' indicating some social activity but not a party focus—no bars, organized events, or party atmosphere mentioned."
     },
     "views": {
       "has_view": false,
@@ -2470,7 +2475,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "described as a relaxed family-run guesthouse, not party-oriented; ideal gateway stop for exploring Ephesus"
+      "notes": "described as a relaxed family-run guesthouse, not party-oriented; ideal gateway stop for exploring Ephesus",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly described as 'relaxed' and 'low-key' rather than party-oriented, with quiet rooms and a rooftop terrace used for light social activities like conversations and travel planning, but no organized social events or party atmosphere."
     },
     "views": {
       "has_view": false,
@@ -2812,11 +2818,12 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": "main door locked after 10pm",
       "good_for_sleep": true,
       "good_for_remote_work": true,
-      "notes": "explicitly described as 'not social at all but a good price' - quieter, relaxed option rather than party hostel"
+      "notes": "explicitly described as 'not social at all but a good price' - quieter, relaxed option rather than party hostel",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly described as 'not social at all,' 'not party,' positioned as a 'peaceful retreat' with no social activities listed, and designed for guests prioritizing tranquility over connection."
     },
     "views": {
       "has_view": true,
@@ -3144,7 +3151,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "guests describe genuine cultural exchange - trying on traditional Balinese garb, attending temple ceremonies with hosts"
+      "notes": "guests describe genuine cultural exchange - trying on traditional Balinese garb, attending temple ceremonies with hosts",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The property is explicitly quiet and culture-focused with no bars or organized party events, but the social activities listed (cultural immersion, learning traditional crafts) represent genuine light social engagement rather than zero social element."
     },
     "views": {
       "has_view": true,
@@ -3313,7 +3321,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The property is a budget-to-midrange hotel (not a hostel) with a pool as a social hub and friendly staff, but explicit mention of 'minimal party atmosphere' and 'calm, straightforward' vibe suggests limited organized social activities, though the pool creates some natural guest interaction."
     },
     "views": {
       "has_view": true,
@@ -3463,7 +3472,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The homestay is explicitly described as peaceful and family-centered with cultural exchange as the only social activity, but lacks clear signals of intentional quiet/silence (no meditation focus, no explicit 'no socializing' policy), so it defaults to low rather than none."
     },
     "views": {
       "has_view": false,
@@ -3809,11 +3819,12 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": "strictly enforced for good rest",
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "explicitly strict on noise reduction to ensure guest rest - not a party hostel"
+      "notes": "explicitly strict on noise reduction to ensure guest rest - not a party hostel",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel explicitly enforces strict silent hours for rest, has zero social activities or weekend events listed, is specifically described as 'not a party hostel' with a 'no-party policy,' and guests explicitly appreciate it for prioritizing sleep over socializing."
     },
     "views": {
       "has_view": true,
@@ -4989,7 +5000,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "adults-only hostel, quiet and easy to locate per reviews, good for solo travelers"
+      "notes": "adults-only hostel, quiet and easy to locate per reviews, good for solo travelers",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is explicitly tagged as 'quiet' and 'adults_only' with no social activities or weekend events listed, but it has a common lounge, garden area, and library that enable light guest interaction, plus the vibe profile notes it's designed for 'solo travelers' which typically implies some social opportunity rather than enforced silence."
     },
     "views": {
       "has_view": true,
@@ -5156,11 +5168,12 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "one reviewer traveling with two kids expected a rowdy backpacker crowd and was pleasantly surprised by the calm atmosphere"
+      "notes": "one reviewer traveling with two kids expected a rowdy backpacker crowd and was pleasantly surprised by the calm atmosphere",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly tagged as 'calm_not_party', has no social activities or weekend activities listed, a family with children was 'pleasantly surprised by the calm atmosphere' (indicating absence of expected backpacker rowdiness), and the vibe profile clearly states it is 'positioned as a place to rest and recharge rather than a hub for organized social activities or late-night energy.'"
     },
     "views": {
       "has_view": false,
@@ -5481,10 +5494,11 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The property is explicitly described as a quiet, no-frills budget hotel with no social activities or organized events listed, and the vibe profile states it is 'suited to travelers prioritizing location and welcoming staff over amenities or socializing,' with no bar, common social spaces, or party infrastructure mentioned."
     },
     "views": {
       "has_view": false,
@@ -5811,11 +5825,12 @@
         "yoga classes across 4 shalas"
       ],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "visited off-season felt 'not very social' per one review; described as a 'jungle dream' by fans"
+      "notes": "visited off-season felt 'not very social' per one review; described as a 'jungle dream' by fans",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): Bhakti Kutir is explicitly positioned as a yoga/nature retreat with no bar, no weekend activities, no nightlife appeal, and reviews describing it as quiet/unsocial even in season—it's purpose-built for peace-seekers and tranquility, not social gathering."
     },
     "views": {
       "has_view": true,
@@ -6319,7 +6334,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": true,
-      "notes": "'#1 Top Rated Hostel in Kozhikode' per Hostelz; oasis of peace in a busy town per reviews"
+      "notes": "'#1 Top Rated Hostel in Kozhikode' per Hostelz; oasis of peace in a busy town per reviews",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly described as 'peaceful' and an 'oasis of peace,' rated #1 for its quiet atmosphere, with only occasional art exhibitions as social activity and no weekend party events, but it does attract 'solo_social_seekers' and has a charming courtyard that facilitates light guest interaction."
     },
     "views": {
       "has_view": true,
@@ -7009,11 +7025,12 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": true,
-      "notes": "explicitly quiet, narrow-alley setting; not a social hostel environment"
+      "notes": "explicitly quiet, narrow-alley setting; not a social hostel environment",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The data explicitly describes this as a quiet guesthouse with no social activities or weekend activities listed, and the vibe profile states 'there's no party scene here, just calm, friendly staff and a genuinely restful atmosphere' with guests specifically prioritizing quiet over social energy."
     },
     "views": {
       "has_view": true,
@@ -7512,7 +7529,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "few trains pass and are described as barely noticeable, preferable to the busier main street where other hostels sit"
+      "notes": "few trains pass and are described as barely noticeable, preferable to the busier main street where other hostels sit",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): While explicitly described as 'quiet' and attracting 'peace_lovers' with no social activities listed, the presence of a sun terrace, garden, shared kitchen, and board games suggests some light social infrastructure for guests to gather, placing it at low rather than none."
     },
     "views": {
       "has_view": true,
@@ -10231,7 +10249,8 @@
       "silent_hours": null,
       "good_for_sleep": true,
       "good_for_remote_work": null,
-      "notes": "called 'a backpacker's dream come true' by one detailed reviewer, chilled and friendly overall atmosphere"
+      "notes": "called 'a backpacker's dream come true' by one detailed reviewer, chilled and friendly overall atmosphere",
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is described as 'chilled' with a 'friendly atmosphere' and attracts budget backpackers and solo travelers, but lacks explicit social activities or party infrastructure, suggesting minimal but not zero social engagement."
     },
     "views": {
       "has_view": false,
@@ -14609,7 +14628,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly tagged 'no_party' and positioned against Vietnam's typical party scene, but has social infrastructure (dorm setup, family dinners, coffee culture) that creates natural guest interaction rather than silence."
     },
     "views": {
       "has_view": false,
@@ -17663,10 +17683,11 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly described as a quiet, guesthouse-style retreat with no bar, no organized activities, and appeals specifically to peace-lovers seeking calm over social buzz—meeting the core criteria for 'none'."
     },
     "views": {
       "has_view": false,
@@ -19857,7 +19878,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is explicitly 'deliberately non-party' with a quiet, calm atmosphere designed for peace-seekers, but it has a rooftop terrace and attracts solo social seekers, indicating some light social gathering potential despite the anti-party positioning."
     },
     "views": {
       "has_view": false,
@@ -20647,10 +20669,11 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly positioned as a 'calmer alternative' to party hostels with no organized social events, empty social activities list, and a vibe profile emphasizing 'genuine tranquility' and 'noise-free retreat' for peace-lovers and those prioritizing rest."
     },
     "views": {
       "has_view": false,
@@ -23013,7 +23036,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is nature-focused and peaceful with minimal organized social activities, but has a common area for gathering and attracts adventure travelers who may socialize casually, lacking explicit signals of total quietness or anti-social design."
     },
     "views": {
       "has_view": false,
@@ -23272,10 +23296,11 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly described as eco-lodge/hiking-base with quiet, outdoors-focused atmosphere, no social activities listed, no bar/restaurant/entertainment facilities, and guests primarily there for mountain activities rather than socializing."
     },
     "views": {
       "has_view": false,
@@ -24194,7 +24219,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The property explicitly has no organized social activities or weekend events and emphasizes nature retreat/solitude, but the vibe profile describes it as a 'conversation starter' and mentions guests naturally socializing around the unique accommodations, preventing a clear 'none' classification."
     },
     "views": {
       "has_view": false,
@@ -26065,7 +26091,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": true
+      "good_for_remote_work": true,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel has a rooftop cafe with documented communal gatherings and social activities, but strict house rules (no alcohol/drugs, no large groups, ID requirements) and an explicit wellness/yoga focus create a calm, controlled social environment rather than a party atmosphere."
     },
     "views": {
       "has_view": true,
@@ -26412,7 +26439,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly described as a 'peaceful escape' with nature-focused vibe tags, located remotely to suit travelers wanting quiet, and social activity is limited to communal meals only—no bar, no weekend events, no party atmosphere, but some light social connection through shared dining."
     },
     "views": {
       "has_view": true,
@@ -27488,7 +27516,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": true
+      "good_for_remote_work": true,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel explicitly has 'quiet' as a vibe tag, a coworking-friendly focus, and is described as having a 'low-key social atmosphere' ideal for remote work rather than nightlife, but does include 'common space entertainment' and attracts 'solo social seekers,' clearly indicating some light social activity rather than zero."
     },
     "views": {
       "has_view": false,
@@ -27868,7 +27897,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): While explicitly described as 'quiet' and 'peaceful' with no listed social activities, the presence of a rooftop terrace and outdoor lounge that serves as a gathering space, combined with the 'good_for_sleep' flag rather than explicit meditation/retreat positioning, suggests minimal but real social potential rather than genuine silence."
     },
     "views": {
       "has_view": true,
@@ -28664,7 +28694,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel has a small size, budget focus, and relaxed atmosphere with no explicit party amenities, but weekend hiking arrangements and an outdoor lounge suggest some light social activity, falling short of the explicit 'none' signals needed to classify it as completely non-social."
     },
     "views": {
       "has_view": true,
@@ -28950,7 +28981,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": true
+      "good_for_remote_work": true,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel explicitly features social activities (volunteering, workshops, trekking bookings) and is praised for its 'social, inclusive atmosphere,' but is positioned as quiet, good for remote work, and explicitly trades 'nightlife buzz for genuine quiet'—indicating light social engagement without party elements."
     },
     "views": {
       "has_view": null,
@@ -29096,7 +29128,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is explicitly described as peaceful and nature-focused with home-cooked family meals as the primary social activity, but the presence of a bar and the 'friendly, laid-back' atmosphere with budget backpackers suggest some light social element beyond zero."
     },
     "views": {
       "has_view": null,
@@ -29258,7 +29291,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": false,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel has a quiet, low-key atmosphere with no explicit social activities or party infrastructure mentioned, but the presence of a rooftop terrace and budget backpacker clientele suggests minimal social gathering potential exists, falling short of the explicit 'none' criteria which requires clear signals of peace/meditation focus or active avoidance of socializing."
     },
     "views": {
       "has_view": true,
@@ -29830,7 +29864,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": true
+      "good_for_remote_work": true,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is explicitly described as quiet and good for sleep/remote work with no social activities listed, but lacks a clear signal of intentional silence (no meditation focus, no explicit 'no socializing' policy), so defaults to low rather than none."
     },
     "views": {
       "has_view": true,
@@ -30015,7 +30050,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel has documented social activities (sunrise tours, cooking classes, safari tours) and a common gathering space (outdoor lounge), but the vibe profile explicitly emphasizes a 'relaxed and quiet' atmosphere ideal for sleep, with no bar, no party scene, and no late-night socializing mentioned."
     },
     "views": {
       "has_view": true,
@@ -30323,10 +30359,11 @@
       "weekend_activities": [
         "surfing"
       ],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly described as a tiny, secluded, quiet, peaceful lagoon-side property ideal for those seeking 'genuine seclusion and a break from crowded hostel scenes,' with no bar, no organized social events, and activities are nature-based (kayaking, snorkeling) rather than social gatherings."
     },
     "views": {
       "has_view": true,
@@ -30477,7 +30514,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel explicitly lacks organized group social activities and emphasizes tranquility and rest, but has a garden and some minimal social opportunities (garden tours, outdoor lounge), suggesting light rather than zero social element."
     },
     "views": {
       "has_view": true,
@@ -31040,7 +31078,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly tagged as 'social' with safari travelers and solo social seekers as guests, and features a safari booking desk as a social activity, indicating light social engagement rather than the quiet, isolated nature required for 'none'."
     },
     "views": {
       "has_view": true,
@@ -32164,7 +32203,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is explicitly described as quiet and peaceful with a calm atmosphere and pool lounging as the only social activity, but lacks a clear statement of zero social interaction or explicit 'no party' policy, so it defaults to low rather than none."
     },
     "views": {
       "has_view": false,
@@ -32302,10 +32342,11 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly described as 'not_a_party_hostel,' lacks a bar/restaurant, has no organized social activities, attracts quiet travelers and couples, and is positioned as a peaceful guesthouse retreat rather than a backpacker social hub."
     },
     "views": {
       "has_view": false,
@@ -32475,10 +32516,11 @@
       ],
       "social_activities": [],
       "weekend_activities": [],
-      "party_level": "low",
+      "party_level": "none",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'none' (confidence: high): The hostel is explicitly described as family-run, quiet, with no bar or organized social activities, focused on rest rather than socializing, and guests are drawn to history/temples rather than social gathering."
     },
     "views": {
       "has_view": false,
@@ -32631,7 +32673,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel has explicit social activities (shared dinners, garden patio hangouts) and is described as family-run and homely with a peaceful garden atmosphere, clearly indicating some light social gathering despite being quiet and prioritizing good sleep."
     },
     "views": {
       "has_view": false,
@@ -32774,7 +32817,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel has a small outdoor terrace where guests hangout, indicating some light social activity, but it is explicitly described as a practical base camp focused on nature/trekking rather than a social hub, with no organized social events or weekend activities listed."
     },
     "views": {
       "has_view": false,
@@ -33532,7 +33576,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel is explicitly described as quiet with nature-focused activities (jungle trekking, walking tours), but the presence of organized social activities and a guest mix suggests some light social interaction rather than complete silence."
     },
     "views": {
       "has_view": true,
@@ -33701,7 +33746,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly described as a 'serene lakefront retreat' and 'peaceful' with vibe tags emphasizing 'quiet' and 'relaxing,' but it has some light social activity through the German bakery/cafe hangout and boating activities, placing it clearly in the 'low' social category rather than 'none'."
     },
     "views": {
       "has_view": true,
@@ -33893,7 +33939,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel is explicitly diving-focused with social activities centered on shared dive trips and pool access, not nightlife or parties, and is tagged as 'quiet' with an early-rising crowd—indicating some light social activity but no party element."
     },
     "views": {
       "has_view": true,
@@ -34217,7 +34264,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": null,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: medium): The hostel has no listed social activities or weekend events and is explicitly described as 'stripped-down' and 'no-frills' with 'low party vibes,' but lacks explicit signals like 'quiet/peaceful/meditation-focused' or 'no bar' that would clearly indicate 'none'."
     },
     "views": {
       "has_view": false,
@@ -34384,7 +34432,8 @@
       "party_level": "low",
       "silent_hours": null,
       "good_for_sleep": true,
-      "good_for_remote_work": null
+      "good_for_remote_work": null,
+      "party_level_reclassification_note": "Reclassified from 'low' to 'low' (confidence: high): The hostel explicitly features some light social activities (shared kitchen meals, waterfall trekking meetups) and is described as a social retreat for nature travelers, clearly signaling more than zero social element, though the overall vibe emphasizes quietude and nature over partying."
     },
     "views": {
       "has_view": true,

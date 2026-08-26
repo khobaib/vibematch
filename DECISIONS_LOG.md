@@ -577,6 +577,128 @@ feels at the time — worth periodically widening the net rather than assuming t
 caught everything, and worth being just as skeptical of one's own verification searches as of the
 original bug.
 
+### 🟢 RESOLVED — "avoid"/"prefer_quiet" party scoring treated a real ambiguity (party_level "low" meaning both "genuinely silent" and "a little activity") as a single value, and rewarded it instead of matching intent strictness
+Surfaced via direct product review of Task #6 validation results, not automated testing. Two
+compounding problems, found together: (1) `party_level: "low"` was being used across the dataset
+to mean two genuinely different things — a hostel with truly no social/party element, and one with
+occasional light activity (weekend gatherings, a chatty common room) — with nothing distinguishing
+them. (2) The scoring formula (`bonus = 20 - distance*steepness` against a virtual target below the
+scale's floor, since no true "zero" category existed) meant even the strict `"avoid"` preference
+*rewarded* a "low" hostel (+5), on the theory that it was "the closest available option." Direct
+critique from real travel experience: someone who explicitly says "avoid party" wants a genuinely
+quiet hostel to score well and a "some activity" hostel to score poorly — rewarding the ambiguous
+middle ground undersells how much that stated preference should matter. **Fixed with three
+changes:** (a) added a real `"none"` tier to `party_level` — `reclassify_party_level.py` used
+Claude to re-read each of the 49 hostels tagged `"low"`'s *existing* data (`reviews_summary`,
+`social_vibe`, `flagged_issues`, `vibe_profile` — no new web research needed) and reclassify: 13
+had clear, explicit evidence of genuinely zero social element ("no-party policy," "not_a_party_
+hostel," enforced silent hours) and moved to `"none"`; 36 had real light-social evidence (rooftop
+gatherings, shared meals, communal activities) and correctly stayed `"low"`; 0 were low-confidence,
+meaning the existing data already had clear signal either way for every case. (b) Replaced the
+single distance-based formula with an explicit, hand-tuned point table per `party_preference`
+category (values set through direct product discussion, not derived from a formula, since the
+desired curve shapes for "avoid" vs. "prefer_quiet" are asymmetric and a shared formula can't
+express that):
+
+| party_level → | none | low | low_to_medium | medium | medium_to_high | high |
+|---|---|---|---|---|---|---|
+| avoid (strict) | +20 | -10 | -20 | -30 | -40 | -50 |
+| prefer_quiet (soft) | +10 | 0 | -5 | -10 | -15 | -20 |
+| prefer_social (soft, mirrored) | -20 | -15 | -10 | -5 | 0 | +10 |
+| prefer_party (strict, mirrored) | -50 | -40 | -30 | -20 | -10 | +20 |
+
+(c) This level of negative scoring is only safe because of the next entry below — without it,
+"avoid" + "high" scoring -50 could have produced empty result sets for genuinely valid searches.
+Verified directly: an "avoid party" query now surfaces the newly-reclassified `"none"` hostels as
+perfect +20 matches at the top of results, exactly as intended.
+
+### 🟢 RESOLVED — Hostels scoring ≤ 0 were dropped from results entirely instead of just ranked low
+Found via the same Task #6 review, testing "party hostel in Bangkok, want the nightlife": the 3
+Bangkok hostels that aren't party-oriented scored strongly negative (`prefer_party` penalty against
+their `low`/`none` party_level) and were silently removed from the response, not merely ranked
+last. Direct critique: this is why party-preference scoring had to stay artificially gentle for so
+long — punishing a mismatch harder always risked pushing every candidate below zero and reproducing
+the exact "Bangkok returns 0 results" failure already fixed once (see the Bangkok RESOLVED entry
+above) for a different underlying reason. Showing nothing is worse than honestly showing "here's
+the closest we've got, though nothing here is a great fit" — gating on score sign conflates
+*ranking* (a relative judgment, which scoring is good at) with *gating* (an absolute judgment about
+whether something is worth showing at all, which a hostel with real location/vibe overlap almost
+always is, even if one criterion scores badly). **Fixed:** `match_hostels()` no longer drops a
+hostel for scoring ≤ 0 — a hostel is excluded only if it has zero breakdown entries at all (nothing
+about the search criteria applied to it whatsoever, e.g. an unconstrained query against a hostel
+with no location or vibe overlap to evaluate). Everything genuinely evaluated is shown, ranked;
+`total_matches` keeps its original meaning (count of score > 0 "genuine" matches, preserving
+existing callers'/tests' expectations), while a new `is_recommended: bool` field on each result
+(true iff score > 0) lets the frontend/AI-explanation layer distinguish "a real match" from "the
+least-bad option available" rather than presenting both with equal confidence. This change is what
+makes the strict party-preference table above safe to ship — a badly-scoring hostel now ranks near
+the bottom instead of vanishing.
+
+### 🟡 OPEN — A nuanced dual-mode query ("focus during the day, meet people at dinner") got ranked purely by party_level, ignoring the work/focus half entirely
+Found via Task #6 validation. Query: "somewhere I can focus during the day but still meet people
+over dinner." Claude's intent parser collapsed this into a single `party_preference: "prefer_
+social"` value — the schema has no way to represent "quiet mornings, social evenings" as two
+separate signals — and every one of the top-ranked results won purely on `party_level` closeness to
+that single target (up to 20 points), with **zero** breakdown entries referencing remote work,
+coworking, or focus at all. Confirmed this isn't just under-weighting: re-running with a reworded
+query ("...focus **in work** during the day...") produced an almost identical parsed intent and,
+critically, the same structural gap — the work/focus dimension of the query is not represented
+anywhere in final ranking, regardless of phrasing. Root cause is two-fold: (1) `party_preference`
+as a single categorical field cannot express time-varying preferences within one stay, and (2) even
+where `vibe_tags`/semantic similarity *did* capture the work-focus nuance, `party_preference`'s
+point budget (up to 20) dominated the additive total enough that those signals never surfaced the
+right hostels into the top ranks for this query. **Not fixed yet** — this needs either a richer
+intent schema (e.g. splitting "daytime vibe" from "evening vibe" as separate preferences) or a
+rebalancing pass across all scoring categories' point budgets, both real design work rather than a
+quick patch.
+
+### 🟡 OPEN — `views` field (`has_view`, `view_type`, `view_from`) is collected but never used in scoring
+Found via direct product review while testing "I want to hear some sound of waves in a calm
+surroundings" — confirmed via code search that `matching.py` never references the `views` field
+anywhere. A hostel can be genuinely oceanfront with real wave/view data on file, but a query about
+that experience can only score via incidental `vibe_tags` overlap (e.g. if a hostel happens to be
+tagged "beachfront") or the semantic layer — the structured, already-collected view data itself
+contributes nothing. Same category of gap as the already-resolved "matching engine ignored
+`near_metro`/`good_for_remote_work`" issue above — a case of "we collected the data" not implying
+"the product uses the data." **Fix:** add explicit keyword detection (ocean/wave/view-related terms
+in `vibe_tags`, mirroring the transit/remote-work pattern already in `score_hostel`) that checks
+`views.has_view`/`views.view_type` directly.
+
+### 🟡 OPEN — Schema is missing several fields real travelers consistently care about
+Prompted directly by the traveler's own travel experience, cross-checked against hostel-booking
+guidance research (hostelz.com, hostelgeeks.com) to confirm these are genuinely common decision
+factors, not just personal preference. Full candidate list surfaced:
+
+- **Bed bug / pest report signal** — currently only expressible buried inside free-text
+  `flagged_issues` (one real case already exists: Habitat Hostel Koh Chang's 2017 report), with no
+  way to filter or score on it directly. One of the most consistently-cited traveler concerns across
+  every source checked — dedicated pest-reporting guides exist across major travel sites.
+- **Lockers / security specifics** — no structured field for in-dorm lockers, 24-hour reception, or
+  keycard/access-control, despite these ranking among the top-cited decision factors in every source
+  reviewed. `services.deposit_required` and `cleanliness_signal` exist but don't cover this.
+- **Hair dryer availability** — not represented anywhere in the current schema.
+- **Clothes-drying facility** — distinct from `services.laundry_service` (already exists): "can I
+  wash clothes" and "can I actually dry them" are different practical questions, especially in humid
+  climates.
+- **Boutique vibe** — currently only expressible as a free-text `vibe_tags` string with no
+  structured backing; could become a real `accommodation_type` enum value instead.
+- **Swimming pool** — NOT actually missing; `facilities.swimming_pool` already exists in the schema.
+  Under-utilized in matching, not a data gap.
+- **Curfew policy** — a real dealbreaker for some travelers (some hostels lock doors overnight), not
+  currently tracked.
+- **Room-noise placement** ("room facing a noisy street vs. a quiet courtyard") — explicitly a
+  ROOM-level attribute, not a hostel-level one (per direct correction) — belongs inside each
+  `room_types[]` entry (near the existing `air_flow`/`sunlight` room-level fields), not as a
+  hostel-wide field, since it can vary dramatically between rooms in the same building.
+
+**Decision: scoped down to a focused first pass** rather than tackling all of these at once, since
+adding a schema field is trivial but backfilling real, sourced data across all 228 hostels is a
+genuine research cost each time (comparable to the `vibe_profile` generation or party-level
+reclassification efforts above). First batch selected for clearest traveler impact: (1) bed bug/pest
+signal, (2) lockers/security, (3) hair dryer + drying facility (combined into one pass, since both
+are quick factual lookups rather than deep research). The rest of this list stays tracked here for a
+future pass rather than being dropped.
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data
