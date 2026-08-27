@@ -813,6 +813,39 @@ countries and focus research effort on the two fields that actually turned up us
 (curfew, lockers) plus bed bugs (safety-relevant even at a 50/9/41 split) and new nearby-attraction
 research. Not yet decided — flagged here for the next planning conversation.
 
+### 🟢 RESOLVED — Consolidated all one-off data-enrichment scripts into a single reusable toolkit
+Raised directly by the traveler: `normalize_views.py`, `reclassify_party_level.py`,
+`normalize_nearby_and_boutique.py`, and `merge_pilot_research.py` were four separate files that each
+did real, useful work, but writing a brand new script for every future field/pass was never going to
+scale — schema growth is the whole shape of this project going forward.
+
+Replaced with `data_tools.py`, which splits the real underlying pattern into two reusable, generic
+operations instead of one script per task:
+
+1. **`normalize <task>`** — re-reads a hostel's own existing fields via Claude Haiku and
+   reclassifies/restructures them (no new research). What all three normalize-style scripts were
+   doing. Each task (`views`, `party_level`, `boutique_nearby`) is now a small entry in a
+   `NORMALIZE_TASKS` registry (filter/system-prompt/context/apply) instead of a whole file — adding
+   a future normalization pass means adding one dict entry, not a new script.
+2. **`merge <results.json> --batch-name <name>`** — applies already-gathered research (e.g. from
+   Agent subagents doing real WebSearch/WebFetch) into `hostels.json`. What `merge_pilot_research.py`
+   did, except that script hardcoded the Thailand+India results directly as a Python literal, which
+   meant the next country batch would've needed another near-duplicate file. Research results now
+   live as plain JSON under `research_batches/` (e.g. `research_batches/thailand_india_2026_08.json`
+   holds the actual pilot data), and `merge` applies any such file via a `MERGE_FIELD_MAP` — a new
+   field from a future research pass needs one line added to that map, not a new script.
+
+Verified the consolidation reproduces identical results: re-ran `merge` against the already-applied
+pilot data and confirmed every field value matched exactly (only difference was a duplicate
+`research_sources` key from testing with a different `--batch-name`, reverted — not a real
+discrepancy).
+
+**This directly answers "which file will the remaining 160-hostel pass update"**: none of the
+old task-specific scripts — future research batches produce a results JSON file (same shape as
+`research_batches/thailand_india_2026_08.json`), and `data_tools.py merge` applies it. The four old
+scripts are removed; their already-applied effects remain in `hostels.json` as before (nothing needs
+to be re-run).
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data
