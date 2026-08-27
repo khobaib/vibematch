@@ -339,7 +339,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "helpful, fluent in English and Hindi, 24/7 available"
+      "communication_quality": "helpful, fluent in English and Hindi, 24/7 available",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm/security lockers (free)",
+        "note": "Booking.com property policies list free security lockers on-site; one review mentioned mould in a room but no bed bug reports found"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -437,7 +446,13 @@
     "region": "Goa",
     "research_depth": "deep",
     "vibe_profile": "BunkNBrew draws a relaxed mix of solo travelers and families seeking genuine connection without the intensity of a party scene. The converted Goan house creates an intimate, charming atmosphere where the attentive owner-managers foster a genuinely welcoming environment. Social energy centers around the small indoor-outdoor lounge and activities like karaoke and evening shows, though it's low-key enough that you'll sleep soundly in the clean, comfortable beds. The well-maintained shared kitchen is a real highlight—perfect for cooking together and swapping travel stories. This place suits people who want approachable socializing, clean accommodation, and fair value, without needing nightlife or luxury frills.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.booking.com/hotel/in/bunknbrew-palolem.en-gb.html",
+        "https://www.hostelworld.com/hostels/p/313920/bunk-n-brew/"
+      ]
+    }
   },
   {
     "id": 3,
@@ -573,7 +588,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "mixed reviews - some praise hosts Nikhil and Kishmita highly, others report poor service during peak season"
+      "communication_quality": "mixed reviews - some praise hosts Nikhil and Kishmita highly, others report poor service during peak season",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Described as 'comfortable beds and secure lockers'; some reviews mention hygiene/cleanliness issues in common areas but no bed bug reports found."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -674,7 +698,13 @@
     "region": "Kerala",
     "research_depth": "deep",
     "vibe_profile": "Cliff & Coral sits just 80 metres from Odayam Beach in a quieter stretch near Varkala Cliff, making it well-suited for couples, families, and solo travellers seeking a low-key coastal retreat. The hostel draws a mixed crowd—some guests rave about clean private rooms with balconies, attentive hosts, and the on-site café's food quality, while others have encountered inconsistent service and humidity or mold concerns during monsoon season. Social activity centres around board games, guitar sessions, and casual daily hangouts in the indoor and outdoor lounges; the vibe leans quiet-to-medium rather than party-focused. Rooms feature average mattresses and pillows, private bathrooms in each unit, and views from your balcony—though cleanliness and comfort can be hit-or-miss depending on season and when you visit. A shared kitchen and on-site restaurant round out the facilities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://wanderlog.com/place/details/3833285/cliff--coral-hostel-varkala-odayam-beach",
+        "https://www.hostelworld.com/hostels/p/304212/cliff-and-coral-varkala-odayam-beach/"
+      ]
+    }
   },
   {
     "id": 4,
@@ -807,7 +837,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "praised - friendly host Ann personally mentioned helping guests beyond expectations"
+      "communication_quality": "praised - friendly host Ann personally mentioned helping guests beyond expectations",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": null
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -889,7 +928,13 @@
     "region": "Northern Thailand",
     "research_depth": "deep",
     "vibe_profile": "Sunny Hostel Garden is a no-frills, budget-conscious option anchored by its unbeatable central location and genuinely hospitable host who goes the extra mile for guests. The modest but clean rooms and garden lounge create a laid-back atmosphere suited to solo travelers and families seeking practicality over luxury, with low-key evening entertainment rather than party vibes. You'll appreciate the walkable proximity to the bus station and night market, and the host's personal touch—though comfort standards are average, the warm hospitality and prime location make it an appealing choice for those prioritizing accessibility and human connection over amenities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://hostel-sunny.paitophotels.com/es/",
+        "https://www.booking.com/hotel/th/sunny-house-hostel.th.html"
+      ]
+    }
   },
   {
     "id": 5,
@@ -1417,7 +1462,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "friendly staff, though one review flagged inconsistent pricing and refund policy issues"
+      "communication_quality": "friendly staff, though one review flagged inconsistent pricing and refund policy issues",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned in reviews or listings found"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -1506,7 +1560,13 @@
     "region": "Goa",
     "research_depth": "deep",
     "vibe_profile": "Bibhitaki works well for social travelers who want to stay close to the beach without sacrificing on-site activity and dining options. The hostel caters to a mixed crowd—solo seekers, couples, and families—with evening shows and indoor games keeping the vibe lively at a medium party level. The on-site multi-cuisine restaurant and cafe mean you're never far from food, and the kids' play room makes it family-accessible. Rooms come with private bathrooms and air purifiers, though sleep comfort is fairly standard; some guests have noted cleaning could be more frequent, so it's worth checking conditions on arrival. Staff are generally friendly, making it a reasonably comfortable base for a beach-focused stay.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.in/Hotel_Review-g306996-d27180375-Reviews-Bibhitaki_Hostels-Canacona_South_Goa_District_Goa.html",
+        "https://www.hostelworld.com/hostels/p/325392/bibhitaki-hostels/"
+      ]
+    }
   },
   {
     "id": 8,
@@ -1621,7 +1681,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "exceptionally friendly per majority reviews, though a minority report unreliable refund policies"
+      "communication_quality": "exceptionally friendly per majority reviews, though a minority report unreliable refund policies",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "reception/free security lockers",
+        "note": "Listing states 'Free Security Lockers' available"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew, 24 hour reception"
     },
     "location": {
       "nearby": [
@@ -1710,7 +1779,14 @@
     "region": "Delhi",
     "research_depth": "deep",
     "vibe_profile": "AmigosIndia cultivates a welcoming, home-like community that appeals especially to solo travelers, budget backpackers, and long-term stayers seeking connection over nightlife. The free daily yoga classes in the in-house studio and complimentary home-cooked Indian meals create a wellness-focused atmosphere, while the rooftop garden—with its city views—serves as a natural gathering spot. Staff are genuinely warm and engaged, and repeat visitors are common, suggesting guests feel comfortable extending their stays. Sleep quality is solid and the social vibe leans toward low-to-medium energy, making it equally suitable for those wanting to meet people or rest well. The resident dogs add to the relaxed, family-oriented feel, though a handful of guests have reported isolated cleanliness concerns.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/276662/amigosindia/",
+        "https://www.tripadvisor.com/Hotel_Review-g304551-d12528849-Reviews-Amigos_India-New_Delhi_National_Capital_Territory_of_Delhi.html",
+        "https://amigosindia.co.in/"
+      ]
+    }
   },
   {
     "id": 9,
@@ -1826,7 +1902,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "quiet, residential-street location per description"
+      "communication_quality": "quiet, residential-street location per description",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers (under-bed)",
+        "note": "Hosteller's own site lists 'Individual lockers for secure storage' in dorms; one guest review requested built-in locks be added to the under-bed lockers."
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew, 24hr reception, quiet/silent hours 10 PM - 8 AM"
     },
     "location": {
       "nearby": [
@@ -1928,7 +2013,15 @@
     "region": "Kerala",
     "research_depth": "deep",
     "vibe_profile": "This Fort Kochi hostel sits on a quiet residential street yet remains walkable to the beach and Chinese Fishing Nets, striking a balance between peaceful stays and easy exploration. It's built for budget backpackers and solo travelers seeking genuine community—think rooftop movie nights and board games rather than high-energy partying. The self-service cafe culture and communal kitchen encourage guests to linger and connect, while the colourful exterior and funky rooftop mural add character. Sleeping comfort is straightforward and average, suits those prioritizing social connection and atmosphere over luxury, and the on-site generator ensures reliable power in this neighborhood setting.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.thehosteller.com/hostels/the-hosteller-fort-kochi/",
+        "https://www.thehosteller.com/hostels/the-hosteller-fort-kochi-ocean-edge/",
+        "https://www.hostelworld.com/hostels/p/331571/the-hosteller-fort-kochi-ocean-edge/",
+        "https://www.tripadvisor.com/Hotel_Review-g15180821-d25050318-Reviews-The_Hosteller_Fort_Kochi-Fort_Kochi_Kochi_Cochin_Ernakulam_District_Kerala.html"
+      ]
+    }
   },
   {
     "id": 10,
@@ -3238,7 +3331,16 @@
       "checkin_24_7": false,
       "room_entry_method": "keycard_after_10pm",
       "communication_quality": "very friendly and helpful, owner personally praised",
-      "notes": "free towel, shampoo, shower gel, hairdryer; 24hr CCTV security"
+      "notes": "free towel, shampoo, shower gel, hairdryer; 24hr CCTV security",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned in facilities lists or reviews found"
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": null,
+      "curfew_policy": "Main entrance door locked after 10 PM (keycard access still works); reception open 7 AM-10 PM, check-in until 10 PM (advance notice required for later arrivals)"
     },
     "location": {
       "nearby": [
@@ -3335,7 +3437,12 @@
     "region": "Northern Thailand",
     "research_depth": "deep",
     "vibe_profile": "Stay North Gate is a quiet, bed-and-breakfast-style retreat designed for guests seeking peaceful rest rather than social connection—ideal for couples, solo travelers, and anyone prioritizing sleep and tranquility. The standout feature is genuinely comfortable mattresses paired with friendly, attentive staff and free breakfast to offset modest rates. Located steps from North Gate Jazz Co-op, it offers easy access to live music without the party atmosphere; the main door locks at 10pm and CCTV security adds a sense of safety. The shared lounge and free computer access suit remote workers who value a calm environment, while some rooms feature city views from private balconies. This is a place to rest well and settle in, not to mingle with other backpackers.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/305985/stay-north-gate-bed-and-breakfast/"
+      ]
+    }
   },
   {
     "id": 17,
@@ -3427,7 +3534,16 @@
       "checkin_24_7": false,
       "room_entry_method": null,
       "communication_quality": "very helpful staff per reviews",
-      "notes": "limited front desk hours 07:00-22:00, advance notice needed for late check-in"
+      "notes": "limited front desk hours 07:00-22:00, advance notice needed for late check-in",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Reviewers describe an extra-large locker separating each bed plus a smaller locker above for valuables"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew; reception hours 07:00-22:00 (late check-in requires advance notice)"
     },
     "location": {
       "nearby": [
@@ -3511,7 +3627,12 @@
     "region": "Southern Thailand",
     "research_depth": "deep",
     "vibe_profile": "Capzule Bed Phuket is a design-conscious hostel housed in a beautifully restored Peranakan building in Old Phuket Town, drawing party-minded solo travelers and budget backpackers who want both style and social energy. The standout feature is the spacious bunk beds with generous individual lockers and curtains—rare comfort for dorm living—plus a rooftop lounge where you'll genuinely mix with locals alongside other travelers, creating a livelier scene than typical backpacker hubs. With an on-site bar and restaurant, the vibe skews toward evening hangouts and social connection rather than quiet retreat. The hostel earns consistently high marks for cleanliness and thoughtful design, making it well-suited for those who prioritize meeting people and enjoying common spaces over sleeping long hours.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/314218/capzule-bed-phuket/"
+      ]
+    }
   },
   {
     "id": 18,
@@ -4027,7 +4148,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "exceptional, hosts Sreekumar and Sushama personally praised, treat guests like family"
+      "communication_quality": "exceptional, hosts Sreekumar and Sushama personally praised, treat guests like family",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "No amenity listings or reviews mention lockers; this is a small homestay, not a typical dorm hostel."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -4115,7 +4245,14 @@
     "region": "Kerala",
     "research_depth": "deep",
     "vibe_profile": "Greenview Homestay offers an intimate, family-centered experience where guests become part of the household rather than mere visitors. Hosts Sreekumar and Sushama extend genuine hospitality, and mornings begin with traditional Kerala home-cooked breakfasts featuring specialties like appam and vegetable stew. The peaceful garden terrace provides a quiet retreat, and the location sits within easy walking distance of the beach, making it ideal for families, couples, and travelers seeking cultural connection over social buzz. Sleep is restful here, though bedding is modest; the real draw is the warmth of staying in a well-maintained home and the unhurried rhythm that encourages meaningful conversations with hosts and fellow guests.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g311295-d28510141-Reviews-Greenview_Homestay_Kovalam-Kovalam_Thiruvananthapuram_District_Kerala.html",
+        "https://www.goibibo.com/hotels/greenview-homestay-hotel-in-kovalam-8315066599015704126/",
+        "https://www.makemytrip.com/hotels/amenities-of-greenview_homestay-details-kovalam_and_poovar.html"
+      ]
+    }
   },
   {
     "id": 21,
@@ -4233,7 +4370,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "warm and welcoming, staff (esp. Gokul and female kitchen staff) specifically praised"
+      "communication_quality": "warm and welcoming, staff (esp. Gokul and female kitchen staff) specifically praised",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Every bed has an attached locker; guests must bring or buy their own padlock. One December 2025 review mentioned finding ants/insects near a bed (not bed bugs specifically)."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": true,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -4342,7 +4488,13 @@
     "region": "Kerala",
     "research_depth": "deep",
     "vibe_profile": "Molly's Hostel sits in Varkala's quieter South Cliff area, offering a genuinely peaceful retreat wrapped in lush gardens complete with hammocks and badminton. The vibe strikes a rare balance—sociable and welcoming without tipping into noise or chaos, making it equally suited to solo travelers seeking connection, couples wanting calm, and peace-lovers who still want community. Owner Molly's hands-on presence creates a warm, personal atmosphere, and the on-site food comes highly praised for both quality and value. The sleeping quarters are comfortable if modest, and while early morning calls to prayer are part of this neighborhood's character, they rarely disturb rest; overall cleanliness is very good, reflecting both the hostel's care and the isolated nature of occasional complaints.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/313426/mollys-hostel/",
+        "https://www.tripadvisor.com/Hotel_Review-g297639-d23849376-Reviews-Molly_s_Hostel-Varkala_Town_Varkala_Thiruvananthapuram_District_Kerala.html"
+      ]
+    }
   },
   {
     "id": 22,
@@ -4620,7 +4772,16 @@
       "checkin_24_7": true,
       "room_entry_method": null,
       "communication_quality": "very helpful and polite, staff Rozar and Vivek specifically named and praised for hospitality",
-      "notes": "airport transportation and tour desk available; one review requested rental scooters be added"
+      "notes": "airport transportation and tour desk available; one review requested rental scooters be added",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": "none mentioned",
+        "note": "Facilities list did not explicitly mention lockers"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew, 24 hour reception"
     },
     "location": {
       "nearby": [
@@ -4723,7 +4884,13 @@
     "region": "West Bengal",
     "research_depth": "deep",
     "vibe_profile": "Backpackers Hub draws solo travelers and nature enthusiasts seeking a peaceful retreat with genuine hospitality. The mountain views from the common area are a standout feature—guests linger there constantly—and the on-site karaoke club adds a low-key social element without overwhelming the calm atmosphere. Staff members Rozar and Vivek are exceptional hosts who ensure guests are well fed with good quality food, and the hostel maintains high cleanliness standards. With easy access to shared cabs and a welcoming vibe, it suits travelers wanting community and connection without the intensity of a party hostel, though beds are average comfort-wise.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/st/hostels/p/319100/backpackers-hub/",
+        "https://www.hostelworld.com/hostels/p/319100/backpackers-hub/"
+      ]
+    }
   },
   {
     "id": 24,
@@ -4840,7 +5007,16 @@
       "checkin_24_7": true,
       "room_entry_method": null,
       "communication_quality": "very positive in recent reviews, several managers/hosts named across different years (Jyoti, Abhishek, Vijay bhai) suggesting staff turnover or seasonal rotation",
-      "notes": "activities coordinated via WhatsApp group per one review; property described as 'a bit of a scouting to find'"
+      "notes": "activities coordinated via WhatsApp group per one review; property described as 'a bit of a scouting to find'",
+      "bed_bug_reports": true,
+      "lockers": {
+        "available": true,
+        "type": "reception/lobby security lockers",
+        "note": "Listed as 'Security Lockers' / 'Lockers in Lobby'; not described as in-dorm."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -4942,7 +5118,14 @@
     "region": "Himachal Pradesh",
     "research_depth": "deep",
     "vibe_profile": "This riverside retreat suits solo travelers and digital nomads seeking a workation base with genuine mountain scenery. Set directly beside the Parvati River with a celebrated 360-degree rooftop view, the hostel offers a remote-feeling escape balanced by an active social scene—weekly WhatsApp-coordinated activities and riverside hangouts keep the common areas buzzing without overwhelming quiet seekers. The dedicated workation space, on-site restaurant, and garden terrace make it ideal for those blending work and travel. Recent guests consistently praise the atmosphere and cleanliness, though the unmarked approach path can be tricky to navigate; mattresses and pillows are functional rather than luxurious, so comfort-focused sleepers should manage expectations.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/317992/nomads-hostel-kasol/",
+        "https://www.hostelz.com/hostel/356019-Nomads-Hostel",
+        "https://www.tripadvisor.com/Hotel_Review-g2424731-d12237436-Reviews-Nomads_Hostel-Kasol_Kullu_District_Himachal_Pradesh.html"
+      ]
+    }
   },
   {
     "id": 25,
@@ -5056,7 +5239,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "very warm and hospitable per almost all reviews, cash-only payment"
+      "communication_quality": "very warm and hospitable per almost all reviews, cash-only payment",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned on Hostelworld policy/facilities listing."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew (explicitly stated in property policies; check-in 12:00-23:00)"
     },
     "location": {
       "nearby": [
@@ -5156,7 +5348,14 @@
     "region": "Himachal Pradesh",
     "research_depth": "deep",
     "vibe_profile": "Set in a working apple orchard surrounded by panoramic mountain views, FARM Hostel offers a tranquil nature-immersion experience ideal for solo travelers and peace-seekers wanting to unplug. The expansive lawn, bonfire facility, and resident dogs create a warm, low-key social atmosphere punctuated by jam sessions and movie nights—connection without pressure. Rooms are spacious and clean with average mattresses; the standout is the exceptional hospitality and outstanding cuisine (including vegetarian, halal, and kosher options) prepared by the beloved on-site cook. Staff friendliness is consistently praised, and the shared kitchen is available for guest use. This place rewards those seeking quiet, natural beauty, and genuine human connection over nightlife.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/311231/farm-hostel-and-camps/",
+        "https://www.hostelz.com/hostel/479473-FARM-Hostel---Camps",
+        "https://www.tripadvisor.com/Hotel_Review-g297618-d23461896-Reviews-Farm_Hostel_and_Camps-Manali_Kullu_District_Himachal_Pradesh.html"
+      ]
+    }
   },
   {
     "id": 26,
@@ -5270,7 +5469,16 @@
       "checkin_24_7": true,
       "room_entry_method": null,
       "communication_quality": "very approachable, staff member Sonu specifically praised for insightful city tours and kindness",
-      "notes": "guest allowed to stay after checkout without extra charge when sick - notably generous per one review"
+      "notes": "guest allowed to stay after checkout without extra charge when sick - notably generous per one review",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "reception storage only",
+        "note": "One review mentions leaving belongings in a locker after checkout; review volume is very low (only ~2 detailed reviews found) so signal is weak."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -5369,7 +5577,12 @@
     "region": "Uttar Pradesh",
     "research_depth": "deep",
     "vibe_profile": "Gypsy Diaries draws solo travelers and culture-focused backpackers seeking genuine local connection rather than typical hostel scenes. The experience revolves around curated immersion—sunrise Ganga boat rides, temple walks, and Banarasi food tastings led by exceptionally attentive staff like Nitin and Sonu, who've earned genuine affection from guests. The property itself is remarkably open and spacious with a cozy rooftop and city views, though beds are average comfort-wise. Social energy is low-to-medium and oriented toward shared exploration; one guest loved it so much they extended their stay by three nights. This suits travelers wanting depth and local flavor alongside fellow curious explorers.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelz.com/hostel/479607-Gypsy-Diaries"
+      ]
+    }
   },
   {
     "id": 27,
@@ -5484,7 +5697,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "attentive, caring, memorable per multiple reviews; partnered with a local driver (Ali) for transport"
+      "communication_quality": "attentive, caring, memorable per multiple reviews; partnered with a local driver (Ali) for transport",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "reception/lobby security lockers",
+        "note": "Described as 'Free Security Lockers' and 'Lockers in Lobby' across listings; not in-dorm personal lockers."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -5576,7 +5798,14 @@
     "region": "Rajasthan",
     "research_depth": "deep",
     "vibe_profile": "Horn OK Please Hostel draws solo travellers and culture-focused backpackers into a genuinely clean, artsy community hub—it's consistently called the cleanest hostel in India by independent guests, not marketing spin. The exceptional staff and welcoming ethos fuel a low-key social scene centred on yoga classes, film nights, and live music rather than heavy partying; guests regularly report making dozens of new friends. Hand-painted wall art adorns the staircase and common areas, while the sprawling sun terrace and large cozy lounge provide genuine gathering space. Free breakfast with vegetarian options, good coffee, and a fully equipped kitchen round out the experience, making it ideal for travellers seeking authentic connection and cleanliness over creature comforts—though beds are merely average and there's a no-outside-food policy.",
-    "is_boutique_style": true
+    "is_boutique_style": true,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/303284/horn-ok-please-hostel-jaipur/",
+        "https://www.hostelz.com/hostel/455870-Horn-Ok-Please-Hostel",
+        "https://www.tripadvisor.com/Hotel_Review-g304555-d19622782-Reviews-Horn_Ok_Please_Hostel_Jaipur-Jaipur_Jaipur_District_Rajasthan.html"
+      ]
+    }
   },
   {
     "id": 28,
@@ -5667,7 +5896,16 @@
       "checkin_24_7": null,
       "room_entry_method": null,
       "communication_quality": "warm hospitality repeatedly praised, staff member/host 'Gabbar' mentioned by name",
-      "notes": "pet-friendly after consultation, cash-only payment at some listings"
+      "notes": "pet-friendly after consultation, cash-only payment at some listings",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "lobby lockers / safety deposit boxes",
+        "note": "Planet of Hotels lists 'luggage storage and lockers' plus in-room safety deposit boxes; no in-dorm personal lockers explicitly confirmed."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew found; property has a 24-hour front desk (check-in from 12:00 PM, check-out by 11:00 AM)"
     },
     "location": {
       "nearby": [
@@ -5767,7 +6005,13 @@
     "region": "Rajasthan",
     "research_depth": "deep",
     "vibe_profile": "12 Monks Backpackers Community sits just steps from Pushkar's sacred Brahma Temple, offering a genuinely relaxing retreat with spacious rooms and a standout rooftop overlooking the ghats. The atmosphere skews chilled rather than party-focused, drawing solo travelers, couples, and budget backpackers who value peace alongside occasional social activity—karaoke, movie nights, and themed dinners keep things lively without overwhelming the calm vibe. Staff warmth is a defining feature, and the on-site restaurant serves solid Indian cuisine and breakfast. Guests consistently describe it as among the most peaceful places they've stayed in India, making it ideal if you want to decompress in a spiritual setting without sacrificing comfort or basic community.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.in/Hotel_Review-g319729-d21410659-Reviews-12_Monks_Hostel-Pushkar_Ajmer_District_Rajasthan.html",
+        "https://en.planetofhotels.com/india/pushkar/12-monks-hostel-pushkar"
+      ]
+    }
   },
   {
     "id": 29,
@@ -5858,7 +6102,16 @@
       "checkin_24_7": null,
       "room_entry_method": null,
       "communication_quality": null,
-      "notes": "front desk staffed during limited hours only"
+      "notes": "front desk staffed during limited hours only",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "safe storage (type unspecified)",
+        "note": "Listing mentions 'safe storage'; not specified whether in-dorm personal lockers or reception-only."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "24hr reception (24/7 front desk); no curfew mentioned"
     },
     "location": {
       "nearby": [
@@ -5951,7 +6204,12 @@
     "region": null,
     "research_depth": "deep",
     "vibe_profile": "The Victory View is a small, adults-only hostel in Bangkok's Pratunam area, designed for solo travelers and budget backpackers seeking a quieter, low-key experience. The property feels peaceful and well-organized, with a common lounge and garden area plus a library for downtime, making it easy to unwind without heavy socializing. Rooms are tidy and some offer city views, though bedding is fairly basic. The convenient BTS access and central location appeal to independent travelers, while the badminton court and smoking zone add subtle character. Free drinking water is available, and cleanliness is generally solid, though checking room conditions beforehand is worth doing given varied past reports.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g293916-d15118597-Reviews-The_Victory_View_Hostel-Bangkok.html"
+      ]
+    }
   },
   {
     "id": 30,
@@ -6064,7 +6322,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "mostly friendly and professional per most reviews; one review flagged a rude front desk incident escalating to police being called"
+      "communication_quality": "mostly friendly and professional per most reviews; one review flagged a rude front desk incident escalating to police being called",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "One Hostelworld review (Mar 2025) mentioned a broken locker lock on their bed, resolved by staff moving them."
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No 24hr reception; front desk staffed only 8:00 AM-10:00 PM daily, no after-hours check-in noted"
     },
     "location": {
       "nearby": [
@@ -6145,7 +6412,12 @@
     "region": null,
     "research_depth": "deep",
     "vibe_profile": "All Day Hostel offers a quieter, hotel-like alternative to typical backpacker party hostels, nestled in a safe residential neighborhood just 90 metres from Bangchak BTS station. It attracts a diverse mix of budget travelers, families, and solo visitors seeking clean, comfortable rooms with good air conditioning and spacious layouts rather than a social scene—one family traveling with children was pleasantly surprised by how calm everything felt. The on-site café and restaurant serve all-day complimentary fruit, coffee, and tea, while the contemporary art-decorated common areas provide a relaxed gathering space. Staff are generally friendly and helpful, and the hostel maintains strong cleanliness standards throughout, though it's positioned as a place to rest and recharge rather than a hub for organized social activities or late-night energy.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/286733/all-day-hostel-bts-bang-chak/"
+      ]
+    }
   },
   {
     "id": 31,
@@ -6261,7 +6533,16 @@
       "checkin_24_7": true,
       "room_entry_method": null,
       "communication_quality": "very social, staff (Chris, Taya) specifically praised for organizing activities and pub crawls",
-      "notes": "no durian allowed on property"
+      "notes": "no durian allowed on property",
+      "bed_bug_reports": true,
+      "lockers": {
+        "available": true,
+        "type": "lockers in lobby (extra service)",
+        "note": "Listed as an extra/paid service per Dorms.com/Hostelz aggregator listing."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -6342,7 +6623,12 @@
     "region": "Southern Thailand",
     "research_depth": "deep",
     "vibe_profile": "This high-energy social hostel thrives on organized pub crawls and staff-led activities, making it ideal for solo travelers and party-minded backpackers seeking connection and nightlife. The games room and on-site bar create natural gathering spots, while the standout touch of a resident tattoo artist adds character. Even the large dorms feel surprisingly comfortable with individual curtains and decent sleeping setups, though mattresses are average. Staff are genuinely engaged in pulling guests into the social scene, and the mix of digital nomads and social seekers keeps conversation flowing. Note that the kitchen isn't available, so you'll rely on the on-site restaurant and bar for meals—just be aware that portions can vary.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/91204/amazing-backpackers-hostel-aonang/"
+      ]
+    }
   },
   {
     "id": 32,
@@ -6433,7 +6719,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "friendly, multilingual staff (English, Italian, Thai); GM Stefano Cattaneo personally responds to reviews"
+      "communication_quality": "friendly, multilingual staff (English, Italian, Thai); GM Stefano Cattaneo personally responds to reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned; property is a small 20-room private-room hotel, not a dorm hostel, so in-room lockers are unlikely to apply"
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew mentioned; reviewer notes 24-hour reception"
     },
     "location": {
       "nearby": [
@@ -6510,7 +6805,12 @@
     "region": "Southern Thailand",
     "research_depth": "deep",
     "vibe_profile": "Hotel Sole is a straightforward budget hotel that delivers solid value in a prime Phuket location, drawing budget travelers, couples, and solo visitors who want easy access to Bangla Road's energy without the noise of staying directly on it. The friendly, attentive staff are a genuine highlight and consistently earn praise for their service, while the property maintains good cleanliness standards with neat rooms featuring private bathrooms and rain showers. Sleeping comfort is modest—mattresses and pillows are average—but the small plunge pool and onsite spa facilities offer low-key relaxation, and the restaurant handles both Italian and Thai meals if you don't feel like venturing out. This is a quiet, no-frills option suited to travelers prioritizing location and welcoming staff over amenities or socializing.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g297930-d1413341-Reviews-Hotel_Sole-Patong_Kathu_Phuket.html"
+      ]
+    }
   },
   {
     "id": 33,
@@ -6602,7 +6902,16 @@
       "checkin_24_7": null,
       "room_entry_method": null,
       "communication_quality": "warm, family-like per multiple reviews; staff Mark, Nicky, Sak specifically praised by name",
-      "notes": "free taxi to Full/Half Moon parties when tickets purchased through the bar"
+      "notes": "free taxi to Full/Half Moon parties when tickets purchased through the bar",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "lockers provided outside dorm room (key deposit 200 baht)",
+        "note": "Confirmed by a Tripadvisor reviewer; deposit required for locker key and towel"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -6697,7 +7006,12 @@
     "region": "Southern Thailand",
     "research_depth": "deep",
     "vibe_profile": "Echo Beach Hostel is a high-energy beachfront party hub that thrives on social connection and regular access to the island's famous moon parties. The vibe attracts party travelers and solo seekers who want constant activity—think beach bar hangouts, BBQ nights, and organized transport to nearby parties, with staff and owners who become genuine friends over extended stays. The communal spaces are lively with a DJ area, games, and hammocks right on the sand, though quiet sleep isn't really the priority here. Guests who stay longer often find themselves part of the community through volunteering opportunities, while the beachfront location, free breakfast, and strong personal touch from staff create a tight-knit atmosphere that rewards those looking to plant roots for a few weeks rather than pass through.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g11893551-d3752833-Reviews-Echo_Beach_Hostel-Baan_Tai_Ko_Pha_Ngan_Surat_Thani_Province.html"
+      ]
+    }
   },
   {
     "id": 34,
@@ -6809,7 +7123,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "friendly and helpful, several staff repeatedly praised by name (Jenniferji, Seikatji, Sanjuji, Rahulji)"
+      "communication_quality": "friendly and helpful, several staff repeatedly praised by name (Jenniferji, Seikatji, Sanjuji, Rahulji)",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned in facility listings or reviews found; no bed bug complaints in extensive reviews, only mosquito mentions"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -6910,7 +7233,13 @@
     "region": "Goa",
     "research_depth": "deep",
     "vibe_profile": "Bhakti Kutir is an intimate eco-lodge nestled in a coconut grove, purpose-built for yoga practitioners and nature seekers wanting genuine immersion over comfort. Each individually designed cabana uses natural materials like rice straw and bamboo, offering cozy rustic sleeping with average bedding—the trade-off is no air-conditioning and insects as part of the experience. The property centers around four distinct yoga shalas and a vegetarian restaurant, with warm staff and a genuinely peaceful atmosphere that suits those prioritizing tranquility; off-season guests should expect quieter social scenes and dim common areas in the evenings. This isn't suited to travelers seeking nightlife, modern amenities, or a bug-free environment, but for yoga enthusiasts and jungle dreamers, it delivers authentic nature-focused retreat vibes. Note that the community kitchen has had cleanliness concerns worth checking on directly.",
-    "is_boutique_style": true
+    "is_boutique_style": true,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/313113/bhakti-kutir-palolem/",
+        "https://www.booking.com/reviews/in/hotel/bhakti-kutir.html"
+      ]
+    }
   },
   {
     "id": 35,
@@ -7022,7 +7351,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "warm and friendly per most reviews, owners specifically praised for creating a home-like community"
+      "communication_quality": "warm and friendly per most reviews, owners specifically praised for creating a home-like community",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "personal lockers in dorm",
+        "note": "Reviews mention personal lockers; one review noted a locker cover net needing repair."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew; front desk staffed 24 hours."
     },
     "location": {
       "nearby": [
@@ -7111,7 +7449,14 @@
     "region": "Goa",
     "research_depth": "deep",
     "vibe_profile": "Bunkd Hostel Anjuna is a community-driven budget hostel where people genuinely matter more than pristine furnishings. The walls are layered with art and messages from past guests, creating a lived-in, homey atmosphere that appeals to solo travelers and long-term stayers seeking genuine connection. An active volunteer program draws collaborative types, and seasonal celebrations like Holi bring the community together in memorable ways. Staff are warm and welcoming, treating guests like family. Sleep and bedding are functional rather than luxurious, and cleanliness experiences vary—worth checking recent reviews—but those prioritizing social energy and authentic community vibes over comfort or polish will find their people here.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.goibibo.com/hotels/bunkd-hostel-anjuna-dorms-restaurant-hotel-in-goa-5992410866155955908/",
+        "https://www.tripadvisor.com/Hotel_Review-g306992-d13354089-Reviews-Bunkd_Hostel-Anjuna_Bardez_North_Goa_District_Goa.html",
+        "https://www.hostelworld.com/bed-and-breakfasts/p/284350/bunkd-hostels-anjuna/"
+      ]
+    }
   },
   {
     "id": 36,
@@ -7201,7 +7546,16 @@
       "checkin_24_7": true,
       "room_entry_method": null,
       "communication_quality": "very warm, manager 'Raj' specifically and repeatedly praised by name across many reviews",
-      "notes": "guests aged 18-40 only per one listing's policy"
+      "notes": "guests aged 18-40 only per one listing's policy",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "free security lockers",
+        "note": "Listed as 'Free Security Lockers' among hostel facilities; not detailed further."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -7293,7 +7647,13 @@
     "region": "Goa",
     "research_depth": "deep",
     "vibe_profile": "Mitra Hostel is a high-energy, pool-centric gathering spot that thrives on social connection and daytime leisure. The well-maintained swimming pool serves as the real heart of the place, anchoring karaoke nights and casual hangouts, while manager Raj's genuine warmth and attentiveness set the tone for the entire experience. This hostel suits solo travelers and groups seeking an active social scene, particularly those who value beach time and evening energy over quiet retreat—the atmosphere leans decidedly toward mingling and celebration rather than rest. Rooms come with daily cleaning and some feature air purifiers, though sleeping comfort is moderate across the board. The on-site bar and restaurant, plus table tennis and darts, round out a space that's fundamentally built for connection and fun.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/323244/mitra-hostel-by-the-pool/",
+        "https://www.tripadvisor.com/Hotel_Review-g1204883-d23765930-Reviews-Mitra_Hostel_Vagator-Vagator_North_Goa_District_Goa.html"
+      ]
+    }
   },
   {
     "id": 37,
@@ -7408,7 +7768,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "exceptionally friendly, host/manager repeatedly praised, guests say they 'didn't even miss the host' due to staff quality"
+      "communication_quality": "exceptionally friendly, host/manager repeatedly praised, guests say they 'didn't even miss the host' due to staff quality",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Only 'Luggage Storage' is listed among popular amenities; no explicit locker mention found."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -7506,7 +7875,13 @@
     "region": "Kerala",
     "research_depth": "deep",
     "vibe_profile": "Design Ashram Art Hostel occupies a beautifully restored heritage building designed and run by architects, creating an unusually thoughtful atmosphere that appeals to digital nomads, culture seekers, and solo travelers looking for substance over chaos. The charming courtyard with preserved original architecture, lush greenery, and occasional art exhibitions provides a peaceful gathering space without being party-focused—this is genuinely conducive to both remote work and deep sleep. Spacious, clean dorms and exceptional staff hospitality make it feel more like staying with knowledgeable hosts than in a typical hostel, while the proximity to the beach offers a natural escape route. The peaceful, design-conscious vibe suits those seeking cultural immersion and creative community rather than high-energy socializing.",
-    "is_boutique_style": true
+    "is_boutique_style": true,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.booking.com/hotel/in/design-ashram.html",
+        "https://www.goibibo.com/hotels/design-ashram-art-hostel-hotel-in-calicut-kozhikode-4264409446217532834/"
+      ]
+    }
   },
   {
     "id": 38,
@@ -7620,7 +7995,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "STRONGLY MIXED: 2018 review praises owner 'Jitesh' and staff as welcoming and helpful; a later detailed review describes reception staff as arrogant and dismissive of a serious complaint"
+      "communication_quality": "STRONGLY MIXED: 2018 review praises owner 'Jitesh' and staff as welcoming and helpful; a later detailed review describes reception staff as arrogant and dismissive of a serious complaint",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "reception storage only",
+        "note": "'No lockers in room. But there is a free locker for valuables available by the reception' per guest review. One reviewer noted windows didn't close properly, letting in mosquitoes; no bed bug mentions found."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -7703,7 +8087,13 @@
     "region": "Kerala",
     "research_depth": "deep",
     "vibe_profile": "This clifftop property sits directly on the Varkala Cliff with immediate beach access and stunning sea views—a genuinely distinctive setting for budget backpackers and solo travelers. The hostel offers communal kitchen facilities for self-catering, board games, cycling, darts, and an outdoor garden terrace, fostering a low-key social environment. However, the property has undergone multiple rebranding cycles and reviews paint starkly different pictures across time: while some guests have praised cleanliness and the location, more recent accounts report significant discrepancies between advertised and actual room conditions, maintenance issues, and inconsistent staff responsiveness. Comfort is modest (average mattresses and pillows), and the adults-only atmosphere appeals to those seeking a quieter vibe. Given its history of name changes and mixed feedback quality, expectations should be calibrated carefully.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.dorms.com/youth-Hostel/Hostal-The-Lost-Varkala-Helipad/BK2377951",
+        "https://www.booking.com/hotel/in/the-lost-hostels-varkala-helipad.html"
+      ]
+    }
   },
   {
     "id": 39,
@@ -7818,7 +8208,16 @@
       "checkin_24_7": null,
       "room_entry_method": null,
       "communication_quality": "mixed - some sources describe excellent service, cleanliness rated 'good' on Planet of Hotels while Travelocity shows a starkly different picture",
-      "notes": "constant power outages and wifi dropping out flagged in one review; leaks through windows in another"
+      "notes": "constant power outages and wifi dropping out flagged in one review; leaks through windows in another",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned in hostel listings (Hostelworld, MakeMyTrip, Goibibo) or the ~578 reviews checked."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -7915,7 +8314,12 @@
     "region": "Kerala",
     "research_depth": "deep",
     "vibe_profile": "This beachfront hostel sits right on Varkala's distinctive black-sand beach, drawing party travelers and solo beach-lovers looking for social nights of bonfires, guitar jams, and board games. The vibe skews medium-to-high energy with garden lounging under coconut trees and an on-site restaurant, though notably the rooms are soundproofed—a striking feature that suggests you can actually sleep despite the evening buzz. Average mattresses and pillows mean comfort is modest, and some dorms have bathrooms located outside the main building. Guest feedback varies significantly across sources, so expect to research recent reviews carefully; the beach access and event calendar are consistently praised, but overall experience reports are mixed.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/st/hostels/p/315943/soul-varkala/"
+      ]
+    }
   },
   {
     "id": 40,
@@ -8442,7 +8846,16 @@
       "checkin_24_7": null,
       "room_entry_method": null,
       "communication_quality": "exceptional, staff member Rajeev specifically and repeatedly praised by name",
-      "notes": "organizes daily activities and walking tours; portable heater rental available in winter"
+      "notes": "organizes daily activities and walking tours; portable heater rental available in winter",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned in listing facilities snippet or reviews found; full 26-item facility list not accessible."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No fixed curfew; 24-hour reception, check-in window 13:00-midnight, guests asked to be quiet after 24:00."
     },
     "location": {
       "nearby": [
@@ -8533,7 +8946,14 @@
     "region": "Uttar Pradesh",
     "research_depth": "deep",
     "vibe_profile": "Joey's Hostel sits practically on the doorstep of the Taj Mahal—a 4-8 minute walk away—making it ideal for culture seekers and budget travelers who want maximum access to Agra's main draw. The standout feature is the rooftop terrace with direct Taj Mahal views, perfect for sunrise, sunset, or moonlit meals. Housed in a restored old Indian-style building with a central courtyard, the space encourages guest interaction while the exceptionally hospitable staff (particularly Rajeev) earn consistent praise for making stays memorable. Daily organized activities and walking tours keep the social energy low-to-medium, and the hostel welcomes solo travelers, families, and groups alike. Accommodations are average in comfort with a shared kitchen and free breakfast, though some guests note basic facilities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/st/hotels/p/293756/joey-s-hostel-agra/",
+        "https://www.tripadvisor.com/Hotel_Review-g297683-d15701470-Reviews-Joey_s_Hostel-Agra_Agra_District_Uttar_Pradesh.html",
+        "https://wanderlog.com/place/details/778462/joeys-hostel-agra"
+      ]
+    }
   },
   {
     "id": 43,
@@ -10073,7 +10493,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "very helpful and professional per most reviews"
+      "communication_quality": "very helpful and professional per most reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "reception/lobby storage lockers",
+        "note": "Official Zostel site lists 'Lockers' and 'Storage Facility' as amenities; hostelz.com lists 'Lockers in Lobby'. No mention of personal in-dorm lockers."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew found; 24/7 reception (check-in 13:00-23:00, check-out until 10:00)"
     },
     "location": {
       "nearby": [
@@ -10155,7 +10584,13 @@
     "region": "Rajasthan",
     "research_depth": "deep",
     "vibe_profile": "Zostel Pushkar draws budget backpackers, digital nomads, and solo travelers seeking both community and productivity. The standout features—an outdoor pool, well-equipped workstations, and rooftop sunset jamming sessions overlooking the Aravali hills—create a balanced social hub that works equally well for workations and leisurely stays. The common areas buzz with activity, billiards and books fill downtime, and the on-site restaurant serves solid Indian fare. Sleep comfort is modest and cleanliness generally strong, though the location sits removed from Pushkar's main lake and market area, which some guests feel is a trade-off at this price point. Staff are notably helpful and professional throughout.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/101526/zostel-pushkar/",
+        "https://www.zostel.com/destination/pushkar/stay/pushkar-rajasthan-pshx220"
+      ]
+    }
   },
   {
     "id": 52,
@@ -10469,7 +10904,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "mostly praised, staff member Arbaz/Nitish repeatedly named favorably; but see flagged_issues for a serious safety incident"
+      "communication_quality": "mostly praised, staff member Arbaz/Nitish repeatedly named favorably; but see flagged_issues for a serious safety incident",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "conflicting reports: in-dorm lockers vs lobby lockers",
+        "note": "dorms.com describes 'secure lockers in dorms'; hostelz.com separately describes 'Lockers in Lobby'. Availability of some form of locker is well-supported, exact type is unconfirmed."
+      },
+      "hair_dryer_available": false,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -10567,7 +11011,13 @@
     "region": "Rajasthan",
     "research_depth": "deep",
     "vibe_profile": "Madpackers Pushkar is an award-winning hostel housed in one of Pushkar's most artistically decorated buildings, with traditional Rajasthani art throughout and three distinct rooftop terraces that anchor the social scene. It draws party travelers, solo social seekers, and budget backpackers with a medium-to-high energy vibe centered on rooftop hangouts, yoga, and a dedicated camping terrace. The spacious rooms offer comfortable sleeping conditions, and staff members like Arbaz and Nitish are generally warm and helpful. Most guests report good cleanliness and comfort, though a small number of detailed reports—including one regarding a bathroom that wasn't cleaned during a multi-night stay and another concerning a serious nighttime safety incident—warrant careful consideration, particularly for solo female travelers.",
-    "is_boutique_style": true
+    "is_boutique_style": true,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g319729-d12268866-Reviews-Madpackers_Pushkar-Pushkar_Ajmer_District_Rajasthan.html",
+        "https://www.hostelz.com/hostel/356399-Madpackers-Hostel"
+      ]
+    }
   },
   {
     "id": 54,
@@ -12347,7 +12797,16 @@
       "checkin_24_7": null,
       "room_entry_method": null,
       "communication_quality": "helpful and responsive, staff Dong, Marc, Night, and Ash specifically named favorably across reviews",
-      "notes": "arranges a different guest event every single night"
+      "notes": "arranges a different guest event every single night",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "spacious pod-style lockers / lobby lockers",
+        "note": "Described as 'spacious lockers' for pod dorms and 'Lockers in Lobby' as an extra service."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -12424,7 +12883,13 @@
     "region": "Northern Thailand",
     "research_depth": "deep",
     "vibe_profile": "Stamps is built for solo travelers and social butterflies who want nightly action without sacrificing personal space. Every single night brings a different organized event—karaoke, pub quizzes, pub crawls, family dinners, BBQs—creating genuinely constant social momentum that outpaces most hostels. The pod-style dorms with privacy curtains strike a balance, letting you retreat when you need it while the cozy common area and onsite bar keep the energy flowing. Staff members are known by name and reputation for their warmth and attentiveness. An in-house tour agency handles bookings and pickups directly from the hostel, making it easy to explore beyond the Old City walls.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelz.com/hostel/320819-Stamps-Backpackers",
+        "https://stamps-backpackers.com/"
+      ]
+    }
   },
   {
     "id": 65,
@@ -15611,10 +16076,56 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": true,
+      "lockers": {
+        "available": true,
+        "type": "free security lockers",
+        "note": "Booking/Hostelworld list 'Free Security Lockers'; also referenced as 'Lockers in Lobby'"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no strict curfew found; 24hr-style check-in window 14:00-23:00, one 2026 review noted noise 'stopped after 10'"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Tha Pae Gate / Old City temples",
+          "type": "landmark",
+          "distance_km": 1.2,
+          "walkable": true
+        },
+        {
+          "name": "Chiang Mai Night Market / Night Bazaar",
+          "type": "market",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Rooftop bars near Old City",
+          "type": "nightlife",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Local cafes near Old City",
+          "type": "cafe",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Sticky Waterfalls",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Grand Canyon Water Park",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": false
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -15657,7 +16168,13 @@
     "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Mad Monkey Chiang Mai is built for party-focused solo travelers and social seekers drawn to the chain's high-energy atmosphere. The sprawling saltwater pool and onsite gym and yoga spaces provide both daytime hangout spots and wellness options, though the vibe leans distinctly toward evening socializing and nightlife. Beds are comfortable enough for shorter stays, and staff feedback is generally positive, though this isn't a place prioritizing quiet or deep rest. If you're looking to meet other travelers in a lively setting with built-in entertainment infrastructure, it delivers; if you need tranquility or a dedicated work setup, look elsewhere.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/ShowUserReviews-g293917-d9466290-r636610489-Mad_Monkey_Chiang_Mai-Chiang_Mai.html",
+        "https://madmonkeyhostels.com/destination/chiang-mai/"
+      ]
+    }
   },
   {
     "id": 88,
@@ -15746,10 +16263,32 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "free/security lockers plus big under-bed lockers in dorms",
+        "note": "Hostelworld lists 'Free Security Lockers' and 'Big size under-bed lockers' in dorm rooms"
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": true,
+      "curfew_policy": "no formal curfew; reception hours 07:00-22:00, no gathering/partying in outdoor common areas (lawn/gazebo/parking) after 22:00"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Chiang Mai Old City / Tha Pae Gate area",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Nimman / Old City cafes",
+          "type": "cafe",
+          "distance_km": null,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -15791,7 +16330,13 @@
     "source_note": "Populated from airportels.asia, hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Hostel Lullaby sits in the heart of Chiang Mai's Old City, offering a carefully balanced retreat for solo travelers seeking connection without chaos. The vibe skews quiet and social—you'll find genuine conversation rather than forced party energy, with guests ranging from peace-seeking introverts to solo explorers looking to meet like-minded people. Daily offerings like yoga and Thai boxing classes create natural gathering points without overwhelming pressure to join. Rooms are clean and restful, though beds are straightforward rather than luxurious, and the included breakfast sets you up well before exploring. This is the spot for someone who wants a welcoming community atmosphere but also values real sleep and some breathing room.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/285374/hostel-lullaby-non-smoking/",
+        "https://www.hostellullaby.com/"
+      ]
+    }
   },
   {
     "id": 89,
@@ -15880,10 +16425,44 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "No locker information found in facility listings scanned; only general amenities like WiFi, luggage storage, 24hr reception, cable TV were listed"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no explicit curfew found; reception working hours listed as 08:00-22:00, 24hr reception also referenced on one listing (conflicting)"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Chiang Rai Clock Tower",
+          "type": "landmark",
+          "distance_km": 1.9,
+          "walkable": true
+        },
+        {
+          "name": "Denha Market",
+          "type": "market",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Oub Kham Museum",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Chiang Rai Night Bazaar",
+          "type": "nightlife",
+          "distance_km": null,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -15925,7 +16504,13 @@
     "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Grace Hostel draws budget-conscious backpackers and transit travelers, particularly those catching the slow boat to Luang Prabang—its prime location just 150 meters from Bus Station 1 makes it an ideal stopover. The vibe sits at a medium party level, catering to sociable travelers rather than those seeking quiet retreats. Staff come across as friendly, and the hostel sweetens stays with complimentary snacks and hot drinks. Sleep comfort is fairly basic with average mattresses and pillows, while the common area provides a modest gathering space for guests to connect before moving onward.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/285980/grace-hostel/",
+        "https://www.gracehostel.com/"
+      ]
+    }
   },
   {
     "id": 90,
@@ -16014,10 +16599,68 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "in-room/common area lockers",
+        "note": "Hostelworld/reviewer mention: 'lockers had plenty of room'"
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no explicit curfew found; reception working hours 08:00-22:00, check-in window 14:00-22:00"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Chiang Rai Night Bazaar",
+          "type": "nightlife",
+          "distance_km": 0.01,
+          "walkable": true
+        },
+        {
+          "name": "Old Bus Station",
+          "type": "landmark",
+          "distance_km": 0.1,
+          "walkable": true
+        },
+        {
+          "name": "Sirikorn Market (flower market)",
+          "type": "market",
+          "distance_km": 0.0,
+          "walkable": true
+        },
+        {
+          "name": "7-Eleven",
+          "type": "other",
+          "distance_km": 0.25,
+          "walkable": true
+        },
+        {
+          "name": "Cat cafe",
+          "type": "cafe",
+          "distance_km": 0.3,
+          "walkable": true
+        },
+        {
+          "name": "Chiang Rai Clock Tower",
+          "type": "landmark",
+          "distance_km": 0.6,
+          "walkable": true
+        },
+        {
+          "name": "Saturday Walking Street Night Market",
+          "type": "market",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "White Temple (Wat Rong Khun)",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": false
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -16058,7 +16701,12 @@
     "source_note": "Populated from abrokenbackpack.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Busket Hostel stands out for its thoughtfully designed interiors that challenge typical hostel aesthetics, drawing solo travelers and budget backpackers who appreciate style alongside affordability. Positioned conveniently next to the bus station and Night Bazaar, it caters well to those prioritizing easy access to transport and local nightlife, with a medium party atmosphere that suits guests seeking social connection without intensity. The sleeping arrangements offer average comfort across mattresses and pillows, while the common areas provide space for meeting fellow travelers. Staff come across as friendly, and the overall cleanliness maintains generally positive impressions—making this an ideal base for design-conscious backpackers who value proximity to the action and a hostel that feels intentionally curated rather than generic.",
-    "is_boutique_style": true
+    "is_boutique_style": true,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hotels/p/293134/busket-hostel/"
+      ]
+    }
   },
   {
     "id": 91,
@@ -16147,10 +16795,56 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "free security lockers",
+        "note": "Listed as 'Free Security Lockers' plus free luggage storage; no locker complaints in available reviews"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew; reception working hours 8:00am-10:00pm"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Chiang Rai Night Bazaar",
+          "type": "nightlife",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Clock Tower",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Wat Rong Suea Ten (Blue Temple)",
+          "type": "landmark",
+          "distance_km": 3.5,
+          "walkable": true
+        },
+        {
+          "name": "Wat Huay Pla Kang (Big Buddha)",
+          "type": "landmark",
+          "distance_km": 7.0,
+          "walkable": false
+        },
+        {
+          "name": "Baan Dam Museum (Black House)",
+          "type": "landmark",
+          "distance_km": 10.0,
+          "walkable": false
+        },
+        {
+          "name": "Wat Rong Khun (White Temple)",
+          "type": "landmark",
+          "distance_km": 13.0,
+          "walkable": false
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -16191,7 +16885,12 @@
     "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Backpack Hostel draws solo travelers and budget backpackers looking to meet others without the intensity of a party scene. The rooftop terrace serves as the social hub where guests naturally congregate, creating a relaxed atmosphere for conversation and connection. Sleep quarters offer average comfort with standard mattresses and pillows, so expectations should be modest. Staff are welcoming and the hostel maintains generally positive cleanliness standards. The proximity to Bus Station 1 makes it practical for onward travel, appealing to those prioritizing convenience and social connection over luxury amenities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/302424/backpack-hostel/"
+      ]
+    }
   },
   {
     "id": 92,
@@ -16958,10 +17657,68 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "lockers in lobby/common area (extra paid service)",
+        "note": "Listed as an 'extra service' alongside towels and luggage storage, not free in-dorm lockers."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Morjim Beach",
+          "type": "beach",
+          "distance_km": 0.3,
+          "walkable": true
+        },
+        {
+          "name": "Olive Ridley Turtle Nesting Site (Turtle Beach)",
+          "type": "nature",
+          "distance_km": 0.5,
+          "walkable": true
+        },
+        {
+          "name": "La Plage",
+          "type": "cafe",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Sublime",
+          "type": "cafe",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Ashwem Beach",
+          "type": "beach",
+          "distance_km": 4.0,
+          "walkable": false
+        },
+        {
+          "name": "Chapora Fort",
+          "type": "landmark",
+          "distance_km": 8.0,
+          "walkable": false
+        },
+        {
+          "name": "Vagator & Anjuna nightlife area",
+          "type": "nightlife",
+          "distance_km": 10.0,
+          "walkable": false
+        },
+        {
+          "name": "Sweet Water Lake, Arambol",
+          "type": "nature",
+          "distance_km": 6.5,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17005,7 +17762,13 @@
     "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Wanderer's Hostel is a laid-back retreat in Morjim that draws peace-loving travellers and solo seekers looking for a relaxed atmosphere. The standout feature is its pool—reportedly the only one at a hostel in the area—with accommodation clustered in cute tents and dorms around it, creating an unhurried, contemplative vibe that appeals particularly to the yoga crowd and long-term guests. The common areas foster a mellow social scene with a medium party level, while sleep quarters offer average comfort. Staff are friendly and the space maintains generally positive cleanliness standards, making it a solid choice for those prioritizing tranquility over activity.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g1936425-d5502318-Reviews-Wanderers_Hostel-Morjim_North_Goa_District_Goa.html",
+        "https://www.hostelz.com/hostel/246245-Wanderers-Hostel"
+      ]
+    }
   },
   {
     "id": 98,
@@ -17094,10 +17857,68 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Reviewer noted 'separate locker to each bed'; also lockers listed in lobby/common area per listing amenities"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Candolim Beach",
+          "type": "beach",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Sinquerim Beach",
+          "type": "beach",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Aguada Fort",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Candolim Church (Church of St. Lawrence)",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Calangute Beach",
+          "type": "beach",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Baga Beach",
+          "type": "nightlife",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "SinQ Nightclub",
+          "type": "nightlife",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Candolim Market (Tuesday market)",
+          "type": "market",
+          "distance_km": null,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17138,7 +17959,14 @@
     "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Backpacker Panda Candolim draws budget-conscious solo travelers and social backpackers looking for a beachside base with room to mingle. The clean, spacious property sits just 100 meters from Candolim Beach, with generous outdoor common areas perfect for meeting other guests and a medium-paced social scene. Sleep comfort is straightforward—average mattresses and pillows—but the hostel maintains positive cleanliness standards and friendly staff. As part of the expanding Backpacker Panda chain, it offers reliable chain-hostel consistency: no frills, but solid foundations for those prioritizing beach access and easy socializing over quiet retreats or extensive amenities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g297605-d8615024-Reviews-Backpacker_Panda_Goa-Candolim_Bardez_North_Goa_District_Goa.html",
+        "https://www.hostelz.com/hostel/279038-Backpacker-Panda---Goa",
+        "https://www.fernhotels.com/blogs/your-guide-to-exploring-candolim-goa"
+      ]
+    }
   },
   {
     "id": 99,
@@ -17227,10 +18055,50 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Lockers not explicitly mentioned in listing or reviews found."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "24-hour reception listed; no explicit curfew mentioned"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Arambol Beach",
+          "type": "beach",
+          "distance_km": 0.1,
+          "walkable": true
+        },
+        {
+          "name": "Paliem Sweet Water Lake",
+          "type": "nature",
+          "distance_km": 1.5,
+          "walkable": true
+        },
+        {
+          "name": "Arambol Cliff / Drum Circle sunset point",
+          "type": "viewpoint",
+          "distance_km": 1.0,
+          "walkable": true
+        },
+        {
+          "name": "Arambol flea/night market",
+          "type": "market",
+          "distance_km": 0.5,
+          "walkable": true
+        },
+        {
+          "name": "Mandrem Beach",
+          "type": "beach",
+          "distance_km": 4.5,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17275,7 +18143,14 @@
     "source_note": "Populated from cozycozy.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Dreamcatcher House appeals to peace-seekers and digital nomads drawn to the area's laid-back, spiritual character. The hostel centers around a yoga and meditation studio, with a workspace cafe offering high-speed 5G wifi—ideal for remote workers who want to blend productivity with wellness. Accommodation ranges from male and female dorms to private sea-view rooms, giving guests flexibility between budget and comfort. The atmosphere sits at a medium social level, attracting yoga enthusiasts and those seeking a calm, grounded environment rather than a high-energy party scene. Sleeping arrangements offer average comfort, while the friendly staff and generally clean facilities support a relaxed, welcoming stay.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/322685/dreamcatcher-house-and-hostel-arambol/",
+        "https://www.tripadvisor.com/ShowUserReviews-g2307943-d24075056-r842574843-Dreamcatcher_House_Hostel_at_Arambol_Beach-Arambol_North_Goa_District_Goa.html",
+        "https://www.booking.com/hotel/in/dream-catcher-arambol.html"
+      ]
+    }
   },
   {
     "id": 100,
@@ -17364,10 +18239,50 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm lockers",
+        "note": "Guest review noted 'even the locker was soo small' - present but reported as small."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": false,
+      "curfew_policy": null
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Baga Beach",
+          "type": "beach",
+          "distance_km": 0.6,
+          "walkable": true
+        },
+        {
+          "name": "Tito's Lane",
+          "type": "nightlife",
+          "distance_km": 1.0,
+          "walkable": true
+        },
+        {
+          "name": "Calangute Beach",
+          "type": "beach",
+          "distance_km": 2.0,
+          "walkable": true
+        },
+        {
+          "name": "Saturday Night Market, Arpora",
+          "type": "market",
+          "distance_km": 3.0,
+          "walkable": null
+        },
+        {
+          "name": "Anjuna Flea Market",
+          "type": "market",
+          "distance_km": 6.0,
+          "walkable": false
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17410,7 +18325,13 @@
     "source_note": "Populated from hostelgeeks.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Bedrock Boutique Hostel is one of India's largest luxury hostels, drawing party travelers and solo social seekers with its distinctive club-themed common areas and seasonal amphitheatre venue. Set on a quiet side street just off the lively Baga-Calangute strip, it strikes a balance between accessible nightlife and a more relaxed neighborhood feel. The vibe leans toward medium-level socializing and group energy rather than tranquility, making it ideal for those seeking connection and entertainment. Sleep comfort here is functional rather than premium, with average mattresses and bedding, so expectations should be realistic if rest is a priority.",
-    "is_boutique_style": true
+    "is_boutique_style": true,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.booking.com/hotel/in/bedrock-boutique-hostel.html",
+        "https://www.tripadvisor.com/Hotel_Review-g635747-d15061867-Reviews-Bedrock_Boutique_Hostel-Baga_North_Goa_District_Goa.html"
+      ]
+    }
   },
   {
     "id": 101,
@@ -17499,10 +18420,50 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm lockers",
+        "note": "Guest review: 'Dorms have lockers (not big though) to store your valuables.'"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Calangute Beach",
+          "type": "beach",
+          "distance_km": 0.1,
+          "walkable": true
+        },
+        {
+          "name": "Baga Beach",
+          "type": "beach",
+          "distance_km": 2.0,
+          "walkable": true
+        },
+        {
+          "name": "Tito's Lane",
+          "type": "nightlife",
+          "distance_km": 2.5,
+          "walkable": true
+        },
+        {
+          "name": "Candolim Beach",
+          "type": "beach",
+          "distance_km": 3.0,
+          "walkable": null
+        },
+        {
+          "name": "Saturday Night Market, Arpora",
+          "type": "market",
+          "distance_km": 4.0,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17543,7 +18504,13 @@
     "source_note": "Populated from thebrokebackpacker.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Hashtag Rooms caters well to digital nomads and solo travellers seeking a clean, functional base near the beach. Located just 100 metres from Calangute Beach, it's an ideal launching point for exploring North Goa's coastal spots. The hostel maintains notably clean spaces and bathrooms, with a common area for socialising, though the party vibe sits at a moderate level—it's neither a quiet retreat nor a high-energy party hub. Sleep comfort is straightforward rather than luxurious, with average-quality mattresses and pillows, but the reliable cleanliness and strong remote-work setup make it a solid choice for those prioritising productivity and nearby beach access over creature comforts.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/ShowUserReviews-g306995-d12920678-r618605414-Hashtag_Rooms-Calangute_North_Goa_District_Goa.html",
+        "https://www.justdial.com/Goa/Hashtag-Rooms-Closed-Down-Calangute/0832PX832-X832-180323160009-B8D1_BZDET"
+      ]
+    }
   },
   {
     "id": 102,
@@ -17632,10 +18599,62 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": null
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Munnar Tea Museum",
+          "type": "landmark",
+          "distance_km": 2.0,
+          "walkable": true
+        },
+        {
+          "name": "Eravikulam National Park",
+          "type": "nature",
+          "distance_km": 15.0,
+          "walkable": false
+        },
+        {
+          "name": "Mattupetty Dam",
+          "type": "nature",
+          "distance_km": 13.0,
+          "walkable": false
+        },
+        {
+          "name": "Echo Point",
+          "type": "viewpoint",
+          "distance_km": 15.0,
+          "walkable": false
+        },
+        {
+          "name": "Kundala Lake",
+          "type": "nature",
+          "distance_km": 20.0,
+          "walkable": false
+        },
+        {
+          "name": "Attukad Waterfalls",
+          "type": "nature",
+          "distance_km": 12.0,
+          "walkable": false
+        },
+        {
+          "name": "Munnar town market",
+          "type": "market",
+          "distance_km": null,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17676,7 +18695,13 @@
     "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Vedanta Wake Up Munnar stands as the only dedicated hostel in Munnar, drawing nature enthusiasts and cultural explorers into the heart of tea plantation country. The place centers around curated experiences—village walks, plantation tours, cooking classes, yoga, and ayurvedic massage—creating a retreat atmosphere that values immersion over nightlife. You'll find a common area to connect with fellow guests, though the social energy sits at a medium level rather than high-octane. Beds are functional if modest, and the staff comes across as genuinely welcoming. This suits travelers seeking quiet cultural engagement and wellness activities far more than those hunting for a bustling party scene.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelz.com/hostel/218515-Vedanta-Wake-Up---Munnar",
+        "https://www.tripadvisor.in/Hotel_Review-g303881-d10210749-Reviews-Vedanta_Wake_Up_Town_Centre-Munnar_Idukki_District_Kerala.html"
+      ]
+    }
   },
   {
     "id": 103,
@@ -17765,10 +18790,50 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": true,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Listed for both female and mixed dorms on Zostel's own site."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No stated curfew; 24/7 reception listed for all room types."
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Alappuzha Beach",
+          "type": "beach",
+          "distance_km": 0.0,
+          "walkable": true
+        },
+        {
+          "name": "Vijay Beach Park",
+          "type": "landmark",
+          "distance_km": 0.1,
+          "walkable": true
+        },
+        {
+          "name": "Cafe Catamaran",
+          "type": "cafe",
+          "distance_km": 0.05,
+          "walkable": true
+        },
+        {
+          "name": "Alleppey Backwaters / houseboat & shikara rides",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Alappuzha Lighthouse",
+          "type": "viewpoint",
+          "distance_km": null,
+          "walkable": null
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17809,7 +18874,14 @@
     "source_note": "Populated from flashpackingkerala.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Zostel Alleppey is a social hub within the trusted Zostel chain, catering to budget backpackers and solo travelers eager to connect with other guests. The hostel serves as an ideal launchpad for exploring Kerala's famous backwaters, with houseboat trips easily arranged from here. Featuring a common area for mingling, it strikes a medium party level that encourages socializing without overwhelming those seeking quieter moments. Sleeping quarters offer average comfort with standard mattresses and pillows, while the staff maintains a friendly atmosphere and generally positive cleanliness standards. This is a place built for meeting people and planning adventures, rather than luxurious relaxation.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://old.zostel.com/zostel/alleppey/",
+        "https://www.tripadvisor.com/Hotel_Review-g608471-d13431012-Reviews-Zostel_Alleppey-Alappuzha_Alappuzha_District_Kerala.html",
+        "https://www.hostelworld.com/hostels/p/285231/zostel-alleppey/"
+      ]
+    }
   },
   {
     "id": 104,
@@ -17898,10 +18970,62 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not specified in listing; property emphasizes dorm/private rooms, garden, board games, foosball."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "24 hour reception, no curfew mentioned; check-in 14:00-24:00"
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Pookode Lake",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": true
+        },
+        {
+          "name": "Myngl Cafe (on-site)",
+          "type": "cafe",
+          "distance_km": 0.0,
+          "walkable": true
+        },
+        {
+          "name": "Lakkidi Viewpoint",
+          "type": "viewpoint",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Soochipara Falls",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Edakkal Caves",
+          "type": "landmark",
+          "distance_km": 45.0,
+          "walkable": false
+        },
+        {
+          "name": "Phantom Rock",
+          "type": "viewpoint",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Thirunelli Temple",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": false
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -17942,7 +19066,13 @@
     "source_note": "Populated from cozycozy.com, Tripadvisor (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Set in the Wayanad hill station, this property draws nature lovers and families seeking a retreat into Kerala's lush landscape, with the notable draw of a swimming pool—a rarity among Kerala hostels. The vibe sits at a moderate social level, inviting guests to mingle without demanding constant interaction. Sleep comfort hovers around average with standard mattresses and pillows, while the common areas provide a relaxed hub for meeting other travelers. The proximity to Edakkal Caves and Muthanha Wildlife Sanctuary makes it a natural base for exploring the region's outdoor attractions.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/322319/the-hosteller-wayanad-vythiri/",
+        "https://www.tripadvisor.com/Hotel_Review-g14904550-d26774630-Reviews-The_Hosteller_Wayanad_Vythiri-Pookode_Wayanad_District_Kerala.html"
+      ]
+    }
   },
   {
     "id": 105,
@@ -18031,10 +19161,44 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "No review or listing signal found on locker availability."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Vembanad Lake (Punnamada Lake)",
+          "type": "nature",
+          "distance_km": 0.0,
+          "walkable": true
+        },
+        {
+          "name": "Punnamada Boat Jetty",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Nehru Trophy Boat Race finishing point",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Kerala backwater paddy fields",
+          "type": "nature",
+          "distance_km": 0.0,
+          "walkable": true
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -18078,7 +19242,14 @@
     "source_note": "Populated from global-gallivanting.com (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Bamboostix is an island retreat in the Kerala backwaters where nature and relaxation take priority over typical hostel hustle. Accessible only by the hostel's own boat service, it draws those seeking genuine escape rather than nightlife—though occasional parties keep the social energy moderate. The rustic-chic, eco-conscious setting is dotted with hammocks perfect for unwinding, and you'll find a welcoming common area and generally friendly staff. Sleep comfort is straightforward rather than luxe, but the genuine isolation and distinctive island setting attract budget backpackers and nature seekers willing to trade amenities for atmosphere.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.lifeisoutside.com/bamboostix-island-alleppey/",
+        "https://www.click.in/alappuzha/bamboostix-island-resort-punnamada-lake-c124-v771630",
+        "https://www.innsite.com/inns/B236399.html"
+      ]
+    }
   },
   {
     "id": 106,
@@ -18167,10 +19338,68 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "generally positive per available reviews"
+      "communication_quality": "generally positive per available reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not listed among Hostelworld facilities for this property (rebranded as Monkey Tribe Vagamon); no confirmation found either way."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
-      "nearby": [],
+      "nearby": [
+        {
+          "name": "Vagamon Meadows",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Pine Forest, Vagamon",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Mooppanpara Viewpoint",
+          "type": "viewpoint",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Kurisumala",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Thangal Para (Dargah shrine)",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Murugan Para Temple",
+          "type": "landmark",
+          "distance_km": null,
+          "walkable": null
+        },
+        {
+          "name": "Marmala Waterfalls",
+          "type": "nature",
+          "distance_km": null,
+          "walkable": false
+        },
+        {
+          "name": "Kolahalamedu Peak",
+          "type": "viewpoint",
+          "distance_km": null,
+          "walkable": false
+        }
+      ],
       "distance_to_center_km": null,
       "easy_to_find": true,
       "near_metro": false,
@@ -18212,7 +19441,13 @@
     "source_note": "Populated from Tripadvisor aggregation (searched July 2026). NOTE: this entry was added as part of a broad geographic-diversity batch (not personally visited), researched via a single broader regional search rather than the deeper multi-search pass used for other entries in this dataset. Treat as lighter-touch/lower-confidence data pending manual review.",
     "research_depth": "light",
     "vibe_profile": "Zostel Vagamon draws nature-focused travelers and solo adventurers seeking a quieter hill-station escape, set in Vagamon's underrated landscape with easy walking access to waterfalls and local sights. The hostel's common areas provide a social hub, while the friendly staff—particularly manager Vinu—are known for organizing activities that bring guests together. Sleep comfort sits at average, with standard mattresses and pillows, and the overall cleanliness receives positive marks. This is an ideal base for those prioritizing scenic exploration and low-key social connection over intensive nightlife or luxury amenities, with a medium party atmosphere that balances relaxation and community.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/294806/monkey-tribe-vagamon/",
+        "https://www.tripadvisor.in/Hotel_Review-g2282921-d16708521-Reviews-or10-Zostel_Vagamon-Vagamon_Idukki_District_Kerala.html"
+      ]
+    }
   },
   {
     "id": 107,
@@ -19655,7 +20890,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "incredibly friendly and helpful, staff Marcus and Rachelle specifically named and praised across reviews"
+      "communication_quality": "incredibly friendly and helpful, staff Marcus and Rachelle specifically named and praised across reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not explicitly confirmed as an amenity in the sources checked, despite substantial review volume"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No stated curfew; reception hours roughly 08:00-22:00, in-room/bar music ends at 11pm nightly (noise policy, not a lockout)"
     },
     "location": {
       "nearby": [
@@ -19731,7 +20975,13 @@
     "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok despite it being one of Southeast Asia's best-known nightlife destinations, causing 'party hostel in Bangkok' searches to return zero results. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review.",
     "research_depth": "deep",
     "vibe_profile": "This is a high-energy party hostel right on Khao San Road, ideal for solo travelers and groups seeking social connection and nightlife. The vibe centers around lively organized events and bar crawls, with a large common area and on-site bar that pulse with activity—this is decidedly not a place for quiet or restful sleep. Staff are genuinely friendly and attentive, and guests consistently praise the clean, modern facilities and comfortable beds. The atmosphere attracts budget backpackers and night-focused travelers who came to Bangkok specifically to go out, meet people, and experience the legendary backpacker scene.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/337829/nomads-bangkok-khao-san-road-hostel/",
+        "https://nomadsworld.com/thailand/nomads-hostel-bangkok/"
+      ]
+    }
   },
   {
     "id": 118,
@@ -19844,7 +21094,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "self-described as taking hospitality seriously with 10 years of hostel experience; run by former backpackers themselves"
+      "communication_quality": "self-described as taking hospitality seriously with 10 years of hostel experience; run by former backpackers themselves",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "lockers (in-facility security lockers per one source, lobby/luggage-area lockers per another)",
+        "note": "Hostelworld facilities list 'Free Security Lockers'; Hostelz lists 'Lockers in Lobby' - exact in-dorm vs lobby placement unconfirmed"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "24-hour reception, no lockout; quiet time in rooms generally from 11:30pm, bar/fire pit area open later"
     },
     "location": {
       "nearby": [
@@ -19914,7 +21173,13 @@
     "source_note": "Added specifically to fill a real data gap found during matching engine testing - the dataset previously had zero genuine high-party hostels in Bangkok. Populated from Hostelworld (searched August 2026). Not independently verified; awaiting manual review.",
     "research_depth": "deep",
     "vibe_profile": "This is an unabashedly social party hostel squarely on Khao San Road, explicitly catering to travelers aged 18–35 seeking Bangkok's nightlife scene. The property runs its own pub crawls and boat trips, creating a built-in social structure for solo travelers and groups looking to meet people and explore the city's party offerings. Noise levels are high by design—the hostel warns guests upfront that comfort during sleeping hours isn't a priority here. Staff are experienced and hospitable, drawn from backpacking backgrounds themselves. Sleeping quarters are average in comfort, suited for those who plan to be out late rather than resting early, making this the right fit for adventure-focused travelers but a poor match for anyone seeking quiet or restorative accommodation.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/326223/revolution-khao-san-by-the-bliss/",
+        "https://www.hostelz.com/hostel/503559-Revolution-Khao-San-By-The-Bliss"
+      ]
+    }
   },
   {
     "id": 119,
@@ -27992,7 +29257,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "helpful, friendly staff per reviews"
+      "communication_quality": "helpful, friendly staff per reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "reception/lobby storage lockers",
+        "note": "Official Zostel site lists 'Storage facility'; hostelz.com lists 'Lockers in Lobby'. Consistent with Zostel brand pattern, no in-dorm personal lockers confirmed."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew found; check-in 13:00 (1:00 PM), check-out 10:00 AM, no stated reception cutoff"
     },
     "location": {
       "nearby": [
@@ -28069,7 +29343,13 @@
     "region": "Uttarakhand",
     "research_depth": "deep",
     "vibe_profile": "This Zostel draws yoga practitioners, solo travelers, and budget backpackers seeking a wellness-focused social scene rather than late-night energy. The rooftop café overlooking Himalayan foothills is the heart of the experience, fostering genuine guest connections over tea and conversation. Expect strict house rules—no under-18s, strict alcohol and drug policies, and government ID requirements—which keeps the vibe calm and secure rather than party-oriented. Common spaces include billiards and board games, plus an on-site restaurant and expansive lawn, making it genuinely good for remote work and leisurely hangouts. Rooms feature personal balconies and mountain views, though mattresses and pillows are average; cleanliness throughout is immaculate, and staff are genuinely warm and attentive.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/329691/zostel-rishikesh-tapovan/",
+        "https://www.zostel.com/destination/rishikesh/stay/zostel-rishikesh-tapovan-rshh141"
+      ]
+    }
   },
   {
     "id": 180,
@@ -28182,7 +29462,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "friendly and helpful per most reviews"
+      "communication_quality": "friendly and helpful per most reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "lobby lockers",
+        "note": "hostelz.com lists 'Lockers in Lobby' for this Moustache Escapes property; no in-dorm personal lockers confirmed."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew found; check-in window 12:00-23:00 (some listings note 24-hour check-in availability), check-out until 10:00"
     },
     "location": {
       "nearby": [
@@ -28272,7 +29561,13 @@
       }
     ],
     "vibe_profile": "Moustache Udaipur thrives on its stunning rooftop overlooking Lake Pichola, drawing budget backpackers and social travelers who come for the lake views and lively atmosphere. The hostel cultivates a medium-to-high energy party vibe with rooftop hangouts as the main social hub, and staff are generally friendly and helpful. Mattress and pillow comfort are average, so sleep may not be the priority here. A small number of recent reports—including one detailed account of theft from luggage storage and dampness/odor issues in bedding and bathrooms—stand out against an otherwise strongly positive review history, worth keeping in mind when storing valuables or if you're sensitive to cleanliness concerns.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.in/Hotel_Review-g297672-d10712643-Reviews-Moustache_Hostel_Udaipur-Udaipur_Udaipur_District_Rajasthan.html",
+        "https://www.hostelworld.com/hostels/p/269431/moustache-udaipur/"
+      ]
+    }
   },
   {
     "id": 181,
@@ -28383,7 +29678,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "friendly staff, though a few reviews mention occasional chaotic/slow communication"
+      "communication_quality": "friendly staff, though a few reviews mention occasional chaotic/slow communication",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not itemized in listing facilities excerpt"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -28469,7 +29773,13 @@
       }
     ],
     "vibe_profile": "Zostel Hampi offers a serene retreat in rural hut-style accommodation surrounded by farmland, drawing budget backpackers and nature lovers seeking genuine peace over easy access to central attractions. The social atmosphere centers on communal meals where guests connect over excellent food prepared by warm, hospitable staff—perfect for solo travelers who want community without the party scene. Sleep is genuinely restful here, though bedding is fairly basic. The on-site restaurant and outdoor lounge overlooking countryside views create a slow-travel vibe ideal for unplugging. Worth noting: laundry service can be inconsistent and staff communication occasionally chaotic, though these rarely overshadow the overall experience of stepping away from crowds into a quiet, well-kept rural setting.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/321681/zostel-hampi-gangavathi/",
+        "https://www.tripadvisor.com/Hotel_Review-g319725-d26628344-Reviews-Zostel_Hampi_Gangavathi-Hampi_Bellary_District_Karnataka.html"
+      ]
+    }
   },
   {
     "id": 182,
@@ -28582,7 +29892,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "friendly and helpful staff, though some reviews note communication gaps between shifts regarding guest complaints"
+      "communication_quality": "friendly and helpful staff, though some reviews note communication gaps between shifts regarding guest complaints",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-hostel lockers plus separate luggage storage",
+        "note": "Listed as amenities on Hostel Management/Tripadvisor listing."
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": true,
+      "curfew_policy": "no curfew; 24-hour reception"
     },
     "location": {
       "nearby": [
@@ -28670,7 +29989,13 @@
       }
     ],
     "vibe_profile": "Backpacker Panda Colaba draws budget-conscious solo travelers and international backpackers seeking Mumbai's vibrant Colaba neighborhood, with easy access to the Gateway of India and local markets. The hostel fosters a social atmosphere through common areas—an indoor lounge and rooftop space—where guests naturally connect, though the party vibe stays modest. Staff are genuinely friendly and helpful, and a complimentary breakfast plus shared kitchen on each floor add practical value. However, expect some friction: hot water can be unreliable and showerheads occasionally need manual holding, cleaning between guests has been patchy, and there's been at least one concerning incident where staff response to a disruptive guest fell short of what some felt was necessary. Overall comfort is solid rather than polished—beds and pillows are average—making this best suited for travelers prioritizing location and social connection over pristine facilities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g304554-d13418597-Reviews-Backpacker_Panda_Colaba-Mumbai_Maharashtra.html",
+        "https://hostelmanagement.com/india/mumbai/backpacker-panda-colaba"
+      ]
+    }
   },
   {
     "id": 183,
@@ -28761,7 +30086,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "friendly and helpful per most reviews, though some found staff dismissive of maintenance complaints"
+      "communication_quality": "friendly and helpful per most reviews, though some found staff dismissive of maintenance complaints",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "General 'storage facility' mentioned on official Zostel page; dedicated lockers not explicitly confirmed."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no explicit curfew mentioned; property enforces quiet hours 11pm-6am, check-in 1pm/check-out 10am, 18+ only"
     },
     "location": {
       "nearby": [
@@ -28847,7 +30181,14 @@
       }
     ],
     "vibe_profile": "Zostel Bangalore sits in the heart of Koramangala's vibrant nightlife and restaurant scene, making it ideal for budget backpackers and young professionals who want to be where the action is. The dedicated workspace and social lounges (including a rooftop area) cater well to remote workers and those seeking connection, with foosball and board games fueling low-key hangouts. Staff are generally friendly, and rooms themselves are comfortable, though bathroom cleanliness is inconsistent—some guests have reported dusty facilities and staff who've been dismissive about cleaning requests. The hostel also contends with occasional power cuts, mosquitoes, and spotty air conditioning in larger dorms, which can be uncomfortable given Bangalore's heat. It's a solid midrange option if you prioritize location and workspace comfort over pristine facilities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/323027/zostel-bangalore-koramangala/",
+        "https://www.zostel.com/destination/bangalore/stay/zostel-bangalore-koramangala-bngh469",
+        "https://www.booking.com/reviews/in/hotel/zostel-bangalore-koramangala.html"
+      ]
+    }
   },
   {
     "id": 184,
@@ -28960,7 +30301,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "described as friendly by some, though other reviews report rude staff interactions"
+      "communication_quality": "described as friendly by some, though other reviews report rude staff interactions",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned; luggage storage is offered but lockers not specified."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew enforced; reception working hours 09:00-23:00"
     },
     "location": {
       "nearby": [
@@ -29064,7 +30414,14 @@
       }
     ],
     "vibe_profile": "This mountain-view hostel draws budget backpackers and trekkers with its rooftop gathering space and well-regarded in-house café, making it a social hub for meeting other travelers. The rooftop lounge offers views and a natural gathering point, though the vibe comes with trade-offs: the climb to reach the property is steep—100–200 steps with luggage—and reviews consistently flag uncomfortably hard mattresses that have caused physical discomfort for some guests. Cleanliness issues in rooms and bathrooms have been noted alongside mixed reports on staff friendliness, so experiences here vary noticeably. It's best suited to sociable, physically capable travelers willing to overlook sleep comfort and maintenance concerns for the social atmosphere and quality food.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/315332/zostel-mcleodganj/",
+        "https://www.tripadvisor.in/Hotel_Review-g1092107-d24951953-Reviews-Zostel_Mcleodganj-McLeod_Ganj_Dharamsala_Kangra_District_Himachal_Pradesh.html",
+        "https://www.hostelz.com/hostel/371292-Zostel-Dharamkot"
+      ]
+    }
   },
   {
     "id": 185,
@@ -29177,7 +30534,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "described as helpful; travel desk assists with tours and onward travel"
+      "communication_quality": "described as helpful; travel desk assists with tours and onward travel",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not detailed in fetched excerpt; listing indicated 22 total facilities not all itemized"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no strict curfew, 24 hour reception"
     },
     "location": {
       "nearby": [
@@ -29268,7 +30634,13 @@
       }
     ],
     "vibe_profile": "Zostel Gokarna sits perched on cliffs directly above the beach, offering dramatic sea views from both dorms and communal outdoor spaces—a striking setting for budget backpackers and solo travelers seeking social connection. The vibe leans party-friendly with a medium-to-high energy level, centered around beach hangouts and cliffside lounging, though guests should know that nighttime noise from music is a consistent presence that can interrupt sleep. The traditional woven hut accommodations and laid-back atmosphere, paired with an onsite restaurant and helpful staff, attract those prioritizing beach life and meeting other travelers over quiet, focused stays. Mattress and pillow comfort are average, so expectations should align with the bohemian, no-frills hostel experience this place delivers.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/265858/zostel-gokarna/",
+        "https://www.tripadvisor.com/Hotel_Review-g651646-d9999076-Reviews-or270-Zostel_Gokarna-Gokarna_Uttara_Kannada_District_Karnataka.html"
+      ]
+    }
   },
   {
     "id": 186,
@@ -29379,7 +30751,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "described as providing great service"
+      "communication_quality": "described as providing great service",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned in reviews or listing pages found."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -29467,7 +30848,13 @@
     "region": "Ladakh",
     "research_depth": "deep",
     "vibe_profile": "Zostel Leh is a seasonal high-altitude base well-suited for budget backpackers, solo trekkers, and adventure seekers exploring Ladakh. The rooftop terrace is the social hub, offering Himalayan mountain views and a natural gathering space for guests to connect over evening conversations. Staff come across as genuinely friendly and helpful, particularly in arranging treks and bike rentals for local exploration. Beds are comfortable though unremarkable, and the hostel maintains a cozy atmosphere that appeals to the trekking crowd. As a seasonal property, it's closed during deep winter months due to the extreme altitude and climate.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g297625-d12713676-Reviews-Zostel_Leh-Leh_Leh_District_Ladakh.html",
+        "https://www.hostelworld.com/bed-and-breakfasts/p/280302/zostel-leh/"
+      ]
+    }
   },
   {
     "id": 187,
@@ -29580,7 +30967,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "exceptionally friendly and helpful staff per reviews"
+      "communication_quality": "exceptionally friendly and helpful staff per reviews",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned in reviews or on official site; substantial recent reviews with no bed bug/pest mentions"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "gates closed around midnight-1am; strict house rules (reviewers describe restrictions like no drinking after 12:30am)"
     },
     "location": {
       "nearby": [
@@ -29664,7 +31060,13 @@
       }
     ],
     "vibe_profile": "Micasa Hostels sits in Pondicherry's charming French Quarter heritage district, catering well to budget backpackers, digital nomads, and solo travelers seeking a quieter base. The onsite coworking space and low-key social atmosphere make it ideal for remote work, with friendly and attentive staff consistently earning praise. Common areas can get quite humid and hot during warm seasons, and bathrooms occasionally fall short of cleanliness standards despite daily cleaning—factors worth considering if you're sensitive to climate or hygiene. This is a place for those prioritizing a calm, work-conducive environment over nightlife; the surrounding area offers limited evening entertainment but genuine heritage character and a relaxed pace.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.in/Hotel_Review-g659792-d15213540-Reviews-Micasa_Hostels-Pondicherry_Union_Territory_of_Pondicherry.html",
+        "https://www.micasahostels.com/"
+      ]
+    }
   },
   {
     "id": 188,
@@ -29799,7 +31201,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "friendly, helpful, and warm per most reviews; one business traveler reported unprofessional reception staff"
+      "communication_quality": "friendly, helpful, and warm per most reviews; one business traveler reported unprofessional reception staff",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm lockers",
+        "note": "Lockers provided in dorm rooms per property's own site."
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": null,
+      "curfew_policy": "No curfew; 24-hour reception, with quiet/silent hours enforced 10 PM-8 AM."
     },
     "location": {
       "nearby": [
@@ -29876,7 +31287,14 @@
       }
     ],
     "vibe_profile": "This clean, budget-friendly hostel draws budget backpackers, cultural travelers, and solo social seekers eager to explore the Golden Temple area. The social scene centers around common spaces with board games and foosball, creating a low-to-medium party atmosphere where guests naturally mingle rather than rage. Staff are warm and helpful, and the on-site café keeps the community connected, though note that ground-floor rooms can pick up noise from the reception area—upper floors are quieter if that matters to you. Some guests find the pillows firm, and the mattresses are average, but overall cleanliness and the friendly, social environment make this a solid choice for those prioritizing connection and value over luxury sleep. Pets are welcome, making it a rare option for travelers with animal companions.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.thehosteller.com/hostels/the-hosteller-amritsar/",
+        "https://www.tripadvisor.com/Hotel_Review-g303884-d27123125-Reviews-The_Hosteller_Amritsar_Near_Golden_Temple-Amritsar_Amritsar_District_Punjab.html",
+        "https://www.hostelworld.com/hostels/p/324345/the-hosteller-amritsar-near-golden-temple/"
+      ]
+    }
   },
   {
     "id": 189,
@@ -33728,7 +35146,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "staff rated 8.4/10; friendly and helpful, three-time Hoscar Award winner property"
+      "communication_quality": "staff rated 8.4/10; friendly and helpful, three-time Hoscar Award winner property",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Large under-bed lockers, free of charge; guest review: 'the lockers are so big I could've put 3 times my bag in there.'"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": false,
+      "curfew_policy": "no curfew, 24hr reception"
     },
     "location": {
       "nearby": [
@@ -33800,7 +35227,13 @@
     "region": "Krabi Province",
     "research_depth": "deep",
     "vibe_profile": "Pak-Up Hostel is a vibrant social hub designed for budget backpackers and solo travelers seeking a lively atmosphere. The property thrives on connection, with bar nights, rooftop gym sessions, and tour desk meetups creating plenty of opportunities to meet fellow guests, while the pool and on-site bar keep the energy going through the day. An 18-40 age restriction keeps the crowd young and the party level medium-to-high, though some recent guests have noted wear on bed linens despite generally strong cleanliness standards. Dorms feature AC, privacy curtains, and lockers for security; mattresses and pillows are average, and a shared kitchen plus free breakfast add practical value. Note that cash is preferred here, as credit cards aren't accepted on-site.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/46929/pak-up-hostel/",
+        "https://www.pakuphostel.com/"
+      ]
+    }
   },
   {
     "id": 210,
@@ -33939,7 +35372,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "staff rated highest of all categories (8.0/10), described as friendly and social"
+      "communication_quality": "staff rated highest of all categories (8.0/10), described as friendly and social",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Hostelworld describes 'secure lockers' in dorm rooms; free luggage storage also offered."
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew"
     },
     "location": {
       "nearby": [
@@ -34021,7 +35463,12 @@
       }
     ],
     "vibe_profile": "Summer Hostel Koh Tao is a social hub for divers and budget-conscious solo travelers drawn to the nearby dive shops and beach. The friendly staff and lively bean bag lounge create an energetic atmosphere perfect for meeting other guests, with a medium party vibe that keeps things engaging without being overwhelming. Sleeping comfort is straightforward—expect average mattresses and pillows—and note that some dorms lack bed curtains and showers are outdoor (occasional insects can be an annoyance). The small indoor lounge and shared kitchen with basic amenities suit travelers prioritizing social connection and diving access over luxury, though cleanliness standards are modest across the board.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/270368/summer-hostel-koh-tao/"
+      ]
+    }
   },
   {
     "id": 211,
@@ -34156,7 +35603,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "staff rated 9.4/10 overall, though a minority of recent reviews note inconsistent friendliness"
+      "communication_quality": "staff rated 9.4/10 overall, though a minority of recent reviews note inconsistent friendliness",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Listings show 'Lockers in Lobby' on one aggregator page but this could not be independently confirmed and may reflect a data error - treated as unverified."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "informal midnight quiet-down (no strict lockout)"
     },
     "location": {
       "nearby": [
@@ -34243,7 +35699,12 @@
       }
     ],
     "vibe_profile": "This long-standing Pai institution thrives on its social poolside scene, with an infinity pool framed by mountain views serving as the hub for budget backpackers and solo travelers seeking connection. The vibe is relaxed and medium-paced, anchored by a poolside bar, hammock lounging, and access to circus workshops through the linked Pai Circus School. Staff are generally warm and welcoming, and the hostel offers a free daily taxi to town plus an onsite restaurant. Sleep comfort is modest—expect average mattresses and pillows—and external shared bathrooms occasionally attract insects, typical of open-air properties. During quieter off-season periods, some guests report a dip in cleanliness and atmosphere, though the hostel remains a solid choice for social, budget-conscious travelers prioritizing community over solitude.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/91394/the-famous-pai-circus-hostel/"
+      ]
+    }
   },
   {
     "id": 212,
@@ -34358,7 +35819,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "staff rated 9.8/10, repeatedly described as incredibly friendly and helpful"
+      "communication_quality": "staff rated 9.8/10, repeatedly described as incredibly friendly and helpful",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "Not mentioned on Hostelworld listing; no locker complaints or confirmations found"
+      },
+      "hair_dryer_available": false,
+      "clothes_drying_facility": true,
+      "curfew_policy": "no curfew; reception hours 09:00-22:00 with limited access outside those hours"
     },
     "location": {
       "nearby": [
@@ -34443,7 +35913,12 @@
       }
     ],
     "vibe_profile": "Lanta Hostel draws budget-conscious solo travelers and small groups seeking a laid-back, adults-only atmosphere near the beach. The standout here is the exceptionally warm and helpful staff, who make guests feel genuinely welcomed despite modest sleeping quarters—bunks lack privacy curtains and mattresses are basic. The common kitchen and dining area encourage socializing, though the vibe stays relaxed rather than party-focused; be prepared for AC that runs mainly evenings and early mornings, which some find uncomfortable during hot afternoons. Daily bathroom cleaning is standard, though occasional drainage issues pop up. It's a place where hospitality and location trump creature comforts, and many guests return for exactly that balance.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hotels/p/284018/lanta-hostel/"
+      ]
+    }
   },
   {
     "id": 213,
@@ -34556,7 +36031,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "staff rated 8.3/10; some reviews note staff 'don't do much to create atmosphere' despite the party branding"
+      "communication_quality": "staff rated 8.3/10; some reviews note staff 'don't do much to create atmosphere' despite the party branding",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "reception storage only",
+        "note": "Booking.com/Hostelz listing mentions 'Lockers in Lobby'; not confirmed as in-dorm personal lockers."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": true,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -34630,7 +36114,12 @@
       }
     ],
     "vibe_profile": "SocialTel Koh Samui is a high-energy party hostel positioned directly across from Chaweng Beach, designed for young backpackers and nightlife seekers. The swim-up pool bar and on-site Kitten Club create a built-in social scene, with pool parties anchoring weekends. Expect consistent noise from the nightclub and surrounding Chaweng strip—it's integral to the experience rather than a downside if you're here for the party atmosphere. Sleep comfort is secondary (mattresses and pillows are average), and there are no silent hours, making this a poor fit for light sleepers or remote workers. Staff are friendly, though some guests felt the party vibe could use more active social coordination from the team.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelz.com/hostel/485090-SocialTel-Koh-Samui"
+      ]
+    }
   },
   {
     "id": 214,
@@ -34741,7 +36230,16 @@
       "self_check_in": false,
       "checkin_24_7": true,
       "room_entry_method": null,
-      "communication_quality": "staff rated 9.4/10, consistently praised as friendly"
+      "communication_quality": "staff rated 9.4/10, consistently praised as friendly",
+      "bed_bug_reports": true,
+      "lockers": {
+        "available": true,
+        "type": "in-dorm personal lockers",
+        "note": "Oyster.com review notes lockers alongside bunk beds in dorm rooms"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": true,
+      "curfew_policy": "24-hour reception (front desk staffed overnight per guest reviews); no lockout mentioned"
     },
     "location": {
       "nearby": [
@@ -34819,7 +36317,13 @@
     "region": null,
     "research_depth": "deep",
     "vibe_profile": "Chern Hostel is a design-conscious, intimate retreat tucked into Bangkok's historic Old Town, attracting culture-focused travelers and solo adventurers who value aesthetics and calm over nightlife. The boutique atmosphere—described by guests as more upscale hotel than typical hostel—centers on a compact indoor lounge and an on-site pool, a rarity in the area, though seating can be tight during peak hours. Staff are notably warm and attentive, and the hostel maintains excellent cleanliness throughout. This is decidedly a place for sleeping well and soaking up the neighborhood's character rather than partying; it suits anyone seeking a peaceful, well-designed base in a culturally rich pocket of the city.",
-    "is_boutique_style": true
+    "is_boutique_style": true,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/84980/chern-hostel/",
+        "https://www.oyster.com/bangkok/hotels/chern-hostel/"
+      ]
+    }
   },
   {
     "id": 215,
@@ -34908,7 +36412,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "friendly staff noted in positive reviews"
+      "communication_quality": "friendly staff noted in positive reviews",
+      "bed_bug_reports": true,
+      "lockers": {
+        "available": null,
+        "type": null,
+        "note": "No locker mentions found in reviews or listing pages checked"
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -34986,7 +36499,12 @@
       }
     ],
     "vibe_profile": "The Habitat Hostel Koh Chang operates as a quiet, budget-friendly guesthouse rather than a traditional backpacker hub—think private, hotel-style rooms close to the beach instead of dorm beds and nightly social events. The place suits couples and travelers seeking peace and rest, with genuinely good sleeping conditions and a small indoor lounge for downtime. Guests consistently praise the cleanliness and spacious rooms, though an older report flagged pest issues (which hasn't recurred in recent reviews). There's no bar or restaurant on-site, and the social scene is minimal; free breakfast and tea/coffee are standard, but you'll need to venture out to eat or socialise. It's ideal if you want a clean, quiet retreat near the beach—less so if you're hunting the typical backpacker party atmosphere.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.tripadvisor.com/Hotel_Review-g580110-d10796581-Reviews-The_Habitat_Hostel_Koh_Chang-Ko_Chang_Trat_Province.html"
+      ]
+    }
   },
   {
     "id": 216,
@@ -35097,7 +36615,16 @@
       "self_check_in": false,
       "checkin_24_7": null,
       "room_entry_method": null,
-      "communication_quality": "owner personally praised for hospitality in multiple reviews"
+      "communication_quality": "owner personally praised for hospitality in multiple reviews",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "lockers (listed room feature)",
+        "note": null
+      },
+      "hair_dryer_available": true,
+      "clothes_drying_facility": true,
+      "curfew_policy": null
     },
     "location": {
       "nearby": [
@@ -35172,7 +36699,12 @@
       }
     ],
     "vibe_profile": "This intimate, family-run hostel caters to budget-conscious travelers and history enthusiasts drawn to Sukhothai's temples and historical sites. The spotless, cozy rooms and genuinely hospitable owner create a welcoming retreat focused on rest rather than socializing—there's no bar or organized activities, just a quiet environment ideal for sleeping and recharging. Bicycle rentals make exploring the nearby Historical Park convenient, while free breakfast and drinking water keep costs down. Note that the two shared bathrooms can get busy during peak mornings, and fan-only rooms may feel warm; mattresses tend toward firm. It's perfect for those seeking cleanliness, comfort, and peaceful accommodation over nightlife and amenities.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hotels.com/ho634637632/sukhothai-cozy-hostel-dorm-sukhothai-thailand/"
+      ]
+    }
   },
   {
     "id": 217,
@@ -35265,7 +36797,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "hosts repeatedly described as incredibly friendly and caring"
+      "communication_quality": "hosts repeatedly described as incredibly friendly and caring",
+      "bed_bug_reports": false,
+      "lockers": {
+        "available": true,
+        "type": "free security lockers / in-room lockers for valuables",
+        "note": "Listing mentions 'free security lockers' plus in-room lockers with bunk privacy curtains."
+      },
+      "hair_dryer_available": null,
+      "clothes_drying_facility": null,
+      "curfew_policy": "no curfew, reception hours 6:00 AM - 11:00 PM"
     },
     "location": {
       "nearby": [
@@ -35330,7 +36871,12 @@
     "region": "Phra Nakhon Si Ayutthaya Province",
     "research_depth": "deep",
     "vibe_profile": "Plus Hostel Ayutthaya is a small, family-run homestay where guests gather around included breakfast and dinner in a peaceful garden setting—ideal for history buffs and budget travelers wanting to explore the nearby temples without the noise of central tourist zones. The exceptionally caring hosts and homely atmosphere are what guests rave about most, paired with bicycle rental to hop between historical sites. It's a quiet, clean space designed for good sleep rather than socializing, with low-key patio hangouts as the main gathering point. The trade-off is modest amenities and mattresses; this suits travelers prioritizing genuine hospitality and rest over frills.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/st/hotels/p/294223/plus-hostel-ayutthaya/"
+      ]
+    }
   },
   {
     "id": 218,
@@ -35419,7 +36965,16 @@
       "self_check_in": false,
       "checkin_24_7": false,
       "room_entry_method": null,
-      "communication_quality": "staff rated 9.0/10, praised for helping arrange jungle tours"
+      "communication_quality": "staff rated 9.0/10, praised for helping arrange jungle tours",
+      "bed_bug_reports": null,
+      "lockers": {
+        "available": true,
+        "type": "lockers (property-wide, per hostel's own site)",
+        "note": "Own website lists 'lockers' among amenities; not independently verified via third-party reviews"
+      },
+      "hair_dryer_available": false,
+      "clothes_drying_facility": true,
+      "curfew_policy": "reception working hours 8:00-21:00 (guests arriving after 21:00 asked to notify in advance)"
     },
     "location": {
       "nearby": [
@@ -35494,7 +37049,13 @@
       }
     ],
     "vibe_profile": "This dorm-only hostel sits just steps from Khao Sok National Park's entrance, making it ideal for nature lovers and trekkers prioritizing jungle access over creature comforts. The bare-bones setup—no bed curtains, average mattresses, and minor bathroom issues—suits budget-conscious travelers who don't mind trading privacy and polish for proximity to the park. Staff are genuinely helpful with tour and trek arrangements, and the small outdoor terrace provides a low-key spot to connect with fellow hikers. Note that reception closes early and payment is cash-only, which can be inconvenient for late arrivals or card-dependent visitors. This is a practical base camp for park exploration, not a social hub or comfort retreat.",
-    "is_boutique_style": false
+    "is_boutique_style": false,
+    "research_sources": {
+      "pilot_2026_08_thailand_india": [
+        "https://www.hostelworld.com/hostels/p/323587/khaosok-jungle-hostel/",
+        "https://khaosokjunglehostel.com/"
+      ]
+    }
   },
   {
     "id": 219,

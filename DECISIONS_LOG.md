@@ -765,6 +765,54 @@ verified live against real queries.
 new research (not just re-reading existing data) and is scoped into the larger data-enrichment pass
 below, alongside bed bugs/lockers/hair dryer/curfew.
 
+### 🟢 RESOLVED (pilot) — Thailand + India research pass: bed bugs, lockers, hair dryer, drying,
+### curfew, plus new nearby-attraction research for the 15 gap hostels
+Before committing to the full 228-hostel research pass, ran it first as a pilot on all 68
+Thailand + India hostels (26 + 42), specifically to get real numbers on cost/effort and — just as
+important — how often this kind of research actually finds a real answer versus correctly returning
+null. Executed via 14 parallel `Agent` subagents (~5 hostels each, genuine `WebSearch`/`WebFetch`
+calls, not the cheap Haiku-only pattern used for `views`/`party_level`/nearby-restructuring above),
+batched by hostel so each subagent could research every applicable field per hostel from the same
+source material in one pass.
+
+New fields added to `services`: `bed_bug_reports` (bool|null), `lockers` ({available, type, note}),
+`hair_dryer_available` (bool|null), `clothes_drying_facility` (bool|null), `curfew_policy`
+(string|null) — plus `research_sources.pilot_2026_08_thailand_india` per hostel (the actual URLs
+used) for auditability. `location.nearby` was also populated from scratch (same structured shape as
+`normalize_nearby_and_boutique.py`) for the 15 of these 68 hostels that had no existing nearby data.
+
+**Coverage results (68 hostels)** — this is the actual reliability signal the pilot was for:
+- `curfew_policy`: 47/68 (69%) populated — high coverage, since check-in/reception hours are almost
+  always stated on OTA listings even when a hostel calls itself "no curfew."
+- `lockers.available`: 41/68 (60%) confirmed `true`, 0 confirmed `false`, 27 (40%) null — makes
+  sense: a hostel having lockers gets mentioned, a hostel NOT having them almost never does (nobody
+  writes a review just to say "no lockers"), so `false` will stay rare across this whole dataset by
+  the nature of the source material, not a research gap.
+- `bed_bug_reports`: 34/68 (50%) confidently `false` (reviewed, no credible signal), 6/68 (9%)
+  `true` (a real, credible report found), 28/68 (41%) null (not enough review signal to judge either
+  way). The 6 `true` hits are the most important number here — one of them (The Habitat Hostel Koh
+  Chang) independently corroborates a bed-bug mention already sitting in that hostel's
+  `flagged_issues` from the original research pass, a genuine cross-check that the new research is
+  finding real signal, not noise.
+- `hair_dryer_available` and `clothes_drying_facility`: the weak spots — only 10/68 (15%) and 8/68
+  (12%) came back `true` respectively, with 81-85% null. These are rarely stated explicitly on
+  listings or in reviews, so a high null rate here is an honest finding about the source material,
+  not a failed search — expect this to hold across the full 228.
+
+**Effort observed**: ~862K total tokens and 391 tool calls across all 14 subagents (~12.7K
+tokens/hostel), run in parallel so real wall-clock was a few minutes rather than the ~23 minutes of
+summed agent-time. Extrapolating linearly to the remaining 160 hostels: roughly 2.4x this pilot's
+token/tool-call volume, run as ~30-35 more subagent batches. Exact dollar cost isn't something this
+project has visibility into (depends on the account's billing rate), but the effort scale is now a
+real, measured number instead of a guess.
+
+**Decision on how to proceed with the remaining 160 hostels**: given the sparse coverage on hair
+dryer/drying facility specifically, worth deciding up front whether to keep researching those two
+fields at the same depth (accepting an ~85% null rate) or deprioritize them for the remaining
+countries and focus research effort on the two fields that actually turned up usable signal
+(curfew, lockers) plus bed bugs (safety-relevant even at a 50/9/41 split) and new nearby-attraction
+research. Not yet decided — flagged here for the next planning conversation.
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data
