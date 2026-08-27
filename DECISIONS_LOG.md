@@ -700,24 +700,70 @@ factors, not just personal preference. Full candidate list surfaced:
 - **Clothes-drying facility** — distinct from `services.laundry_service` (already exists): "can I
   wash clothes" and "can I actually dry them" are different practical questions, especially in humid
   climates.
-- **Boutique vibe** — currently only expressible as a free-text `vibe_tags` string with no
-  structured backing; could become a real `accommodation_type` enum value instead.
+- **Boutique vibe** — RESOLVED, see the entry below. Was reclassifiable from existing data (no new
+  research needed), so it was pulled out of this list and done immediately rather than held for the
+  larger research pass.
 - **Swimming pool** — NOT actually missing; `facilities.swimming_pool` already exists in the schema.
   Under-utilized in matching, not a data gap.
 - **Curfew policy** — a real dealbreaker for some travelers (some hostels lock doors overnight), not
-  currently tracked.
+  currently tracked. Folded into the upcoming larger research pass (same cheap-lookup tier as hair
+  dryer — a factual yes/no most hostel listings state directly).
 - **Room-noise placement** ("room facing a noisy street vs. a quiet courtyard") — explicitly a
   ROOM-level attribute, not a hostel-level one (per direct correction) — belongs inside each
   `room_types[]` entry (near the existing `air_flow`/`sunlight` room-level fields), not as a
-  hostel-wide field, since it can vary dramatically between rooms in the same building.
+  hostel-wide field, since it can vary dramatically between rooms in the same building. Kept
+  deliberately separate from the other fields above/below since it's a different schema shape
+  problem (room-level, not hostel-level), not just a different research cost.
 
 **Decision: scoped down to a focused first pass** rather than tackling all of these at once, since
 adding a schema field is trivial but backfilling real, sourced data across all 228 hostels is a
 genuine research cost each time (comparable to the `vibe_profile` generation or party-level
 reclassification efforts above). First batch selected for clearest traveler impact: (1) bed bug/pest
-signal, (2) lockers/security, (3) hair dryer + drying facility (combined into one pass, since both
-are quick factual lookups rather than deep research). The rest of this list stays tracked here for a
-future pass rather than being dropped.
+signal, (2) lockers/security, (3) hair dryer + drying facility, (4) curfew policy (folded in later,
+same cheap-lookup tier) — combined into one research pass since all four are quick factual lookups
+rather than deep research. Room-noise placement stays deferred separately (different schema shape).
+
+### 🟢 RESOLVED — Nearby attractions field added, and boutique-style added; both normalized from
+### existing data (no new research)
+Two more gaps, both fixable without new web research:
+
+1. **Nearby attractions**: raised directly by the traveler — "when as a traveler we go to a hostel,
+   we always look for nearby attractions, cafes, fun/chill places, nature... within 3-5 kms, which
+   is walkable." `location.nearby` already existed for 118/228 hostels, but only as informal
+   free-text strings ("Palolem Beach (13 min walk)", "Odayam Beach (80m)") with distance/time
+   embedded inconsistently, no type classification, and it was never referenced anywhere in
+   `matching.py` — pure dead data.
+2. **Boutique vibe**: previously only expressible as an unstructured `vibe_tags` string, with no
+   reliable way to filter or score on it. Confirmed via `accommodation_type` distribution
+   (215 hostel / 6 guesthouse / 4 hotel / 2 homestay / 1 villa) that "boutique" isn't currently
+   modeled as any kind of category — it's a style descriptor that cuts across accommodation types
+   (a boutique hostel is still fundamentally a hostel), so it became a new `is_boutique_style`
+   boolean rather than a new `accommodation_type` value.
+
+Both fixed together via `normalize_nearby_and_boutique.py` — same "re-read existing data only,
+default conservatively, no fabrication" methodology already used for `party_level` and `views`:
+`location.nearby` restructured into `[{"name", "type", "distance_km", "walkable"}]` (type is one of
+`cafe|nature|landmark|nightlife|beach|viewpoint|market|other`; `distance_km` is null rather than
+guessed when the source text gives no real distance/time signal — e.g. "gateway to Yala National
+Park" correctly produced `distance_km: null`, not a fabricated number), with the original free-text
+preserved in `location.nearby_raw_text`. `is_boutique_style` classified for all 228 hostels,
+defaulting to `false` unless there's clear signal (25 came back `true`) since boutique is the
+exception, not the default.
+
+Verified: 0 vocabulary violations, 0 structural violations across all 118 restructured entries;
+spot-checked output reads correctly (e.g. Bedrock Boutique Hostel — tagged `luxury_hostel` /
+`amphitheatre` / `club_themed_common_areas` — correctly classified `is_boutique_style: true`).
+
+Both wired into `matching.py` as new auditable scoring steps: nearby attractions match a query's
+named category (e.g. "beach", "nightlife", "cafe") against the hostel's actual `nearby` list, deduped
+to the best entry per type, with `+10` if walkable and `+6` if not (e.g. "walkable to Arugam Bay
+beach (beach), matching what you're looking for nearby"); boutique-style query language ("boutique",
+"design hostel", "upscale", etc.) earns `+10` against hostels with `is_boutique_style: true`. Both
+verified live against real queries.
+
+**Still open**: the other 110 hostels have NO `location.nearby` data at all — that requires genuine
+new research (not just re-reading existing data) and is scoped into the larger data-enrichment pass
+below, alongside bed bugs/lockers/hair dryer/curfew.
 
 ---
 

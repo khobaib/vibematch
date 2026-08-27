@@ -426,7 +426,59 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
             if query_mentions_view_generically:
                 add(6, f"has a view ({', '.join(sorted(hostel_view_types))}), matching your interest in a scenic stay")
 
-    # --- 10. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
+    # --- 10. Nearby attractions (structured location.nearby field, restructured
+    # from informal free-text via normalize_nearby_and_boutique.py — existed as
+    # unstructured strings for 118 hostels and was never referenced in scoring;
+    # the remaining 110 hostels have no nearby data at all yet, tracked as part
+    # of the larger new-research data-enrichment pass). Matches a query naming
+    # a category of nearby place (cafe, beach, nightlife, etc.) against the
+    # hostel's actual nearby list, with extra credit when it's walkable. See
+    # DECISIONS_LOG.md.
+    NEARBY_TYPE_KEYWORDS = {
+        "cafe": ("cafe", "coffee shop", "coffee"),
+        "nature": ("nature", "hiking", "trekking", "trail", "forest walk", "national park"),
+        "landmark": ("landmark", "temple", "monument", "historic site", "sightseeing"),
+        "nightlife": ("nightlife", "bar", "bars", "club", "clubbing", "pub"),
+        "beach": ("beach",),
+        "viewpoint": ("viewpoint", "scenic spot", "lookout", "sunset spot"),
+        "market": ("market", "bazaar", "night market"),
+    }
+
+    hostel_nearby = hostel.get("location", {}).get("nearby") or []
+    if hostel_nearby and isinstance(hostel_nearby[0], dict):
+        # Dedupe to the best (walkable if possible) match per place type, so
+        # e.g. 3 separate cafes nearby doesn't triple-count the same signal.
+        matched_nearby_types = {}
+        for entry in hostel_nearby:
+            place_type = entry.get("type")
+            keywords = NEARBY_TYPE_KEYWORDS.get(place_type)
+            if not keywords:
+                continue
+            if any(any(kw in vt.lower() for kw in keywords) for vt in vibe_tags):
+                existing = matched_nearby_types.get(place_type)
+                if existing is None or (entry.get("walkable") and not existing.get("walkable")):
+                    matched_nearby_types[place_type] = entry
+
+        for place_type, entry in matched_nearby_types.items():
+            if entry.get("walkable"):
+                add(10, f"walkable to {entry['name']} ({place_type}), matching what you're looking for nearby")
+            else:
+                add(6, f"has {entry['name']} ({place_type}) nearby, matching what you're looking for")
+
+    # --- 11. Boutique style (new field, classified from existing
+    # accommodation_type/vibe_tags/facilities/exclusive_features via
+    # normalize_nearby_and_boutique.py — "boutique" is a style descriptor
+    # that cuts across accommodation_type rather than being its own value,
+    # so it's a separate boolean). See DECISIONS_LOG.md.
+    BOUTIQUE_KEYWORDS = ("boutique", "design hostel", "design-focused", "stylish", "upscale", "aesthetic", "curated", "chic")
+    query_mentions_boutique = (
+        any(any(kw in vt.lower() for kw in BOUTIQUE_KEYWORDS) for vt in vibe_tags)
+        or any(any(kw in tp.lower() for kw in BOUTIQUE_KEYWORDS) for tp in traveler_profile)
+    )
+    if query_mentions_boutique and hostel.get("is_boutique_style"):
+        add(10, "boutique-style property, matching your preference for a more design-focused/upscale stay")
+
+    # --- 12. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
     # Complements the exact/partial vibe_tags matching above (#3): tags catch
     # explicit keyword overlap, this catches nuance a tag vocabulary can't
     # enumerate (e.g. "somewhere I can focus in the mornings but still meet
