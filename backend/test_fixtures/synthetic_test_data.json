@@ -1,0 +1,497 @@
+{
+  "_README": "SYNTHETIC TEST DATA ONLY. This entire file is randomly generated fake data used exclusively by validate.py to mechanically test matching.py scoring logic before real per-hostel research exists for these fields. NEVER merge any part of this file into hostels.json.",
+  "daynight": {
+    "_WARNING": "SYNTHETIC TEST DATA \u2014 randomly generated, NOT real research. Used only by validate_daynight_split.py to mechanically test the daytime/evening split-scoring logic before real per-hostel day/night data exists. NEVER merge this into hostels.json.",
+    "_generated": "2026-08-28, random.seed(42) for reproducibility",
+    "fixture": {
+      "1": {
+        "daytime_party_level": "medium_to_high",
+        "evening_party_level": "none"
+      },
+      "5": {
+        "daytime_party_level": "medium_to_high",
+        "evening_party_level": "low"
+      },
+      "16": {
+        "daytime_party_level": "high",
+        "evening_party_level": "high"
+      },
+      "19": {
+        "daytime_party_level": "high",
+        "evening_party_level": "medium_to_high"
+      },
+      "29": {
+        "daytime_party_level": "medium",
+        "evening_party_level": "low"
+      },
+      "31": {
+        "daytime_party_level": "medium",
+        "evening_party_level": "medium_to_high"
+      },
+      "41": {
+        "daytime_party_level": "low_to_medium",
+        "evening_party_level": "none"
+      },
+      "43": {
+        "daytime_party_level": "low",
+        "evening_party_level": "high"
+      },
+      "45": {
+        "daytime_party_level": "medium",
+        "evening_party_level": "low_to_medium"
+      },
+      "49": {
+        "daytime_party_level": "low_to_medium",
+        "evening_party_level": "low"
+      },
+      "51": {
+        "daytime_party_level": "low",
+        "evening_party_level": "low_to_medium"
+      },
+      "52": {
+        "daytime_party_level": "none",
+        "evening_party_level": "none"
+      },
+      "54": {
+        "daytime_party_level": "medium",
+        "evening_party_level": "none"
+      },
+      "58": {
+        "daytime_party_level": "low_to_medium",
+        "evening_party_level": "low_to_medium"
+      },
+      "59": {
+        "daytime_party_level": "medium_to_high",
+        "evening_party_level": "low_to_medium"
+      },
+      "68": {
+        "daytime_party_level": "none",
+        "evening_party_level": "high"
+      },
+      "86": {
+        "daytime_party_level": "medium",
+        "evening_party_level": "medium_to_high"
+      },
+      "121": {
+        "daytime_party_level": "none",
+        "evening_party_level": "medium"
+      },
+      "126": {
+        "daytime_party_level": "none",
+        "evening_party_level": "medium_to_high"
+      },
+      "150": {
+        "daytime_party_level": "low_to_medium",
+        "evening_party_level": "high"
+      },
+      "158": {
+        "daytime_party_level": "medium_to_high",
+        "evening_party_level": "low_to_medium"
+      },
+      "219": {
+        "daytime_party_level": "medium_to_high",
+        "evening_party_level": "low"
+      },
+      "226": {
+        "daytime_party_level": "high",
+        "evening_party_level": "none"
+      }
+    }
+  },
+  "backlog_fields": {
+    "_WARNING": "SYNTHETIC TEST DATA \u2014 randomly generated, NOT real research. Covers 7 EXPERIMENTAL fields (wifi_quality, desk_setup, diy_breakfast_available, kitchen_utensils_quality, communal_dinner_available, whatsapp_community_group_available, solo_group_ratio) that are real schema + real scoring logic in matching.py but have NO real values in hostels.json yet. Used only by validate_backlog_fields.py to mechanically test the scoring logic before real per-hostel research exists. NEVER merge this into hostels.json.",
+    "_generated": "2026-08-28, random.seed(99) for reproducibility",
+    "fixture": {
+      "5": {
+        "facilities": {
+          "wifi_quality": "weak",
+          "desk_setup": "basic"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "10": {
+        "facilities": {
+          "wifi_quality": "weak",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "23": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "24": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "35": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_groups"
+        }
+      },
+      "43": {
+        "facilities": {
+          "wifi_quality": "weak",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "45": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "46": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_groups"
+        }
+      },
+      "52": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "58": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "59": {
+        "facilities": {
+          "wifi_quality": "weak",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "64": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_groups"
+        }
+      },
+      "65": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "basic"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "86": {
+        "facilities": {
+          "wifi_quality": "none",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "99": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "basic"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "100": {
+        "facilities": {
+          "wifi_quality": "none",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "105": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_groups"
+        }
+      },
+      "109": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "127": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "basic"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "137": {
+        "facilities": {
+          "wifi_quality": "weak",
+          "desk_setup": "basic"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "basic"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "139": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": false,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "155": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "none"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_groups"
+        }
+      },
+      "161": {
+        "facilities": {
+          "wifi_quality": "weak",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "177": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mostly_solo"
+        }
+      },
+      "182": {
+        "facilities": {
+          "wifi_quality": "good",
+          "desk_setup": "good"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": true,
+          "kitchen_utensils_quality": "good"
+        },
+        "social_vibe": {
+          "communal_dinner_available": false,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mixed"
+        }
+      },
+      "189": {
+        "facilities": {
+          "wifi_quality": "excellent",
+          "desk_setup": "basic"
+        },
+        "kitchen_food": {
+          "diy_breakfast_available": false,
+          "kitchen_utensils_quality": "none"
+        },
+        "social_vibe": {
+          "communal_dinner_available": true,
+          "whatsapp_community_group_available": true,
+          "solo_group_ratio": "mixed"
+        }
+      }
+    }
+  }
+}

@@ -69,6 +69,22 @@ TEST_CASES = [
         "why": "Strong negative party preference. Checking whether the semantic layer ever "
                "overrides or undermines a traveler's explicit, strongly-worded 'avoid' signal.",
     },
+    {
+        "query": "clean and comfortable hostel with secure lockers, no bed bugs please",
+        "why": "New services-field validation: bed_bug_reports (unconditional -15 if true, "
+               "keyword-gated +6 if confirmed clean) and lockers (keyword-gated +8/-5). Checking "
+               "the always-on bed bug penalty surfaces correctly and doesn't get drowned out by "
+               "other signals, and that the new 'comfortable' keyword actually triggers the "
+               "bed bug bonus as intended.",
+    },
+    {
+        "query": "need 24/7 access, no curfew, with a hair dryer and a place to dry my clothes",
+        "why": "New services-field validation: curfew_policy (strong '24/7' language -> -20 "
+               "penalty on a real curfew, vs the softer -8 for a general mention), plus "
+               "hair_dryer_available and clothes_drying_facility (keyword-gated +6/-4 each). "
+               "Checking all three fire together correctly on one query without stepping on "
+               "each other's breakdown entries.",
+    },
 ]
 
 

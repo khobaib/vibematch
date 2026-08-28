@@ -80,7 +80,7 @@ def load_hostels(path="hostels.json"):
         return json.load(f)
 
 
-def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, semantic_entry: dict = None) -> dict:
+def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, semantic_entry: dict = None, raw_query: str = None) -> dict:
     """
     Returns a dict: {"score": int, "breakdown": [{"points": int, "reason": str}, ...]}
 
@@ -211,6 +211,23 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
 
     # --- 3. Vibe tag overlap ---
     vibe_tags = set(t.lower() for t in intent.get("vibe_tags", []))
+
+    # Combined searchable text for the new services-field keyword checks
+    # (steps 12-16 below): the parsed vibe_tags ALONE aren't reliable for
+    # these, because Claude's intent parser paraphrases rather than
+    # preserving literal wording — e.g. "secure lockers" in a real query
+    # came back as just the tag "secure" (no "locker" anywhere), and "hair
+    # dryer... dry my clothes" came back as "practical amenities"/"laundry"
+    # (no "hair dryer" or "drying" anywhere). Confirmed directly via
+    # validate_semantic_matching.py: both bonuses silently failed to fire
+    # despite the traveler explicitly asking for both. Paraphrase-tolerant
+    # tag matching is fine for fuzzy vibe language, but actively wrong for
+    # specific factual asks like this, where the literal word is what
+    # matters. Falling back to the raw query text (when available) fixes
+    # it without weakening the existing vibe_tags-based steps elsewhere.
+    query_search_text = " ".join(vibe_tags)
+    if raw_query:
+        query_search_text += " " + raw_query.lower()
     hostel_tags = set(t.lower() for t in hostel.get("vibe_tags", []))
     matched_tags = vibe_tags & hostel_tags
     if matched_tags:
@@ -354,23 +371,86 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
         "prefer_party":  {"none": -50, "low": -40, "low_to_medium": -30, "medium": -20, "medium_to_high": -10, "high": 20},
     }
 
-    party_preference = intent.get("party_preference")
-    score_table = PARTY_SCORE_TABLE.get(party_preference) if party_preference else None
-    if score_table is not None:
-        hostel_party_level = (hostel.get("social_vibe", {}).get("party_level") or "").lower()
-        if hostel_party_level in score_table:
-            bonus = score_table[hostel_party_level]
+    # DAYTIME/EVENING SPLIT (Fix B for the "focus during the day, meet people
+    # over dinner" dual-mode gap — see DECISIONS_LOG.md). A single
+    # `party_preference` value can't express "quiet mornings, social
+    # evenings" — it forces a blended read that penalizes exactly the
+    # hostels that would be the best fit (real example: a hostel with
+    # good_for_remote_work + party_level "low_to_medium" + real evening
+    # activities scored WORSE under prefer_social's blended table than a
+    # pure high-party hostel with zero daytime-focus signal). Fixed at the
+    # INTENT level by parsing two additional optional fields
+    # (daytime_vibe_preference / evening_vibe_preference), only set by the
+    # parser when a query genuinely names two different times of day with
+    # two different vibes — see main.py's parse_intent prompt.
+    #
+    # EXPERIMENTAL / KNOWN LIMITATION: this only half-solves the problem.
+    # The hostel side still only has ONE `party_level` for the whole
+    # property — there's no real `daytime_party_level`/`evening_party_level`
+    # data yet (that needs genuine new research, tracked in the Field/
+    # Feature Backlog). So this branch reads from those two hostel fields,
+    # which are null for every real hostel in hostels.json right now — on
+    # real data this whole branch currently falls through to "not specified"
+    # for every hostel. It's only exercised meaningfully against
+    # test_fixtures/synthetic_daynight_test.json (clearly-fake, randomly
+    # generated values used ONLY by validate_daynight_split.py, never
+    # merged into hostels.json), specifically to mechanically prove the
+    # split-scoring logic itself works correctly before the real research
+    # is done. Do not mistake a null result here for "confirmed no split
+    # preference exists" — it currently just means we haven't researched it.
+    daytime_pref = intent.get("daytime_vibe_preference")
+    evening_pref = intent.get("evening_vibe_preference")
+    is_day_night_split_query = bool(daytime_pref or evening_pref)
+
+    # Halved version of the prefer_quiet/prefer_social tables above — used
+    # TWICE (once for daytime, once for evening) on a split query, so each
+    # half is scaled down to keep the combined total comparable to the
+    # single-mode step below rather than double-counting.
+    SPLIT_PARTY_SCORE_TABLE = {
+        "quiet": {k: round(v / 2) for k, v in PARTY_SCORE_TABLE["prefer_quiet"].items()},
+        "social": {k: round(v / 2) for k, v in PARTY_SCORE_TABLE["prefer_social"].items()},
+    }
+
+    def score_split_period(period_name, preference, hostel_level_field):
+        if not preference:
+            return
+        score_table = SPLIT_PARTY_SCORE_TABLE.get(preference)
+        if score_table is None:
+            return
+        hostel_level = (hostel.get("social_vibe", {}).get(hostel_level_field) or "").lower()
+        if hostel_level in score_table:
+            bonus = score_table[hostel_level]
             if bonus == max(score_table.values()):
-                add(bonus, f"party vibe ({hostel_party_level}) matches your preference perfectly")
+                add(bonus, f"{period_name} vibe ({hostel_level}) matches your {period_name} preference well")
             elif bonus > 0:
-                add(bonus, f"party vibe ({hostel_party_level}) is reasonably close to your preference")
+                add(bonus, f"{period_name} vibe ({hostel_level}) is reasonably close to your {period_name} preference")
             else:
-                add(bonus, f"heads up: party vibe ({hostel_party_level}) doesn't closely match your stated preference")
+                add(bonus, f"heads up: {period_name} vibe ({hostel_level}) doesn't closely match your {period_name} preference")
         else:
-            # We asked about party level but don't actually know this
-            # hostel's — say so rather than silently skip it, same
-            # transparency principle as the missing-price case earlier.
-            add(0, "party level not specified for this hostel — could not confirm how well it matches your social/quiet preference")
+            add(0, f"{period_name}-specific party level not researched for this hostel yet — could not confirm how well it matches your {period_name} preference")
+
+    if is_day_night_split_query:
+        score_split_period("daytime", daytime_pref, "daytime_party_level")
+        score_split_period("evening", evening_pref, "evening_party_level")
+    else:
+        # --- 8. Party level preference (single-mode fallback, unchanged) ---
+        party_preference = intent.get("party_preference")
+        score_table = PARTY_SCORE_TABLE.get(party_preference) if party_preference else None
+        if score_table is not None:
+            hostel_party_level = (hostel.get("social_vibe", {}).get("party_level") or "").lower()
+            if hostel_party_level in score_table:
+                bonus = score_table[hostel_party_level]
+                if bonus == max(score_table.values()):
+                    add(bonus, f"party vibe ({hostel_party_level}) matches your preference perfectly")
+                elif bonus > 0:
+                    add(bonus, f"party vibe ({hostel_party_level}) is reasonably close to your preference")
+                else:
+                    add(bonus, f"heads up: party vibe ({hostel_party_level}) doesn't closely match your stated preference")
+            else:
+                # We asked about party level but don't actually know this
+                # hostel's — say so rather than silently skip it, same
+                # transparency principle as the missing-price case earlier.
+                add(0, "party level not specified for this hostel — could not confirm how well it matches your social/quiet preference")
 
     # --- 9. Views (structured field, previously collected but never scored) ---
     # DECISIONS_LOG.md OPEN item resolved: the `views` field (has_view,
@@ -478,7 +558,7 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     if query_mentions_boutique and hostel.get("is_boutique_style"):
         add(10, "boutique-style property, matching your preference for a more design-focused/upscale stay")
 
-    # --- 13. Bed bug safety signal (services.bed_bug_reports) ---
+    # --- 12. Bed bug safety signal (services.bed_bug_reports) ---
     # Unlike the other new services-field steps below, this one applies
     # REGARDLESS of query wording — a credible bed bug report is a real
     # dealbreaker-class safety signal, not a mere preference, so it always
@@ -491,15 +571,15 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     # DECISIONS_LOG.md.
     bed_bug_reports = hostel.get("services", {}).get("bed_bug_reports")
     SAFETY_KEYWORDS = ("safe", "safety", "clean", "hygien", "bed bug", "pest", "comfort", "comfortable", "cozy")
-    query_mentions_safety = any(any(kw in vt.lower() for kw in SAFETY_KEYWORDS) for vt in vibe_tags)
+    query_mentions_safety = any(kw in query_search_text for kw in SAFETY_KEYWORDS)
     if bed_bug_reports is True:
         add(-15, "reported bed bug complaints in reviews — worth checking recent listings before booking")
     elif bed_bug_reports is False and query_mentions_safety:
         add(6, "no credible bed bug reports found in reviews")
 
-    # --- 14. Lockers / secure storage (services.lockers) ---
+    # --- 13. Lockers / secure storage (services.lockers) ---
     LOCKER_KEYWORDS = ("locker", "secure storage", "storage", "safe box", "valuables", "security")
-    query_mentions_lockers = any(any(kw in vt.lower() for kw in LOCKER_KEYWORDS) for vt in vibe_tags)
+    query_mentions_lockers = any(kw in query_search_text for kw in LOCKER_KEYWORDS)
     if query_mentions_lockers:
         lockers = hostel.get("services", {}).get("lockers") or {}
         lockers_available = lockers.get("available")
@@ -510,9 +590,9 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
         elif lockers_available is False:
             add(-5, "no lockers confirmed — heads up if secure storage matters to you")
 
-    # --- 15. Hair dryer availability (services.hair_dryer_available) ---
+    # --- 14. Hair dryer availability (services.hair_dryer_available) ---
     HAIR_DRYER_KEYWORDS = ("hair dryer", "hairdryer", "blow dry", "blow-dry")
-    query_mentions_hair_dryer = any(any(kw in vt.lower() for kw in HAIR_DRYER_KEYWORDS) for vt in vibe_tags)
+    query_mentions_hair_dryer = any(kw in query_search_text for kw in HAIR_DRYER_KEYWORDS)
     if query_mentions_hair_dryer:
         hair_dryer = hostel.get("services", {}).get("hair_dryer_available")
         if hair_dryer is True:
@@ -520,12 +600,12 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
         elif hair_dryer is False:
             add(-4, "no hair dryer confirmed — heads up since you asked about this")
 
-    # --- 16. Clothes drying facility (services.clothes_drying_facility) ---
+    # --- 15. Clothes drying facility (services.clothes_drying_facility) ---
     # Deliberately distinct from the existing laundry_service field — "can
     # I wash clothes" and "can I actually dry them" are different practical
     # questions, especially in humid climates.
     DRYING_KEYWORDS = ("dry clothes", "drying", "dryer", "dry my laundry", "line dry")
-    query_mentions_drying = any(any(kw in vt.lower() for kw in DRYING_KEYWORDS) for vt in vibe_tags)
+    query_mentions_drying = any(kw in query_search_text for kw in DRYING_KEYWORDS)
     if query_mentions_drying:
         drying = hostel.get("services", {}).get("clothes_drying_facility")
         if drying is True:
@@ -533,7 +613,7 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
         elif drying is False:
             add(-4, "no clothes-drying facility confirmed — heads up since you asked about this")
 
-    # --- 17. Curfew policy (services.curfew_policy) ---
+    # --- 16. Curfew policy (services.curfew_policy) ---
     # Most travelers who bring this up are looking for FLEXIBILITY (no
     # curfew / 24hr access) rather than actively wanting a curfew, so query
     # mentions of curfew/late-access language are treated as "wants no
@@ -544,8 +624,8 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     # sharper penalty (-20 vs -8), per direct product correction.
     GENERAL_CURFEW_KEYWORDS = ("curfew", "24 hour reception", "24hr reception", "late night", "come back late", "flexible check-in", "no curfew")
     STRONG_CURFEW_KEYWORDS = ("24/7", "24-7", "24/7 access", "round the clock", "round-the-clock", "anytime access")
-    query_mentions_strong_curfew = any(any(kw in vt.lower() for kw in STRONG_CURFEW_KEYWORDS) for vt in vibe_tags)
-    query_mentions_curfew = query_mentions_strong_curfew or any(any(kw in vt.lower() for kw in GENERAL_CURFEW_KEYWORDS) for vt in vibe_tags)
+    query_mentions_strong_curfew = any(kw in query_search_text for kw in STRONG_CURFEW_KEYWORDS)
+    query_mentions_curfew = query_mentions_strong_curfew or any(kw in query_search_text for kw in GENERAL_CURFEW_KEYWORDS)
     if query_mentions_curfew:
         curfew_policy_raw = hostel.get("services", {}).get("curfew_policy")
         curfew_policy = (curfew_policy_raw or "").lower()
@@ -569,7 +649,163 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
                 penalty = -20 if query_mentions_strong_curfew else -8
                 add(penalty, f"heads up: this hostel has a curfew policy ({curfew_policy_raw}), which may not suit your need for late-night/24-7 access")
 
-    # --- 18. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
+    # --- 17. Daytime work-focus combo (multi-field signal, not a single tag) ---
+    # Direct product correction on the still-open "focus during the day, meet
+    # people over dinner" dual-mode gap (DECISIONS_LOG.md): "work focus"
+    # isn't one fact, it's a bundle — strong wifi, a calm/AC'd place to sit
+    # with a laptop, coffee, easy commuting. We only actually HAVE structured
+    # data for a fraction of that bundle (confirmed by checking the schema
+    # directly): `good_for_remote_work` (already scored in step 7 above —
+    # NOT repeated here, to avoid double-counting the same signal),
+    # `near_metro`/`near_airport` (commute ease), and coffee AVAILABILITY
+    # (not necessarily free — direct correction: "lobby/cafe offers some
+    # coffee" means "is coffee available during work hours," not
+    # specifically "is it free"). No dedicated "coffee available" field
+    # exists, so this is approximated from three real signals that each
+    # independently suggest coffee is available on-site: `free_tea_coffee`
+    # (definitely available, and free), an on-site restaurant/bar
+    # (`facilities.restaurant_onsite`/`bar_onsite` — these almost always
+    # serve coffee even when it's not itemized as "free"), or the word
+    # "cafe" appearing in the hostel's own `exclusive_features`/`vibe_tags`
+    # (51/226 hostels). Wifi strength, desk/seating setup, and common-area
+    # AC are NOT structured fields yet (only 11/226 hostels even mention
+    # "wifi" anywhere in free text) — tracked in the Field/Feature Backlog
+    # for a future research pass, not faked here. This step adds the
+    # SUPPORTING signals on top of step 7's core bonus, so a query asking
+    # about daytime focus gets credit for the fuller (if still partial)
+    # picture rather than just the one good_for_remote_work flag.
+    FOCUS_KEYWORDS = ("focus", "work during the day", "quiet during the day", "productive", "remote work", "digital nomad", "coworking", "co-working", "wifi", "laptop")
+    query_mentions_focus = any(kw in query_search_text for kw in FOCUS_KEYWORDS)
+    if query_mentions_focus:
+        hostel_location = hostel.get("location", {})
+        if hostel_location.get("near_metro") or hostel_location.get("near_airport"):
+            add(4, "easy commute (near metro/airport) — useful if you need to step out during a work day")
+
+        kitchen_food = hostel.get("kitchen_food", {})
+        facilities = hostel.get("facilities", {})
+        text_fields = " ".join(hostel.get("exclusive_features", []) + hostel.get("vibe_tags", [])).lower()
+        if kitchen_food.get("free_tea_coffee"):
+            add(3, "free tea/coffee available, handy for work sessions")
+        elif facilities.get("restaurant_onsite") or facilities.get("bar_onsite"):
+            add(3, "on-site restaurant/bar, likely a place to grab coffee during work hours")
+        elif "cafe" in text_fields:
+            add(3, "has an on-site cafe, handy for work sessions")
+
+        lounge_ac = facilities.get("lounge_has_ac")
+        if lounge_ac is True:
+            add(3, "air-conditioned common area, more comfortable for daytime work")
+
+        # wifi_quality / desk_setup (EXPERIMENTAL, see DECISIONS_LOG.md —
+        # not real data yet for any hostel in hostels.json; only exercised
+        # against test_fixtures/synthetic_backlog_fields_test.json via
+        # validate_backlog_fields.py, same pattern as the daytime/evening
+        # split fields above). Reading via .get() means this is a no-op on
+        # every real hostel today (the keys simply aren't present) and
+        # only activates once real per-hostel wifi/desk research exists.
+        wifi_quality = facilities.get("wifi_quality")
+        if wifi_quality in ("good", "excellent"):
+            add(6, f"wifi reported {wifi_quality}, reliable for a work day")
+        elif wifi_quality == "weak":
+            add(-4, "wifi reported weak — heads up if you need it for work")
+        elif wifi_quality == "none":
+            add(-6, "no wifi confirmed — likely a poor fit for a work-focused stay")
+
+        desk_setup = facilities.get("desk_setup")
+        if desk_setup == "good":
+            add(5, "has a proper desk/seating setup for laptop work")
+        elif desk_setup == "basic":
+            add(2, "has basic seating that could work for a laptop")
+        elif desk_setup == "none":
+            add(-3, "no dedicated workspace/desk confirmed")
+
+    # --- 18. Evening social-mixing combo (multi-field signal, distinct from
+    # the raw party-vibe match in step 8) ---
+    # Direct product correction, same open item as above: "meet people over
+    # dinner" isn't a party-hostel question — it's a probability question
+    # about whether the *kind* of guests and the hostel's own organized
+    # social activities make casual mixing likely, independent of nightlife
+    # intensity. Built from existing structured fields: `guest_type` (solo-
+    # heavy vs. group-heavy — group travelers tend to stick to their own
+    # group rather than mixing with strangers), `social_activities` /
+    # `weekend_activities` (organized activities create natural
+    # opportunities to meet people), `staff.friendliness`, and a gentler
+    # light-to-medium `party_level` read (some social energy without being
+    # an overwhelming party scene). Extended below with three more
+    # EXPERIMENTAL fields (communal_dinner_available, whatsapp_community_
+    # group_available, solo_group_ratio) — same status as wifi_quality/
+    # desk_setup above: real schema + real scoring logic, but no real
+    # hostel currently has these fields populated; only exercised against
+    # test_fixtures/synthetic_backlog_fields_test.json. Direct product input
+    # on the WhatsApp field specifically: an active community group is a
+    # genuinely strong, distinct signal — it's the actual mechanism by which
+    # a hostel's guests coordinate hangouts/day-plans/group activities, AND
+    # it's why travelers often return to the same hostel on a later trip
+    # (they're still in the group) — weighted accordingly above the generic
+    # "organizes activities" bonus.
+    SOCIAL_MIXING_KEYWORDS = ("meet people", "meet new people", "meet other travelers", "meet fellow travelers", "make friends", "socialize", "socialise", "mingle", "connect with other travelers", "over dinner", "communal dinner", "shared meals", "whatsapp", "community group", "stay in touch", "keep in touch", "regulars")
+    query_mentions_social_mixing = any(kw in query_search_text for kw in SOCIAL_MIXING_KEYWORDS)
+    if query_mentions_social_mixing:
+        social = hostel.get("social_vibe", {})
+        guest_types = [g.lower() for g in social.get("guest_type", [])]
+
+        # solo_group_ratio (EXPERIMENTAL — new, more granular field) takes
+        # priority over the older guest_type text heuristic when present;
+        # falls back to the original heuristic otherwise so real hostels
+        # (which only have guest_type today) keep working unchanged.
+        solo_group_ratio = social.get("solo_group_ratio")
+        if solo_group_ratio == "mostly_solo":
+            add(6, "guest mix is mostly solo travelers, good odds of meeting people to connect with")
+        elif solo_group_ratio == "mixed":
+            add(2, "guest mix is a blend of solo travelers and groups")
+        elif solo_group_ratio == "mostly_groups":
+            add(-6, "guest mix leans heavily toward groups, which can make it harder to naturally meet new people")
+        else:
+            if any("solo" in g for g in guest_types):
+                add(5, "popular with solo travelers, good odds of meeting other solo travelers to connect with")
+            if any("group" in g for g in guest_types):
+                add(-5, "guests here tend to travel in groups, which can make it harder to naturally meet new people")
+
+        activities = (social.get("social_activities") or []) + (social.get("weekend_activities") or [])
+        if activities:
+            example = activities[0]
+            add(6, f"organizes social activities (e.g. {example}), which create natural chances to meet other travelers")
+
+        if social.get("communal_dinner_available") is True:
+            add(6, "hosts communal/family-style dinners, a natural way to meet other travelers over a meal")
+
+        if social.get("whatsapp_community_group_available") is True:
+            add(8, "has an active WhatsApp/community group — a strong signal of an ongoing social community, and often why travelers come back on a later trip")
+
+        friendliness = (social.get("friendliness") or hostel.get("staff", {}).get("friendliness") or "").lower()
+        if any(w in friendliness for w in ("friendly", "welcoming", "excellent", "warm")):
+            add(3, "staff described as especially friendly, which tends to correlate with an easy, welcoming social atmosphere")
+
+        hostel_party_level = (social.get("party_level") or "").lower()
+        if hostel_party_level in ("low_to_medium", "medium"):
+            add(4, "some social energy without being an overwhelming party scene — good odds of casual mixing like meeting people over dinner")
+
+    # --- 19. Food self-sufficiency combo (free_breakfast is REAL data;
+    # diy_breakfast_available and kitchen_utensils_quality are EXPERIMENTAL,
+    # same status as the fields above — schema + scoring logic real, actual
+    # values not researched yet, only exercised via the synthetic fixture) ---
+    BREAKFAST_KEYWORDS = ("breakfast", "diy breakfast", "self-serve breakfast", "make my own breakfast", "bread and jam", "cook my own food", "self-catering", "kitchen utensils", "pots and pans", "cook my own meals")
+    query_mentions_breakfast = any(kw in query_search_text for kw in BREAKFAST_KEYWORDS)
+    if query_mentions_breakfast:
+        kitchen_food = hostel.get("kitchen_food", {})
+        if kitchen_food.get("free_breakfast") is True:
+            add(8, "free breakfast included")
+        elif kitchen_food.get("diy_breakfast_available") is True:
+            add(5, "offers DIY breakfast basics (bread/jam/butter/tea) so you can put together your own breakfast")
+
+        kitchen_utensils_quality = kitchen_food.get("kitchen_utensils_quality")
+        if kitchen_utensils_quality == "good":
+            add(5, "well-stocked kitchen utensils, good for cooking your own meals")
+        elif kitchen_utensils_quality == "basic":
+            add(2, "basic kitchen utensils available")
+        elif kitchen_utensils_quality == "none":
+            add(-3, "no real kitchen utensils confirmed, even if a kitchen space exists")
+
+    # --- 20. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
     # Complements the exact/partial vibe_tags matching above (#3): tags catch
     # explicit keyword overlap, this catches nuance a tag vocabulary can't
     # enumerate (e.g. "somewhere I can focus in the mornings but still meet
@@ -749,7 +985,7 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
     all_results = []
     genuine_match_count = 0
     for hostel in hostels:
-        result = score_hostel(hostel, intent, local_price_bounds, semantic_entries.get(hostel["id"]))
+        result = score_hostel(hostel, intent, local_price_bounds, semantic_entries.get(hostel["id"]), raw_query)
         if not result["breakdown"]:  # nothing about this hostel was actually evaluated — no signal to show
             continue
         if result["score"] > 0:

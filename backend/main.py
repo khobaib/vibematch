@@ -116,6 +116,14 @@ For party_preference, classify where the traveler sits on a party/social spectru
 - "prefer_social" — wants a social, lively atmosphere without necessarily being a full-on party hostel: "sociable", "like meeting people", "good vibe in the evenings"
 - "prefer_party" — explicitly wants a party hostel, nightlife, loud social scene: "party hostel", "nightlife", "want to rage"
 - Default to "neutral" if there's no clear signal either way.
+- ALWAYS fill this field the same way regardless of whether daytime_vibe_preference/evening_vibe_preference below are also set — it's the fallback the matching engine uses for any query that isn't genuinely time-varying.
+
+For daytime_vibe_preference and evening_vibe_preference (EXPERIMENTAL, see DECISIONS_LOG.md — hostel-side day/night data doesn't exist yet, these are currently only exercised against a synthetic test fixture): only set these two fields — each "quiet", "social", or null — when the query CLEARLY expresses a DIFFERENT preference for daytime vs. evening within the same stay. This is a genuinely different signal than party_preference, which describes one overall vibe.
+- Example that SHOULD set both: "somewhere I can focus during the day but still meet people over dinner" → daytime_vibe_preference: "quiet", evening_vibe_preference: "social".
+- Example that SHOULD set both: "quiet mornings, social nights" → daytime_vibe_preference: "quiet", evening_vibe_preference: "social".
+- Example that should NOT set either (leave both null): "chill hostel, not too party" — this is one overall preference, not a day/night split; party_preference alone covers it.
+- Example that should NOT set either: "party hostel with nightlife" — also one overall preference.
+- Default: leave BOTH null unless the query genuinely names two different times of day with two different vibes.
 
 Respond ONLY with a JSON object, no explanation, no markdown, just raw JSON.
 Use this exact structure:
@@ -125,6 +133,8 @@ Use this exact structure:
   "budget_flexibility": "strict or approximate",
   "stay_duration_signal": "short_term or long_term or unknown",
   "party_preference": "avoid, prefer_quiet, neutral, prefer_social, or prefer_party",
+  "daytime_vibe_preference": "quiet, social, or null",
+  "evening_vibe_preference": "quiet, social, or null",
   "vibe_tags": ["list", "of", "specific", "vibe", "keywords"],
   "traveler_profile": ["inferred", "traveler", "types", "based", "on", "context"]
 }}

@@ -28,20 +28,57 @@ research per hostel (real cost, `merge`-style)? (2) is it worth wiring into `mat
 or just useful as display/explanation context? Triage these together during the periodic review
 rather than one at a time.*
 
-- **DIY breakfast available** — distinct from `kitchen_food.free_breakfast` (already exists,
-  means a full free breakfast is served) and from `kitchen_available` (a usable kitchen exists).
-  This is the middle case: does the hostel leave out bread/jam/butter/tea/coffee etc. for guests
-  to put together their own simple breakfast, without a full served meal. Needs genuine new
-  research (not reclassifiable from existing fields) — raised 2026-08-28.
-- **Kitchen utensils quality** (`none` / `basic` / `good`) — `kitchen_amenities` already exists as
-  a list, but nothing captures whether what's there is actually usable (e.g. one dull knife and a
-  single pan vs. a properly-stocked kitchen). Possibly reclassifiable from existing
-  `kitchen_amenities` list length/contents rather than needing new research — worth checking
-  during triage before assuming it needs a full research pass. Raised 2026-08-28.
-- **`free_breakfast` wiring** (not a new field — already exists in `kitchen_food`, collected for
-  all 226 hostels, just never referenced in `matching.py` scoring, same gap `views`/`nearby` had
-  before those were fixed). Cheap to wire whenever the next scoring pass happens — no new research
-  needed. Raised 2026-08-28.
+**Status key for entries below**: 🔵 *schema + scoring logic built, mechanically validated against
+a synthetic fixture, waiting only on real research* vs 🟣 *idea only, nothing built yet*.
+
+- 🔵 **DIY breakfast available** (`kitchen_food.diy_breakfast_available`, bool) — distinct from
+  `free_breakfast` (a full served meal) and `kitchen_available` (a usable kitchen exists). This is
+  the middle case: bread/jam/butter/tea left out for guests to assemble their own simple breakfast.
+  Schema + scoring built 2026-08-28 (step 19, food self-sufficiency combo), validated against
+  `test_fixtures/synthetic_test_data.json` (backlog_fields section, run via `python validate.py
+  backlog_fields`). Needs genuine new research — not reclassifiable from existing fields.
+- 🔵 **Kitchen utensils quality** (`kitchen_food.kitchen_utensils_quality`, none/basic/good) —
+  `kitchen_amenities` already exists as a list but doesn't capture usability. Schema + scoring
+  built 2026-08-28 (step 19). Possibly reclassifiable from existing `kitchen_amenities` list
+  contents rather than needing new research — worth checking at triage before assuming a full
+  research pass is required.
+- ✅ **`free_breakfast` wiring** — turned out to already be REAL data (37 true / 19 false / 226
+  total), not a backlog item at all. Wired for real 2026-08-28 (step 19) — no fixture, no research
+  needed, done.
+- 🔵 **Wifi quality** (`facilities.wifi_quality`, none/weak/good/excellent) — only 11/226 hostels
+  mention "wifi" anywhere in free text right now; `good_for_remote_work` is the only real proxy.
+  Schema + scoring built 2026-08-28 (step 17, daytime work-focus combo), validated against the
+  synthetic fixture. Needs genuine new research.
+- 🔵 **Desk/seating setup for laptop work** (`facilities.desk_setup`, none/basic/good) — same
+  context as wifi quality. Schema + scoring built 2026-08-28 (step 17). Not reclassifiable from
+  existing data; needs new research.
+- 🟣 **Common-area AC** — `facilities.lounge_has_ac` already exists as a field (already wired into
+  step 17) but is populated for only 4/226 hostels. Likely reclassifiable from existing
+  review/facility text for many hostels — worth checking at triage before assuming full new
+  research is needed.
+- 🔵 **Communal dinner / family-style meal flag** (`social_vibe.communal_dinner_available`, bool) —
+  distinct from `social_activities` (organized events) — specifically about shared meal culture.
+  Only 12/226 hostels mention "dinner" anywhere in free text currently. Schema + scoring built
+  2026-08-28 (step 18, evening social-mixing combo), validated against the synthetic fixture.
+  Needs genuine new research.
+- 🔵 **WhatsApp/community group available** (`social_vibe.whatsapp_community_group_available`,
+  bool) — raised 2026-08-28: a real, strong, and DISTINCT social signal from generic organized
+  activities — it's the actual mechanism guests use to coordinate hangouts/day-plans, and part of
+  why travelers return to the same hostel on a later trip (they're still in the group). Schema +
+  scoring built the same day (step 18, weighted above generic activities/dinners at +8), validated
+  against the synthetic fixture. Needs genuine new research — likely a targeted review-text search
+  ("WhatsApp group", "add you to the group", etc.), same search pattern as the earlier
+  bed-bugs/lockers pass.
+- 🔵 **`daytime_party_level` / `evening_party_level`** (same vocab as the existing `party_level`) —
+  schema + scoring logic built 2026-08-27/28 (see the Fix B TECH DEBT entry above), mechanically
+  validated against `test_fixtures/synthetic_test_data.json` (daynight section, run via `python
+  validate.py daynight`). Needs genuine new research, likely starting with hostels most plausibly
+  having real day/night contrast.
+- 🔵 **Solo-vs-group traveler ratio** (`social_vibe.solo_group_ratio`,
+  mostly_solo/mixed/mostly_groups) — `guest_type` only supports free-text-derived tags (188/226
+  mention "solo" somewhere, only 1 mentions "group") with no real ratio signal. Schema + scoring
+  built 2026-08-28 (step 18, takes priority over the older `guest_type` heuristic when present).
+  Needs genuine new research.
 
 ---
 
@@ -665,7 +702,7 @@ least-bad option available" rather than presenting both with equal confidence. T
 makes the strict party-preference table above safe to ship — a badly-scoring hostel now ranks near
 the bottom instead of vanishing.
 
-### 🟡 OPEN — A nuanced dual-mode query ("focus during the day, meet people at dinner") got ranked purely by party_level, ignoring the work/focus half entirely
+### 🟡 PARTIALLY RESOLVED — A nuanced dual-mode query ("focus during the day, meet people at dinner") got ranked purely by party_level, ignoring the work/focus half entirely
 Found via Task #6 validation. Query: "somewhere I can focus during the day but still meet people
 over dinner." Claude's intent parser collapsed this into a single `party_preference: "prefer_
 social"` value — the schema has no way to represent "quiet mornings, social evenings" as two
@@ -674,14 +711,40 @@ that single target (up to 20 points), with **zero** breakdown entries referencin
 coworking, or focus at all. Confirmed this isn't just under-weighting: re-running with a reworded
 query ("...focus **in work** during the day...") produced an almost identical parsed intent and,
 critically, the same structural gap — the work/focus dimension of the query is not represented
-anywhere in final ranking, regardless of phrasing. Root cause is two-fold: (1) `party_preference`
-as a single categorical field cannot express time-varying preferences within one stay, and (2) even
-where `vibe_tags`/semantic similarity *did* capture the work-focus nuance, `party_preference`'s
-point budget (up to 20) dominated the additive total enough that those signals never surfaced the
-right hostels into the top ranks for this query. **Not fixed yet** — this needs either a richer
-intent schema (e.g. splitting "daytime vibe" from "evening vibe" as separate preferences) or a
-rebalancing pass across all scoring categories' point budgets, both real design work rather than a
-quick patch.
+anywhere in final ranking, regardless of phrasing.
+
+**Direct product follow-up correctly reframed both halves as multi-field combinations, not single
+tags**: "work focus" isn't one fact — it's wifi strength + a calm/AC'd place to sit + coffee + easy
+commuting; "meet people over dinner" isn't a party-hostel question — it's guest-mix (solo vs.
+group-heavy) + organized social activities + staff warmth + a *gentle* social read distinct from
+raw party intensity. Checked the schema directly before building anything: `good_for_remote_work`
+(already scored, step 7), `near_metro`/`near_airport`, and `kitchen_food.free_tea_coffee` exist for
+the work-focus side; wifi quality, desk/seating setup, and common-area AC do NOT (confirmed —
+`facilities.lounge_has_ac` is populated for only 4/226 hostels, "wifi" appears anywhere in free
+text for only 11/226) — those went to the Field/Feature Backlog rather than being faked. For the
+social side, `guest_type`, `social_activities`/`weekend_activities`, and `staff.friendliness` exist
+and are decent signal; a dedicated communal-dinner/family-meal flag does not (only 12/226 mention
+"dinner" anywhere) — also backlogged.
+
+**Fixed with two new steps** (12→17 daytime work-focus combo, 18 evening social-mixing combo, added
+directly after the curfew step): step 17 adds keyword-gated bonuses for commute ease (+4) and free
+coffee (+3) on top of step 7's existing `good_for_remote_work` bonus (deliberately not repeated, to
+avoid double-counting); step 18 adds a genuinely separate "social mixing probability" score —
+solo-traveler-heavy guest mix (+5), group-heavy guest mix (-5, since group travelers tend to stick
+together rather than mix with strangers), organized social activities naming a real example (+6),
+friendly staff (+3), and a gentle light-to-medium party_level credit (+4) distinct from the raw
+party-preference match in step 8. Verified live: the same "focus during the day... meet people over
+dinner" query now shows real, non-zero breakdown entries for both halves (e.g. "free tea/coffee
+available, handy for work sessions" + "organizes social activities (e.g. nightly pub crawl)" +
+"popular with solo travelers") where before there were none.
+
+**Still not fully resolved** — the underlying root cause (a single `party_preference` field can't
+express time-varying preferences, and its point budget still tends to dominate the additive total)
+is unchanged; today's fix adds real credit for the previously-invisible dimension without
+rebalancing the overall weights or restructuring the intent schema. Top-ranked results for this
+query still skew toward high-party_level hostels, just with more complete (and honest) reasoning
+attached now. A full fix would need either splitting "daytime vibe"/"evening vibe" into separate
+intent fields or a deliberate score-weight rebalancing pass — both real design work, not done here.
 
 ### 🟢 RESOLVED — `views` field (`has_view`, `view_type`, `view_from`) was collected but never used in scoring, and the underlying data wasn't clean enough to match against reliably
 Found via direct product review while testing "I want to hear some sound of waves in a calm
@@ -843,6 +906,151 @@ fields at the same depth (accepting an ~85% null rate) or deprioritize them for 
 countries and focus research effort on the two fields that actually turned up usable signal
 (curfew, lockers) plus bed bugs (safety-relevant even at a 50/9/41 split) and new nearby-attraction
 research. Not yet decided — flagged here for the next planning conversation.
+
+### 🟢 RESOLVED — Consolidated the 3 validate_*.py scripts and 2 synthetic fixture files into one toolkit
+Same proliferation problem as the earlier data-enrichment scripts (see the `data_tools.py`
+consolidation entry below), spotted directly: `validate_semantic_matching.py`,
+`validate_daynight_split.py`, and `validate_backlog_fields.py` were each written one at a time in
+response to whatever validation need came up in the moment, with `test_fixtures/
+synthetic_daynight_test.json` and `test_fixtures/synthetic_backlog_fields_test.json` accumulating
+the same way. Replaced with `validate.py` (mirrors `data_tools.py`'s registry pattern — a `SUITES`
+dict mapping a name to a run function, selected via `python validate.py <suite>`, with `all`
+running every suite) and a single `test_fixtures/synthetic_test_data.json` holding both fixtures
+under separate top-level sections (`daynight`, `backlog_fields`), so nothing about a future
+validation need requires a new file — just one new function + one registry entry, or one new
+top-level section in the fixture file if it needs fake data. Verified the consolidation reproduces
+identical output: re-ran both fixture-based suites (`daynight`, `backlog_fields`) through the new
+single entry point and confirmed the same before/after breakdowns and the same "hostels.json
+unmodified" sanity-check result as the original separate scripts.
+
+### 🟡 TECH DEBT — 7 more backlogged fields brought forward the same way: schema + scoring logic built and validated now, real research deferred; plus a new field (WhatsApp community group)
+Direct follow-up, same reasoning as the daytime/evening split entry directly below: rather than
+waiting for a full research pass to touch `matching.py` at all, pulled the rest of the
+Field/Feature Backlog forward into real schema + real scoring logic now, validated against a
+second synthetic fixture — genuine research on the actual values remains deferred and tracked
+below, not done here. Also added a brand new field, raised directly: **`whatsapp_community_group_
+available`** — the observation was that an active WhatsApp/community group is the actual mechanism
+by which a hostel's guests coordinate hangouts/day-plans/group activities, and is part of why
+travelers often return to the same hostel on a later trip (they're still in the group). Agreed this
+is a genuinely distinct, strong signal — not just another "organizes activities" data point — so it
+carries the highest single bonus (+8) in the evening social-mixing step, above generic activities
+(+6) and communal dinners (+6).
+
+**Fields added, all as real schema + real `matching.py` scoring, all EXPERIMENTAL (no real hostel
+has values yet)** except `free_breakfast` which turned out to already be real data (37 true / 19
+false / 226 total in the actual dataset) and is now wired for real, no fixture needed:
+- `facilities.wifi_quality` / `facilities.desk_setup` — extends the daytime work-focus combo
+  (step 17).
+- `kitchen_food.diy_breakfast_available` / `kitchen_food.kitchen_utensils_quality` — new step 19
+  (food self-sufficiency combo), alongside the now-real `free_breakfast`.
+- `social_vibe.communal_dinner_available` / `social_vibe.whatsapp_community_group_available` /
+  `social_vibe.solo_group_ratio` — extends the evening social-mixing combo (step 18);
+  `solo_group_ratio` takes priority over the older `guest_type` text heuristic when present, falls
+  back to the original heuristic otherwise so real hostels (which only have `guest_type` today)
+  are unaffected.
+
+**Validated the same way as the daytime/evening split** — NOT by writing fake values into
+`hostels.json` (rejected for the same reason as before: real production data must never carry
+fabricated values, even flagged ones). Built `test_fixtures/synthetic_backlog_fields_test.json`
+(26 hostels, `random.seed(99)`, explicit `_WARNING`) and `validate_backlog_fields.py`, which
+deep-copies the real hostel list, overlays the synthetic values onto the copy only, and runs 3
+test queries (one per new/extended step) against both real and synthetic-overlay data. Verified
+live: all 3 cases show the new fields contributing real, correctly-labeled breakdown entries in
+the "after" run and nothing in "before" (since real data is null), and the closing sanity check
+confirms `hostels.json` on disk is byte-identical before and after. The food-self-sufficiency test
+case incidentally also confirms `free_breakfast` (the one real field in this batch) was already
+working correctly even before today's changes.
+
+**Not done here**: any real per-hostel research for these 7 fields. See Field/Feature Backlog below
+for the updated entries.
+
+### 🟡 TECH DEBT — Fix B (daytime/evening intent split) implemented and mechanically validated against synthetic data; real hostel-side research not started
+Direct follow-up to the "focus during the day, meet people over dinner" dual-mode gap (see the
+PARTIALLY RESOLVED entry above). Decided to pursue "Fix B" (split intent fields) over "Fix A"
+(rebalance party_preference's point weights) — Fix A is cheap but blunt (it would've changed every
+other query's party scoring, not just dual-mode ones); Fix B is more correct but real work.
+
+**What was built:**
+1. `main.py`'s `parse_intent()` prompt gained two new optional fields, `daytime_vibe_preference`
+   and `evening_vibe_preference` (each `"quiet"`/`"social"`/null), only set by Claude when a query
+   genuinely names two different times of day with two different vibes — explicit few-shot examples
+   included in the prompt to keep this from over-firing on ordinary single-mode queries.
+   `party_preference` is always still filled the same way regardless, as the fallback.
+2. `matching.py`'s party-scoring step now branches: if either new field is set, it runs a NEW
+   split-scoring path (two halved score tables, one per period, reading
+   `social_vibe.daytime_party_level`/`evening_party_level`) instead of the original single-mode
+   `party_preference` table — never both, to avoid double-counting the same underlying signal.
+3. **The hostel side does NOT have real `daytime_party_level`/`evening_party_level` data.** Every
+   real hostel in `hostels.json` has these as null/missing — that needs genuine new research
+   (per-hostel, likely from reviews mentioning "quiet during the day, lively at night" type
+   language), same research-cost category as the bed-bugs/lockers pass, NOT done here. Added to the
+   Field/Feature Backlog below.
+
+**How the logic was validated anyway, without fabricating real data**: rather than randomly filling
+these two fields into `hostels.json` itself (rejected — even clearly flagged, fake values living in
+the same file real search results are served from is a real risk if a flag gets missed later), built
+a separate `test_fixtures/synthetic_daynight_test.json` (23 hostels, `random.seed(42)`, explicit
+`_WARNING` field, values independent of each hostel's real `party_level` on purpose — the goal is
+stress-testing the scoring math itself, not simulating realistic hostels) plus
+`validate_daynight_split.py`, which deep-copies the real hostel list in memory, overlays the
+synthetic values onto the copy ONLY, runs the same dual-mode query against both the untouched real
+data ("before" — everything reads as "not researched yet") and the synthetic-overlay copy
+("after"), and ends with an explicit sanity check confirming `hostels.json` on disk is byte-identical
+before and after the run. Verified live (real Claude call — Voyage still unreachable from this
+sandbox, doesn't matter here since this test doesn't depend on semantic scoring): the parser
+correctly detected the split (`daytime_vibe_preference: "quiet"`, `evening_vibe_preference:
+"social"`, `party_preference: "neutral"` — correctly NOT double-set), the split-scoring branch fired
+instead of the single-mode branch, and rankings shifted sensibly based on the fake data (e.g. a
+hostel with synthetic `daytime: low, evening: high` correctly scored well for this query). This
+proves the scoring mechanism is correct; it says nothing yet about real-world ranking quality, since
+production data for these two fields doesn't exist.
+
+**Next step, not done here**: genuine research pass to populate
+`daytime_party_level`/`evening_party_level` for real hostels (probably starts with the ones most
+likely to have day/night contrast — coworking-forward or "chill by day, social by night" branded
+properties), same batched-Agent-subagent pattern as the services-field research passes above.
+
+### 🟢 RESOLVED — New services-field keyword matching silently failed because it only checked parsed vibe_tags, not the raw query
+Found via Task #6 validation (`validate_semantic_matching.py`), which had 2 new test cases added
+specifically to probe the just-wired bed-bug/lockers/hair-dryer/drying/curfew scoring (steps 12-16
+above). Both new cases immediately exposed a real bug on their first live run: a query for "secure
+lockers" parsed into vibe_tags `["clean", "comfortable", "secure", "safe", ...]` — the literal word
+"lockers" never survived Claude's paraphrasing — so the lockers step's keyword check (which only
+looked at `vibe_tags`) never fired despite the traveler explicitly asking for lockers. Same failure
+for "hair dryer... dry my clothes", which parsed into `["practical amenities", "laundry"]` with
+neither "hair dryer" nor "drying" anywhere. This is a different failure mode from the existing
+transit/remote-work/boutique steps (which happen to use common-enough words that survive
+paraphrasing) — these 5 fields are specific factual asks where literal wording matters, and
+paraphrase-tolerant tag matching actively works against that. **Fixed** by adding `raw_query` as an
+optional parameter threaded through `score_hostel()` (already available in `match_hostels()` for
+semantic matching, just not passed down before) and having the 5 new keyword checks search a
+combined `vibe_tags + raw_query` text blob instead of `vibe_tags` alone. Re-verified live (real
+Claude + Voyage calls, not simulated) immediately after the fix: both cases now correctly surface
+the lockers/hair-dryer/drying/curfew bonuses. General lesson, same shape as several earlier ones in
+this log: a fix validated on one field doesn't automatically generalize — worth deliberately
+testing new scoring logic with real queries before considering it done, exactly what Task #6's
+validation script exists for.
+
+### 🔴 CORRECTION — the 2026-08-28 "live" validate_semantic_matching.py run did NOT actually test the semantic layer; Voyage is unreachable from this environment
+An earlier version of this entry claimed the "calm surroundings" case was re-tested live and
+showed no semantic contribution in the top 5. That claim was wrong and has been replaced by this
+entry. Root cause, caught directly when double-checking: this sandbox's network egress reaches the
+Anthropic API fine (confirmed — `parse_intent()` calls genuinely succeeded), but cannot reach
+`api.voyageai.com` at all (`ProxyError('Unable to connect to proxy', OSError('Tunnel connection
+failed: 403 Forbidden'))`, confirmed via a direct `embed_query()` call). `compute_semantic_entries()`
+is deliberately written to degrade gracefully and silently skip the semantic bonus on ANY exception
+(see its docstring — "semantic matching is a bonus layer, not a hard dependency"), which is the
+right behavior for production but means every "live" validation run done from this environment,
+including all 8 cases in the 2026-08-28 run, executed with the semantic layer silently disabled
+the whole time. The parsed intents and structured-scoring breakdown entries from that run are real
+and valid (that's how the genuine raw_query/paraphrasing bug above was found), but nothing about
+semantic similarity was actually exercised — the absence of `semantically matches` entries in those
+results is an artifact of the environment, not a product finding. **Still needed to close Task #6**:
+someone needs to actually run `validate_semantic_matching.py` (or the live `/search` endpoint)
+somewhere Voyage is reachable — i.e. not this sandbox — the same way the semantic embeddings
+themselves were originally generated and Voyage was validated back in Task #3/#4. Same
+infrastructure limitation as earlier in the project (Voyage AI calls have always needed to run
+from outside this sandbox, not something new).
 
 ### 🟢 RESOLVED — 160-hostel research pass completed (light-touch), 7 data-quality issues found and fixed, 5 new fields wired into matching
 Follow-up to the pilot (Thailand+India, 68 hostels — see above): ran the same bed
