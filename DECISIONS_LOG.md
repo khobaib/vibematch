@@ -10,7 +10,38 @@ has the decision, the reasoning, and the date/context it was made in.*
 
 - **Decisions** = choices we made deliberately, with reasoning, that we're standing behind for now
 - **Tech Debt** = known shortcuts or limitations we accepted on purpose, with a plan to revisit
+- **Field/Feature Backlog** (below) = new schema field ideas that come up mid-conversation, parked
+  here instead of built immediately, since each new field means a real research/enrichment cost
+  across the whole dataset (comparable to the bed-bugs/lockers/curfew pass above) — not something
+  to take on reflexively every time an idea comes up. Reviewed and triaged periodically (~biweekly)
+  rather than per-idea.
 - Nothing here is final — this is a log of *current* thinking, not commitments carved in stone
+
+---
+
+## Field/Feature Backlog
+
+*New data fields worth adding eventually, captured here as they come up rather than built
+immediately. Each one needs the same two-part cost estimate before starting: (1) is this
+re-classifiable from data we already have (cheap, `normalize`-style), or does it need genuine new
+research per hostel (real cost, `merge`-style)? (2) is it worth wiring into `matching.py` scoring,
+or just useful as display/explanation context? Triage these together during the periodic review
+rather than one at a time.*
+
+- **DIY breakfast available** — distinct from `kitchen_food.free_breakfast` (already exists,
+  means a full free breakfast is served) and from `kitchen_available` (a usable kitchen exists).
+  This is the middle case: does the hostel leave out bread/jam/butter/tea/coffee etc. for guests
+  to put together their own simple breakfast, without a full served meal. Needs genuine new
+  research (not reclassifiable from existing fields) — raised 2026-08-28.
+- **Kitchen utensils quality** (`none` / `basic` / `good`) — `kitchen_amenities` already exists as
+  a list, but nothing captures whether what's there is actually usable (e.g. one dull knife and a
+  single pan vs. a properly-stocked kitchen). Possibly reclassifiable from existing
+  `kitchen_amenities` list length/contents rather than needing new research — worth checking
+  during triage before assuming it needs a full research pass. Raised 2026-08-28.
+- **`free_breakfast` wiring** (not a new field — already exists in `kitchen_food`, collected for
+  all 226 hostels, just never referenced in `matching.py` scoring, same gap `views`/`nearby` had
+  before those were fixed). Cheap to wire whenever the next scoring pass happens — no new research
+  needed. Raised 2026-08-28.
 
 ---
 
@@ -812,6 +843,59 @@ fields at the same depth (accepting an ~85% null rate) or deprioritize them for 
 countries and focus research effort on the two fields that actually turned up usable signal
 (curfew, lockers) plus bed bugs (safety-relevant even at a 50/9/41 split) and new nearby-attraction
 research. Not yet decided — flagged here for the next planning conversation.
+
+### 🟢 RESOLVED — 160-hostel research pass completed (light-touch), 7 data-quality issues found and fixed, 5 new fields wired into matching
+Follow-up to the pilot (Thailand+India, 68 hostels — see above): ran the same bed
+bugs/lockers/hair-dryer/drying/curfew/nearby research across the remaining 160 hostels, split
+into two ~40-hostel chunks with a pause between them (token-budget concern), using a
+LIGHT-TOUCH methodology (1-2 targeted searches per hostel instead of the pilot's deeper
+multi-source dive) per direct request — "not this much deep research is needed at this phase of
+product development." This traded some coverage depth for roughly 2-3x less effort per hostel,
+while keeping all 5 fields (rejected the alternative of dropping hair dryer/drying despite their
+weak pilot yield, since consistency across the dataset was preferred over maximizing yield on 3
+fields at this stage). Result: all 158 non-Thailand/India, non-pilot hostels researched across 13
+parallel `Agent` subagent batches with zero WebSearch budget exhaustion this time (the light-touch
+depth stayed well under the per-session quota that caused Wave 2 failures in an earlier attempt at
+this same pass) — each batch wrote its own results file immediately (`research_batches/
+remaining_160_wave1.json` + `remaining_160_wave2_batch{1-12}.json`) specifically so a later
+failure couldn't lose earlier work, a direct lesson from that earlier quota-exhaustion incident.
+
+**Data-quality issues surfaced during research** (same "flag, don't fabricate" discipline as the
+pilot): 7 total. 5 were city/location mix-ups, fixed directly in `hostels.json` (city/region
+corrected, `source_note` updated with a dated correction note): Roy's Villa Hostel (#67,
+Unawatuna → Sigiriya), Camp Poe (#71, Ella → Ahangama), Montacute Boutique Bunkhouse (#144,
+Adelaide → Hobart), Kamasanti Hostel (#116, Sanur → Nusa Penida), and Greg & Tom Hostel Krakow
+(#130, ambiguous which of several similarly-branded Krakow properties — left as-is with a note,
+since 100% correctness isn't the bar at this stage). 2 were "does this listing even belong in the
+dataset" questions rather than typos, and were **removed entirely** after explicit confirmation:
+Maverick Hostel Budapest (#80, completely unreachable in research — no listing found on any
+platform) and Selina Valparaiso (#178, the Selina chain has reportedly closed most of its
+properties and this specific one couldn't be confirmed still open). Dataset is now 226 hostels
+(228 - 2 removals). All per-hostel research notes (38 of them — data-quality flags, single-source
+caveats, budget-tool-limit caveats, etc.) were preserved into each hostel's `source_note` rather
+than silently discarded when merged, even though they don't map to any structured field.
+
+**Final coverage across all 226 hostels** (pilot + both waves combined): `location.nearby` 222/226
+(98%); `services.lockers.available` 138 true / 3 false / 85 null; `services.bed_bug_reports` 13
+true / 76 false / 137 null; `services.curfew_policy` 112/226 (50%) populated;
+`services.hair_dryer_available` 45 true / 5 false / 176 null; `services.clothes_drying_facility`
+38 true / 5 false / 183 null — hair dryer and drying stayed the two weakest fields across the full
+dataset exactly as the pilot predicted, confirming that was real signal about the source material,
+not a fluke of the smaller pilot sample.
+
+**Wired into `matching.py` scoring** (steps 13-17, added directly after this merge completed — the
+pilot's equivalent fields had been sitting collected-but-unused the same way `views`/`nearby` once
+were, see the RESOLVED items above for that same category of gap): `bed_bug_reports` applies an
+unconditional -15 penalty when true regardless of query wording (treated as a real dealbreaker-
+class safety signal, not a mere preference — same reasoning as why `flagged_issues` severity
+always matters), with a smaller keyword-gated +6 bonus for confirmed-clean only when the traveler
+actually raised safety/cleanliness themselves. `lockers`, `hair_dryer_available`, and
+`clothes_drying_facility` are keyword-gated (score only when the query mentions them), +6/+8 if
+confirmed present, -4/-5 if confirmed absent, silent if unknown — same pattern as the existing
+transit/remote-work/boutique steps. `curfew_policy` is keyword-gated on curfew/late-access
+language, interpreted as "wants flexibility" (the far more common real intent behind this phrasing)
+— no-curfew/24hr language scores +8, a real curfew scores -8. Verified live against sample queries
+for each field before considering this done.
 
 ### 🟢 RESOLVED — Consolidated all one-off data-enrichment scripts into a single reusable toolkit
 Raised directly by the traveler: `normalize_views.py`, `reclassify_party_level.py`,

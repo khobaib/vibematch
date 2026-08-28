@@ -478,7 +478,98 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     if query_mentions_boutique and hostel.get("is_boutique_style"):
         add(10, "boutique-style property, matching your preference for a more design-focused/upscale stay")
 
-    # --- 12. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
+    # --- 13. Bed bug safety signal (services.bed_bug_reports) ---
+    # Unlike the other new services-field steps below, this one applies
+    # REGARDLESS of query wording — a credible bed bug report is a real
+    # dealbreaker-class safety signal, not a mere preference, so it always
+    # weighs into ranking rather than only showing up if the traveler
+    # happened to ask about cleanliness. (The softer, keyword-gated bonus
+    # for a confirmed-clean result still requires the traveler to have
+    # actually raised a safety/cleanliness concern — a hostel doesn't get
+    # bonus credit for something nobody asked about.) Data from the
+    # bed-bug/lockers/hair-dryer/drying/curfew research pass — see
+    # DECISIONS_LOG.md.
+    bed_bug_reports = hostel.get("services", {}).get("bed_bug_reports")
+    SAFETY_KEYWORDS = ("safe", "safety", "clean", "hygien", "bed bug", "pest", "comfort", "comfortable", "cozy")
+    query_mentions_safety = any(any(kw in vt.lower() for kw in SAFETY_KEYWORDS) for vt in vibe_tags)
+    if bed_bug_reports is True:
+        add(-15, "reported bed bug complaints in reviews — worth checking recent listings before booking")
+    elif bed_bug_reports is False and query_mentions_safety:
+        add(6, "no credible bed bug reports found in reviews")
+
+    # --- 14. Lockers / secure storage (services.lockers) ---
+    LOCKER_KEYWORDS = ("locker", "secure storage", "storage", "safe box", "valuables", "security")
+    query_mentions_lockers = any(any(kw in vt.lower() for kw in LOCKER_KEYWORDS) for vt in vibe_tags)
+    if query_mentions_lockers:
+        lockers = hostel.get("services", {}).get("lockers") or {}
+        lockers_available = lockers.get("available")
+        if lockers_available is True:
+            locker_type = lockers.get("type")
+            detail = f" ({locker_type})" if locker_type else ""
+            add(8, f"has secure lockers{detail}, matching your interest in secure storage")
+        elif lockers_available is False:
+            add(-5, "no lockers confirmed — heads up if secure storage matters to you")
+
+    # --- 15. Hair dryer availability (services.hair_dryer_available) ---
+    HAIR_DRYER_KEYWORDS = ("hair dryer", "hairdryer", "blow dry", "blow-dry")
+    query_mentions_hair_dryer = any(any(kw in vt.lower() for kw in HAIR_DRYER_KEYWORDS) for vt in vibe_tags)
+    if query_mentions_hair_dryer:
+        hair_dryer = hostel.get("services", {}).get("hair_dryer_available")
+        if hair_dryer is True:
+            add(6, "hair dryer available, matching what you asked about")
+        elif hair_dryer is False:
+            add(-4, "no hair dryer confirmed — heads up since you asked about this")
+
+    # --- 16. Clothes drying facility (services.clothes_drying_facility) ---
+    # Deliberately distinct from the existing laundry_service field — "can
+    # I wash clothes" and "can I actually dry them" are different practical
+    # questions, especially in humid climates.
+    DRYING_KEYWORDS = ("dry clothes", "drying", "dryer", "dry my laundry", "line dry")
+    query_mentions_drying = any(any(kw in vt.lower() for kw in DRYING_KEYWORDS) for vt in vibe_tags)
+    if query_mentions_drying:
+        drying = hostel.get("services", {}).get("clothes_drying_facility")
+        if drying is True:
+            add(6, "has a clothes-drying facility, matching what you asked about")
+        elif drying is False:
+            add(-4, "no clothes-drying facility confirmed — heads up since you asked about this")
+
+    # --- 17. Curfew policy (services.curfew_policy) ---
+    # Most travelers who bring this up are looking for FLEXIBILITY (no
+    # curfew / 24hr access) rather than actively wanting a curfew, so query
+    # mentions of curfew/late-access language are treated as "wants no
+    # curfew" — the far more common real intent behind this kind of phrase.
+    # A STRONG explicit ask ("24/7 access", "round the clock") signals a
+    # much harder requirement than a soft mention of "curfew" alone — a
+    # real curfew is a much bigger miss for that traveler, so it gets a
+    # sharper penalty (-20 vs -8), per direct product correction.
+    GENERAL_CURFEW_KEYWORDS = ("curfew", "24 hour reception", "24hr reception", "late night", "come back late", "flexible check-in", "no curfew")
+    STRONG_CURFEW_KEYWORDS = ("24/7", "24-7", "24/7 access", "round the clock", "round-the-clock", "anytime access")
+    query_mentions_strong_curfew = any(any(kw in vt.lower() for kw in STRONG_CURFEW_KEYWORDS) for vt in vibe_tags)
+    query_mentions_curfew = query_mentions_strong_curfew or any(any(kw in vt.lower() for kw in GENERAL_CURFEW_KEYWORDS) for vt in vibe_tags)
+    if query_mentions_curfew:
+        curfew_policy_raw = hostel.get("services", {}).get("curfew_policy")
+        curfew_policy = (curfew_policy_raw or "").lower()
+        if curfew_policy:
+            # The actual data phrases "no curfew" many different ways — "no
+            # curfew", "no strict curfew", "no formal curfew", "no explicit
+            # curfew", "no fixed curfew", "not a strict curfew", etc. A plain
+            # substring check for the exact phrase "no curfew" missed most of
+            # these (caught directly via testing — several genuinely
+            # no-curfew hostels were about to be wrongly penalized as having
+            # a real curfew). Use a regex that tolerates 0-2 words between
+            # "no"/"not" and "curfew" instead of an exact-phrase match.
+            import re
+            has_no_curfew_language = bool(
+                re.search(r"\bno\w*\s+(\w+\s+){0,2}curfew\b", curfew_policy)
+            ) or any(p in curfew_policy for p in ("24hr", "24-hour", "24 hour"))
+            has_real_curfew = "curfew" in curfew_policy and not has_no_curfew_language
+            if has_no_curfew_language:
+                add(8, "no curfew / 24hr access, matching your need for late-night flexibility")
+            elif has_real_curfew:
+                penalty = -20 if query_mentions_strong_curfew else -8
+                add(penalty, f"heads up: this hostel has a curfew policy ({curfew_policy_raw}), which may not suit your need for late-night/24-7 access")
+
+    # --- 18. Semantic vibe similarity (LLM-written profile <-> Voyage embeddings) ---
     # Complements the exact/partial vibe_tags matching above (#3): tags catch
     # explicit keyword overlap, this catches nuance a tag vocabulary can't
     # enumerate (e.g. "somewhere I can focus in the mornings but still meet
