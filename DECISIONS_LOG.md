@@ -16,6 +16,12 @@ has the decision, the reasoning, and the date/context it was made in.*
   to take on reflexively every time an idea comes up. Reviewed and triaged periodically (~biweekly)
   rather than per-idea.
 - Nothing here is final — this is a log of *current* thinking, not commitments carved in stone
+- **This log intentionally surfaces AI/LLM engineering work explicitly, not just product
+  outcomes** — prompt design decisions, model-choice tradeoffs, structured-output mechanics,
+  eval/validation methodology, and honestly-tracked AI-behavior findings (non-determinism,
+  paraphrasing, degradation, and a self-caught incorrect claim, all documented rather than
+  smoothed over) are a first-class part of what this project is demonstrating, not incidental
+  implementation detail buried in code comments only.
 
 ---
 
@@ -119,11 +125,13 @@ native async support for LLM API calls). React was a deliberate learning goal al
 build — chosen despite being new territory because of its relevance to the target job market.
 
 ### Data storage: JSON file now, PostgreSQL later
-**Why:** At ~66 hostels, a JSON file is simpler to hand-edit and version-control than standing
-up a database. Migration path to Postgres is planned once the dataset or write-concurrency
-needs outgrow a flat file (see roadmap Phase 4).
+**Why:** Simpler to hand-edit and version-control than standing up a database while the dataset
+is still actively researched and corrected by hand. Now at 226 hostels across 40+ countries
+(started at ~66) — still comfortably within what a flat file handles well. Migration path to
+Postgres is planned once the dataset or write-concurrency needs outgrow a flat file (see roadmap
+Phase 4).
 
-### Intent parser: iterative, rule-taught prompt engineering
+### Intent parser: iterative, rule-taught prompt engineering + forced tool-calling for output
 The Claude prompt explicitly teaches inference rules (e.g. "mentions of local market + metro
 access together → long_term_traveler") rather than relying on generic instructions.
 **Why:** Early testing showed generic prompts produced shallow traveler_profile output (e.g.
@@ -131,16 +139,61 @@ just `["solo", "backpacker"]`). Explicitly encoding the founder's own travel-pat
 into the prompt produced dramatically richer, more accurate inferences — validated by
 before/after comparison on real queries.
 
-### Model choice: Claude Sonnet 5 (switched from Sonnet 4.6)
-**Why:** At time of switching, Sonnet 5 was both more capable and priced lower than 4.6 due to
-introductory pricing. Revisit if pricing/model landscape changes.
+**Output mechanism (updated, Task #7):** originally the prompt asked Claude in plain English to
+"respond ONLY with JSON," with hand-rolled markdown-fence-stripping as a safety net before
+`json.loads()`. Both `parse_intent()` and `generate_explanation()` now use Anthropic's forced
+tool-calling instead — a JSON Schema per function, passed via `tools=` and forced via
+`tool_choice`, so the API itself guarantees schema-conforming output. The reasoning instructions
+(inference rules, tone rules, etc.) still live entirely in the prompt text — this only fixed the
+output *mechanism*, not the reasoning. See the Task #7 entry further down for the full writeup.
+
+### Semantic matching layer: a second model (Voyage AI) alongside Claude
+Vibe-tag matching started as pure text/substring comparison — "calm surroundings" (query) vs.
+"quiet" (hostel tag) scored zero shared vibe credit despite being conceptually near-identical to
+a human, because neither string literally contained the other. Fixed by adding a genuine
+semantic layer: Claude (Haiku 4.5) writes a natural-language `vibe_profile` paragraph per hostel
+from its existing structured fields (one-time job, ~228 hostels, ~$0.35, ~29K tokens), each
+profile is embedded via Voyage AI (`voyage-4`), and at search time the traveler's raw query is
+embedded the same way and compared via cosine similarity — a new, auditable breakdown line
+(`compute_semantic_entries()` in `matching.py`), scored relative to the current candidate pool.
+**Why a second model instead of asking Claude to judge similarity directly:** embeddings give a
+cheap, fast, mathematically well-defined similarity score computed once per hostel (document
+embeddings, precomputed) and once per query (query embedding, live) — much cheaper than an extra
+Claude call per hostel per search, and the embedding space genuinely separates "vibe" as a
+concept (validated: a known party hostel's nearest neighbors were all other party hostels, with
+meaningfully lower cross-similarity to the calm cluster). Degrades gracefully to no semantic
+bonus (never breaks search) if Voyage is unreachable or the embeddings file is missing — semantic
+matching is a bonus layer, not a hard dependency. **Known environment quirk, not a product
+issue:** this project's cloud sandbox can reach `api.anthropic.com` but not `api.voyageai.com` —
+semantic-layer validation always has to run from the user's own machine, tracked explicitly so it
+never gets silently skipped or misreported as tested when it wasn't (see the 🔴 CORRECTION entry
+further down for how that mistake actually happened once, and was caught and fixed).
+
+### Model choice: Claude Sonnet 5 (switched from Sonnet 4.6) for reasoning; Voyage voyage-4 for embeddings
+**Why Claude:** at time of switching, Sonnet 5 was both more capable and priced lower than 4.6
+due to introductory pricing. Revisit if pricing/model landscape changes. **Why Voyage
+specifically for embeddings, rather than one model doing everything:** embeddings are a distinct
+capability from text generation/reasoning — Voyage is purpose-built for retrieval-quality vector
+embeddings (asymmetric query/document embedding modes tuned for exactly this search use case) and
+offers a genuinely free tier (200M tokens/year on `voyage-4`) suited to a project at this stage.
 
 ### Matching engine: additive point-based scoring, not ML-based
-Each signal (location, budget, vibe tags, traveler profile, stay duration) adds/subtracts
-points; results sort by total score. Every point addition records a human-readable "reason."
+Each signal (location, budget, vibe tags, traveler profile, stay duration, services fields,
+semantic similarity) adds/subtracts points; results sort by total score. Every point addition
+records a human-readable "reason."
 **Why:** Transparent and debuggable — every score can be explained by reading the reasons list,
-which also becomes the raw material for the planned "Why we matched this" feature. An ML-based
-ranker would be a black box at this stage, with no training data to justify the complexity yet.
+which also becomes the raw material for the "Why we matched this" AI explanation feature. An
+ML-based ranker would be a black box at this stage, with no training data to justify the
+complexity yet.
+
+### Validation: two separate tools for two separate purposes
+`validate.py` prints score breakdowns for a human to read and judge — useful for exploring how a
+change actually behaves. `eval_suite.py` (Task #8) makes automated pass/fail assertions seeded
+from this log's resolved bugs, so a regression is caught by running one command rather than by a
+human re-reading breakdowns and remembering what used to be true. Both stay dependency-free
+custom Python (no pytest) to match the rest of the project's style. See their own docstrings and
+the Task #8 entry further down for the full design (three tiers, split by what each needs: no
+API calls, live Claude only, or live Claude + live Voyage).
 
 ---
 
@@ -464,6 +517,10 @@ path actually renders correctly — got a clear assertion message with actual-vs
 specific `DECISIONS_LOG.md` entry it regression-tests printed alongside it, and `run()` correctly
 returned a non-zero exit code. Both the pass path and the fail path are confirmed working, not
 just the pass path.
+
+Then re-run from the user's machine (Voyage-reachable, unlike this sandbox): all 16/16 cases
+passed, including tier 3 (the semantic case, which only auto-skips here). Task #8 is fully closed
+— every tier confirmed live, not just tiers 1-2.
 
 ### 🟡 OPEN — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
