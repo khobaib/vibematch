@@ -432,6 +432,39 @@ robustness), which is also why a one-off transient failure produces no visible e
 absent bonus. Not a regression, not caused by task #7 (which never touches the semantic/embedding
 code path). Task #7's regression check is now fully closed across all 12 test queries.
 
+### 🟢 RESOLVED — Task #8: automated eval suite seeded from this log's resolved bugs
+`validate.py` prints score breakdowns for a HUMAN to read and judge — every prior validation
+session in this log ended with "here's the output, was this correct?" That doesn't scale as a
+regression guard: nothing stops an already-fixed bug from silently reappearing unnoticed. Built
+`eval_suite.py` — a separate, purpose-built tool making ASSERTIONS with a pass/fail summary,
+no human needed in the loop. No new dependency (no pytest) — a plain custom runner (`CASES`
+registry + `@case` decorator), matching `validate.py`'s existing dependency-free style.
+
+Three tiers, designed around the same reachability/non-determinism constraints already documented
+elsewhere in this file:
+- **Tier 1** (10 cases): fully deterministic unit tests — hand-crafted synthetic hostel/intent
+  dicts fed straight into `score_hostel()`, no API calls at all. Covers bed bug unconditional
+  penalty + comfort-keyword-gated bonus, curfew strong-vs-general tiers + the "no strict curfew"
+  regex fix, the raw_query locker-keyword fallback, negation conflict detection, "avoid" treating
+  "low" party_level as a real miss, strict-vs-approximate budget scoring (including the 20%
+  tolerance boundary), the missing-price flag, and the day/night 0-point neutral-wording fix.
+- **Tier 2** (5 cases): integration tests against real `hostels.json`, needs live Claude only.
+  Covers the Bangkok zero-results regression, continent-level search, compound location strings,
+  and two live `parse_intent()` calls asserting only on ROBUST outcomes (whether the day/night
+  split fields get set at all) rather than exact wording, given the documented non-determinism.
+- **Tier 3** (1 case): the semantic layer, needs live Claude AND live Voyage. Auto-detects Voyage
+  reachability via a real `embed_query()` probe and reports SKIPPED (not FAILED) when it's
+  unreachable, rather than a false-negative failure for an environment limitation — this sandbox
+  always reports SKIPPED here; run from the user's machine to actually exercise it.
+
+Verified directly, not just written and assumed correct: ran all 16 cases from this sandbox
+(tiers 1+2 fully live, tier 3 correctly auto-skipped) — 15 passed, 0 failed, 1 skipped. Then
+deliberately corrupted one case's expected value in-memory (not on disk) to confirm the FAILURE
+path actually renders correctly — got a clear assertion message with actual-vs-expected and the
+specific `DECISIONS_LOG.md` entry it regression-tests printed alongside it, and `run()` correctly
+returned a non-zero exit code. Both the pass path and the fail path are confirmed working, not
+just the pass path.
+
 ### 🟡 OPEN — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
 globally on the system Python rather than in a project-specific virtual environment.
