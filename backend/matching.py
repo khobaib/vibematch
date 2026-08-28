@@ -424,6 +424,8 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
                 add(bonus, f"{period_name} vibe ({hostel_level}) matches your {period_name} preference well")
             elif bonus > 0:
                 add(bonus, f"{period_name} vibe ({hostel_level}) is reasonably close to your {period_name} preference")
+            elif bonus == 0:
+                add(bonus, f"{period_name} vibe ({hostel_level}) is a neutral match for your {period_name} preference — neither close nor a mismatch")
             else:
                 add(bonus, f"heads up: {period_name} vibe ({hostel_level}) doesn't closely match your {period_name} preference")
         else:
@@ -444,6 +446,8 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
                     add(bonus, f"party vibe ({hostel_party_level}) matches your preference perfectly")
                 elif bonus > 0:
                     add(bonus, f"party vibe ({hostel_party_level}) is reasonably close to your preference")
+                elif bonus == 0:
+                    add(bonus, f"party vibe ({hostel_party_level}) is a neutral match for your stated preference — neither close nor a mismatch")
                 else:
                     add(bonus, f"heads up: party vibe ({hostel_party_level}) doesn't closely match your stated preference")
             else:

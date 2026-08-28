@@ -277,24 +277,61 @@ party hostels, with a meaningfully lower cross-similarity to the calm cluster (0
 cluster's internal similarity (~0.80+) — confirming the embedding space genuinely separates
 "vibe" as a concept. See the new open item below for what's *not* yet validated about this.
 
-### 🟡 OPEN — Semantic similarity and structured signals can disagree, not yet validated across many real cases
-The new semantic layer (see resolved item above) and the existing structured scoring
-(`party_preference`, exact/partial `vibe_tags` matching) are deliberately independent sources of
-evidence — each reasons about the query in its own way and can legitimately reach different
-conclusions about the same hostel. Observed directly in a real live search ("a chill hostel in
-Goa good for remote work, not too partyish"): several results received both a `-1` penalty for
-"party vibe (medium) doesn't closely match your stated preference" *and* a positive semantic
-bonus (e.g. +9, +8) for matching "chill/remote work" — each signal being independently honest
-about what it measures, not a bug, but also not yet stress-tested against the kind of adversarial
-cases already logged elsewhere in this file (the "calm vs quiet" case above, the Weligama
-non-determinism case, etc.). Specifically not yet known: how often the two systems disagree, in
-which direction, and whether the current point weighting (semantic capped at 15, comparable to a
-single vibe-tag category) is actually well-calibrated or just a reasonable-sounding starting
-guess.
-**Fix:** Task #6 (validate semantic matching against known tech-debt cases) — run the semantic
-layer against a broad set of real queries, including the existing documented adversarial cases in
-this log, and specifically log cases where semantic and structured scoring disagree so the
-pattern (if any) becomes visible rather than anecdotal.
+### 🟢 RESOLVED — Task #6: semantic matching validated live against known tech-debt cases
+Ran `validate.py semantic` (all 8 cases, live Claude + live Voyage, from the user's own machine —
+this sandbox cannot reach `api.voyageai.com`, see the correction entry above) against 226 real
+hostels / 228 embeddings. Results:
+- **"Calm surroundings" case (the original bug that opened this item): confirmed fixed.**
+  Claude's parser now extracts `calm/relaxing/peaceful`, which directly matches the hostel's real
+  `peaceful` tag for some results — but Kamasanti Hostel ranked #2 with *no tag-match line at
+  all*, credited purely by a `+15 vibe profile semantically matches` line. That's the semantic
+  layer doing genuinely independent work, not just riding on better tag extraction.
+- **Weligama non-determinism case: stable.** Same query, consistent location scoring, semantic
+  similarity held in a tight 0.58–0.64 band across the top 5 — no wild swings.
+- **Bangkok party regression check: clean, no disagreement flags.** Real party hostels ranked
+  top, quiet hostels correctly penalized (-40/-50), ordering unchanged from the pre-semantic fix.
+- **"Absolutely not a party hostel" (strong avoid signal): clean.** All top 5 genuinely
+  no-party hostels; semantic layer never overrode or diluted the explicit rejection.
+- **Bed bugs/lockers and curfew/hair-dryer/drying (new services-field validation): both clean.**
+  No bed-bug-flagged or real-curfew hostel leaked into top 5; comfort-keyword bed-bug bonus,
+  locker/hair-dryer/drying bonuses all fired independently without interfering with each other.
+- **Goa remote-work case ("chill... good for remote work, not too partyish"): disagreement
+  pattern reproduces, exactly as originally logged.** Dreamcatcher House & Hostel, Hashtag Rooms,
+  and BunkNBrew all got both a real structured penalty (party vibe medium/low_to_medium doesn't
+  match `prefer_quiet`, -5 to -10) *and* a positive semantic bonus (+8 to +15) for the hostel's
+  vibe-profile text still reading as "chill/remote-work-friendly." Each score is individually
+  correct given what it measures — this isn't a bug.
+
+**Decision:** keep the two signals fully independent (no dampening). Both scores are honest about
+what they measure — the structured penalty says "this hostel's overall party intensity doesn't
+match what you asked for," the semantic bonus says "this hostel's description is topically very
+similar to your query" — and the net score already reflects that tradeoff without needing a new
+suppression rule. Task #6 is CLOSED on this basis; dampening semantic-vs-structured disagreement
+is not planned work, just something to keep an eye on if it starts producing genuinely bad
+top-line rankings in practice.
+
+### 🟢 RESOLVED — Remaining 4 test queries (daynight + backlog_fields suites) validated live, plus a wording bug found and fixed
+Completes all 12 test queries across the three `validate.py` suites (8 semantic + 1 daynight + 3
+backlog_fields). `daynight` (Fix B split-scoring mechanism) and `backlog_fields` (7 backlogged
+fields' scoring logic) both ran live against their synthetic fixtures — real rankings shifted
+correctly once fake day/evening party levels, wifi/desk, WhatsApp/communal-dinner, and DIY
+breakfast/kitchen-utensils values were overlaid, and both runs' sanity checks confirmed
+`hostels.json` on disk stayed unmodified. Notable results: WhatsApp bonus (+8) correctly
+outranked other social signals as designed; `solo_group_ratio` correctly replaced (not
+double-counted with) the old guest-type text heuristic when present; real `free_breakfast` data
+correctly took priority over the fake `diy_breakfast_available` fallback wherever both existed.
+
+Also found via this run: `score_split_period()` (the day/night split scoring helper) had a
+cosmetic wording bug — a hostel scoring exactly `0` points (a genuinely neutral table entry, e.g.
+`prefer_quiet`'s "low" = 0) fell into the same `else` branch as real negative-point mismatches,
+so it was labeled "heads up: ... doesn't closely match" even though nothing was actually wrong.
+Fixed by adding a distinct `bonus == 0` branch with neutral wording ("is a neutral match... —
+neither close nor a mismatch"). The identical pattern existed in the original single-mode
+`party_preference` fallback right below it (same "else: heads up" catch-all) and was fixed the
+same way for consistency, even though it hadn't yet been hit in a live test. Verified directly by
+re-running `validate.py daynight`: the neutral case (Vietnam Backpacker Hostels, daytime "low")
+now shows the corrected wording, while a genuine mismatch (WanderThirst, daytime "medium" / -5)
+still correctly shows "heads up." Purely cosmetic — no score values changed, only breakdown text.
 
 ### 🟢 RESOLVED — Bangkok had no genuine party hostel, causing valid searches to return zero results
 Found via testing "party hostel in Bangkok, want the nightlife": `party_preference: "prefer_party"`
