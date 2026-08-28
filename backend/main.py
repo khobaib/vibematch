@@ -45,19 +45,27 @@ except Exception as e:
     print(f"WARNING: could not load hostel embeddings, semantic matching disabled: {e}")
 
 
-def extract_text(message) -> str:
+def extract_tool_input(message, tool_name: str) -> dict:
     """
-    Don't assume content[0] is the text block. Claude's response can
-    include multiple content blocks (e.g. a ThinkingBlock with internal
-    reasoning before the actual TextBlock, especially for queries with
-    more nuanced/mixed signals that trigger extended thinking). Search
-    for the block that actually has text rather than assuming position.
+    Task #7 refactor (see DECISIONS_LOG.md): replaces the old extract_text()
+    + manual markdown-fence-stripping + json.loads() pattern. Both
+    parse_intent() and generate_explanation() now force a tool call with a
+    JSON Schema, so Claude's API guarantees a schema-conforming dict back
+    (message.content's tool_use block already has .input parsed) — no more
+    depending on Claude choosing to obey a plain-English "respond ONLY with
+    JSON" instruction, and no more risk of json.loads() throwing on
+    malformed output.
+
+    Still don't assume content[0] is the tool_use block, though — a forced
+    tool call can still be preceded by a ThinkingBlock with internal
+    reasoning (same reason extract_text() had to search rather than assume
+    position). Search for the right block by type and name instead.
     """
     for block in message.content:
-        if getattr(block, "type", None) == "text":
-            return block.text
+        if getattr(block, "type", None) == "tool_use" and getattr(block, "name", None) == tool_name:
+            return block.input
     raise ValueError(
-        f"No text block found in Claude's response. Content block types received: "
+        f"No tool_use block for '{tool_name}' found in Claude's response. Content block types received: "
         f"{[getattr(b, 'type', type(b).__name__) for b in message.content]}"
     )
 
@@ -80,6 +88,68 @@ class ExplainRequest(BaseModel):
 @app.get("/")
 def read_root():
     return {"message": "VibeMatch backend is alive"}
+
+
+# Task #7 (DECISIONS_LOG.md): forced-tool-call schema for parse_intent().
+# The reasoning instructions (traveler-profile inference rules, budget
+# strict/approximate distinction, daytime/evening split examples, etc.)
+# still live entirely in the prompt text below — this schema only
+# constrains output SHAPE, not the content Claude decides to extract. It
+# does NOT fix the earlier raw_query-paraphrasing tech debt (Claude
+# rewording "secure lockers" down to just "secure") — that's a content
+# behavior, unrelated to how the output gets serialized.
+INTENT_TOOL = {
+    "name": "extract_search_intent",
+    "description": "Extract structured search intent from a traveler's natural language hostel search query.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "location": {
+                "type": ["string", "null"],
+                "description": "City, region, or country name mentioned in the query, or null if not mentioned.",
+            },
+            "budget_max": {
+                "type": ["number", "null"],
+                "description": "Maximum price per night as a number, or null if not mentioned.",
+            },
+            "budget_flexibility": {
+                "type": "string",
+                "enum": ["strict", "approximate"],
+            },
+            "stay_duration_signal": {
+                "type": "string",
+                "enum": ["short_term", "long_term", "unknown"],
+            },
+            "party_preference": {
+                "type": "string",
+                "enum": ["avoid", "prefer_quiet", "neutral", "prefer_social", "prefer_party"],
+            },
+            "daytime_vibe_preference": {
+                "enum": ["quiet", "social", None],
+                "description": "Only non-null when the query clearly names a different vibe for daytime vs. evening — see the daytime/evening instructions above.",
+            },
+            "evening_vibe_preference": {
+                "enum": ["quiet", "social", None],
+                "description": "Only non-null when the query clearly names a different vibe for daytime vs. evening — see the daytime/evening instructions above.",
+            },
+            "vibe_tags": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Specific vibe keywords extracted from the query.",
+            },
+            "traveler_profile": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Inferred traveler types based on context, per the inference rules above.",
+            },
+        },
+        "required": [
+            "location", "budget_max", "budget_flexibility", "stay_duration_signal",
+            "party_preference", "daytime_vibe_preference", "evening_vibe_preference",
+            "vibe_tags", "traveler_profile",
+        ],
+    },
+}
 
 
 def parse_intent(query: str) -> dict:
@@ -125,35 +195,50 @@ For daytime_vibe_preference and evening_vibe_preference (EXPERIMENTAL, see DECIS
 - Example that should NOT set either: "party hostel with nightlife" — also one overall preference.
 - Default: leave BOTH null unless the query genuinely names two different times of day with two different vibes.
 
-Respond ONLY with a JSON object, no explanation, no markdown, just raw JSON.
-Use this exact structure:
-{{
-  "location": "city, region, or country name, or null if not mentioned",
-  "budget_max": "maximum price per night as a number, or null if not mentioned",
-  "budget_flexibility": "strict or approximate",
-  "stay_duration_signal": "short_term or long_term or unknown",
-  "party_preference": "avoid, prefer_quiet, neutral, prefer_social, or prefer_party",
-  "daytime_vibe_preference": "quiet, social, or null",
-  "evening_vibe_preference": "quiet, social, or null",
-  "vibe_tags": ["list", "of", "specific", "vibe", "keywords"],
-  "traveler_profile": ["inferred", "traveler", "types", "based", "on", "context"]
-}}
+Call the extract_search_intent tool with the extracted fields.
 """
 
     message = client.messages.create(
         model="claude-sonnet-5",
         max_tokens=1000,
+        tools=[INTENT_TOOL],
+        tool_choice={"type": "tool", "name": "extract_search_intent"},
         messages=[{"role": "user", "content": prompt}]
     )
 
-    raw = extract_text(message)
-    clean = raw.strip()
-    if clean.startswith("```"):
-        clean = clean.split("```")[1]
-        if clean.startswith("json"):
-            clean = clean[4:]
+    return extract_tool_input(message, "extract_search_intent")
 
-    return json.loads(clean.strip())
+
+# Task #7 (DECISIONS_LOG.md): forced-tool-call schema for generate_explanation().
+# Same reasoning as INTENT_TOOL above — the tone/style instructions (fragment
+# style, severity-weighted flagged issues, "never pad heads_ups") stay in the
+# prompt text; this only constrains output shape.
+EXPLANATION_TOOL = {
+    "name": "generate_hostel_explanation",
+    "description": "Produce a short, scannable explanation of why a hostel matched a traveler's search.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "verdict": {
+                "type": "string",
+                "description": "One short, honest phrase (under 10 words) judging overall fit — can be lukewarm or mixed if that's accurate, never just positive spin for its own sake.",
+            },
+            "highlights": {
+                "type": "array",
+                "items": {"type": "string"},
+                "minItems": 1,
+                "maxItems": 4,
+                "description": "1 to 4 short fragments, each a specific concrete reason this hostel fits — NOT full sentences.",
+            },
+            "heads_ups": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "0 or more short fragments for genuine caveats or flagged issues relevant to THIS search — empty list if there's nothing worth flagging, never pad to hit a count.",
+            },
+        },
+        "required": ["verdict", "highlights", "heads_ups"],
+    },
+}
 
 
 def generate_explanation(intent: dict, hostel: dict, breakdown: list) -> dict:
@@ -195,31 +280,20 @@ Why the matching engine scored this hostel for this search:
 {reasons_text}
 {flagged_text}
 
-Respond ONLY with a JSON object, no markdown, no explanation outside the JSON. Use this exact
-structure:
-{{
-  "verdict": "one short, honest phrase (under 10 words) judging overall fit — can be lukewarm or mixed if that's accurate, never just positive spin for its own sake",
-  "highlights": ["1 to 4 short fragments, each a specific concrete reason this hostel fits — NOT full sentences"],
-  "heads_ups": ["0 or more short fragments for genuine caveats or flagged issues relevant to THIS search — return an empty list if there's nothing worth flagging, never pad this to hit a count"]
-}}
-
 Each highlight and heads_up must be a short scannable fragment (roughly 5-12 words), written like
-a label a tired person can read in half a second — not a grammatically complete sentence."""
+a label a tired person can read in half a second — not a grammatically complete sentence.
+
+Call the generate_hostel_explanation tool with the result."""
 
     message = client.messages.create(
         model="claude-sonnet-5",
         max_tokens=400,
+        tools=[EXPLANATION_TOOL],
+        tool_choice={"type": "tool", "name": "generate_hostel_explanation"},
         messages=[{"role": "user", "content": prompt}]
     )
 
-    raw = extract_text(message)
-    clean = raw.strip()
-    if clean.startswith("```"):
-        clean = clean.split("```")[1]
-        if clean.startswith("json"):
-            clean = clean[4:]
-
-    return json.loads(clean.strip())
+    return extract_tool_input(message, "generate_hostel_explanation")
 
 
 @app.post("/search")

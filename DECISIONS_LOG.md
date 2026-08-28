@@ -388,6 +388,50 @@ regardless of frequency — a "serious" issue gets real weight even if it's a si
 report, while a "minor" issue can be softened by its rarity. Frequency and severity are
 explicitly separated as two different axes the model must reason about independently.
 
+### 🟢 RESOLVED — Task #7: parse_intent() and generate_explanation() refactored to use forced tool-calling
+Both functions previously asked Claude in plain English to "Respond ONLY with a JSON object, no
+markdown," then manually stripped ```-fences and called `json.loads()` on the result — reliable
+in practice, but dependent on Claude choosing to obey a formatting instruction, with hand-rolled
+cleanup as the only safety net. Replaced with Anthropic's forced tool-calling: each function now
+defines a JSON Schema (`INTENT_TOOL` / `EXPLANATION_TOOL`), passes it via `tools=`, and forces the
+call via `tool_choice`. The API itself now guarantees schema-conforming output; `extract_text()` +
+markdown-stripping + `json.loads()` is gone, replaced by `extract_tool_input()` which just reads
+`.input` off the returned `tool_use` content block (still searches by block type/name rather than
+assuming position, since a forced tool call can still be preceded by a `ThinkingBlock`).
+
+Explicitly scoped as a shape-only fix: all the reasoning instructions (traveler-profile inference
+rules, budget strict/approximate distinction, daytime/evening split examples, fragment-style tone
+rules, flagged-issue severity weighting) stayed in the prompt text unchanged — this does NOT fix
+the earlier raw_query-paraphrasing tech debt (Claude rewording "secure lockers" down to just
+"secure"), which is a content behavior independent of output serialization.
+
+One real open question going in — whether `"enum": [..., null]` (needed for the nullable
+`daytime_vibe_preference`/`evening_vibe_preference` fields) is actually honored by Claude's
+tool-calling — was resolved empirically, not assumed: tested live (real Claude calls, this
+sandbox can reach `api.anthropic.com`) with a plain query (correctly returned both fields as
+`null`) and the exact daytime/evening split query (correctly returned `"quiet"`/`"social"`).
+`generate_explanation()` was also tested live against a hostel with real `flagged_issues`,
+producing correctly-toned `heads_ups`. Regression-checked by re-running `validate.py daynight` and
+`validate.py backlog_fields` (both live Claude, no Voyage needed) — day/night split still detected
+correctly, all keyword-gated bonuses still fire, sanity checks still confirm `hostels.json`
+unmodified.
+
+`validate.py semantic` was then re-run from the user's machine (Voyage-reachable) against all 8
+cases: 6 of 8 came back essentially identical to the pre-refactor run (same top hostels, same
+scores); cases 3 and 7 showed minor score/ranking drift attributable to the pre-existing, already
+documented intent-parsing non-determinism above (not new — e.g. `"Goa"` vs `"Goa, India"` shifting
+which hostels pass the location filter), not to this refactor. Case 4 (the daytime/evening query)
+came back with NO semantic-bonus lines on any top-5 hostel, a real difference from the original
+run where every top-5 hostel had one. Investigated directly rather than assumed: re-ran case 4 in
+isolation 3 times in a row from the user's machine — all 3 attempts came back with the semantic
+bonus present and consistent (same top hostels, same scores each time, e.g. WanderThirst at 41
+with a `+15` semantic line in all 3 runs). Confirms the one missing-semantic result was a
+transient failure on that single Voyage call during the full-suite run — `compute_semantic_entries()`
+is designed to silently swallow any exception and degrade gracefully (by design, for production
+robustness), which is also why a one-off transient failure produces no visible error, just an
+absent bonus. Not a regression, not caused by task #7 (which never touches the semantic/embedding
+code path). Task #7's regression check is now fully closed across all 12 test queries.
+
 ### 🟡 OPEN — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
 globally on the system Python rather than in a project-specific virtual environment.
