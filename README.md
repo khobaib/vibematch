@@ -62,10 +62,29 @@ personal hostel stays across Asia and Europe, which then became the requirements
   travel stamp" visual design system
 
 ```
-User query → Claude intent parser (forced tool-calling) → matching engine
-  (structured scoring + Voyage semantic similarity) → ranked results + reasons
-  → Claude explanation (forced tool-calling)
+Frontend (React, on Vercel)
+   ↓  HTTP request (raw query)
+FastAPI Backend (on Fly.io)
+   ↓
+1. Claude API  →  parse_intent()  →  structured intent (forced tool-calling)
+   ↓
+2. Python Matching Engine (matching.py)
+     - scores every hostel from hostels.json against the structured intent
+     - calls Voyage API once (embeds the raw query) → compares against
+       precomputed hostel embeddings (hostel_embeddings.json) for a
+       semantic-similarity bonus
+   ↓
+3. Claude API  →  generate_explanation()  →  verdict/highlights/heads-ups
+   (forced tool-calling)
+   ↓
+Ranked results + AI explanations  →  back to Frontend
 ```
+
+Data layer today: `hostels.json` (source of truth, hand-curated flat file) + `hostel_embeddings.json`
+(precomputed once from the vibe profiles). No live database yet — migration to PostgreSQL is a
+deliberately deferred decision (see `DECISIONS_LOG.md`), not an oversight. Claude is called twice
+per search (before and after matching, for different jobs) and Voyage once, in the middle — not a
+single downstream "AI step" tacked onto the end of a linear pipeline.
 
 ---
 
