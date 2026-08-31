@@ -1,0 +1,22 @@
+# Never bake real secrets into the image — secrets are injected at runtime
+# via `fly secrets set` instead (see fly.toml / DECISIONS_LOG.md Task #10).
+.env
+
+__pycache__/
+*.pyc
+
+# Dev-time/one-off tooling not needed at runtime — keeps the image smaller
+# and avoids accidentally shipping research audit trails or throwaway
+# scripts as part of the production container.
+research_batches/
+test_fixtures/
+rerun_case4.py
+validate.py
+eval_suite.py
+audit_vibe_profiles.py
+data_tools.py
+generate_vibe_profiles.py
+embed_vibe_profiles.py
+
+.git/
+.gitignore

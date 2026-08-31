@@ -15,11 +15,23 @@ load_dotenv()
 app = FastAPI()
 
 # Allow the React dev server (different origin: localhost:5173 vs 127.0.0.1:8000)
-# to call this API. Without this, the browser blocks every request before it
-# even reaches FastAPI - this is a browser security rule (CORS), not optional.
+# AND the deployed Vercel frontend to call this API. Without this, the
+# browser blocks every request before it even reaches FastAPI - this is a
+# browser security rule (CORS), not optional.
+#
+# Task #10 (DECISIONS_LOG.md): the production frontend origin is read from
+# an env var (FRONTEND_ORIGIN) rather than hardcoded, since the real Vercel
+# URL isn't known until after the first Vercel deploy. Set it via
+# `fly secrets set FRONTEND_ORIGIN=https://your-actual-project.vercel.app`
+# once you have that URL. Local dev origins stay allowed unconditionally so
+# `npm run dev` keeps working without needing this env var set locally.
+LOCAL_DEV_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"]
+production_frontend_origin = os.getenv("FRONTEND_ORIGIN")
+allowed_origins = LOCAL_DEV_ORIGINS + ([production_frontend_origin] if production_frontend_origin else [])
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

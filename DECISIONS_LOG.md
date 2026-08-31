@@ -522,14 +522,90 @@ Then re-run from the user's machine (Voyage-reachable, unlike this sandbox): all
 passed, including tier 3 (the semantic case, which only auto-skips here). Task #8 is fully closed
 — every tier confirmed live, not just tiers 1-2.
 
-### 🟡 OPEN — No virtual environment for the backend
+### 🟡 IN PROGRESS — Task #10: deploy backend to Fly.io, frontend to Vercel
+**Platform choice:** Fly.io over Railway for the backend, researched directly (not assumed) —
+Railway's platform-wide ~8-hour outage on 2026-05-19 (Google Cloud suspended its GCP account
+without warning; widely covered — Railway's own incident report, The Register, HN) is a real,
+recent reliability mark against it. Fly.io also gives a more visible infra story (real
+Dockerfile/fly.toml, not just a dashboard) and is cheaper at this scale (~$2/mo vs Railway's
+$5/mo minimum, neither has a real free tier anymore as of 2026). Frontend goes to Vercel, not
+Fly.io — a static Vite build has no server-side code to run, so it belongs on a CDN-first static
+host, not a container platform; splitting compute (Fly.io) from static assets (Vercel) is the
+standard pattern, not incidental.
+
+**Deployment files built and verified in this sandbox** (all committed, none of this required
+live Fly.io/Vercel accounts to prepare):
+- `backend/requirements.txt` — **correction:** initially reported as not existing at all, another
+  false alarm from the same root cause as the `.gitignore` one below — this sandbox's copy of
+  `backend/` simply didn't have the user's real file synced into it. The user's actual file was a
+  full `pip freeze` dump (24 packages, every transitive dependency pinned, not just the 6 direct
+  ones) generated on Windows PowerShell — and PowerShell's `>` redirection defaults to UTF-16LE
+  encoding for output, which the file genuinely was, confirmed directly (`file requirements.txt`
+  showed the encoding issue, and every character had a literal null byte after it). This would
+  very likely have broken `pip install -r requirements.txt` inside the Linux-based Docker
+  container at deploy time, since Linux tooling assumes UTF-8/ASCII. Re-saved as clean UTF-8,
+  keeping the user's fuller pinned-transitive-deps approach (more reproducible than a minimal
+  direct-deps-only list) rather than replacing it with a thinner file, and added the `[standard]`
+  extra to `uvicorn` (pulls in uvloop/httptools/websocket support, missing from the bare pin).
+  One further catch: transcribing the corrupted file by eye introduced a real error
+  (`annotated-doc==0.5`, which doesn't exist on PyPI — the actual value was `0.0.5`, ambiguous in
+  the corrupted single-space-per-character format). Caught immediately, not assumed correct: a
+  test install failed on exactly that line, fixed it, then verified a full clean install with a
+  second isolated-venv test — zero errors, all 6 real imports resolve with the user's exact
+  pinned versions.
+- `backend/Dockerfile` — slim Python base image, dependencies layer-cached separately from app
+  code, `hostels.json`/`hostel_embeddings.json` baked into the image (consistent with the
+  flat-file-not-live-database data storage decision — small enough that rebuilding on data
+  updates is the simplest correct choice, not a workaround), binds `0.0.0.0` (required inside a
+  container — the default `127.0.0.1` would be unreachable from Fly's network).
+- `backend/.dockerignore` — critically excludes `.env` from ever being baked into the image;
+  also excludes dev-only tooling (`validate.py`, `eval_suite.py`, `data_tools.py`, research
+  audit trail files) not needed at runtime.
+- `backend/fly.toml` — `min_machines_running = 1` set deliberately (not scale-to-zero): Fly.io's
+  auto-stop/auto-start can have multi-second cold starts per community reports, which would look
+  bad on a demo link a recruiter clicks cold; costs ~$2/mo more to keep one instance always warm,
+  judged worth it for this project's specific purpose (a live demo, not a cost-sensitive product).
+- `backend/main.py` CORS update — production frontend origin now read from a `FRONTEND_ORIGIN`
+  env var (set via `fly secrets set`) rather than hardcoded, since the real Vercel URL isn't
+  known until after the first Vercel deploy; local dev origins (`localhost:5173`) stay allowed
+  unconditionally so `npm run dev` needs no extra setup.
+- `frontend/src/App.jsx` — API base URL now reads from `VITE_API_BASE_URL` (Vite's client-exposed
+  env var convention — anything without the `VITE_` prefix stays build/server-side only,
+  deliberate security boundary), falls back to the original localhost URL so local dev is
+  unaffected. **Not build-tested in this sandbox** — only `App.jsx`/`App.css` exist here, not the
+  full Vite project scaffold (`package.json`, `vite.config.js`, `node_modules`); needs `npm run
+  build` verification from the user's machine, where the real frontend project lives.
+- Root `.gitignore` — **correction:** initially reported as missing entirely, which turned out to
+  be a false alarm caused by this cloud sandbox's copy of the repo simply never having the user's
+  actual `.gitignore` synced into it, not a real gap in the project. The user's real repo has had
+  a `.gitignore` covering `.env`/`node_modules`/`venv`/logs/editor files since early on. Verified
+  directly rather than left assumed either way: ran `git log --all --oneline -- backend/.env` and
+  `git ls-files | Select-String "\.env$"` from the user's actual machine — both came back empty,
+  confirming `.env` was never committed and isn't tracked. No key rotation needed. Merged in the
+  couple of Fly.io/Vercel-specific lines (`.fly/`, `.vercel/`) the existing file was missing,
+  keeping everything else exactly as the user already had it rather than replacing a
+  more-thorough file with a thinner one.
+- `DEPLOYMENT.md` (new file) — full step-by-step deploy sequence (Fly.io launch/secrets/deploy,
+  Vercel project setup, closing the CORS loop by setting `FRONTEND_ORIGIN` after the real Vercel
+  URL is known, end-to-end verification checklist).
+
+**Genuinely not yet done** (needs the user's own accounts/machine, can't be completed from this
+sandbox): the actual `fly launch`/`fly deploy`/`fly secrets set` run, the actual Vercel project
+connection, and the `.env`-in-git-history check above. Task #10 stays IN PROGRESS until those
+run and the live URLs are confirmed working end-to-end.
+
+### 🟢 RESOLVED — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
-globally on the system Python rather than in a project-specific virtual environment.
-`requirements.txt` (generated via `pip freeze`) therefore reflects everything installed
-system-wide, not just what VibeMatch actually needs — harmless for now, but could accumulate
-unrelated packages over time and make the dependency list noisy.
-**Fix:** create a `venv` for the backend (`py -m venv venv`), reinstall dependencies inside it,
-and regenerate a clean `requirements.txt` from that isolated environment.
+globally on the system Python rather than in a project-specific virtual environment. **Second
+correction on this same entry:** an earlier pass here claimed `requirements.txt` "had never
+actually been generated at all," which was itself wrong — same root cause as the `.gitignore` and
+`.env`-history false alarms elsewhere in this Task #10 entry, this cloud sandbox's copy of the
+repo simply didn't have the user's real file synced in. The user did have a real `pip freeze`
+dump all along; see the `requirements.txt` correction above for what actually needed fixing in it
+(UTF-16 encoding, one transcription typo). Docker (see Task #10) gives full runtime isolation for
+production regardless, so a local dev-time `venv` is optional going forward rather than a
+blocking gap — the actual, real problem this item originally pointed at (no isolation at all) is
+solved by containerization, independent of whichever `requirements.txt` format is used.
 
 ### 🟡 OPEN — Matching score weights are hand-tuned, not validated
 Point values (city match = 30, region = 25, vibe tag = 10 each, etc.) were chosen by

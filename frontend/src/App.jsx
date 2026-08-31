@@ -1,8 +1,18 @@
 import { useState } from 'react';
 import './App.css';
 
-const SEARCH_URL = 'http://127.0.0.1:8000/search';
-const EXPLAIN_URL = 'http://127.0.0.1:8000/explain';
+// Task #10 (DECISIONS_LOG.md): API base URL now comes from a Vite env var
+// instead of being hardcoded to localhost, so the same build works against
+// the local dev backend and the deployed Fly.io backend. Vite only exposes
+// env vars prefixed VITE_ to client code (a deliberate security boundary -
+// anything without that prefix stays server/build-side only). Falls back to
+// the original localhost URL when the env var isn't set, so `npm run dev`
+// keeps working with zero extra setup. Set VITE_API_BASE_URL in a
+// frontend/.env.production file (or in Vercel's project env var settings)
+// once the real Fly.io URL is known, e.g. https://vibematch-backend.fly.dev.
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
+const SEARCH_URL = `${API_BASE_URL}/search`;
+const EXPLAIN_URL = `${API_BASE_URL}/explain`;
 
 function ScoreBreakdown({ breakdown }) {
   return (
