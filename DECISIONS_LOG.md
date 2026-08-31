@@ -522,7 +522,7 @@ Then re-run from the user's machine (Voyage-reachable, unlike this sandbox): all
 passed, including tier 3 (the semantic case, which only auto-skips here). Task #8 is fully closed
 — every tier confirmed live, not just tiers 1-2.
 
-### 🟡 IN PROGRESS — Task #10: deploy backend to Fly.io, frontend to Vercel
+### 🟢 RESOLVED — Task #10: deployed backend to Fly.io, frontend to Vercel
 **Platform choice:** Fly.io over Railway for the backend, researched directly (not assumed) —
 Railway's platform-wide ~8-hour outage on 2026-05-19 (Google Cloud suspended its GCP account
 without warning; widely covered — Railway's own incident report, The Register, HN) is a real,
@@ -589,10 +589,55 @@ live Fly.io/Vercel accounts to prepare):
   Vercel project setup, closing the CORS loop by setting `FRONTEND_ORIGIN` after the real Vercel
   URL is known, end-to-end verification checklist).
 
-**Genuinely not yet done** (needs the user's own accounts/machine, can't be completed from this
-sandbox): the actual `fly launch`/`fly deploy`/`fly secrets set` run, the actual Vercel project
-connection, and the `.env`-in-git-history check above. Task #10 stays IN PROGRESS until those
-run and the live URLs are confirmed working end-to-end.
+**Live deploy completed and verified end-to-end from the user's own machine and browser** (not
+just the files above being prepared — the actual accounts, CLI runs, and production traffic):
+- `fly launch` created the app (`vibematch-backend`), read the pre-built `fly.toml` correctly, and
+  built successfully (final image 102MB, `pip install` completed in 19.7s inside the Linux
+  container, confirming the earlier `requirements.txt` UTF-16/transcription fixes actually worked
+  under real conditions, not just in an isolated test venv). Live at
+  `https://vibematch-backend.fly.dev`. **Known cost note, not yet acted on:** `fly launch` created
+  2 machines (Fly's default HA behavior for zero-downtime deploys) despite `min_machines_running =
+  1` being a floor, not a cap — roughly doubles the cost estimate to ~$4/mo. `fly scale count 1`
+  would cut this back down if minimizing cost matters more than the small HA benefit; left as an
+  open option, not required.
+- `fly secrets set ANTHROPIC_API_KEY=... VOYAGE_API_KEY=...` — hit one real bug along the way: the
+  first attempt produced a live `500 Internal Server Error` on `/search`, root-caused via `fly
+  logs` to `anthropic.AuthenticationError: 401 invalid x-api-key` at the `client.messages.create()`
+  call inside `parse_intent()`. Not a code bug — the secret *value* that actually reached Fly.io
+  was wrong (most likely PowerShell mangling an unquoted special-character value during the
+  original `fly secrets set` call, a recurring category of issue this deploy — see the `pwsh` and
+  `curl`-alias PowerShell gotchas below). Fixed by re-copying the key values carefully from the
+  local `.env` and re-running `fly secrets set` with each value explicitly double-quoted. Re-tested
+  and confirmed working: a live `/search` call returned a fully-populated response (parsed intent,
+  10 real matches, structured breakdown reasons, and correct Voyage semantic-similarity bonus
+  lines) — the first real proof that the deployed Voyage key works too, since Voyage is only
+  called downstream of `parse_intent()` inside the matching engine's semantic layer.
+- Frontend deployed to Vercel by connecting the GitHub repo with `frontend` set as the project
+  root (Vercel auto-detected Vite correctly). Hit one real deployment bug: `VITE_API_BASE_URL` was
+  added to Vercel's project settings, but the live site kept calling `http://127.0.0.1:8000` (the
+  local-dev fallback) even after multiple forced redeploys with build cache disabled — confirmed
+  via an unchanged JS bundle hash across "successful" rebuilds. Root cause: the `App.jsx` change
+  reading `VITE_API_BASE_URL` had been made in this sandbox but never actually committed/pushed to
+  the real GitHub repo the whole time, so every Vercel build was compiling the old source
+  regardless of env-var settings or cache state — the exact same class of "sandbox vs. real repo
+  sync gap" already hit twice earlier in this task (`.gitignore`, `requirements.txt`). Confirmed by
+  checking the file directly on GitHub, fixed with a real `git add`/`commit`/`push` of the full
+  batch of task #10 files, which finally produced a new JS bundle hash and picked up the correct
+  production API URL.
+- CORS closed the loop: `fly secrets set FRONTEND_ORIGIN="https://vibematch-pi.vercel.app"` (the
+  stable Vercel production domain, not a per-deployment hash URL) triggered a rolling redeploy on
+  both backend machines.
+- **Full end-to-end verification, from the live browser UI, not just curl/API testing:** searched
+  "goa hostels under $20" on `https://vibematch-pi.vercel.app` — real results rendered as styled
+  cards (score badge, price range, scoring breakdown), and the "Get AI note" feature
+  (`generate_explanation()`) correctly returned a verdict/highlights/heads_ups structure for a real
+  hostel, confirming both Claude calls (`parse_intent()` and `generate_explanation()`) and the
+  Voyage semantic layer all work correctly against live production infrastructure, driven entirely
+  through the real deployed frontend.
+
+Task #10 is fully closed: backend live on Fly.io, frontend live on Vercel, both API keys working,
+CORS closed, full pipeline (structured filtering + scoring, forced-tool-calling Claude calls,
+Voyage semantic matching) verified working end-to-end in production.
 
 ### 🟢 RESOLVED — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
