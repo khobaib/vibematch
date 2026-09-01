@@ -639,6 +639,31 @@ Task #10 is fully closed: backend live on Fly.io, frontend live on Vercel, both 
 CORS closed, full pipeline (structured filtering + scoring, forced-tool-calling Claude calls,
 Voyage semantic matching) verified working end-to-end in production.
 
+**Post-launch cleanup (same day):**
+- `fly scale count 1` — dropped from 2 machines to 1 (destroyed `781ed59b6e1458`, kept
+  `87475e3a436668`), roughly halving ongoing hosting cost. Deliberate tradeoff: gives up Fly's
+  zero-downtime redundancy (a second machine to absorb traffic during a restart/deploy) in
+  exchange for cost, judged acceptable for a low-traffic portfolio demo rather than a
+  revenue-critical product. `min_machines_running = 1` still keeps the one remaining machine
+  always warm, so no cold-start regression from this change.
+- Vercel project renamed for a cleaner production URL: `vibematch-pi.vercel.app` →
+  `vibematch-travel.vercel.app` (old domain kept as an automatic redirect, not deleted, so any
+  already-shared link keeps working). Required an explicit domain change under the project's
+  "Manage Domain" page — renaming the Vercel *project name* alone did **not** change the actual
+  live domain, a real gotcha worth remembering if this comes up again. Updated
+  `fly secrets set FRONTEND_ORIGIN="https://vibematch-travel.vercel.app"` to match, re-verified
+  live end-to-end on the new domain.
+- **Billing note:** confirmed directly from the Fly.io dashboard that the account converted from
+  the initial free trial (7 days / 2 hours machine runtime, whichever came first — consumed almost
+  immediately since machines ran continuously from launch) to real Pay-as-You-Go billing once a
+  card was added, with automatic charging now active. Small and expected (~$0.03 accrued after
+  about a day on 2 machines), not a surprise-bill risk, but worth tracking going forward now that
+  usage is genuinely metered rather than free.
+
+**Live URLs (current, as of this entry):**
+- Frontend: `https://vibematch-travel.vercel.app`
+- Backend: `https://vibematch-backend.fly.dev`
+
 ### 🟢 RESOLVED — No virtual environment for the backend
 All Python packages (`fastapi`, `uvicorn`, `anthropic`, `python-dotenv`, etc.) were installed
 globally on the system Python rather than in a project-specific virtual environment. **Second
