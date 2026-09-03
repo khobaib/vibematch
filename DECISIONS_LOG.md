@@ -1455,6 +1455,81 @@ old task-specific scripts — future research batches produce a results JSON fil
 scripts are removed; their already-applied effects remain in `hostels.json` as before (nothing needs
 to be re-run).
 
+### 🟢 RESOLVED — Dataset expanded 226 → 472 hostels (geographic diversity, then concentrated testing locations), new `research_depth: "placeholder"` tier introduced
+Two back-to-back expansions, both directly requested ahead of getting real testers (friends) onto
+the product: "the testers need data from different parts of the world" first, then a follow-up
+realization that testers need a handful of *specific, pre-defined* destinations with deep enough
+coverage (20+ hostels each) to actually stress-test search, rather than 1-2 hostels scattered
+across dozens of cities.
+
+**Batch 1 — 200 new hostels, 226 → 426** (Thailand/India/Nepal/Indonesia/Sri Lanka: 20 each;
+Europe: 50; South America: 50). Sourced via parallel `Agent` subagents doing real web research
+(Hostelworld/Tripadvisor/Hostelz/Booking.com), each hostel required to be real, currently
+operating, and have a meaningful review base — not invented. De-duplication against the existing
+226 went through two passes: an automated `difflib` fuzzy-match pass (exact + >0.85 ratio + same
+city) caught 31 exact and 5 close duplicates, all replaced with newly-sourced real alternatives;
+a second, stricter full-list verification pass caught one the first pass missed ("Zostel Hampi" vs.
+existing "Zostel Hampi (Gangavathi)" — fuzzy ratio only 0.667 due to the parenthetical, so it slid
+under the 0.85 threshold) plus two entries accidentally dropped during transcription — all fixed
+before finalizing at exactly 200 net-new, zero-overlap hostels.
+
+**Batch 2 — 46 more, 426 → 472**, targeting 5 specific "concentrated testing locations" chosen so
+testers can be given a short, fixed list of destinations with guaranteed depth: Bali, Goa, Ella,
+Pokhara, Bangkok. Counted actual pre-batch coverage first (Bali 22 — already sufficient, Goa 10,
+Ella 5, Pokhara 12, Bangkok 11) and sourced only what was missing (10/15/12/9 respectively — Pokhara
+bumped from 8 to 12 after review, trading 4 thinner-reviewed-but-verified-real candidates back in
+once flagged as an option, landing Pokhara at 24 total instead of 20). Same real-hostel-only
+sourcing and duplicate-checking discipline as batch 1.
+
+**New field: `research_depth` now has three values, not two.** Previously `"deep"` (pilot-quality,
+multi-source) or `"light"` (the 160-hostel light-touch pass). Both of these 226 new hostels use a
+new third tier, **`"placeholder"`**, introduced specifically so unverified data can be traced and
+revisited later rather than silently mixed in as if researched — a direct requirement ("these
+hostels will have some fake data, so that must be traced somehow properly"). Placeholder hostels
+have real, verified `name`/`city`/`country`/`region`; branding/location-inferred (reasonable, not
+verified) `party_level`, `vibe_tags`, and `price_range_usd` bands (calibrated per sub-region — e.g.
+Western Europe ~$18-50 vs. Eastern/Southern Europe ~$10-30, Argentina/Chile ~$8-24 vs.
+Peru/Bolivia/Ecuador ~$6-18); every other field (room-type detail, facilities, services, staff,
+views, reviews_summary, etc.) is an explicit unresearched placeholder using the project's existing
+default-value conventions, not a fabricated value — each hostel's `source_note` states exactly
+which parts are real vs. inferred vs. placeholder. 246 of 472 hostels are currently `"placeholder"`
+tier; a future research pass can `grep` for that value to know precisely which hostels still need
+real research, the same way `research_depth` already distinguished `"deep"` from `"light"`.
+
+**`vibe_profile` + embeddings kept in sync for all 246 new hostels.** Ran the existing (unmodified)
+`generate_vibe_profiles.py` against both batches — it's resumable/idempotent by design (only
+processes hostels missing `vibe_profile`), so no script changes were needed; cost $0.197 for the
+200-hostel batch (114,896 input / 16,430 output tokens) and $0.0633 for the 46-hostel batch (36,714
+input / 5,316 output tokens), both via Claude Haiku. Embeddings were then generated locally (Voyage
+is unreachable from this sandbox) via the existing `embed_vibe_profiles.py`, run from the
+developer's own machine — also unmodified, also resumable. Final state: 472 hostels, all with a
+`vibe_profile`, all embedded (`hostel_embeddings.json` shows 474 — 2 harmless orphan entries
+left over from IDs that existed earlier in the project's history but no longer exist in the current
+`hostels.json`; cosmetic only, `matching.py` only ever looks up embeddings by IDs that actually
+exist).
+
+**Validated three ways before considering this done**, all live (no synthetic fixtures):
+structural checks (field completeness, price-band sanity, party_level distribution — 0 issues
+across all 246 new hostels); live structured-query tests via direct `parse_intent`/`match_hostels`
+calls (6 queries; caught one genuine location-coverage gap — a "Zurich" query correctly returned 0
+matches because no Zurich hostel exists in the new batch, only Lucerne — honestly reported as a
+coverage gap, not a scoring bug, then re-verified against the real city to confirm budget-penalty
+scoring itself works); and a dedicated semantic-matching test (`research_batches/
+test_semantic_concentrated.py`, run from the developer's machine against the live Voyage
+API) — 10 queries across the 5 concentrated locations, 2 per location (one literal, one
+deliberately oblique/non-keyword), confirming the embedding-based semantic layer meaningfully
+ranks new placeholder-tier hostels: several new entries (Zostel Goa Anjuna and The Hosteller Goa
+Anjuna at similarity 0.71+, Pokhara Youth Hostel at 0.757) landed at or near the top of their
+entire location pool's semantic-similarity range, on par with or ahead of longstanding deep-tier
+hostels for the same query. (An earlier run of this same test hit a Voyage free-tier rate limit —
+3 requests/min without a payment method on file — because the test script was making two separate
+embedding calls per query; fixed by caching the query embedding so each query makes exactly one
+real API call, paced 22s apart.)
+
+Final per-location counts for the 5 concentrated testing locations: **Bali 22, Goa 20, Ella 20,
+Pokhara 24, Bangkok 20** — all now meet or exceed the "at least 20" requirement for giving testers
+a short, dependable list of destinations to search against.
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data

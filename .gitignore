@@ -36,3 +36,5 @@ Thumbs.db
 # ---- Deploy (Task #10) ----
 .fly/
 .vercel/
+
+partner_outreach_drafts.md
