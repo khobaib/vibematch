@@ -2,6 +2,8 @@
 
 **AI-powered hostel discovery — describe the vibe you want, get matched stays with real explanations.**
 
+**Live demo:** [vibematch-travel.vercel.app](https://vibematch-travel.vercel.app)
+
 VibeMatch is a conversational search layer for hostel travel, built on a simple product insight:
 "budget, cleanliness, social score" filters miss almost everything that actually makes or breaks
 a stay. Instead of checkboxes, travelers describe what they want in plain language — *"quiet
@@ -9,8 +11,8 @@ hostel near a metro station, good for a long stay, solo backpacker"* — and get
 with clear, honest reasons for every match.
 
 > A product built end-to-end — problem discovery, requirements, data modeling, and working
-> software — to demonstrate how I use AI tools to move from idea to shipped product as a PM,
-> not just to write specs about it.
+> software, deployed and live — to demonstrate how I use AI tools to move from idea to shipped
+> product as a PM, not just to write specs about it.
 
 ---
 
@@ -34,7 +36,7 @@ personal hostel stays across Asia and Europe, which then became the requirements
   into structured product data (location, budget, vibe, traveler type), including *inferred*
   signals a naive keyword search would miss — e.g. reading "wants to shop at the local market"
   as a signal for a longer stay, not just a tourist visit
-- **A real matching engine** — scores a hand-curated database of 226 hostels across 40+ countries
+- **A real matching engine** — scores a curated database of 472 hostels across 48 countries
   against that intent, with hard constraints (location) kept separate from soft ranking signals
   (budget, vibe) — a distinction that took real product judgment to get right, documented below.
   Every point in the final score is individually auditable, never an opaque number.
@@ -57,9 +59,9 @@ personal hostel stays across Asia and Europe, which then became the requirements
 - **An automated regression eval suite** — 16 test cases seeded directly from real bugs found and
   fixed during development, run as pass/fail assertions (not manually re-read breakdowns) so a
   future change can't silently reintroduce a bug that was already caught once.
-- **A React frontend, connected end-to-end to the real backend** — live search, live scoring,
-  live AI explanations, with proper loading/error/data states and a custom "boarding pass /
-  travel stamp" visual design system
+- **A React frontend, connected end-to-end to the real backend, deployed and publicly live** —
+  live search, live scoring, live AI explanations, with proper loading/error/data states and a
+  custom "boarding pass / travel stamp" visual design system
 
 ```
 Frontend (React, on Vercel)
@@ -80,11 +82,21 @@ FastAPI Backend (on Fly.io)
 Ranked results + AI explanations  →  back to Frontend
 ```
 
-Data layer today: `hostels.json` (source of truth, hand-curated flat file) + `hostel_embeddings.json`
-(precomputed once from the vibe profiles). No live database yet — migration to PostgreSQL is a
-deliberately deferred decision (see `DECISIONS_LOG.md`), not an oversight. Claude is called twice
-per search (before and after matching, for different jobs) and Voyage once, in the middle — not a
-single downstream "AI step" tacked onto the end of a linear pipeline.
+Data layer today: `hostels.json` (source of truth, curated flat file) + `hostel_embeddings.json`
+(precomputed once from the vibe profiles), both baked directly into the deployed backend image —
+a deliberate choice for this stage (see `DECISIONS_LOG.md`), not an oversight. No live database
+yet — migration to PostgreSQL is a deliberately deferred decision, also documented there. Claude
+is called twice per search (before and after matching, for different jobs) and Voyage once, in the
+middle — not a single downstream "AI step" tacked onto the end of a linear pipeline.
+
+**On data quality — tracked honestly, not glossed over.** Every hostel carries a `research_depth`
+field with one of three values, so the dataset's own reliability is queryable, not assumed: `deep`
+(118 hostels — multi-source research pass), `light` (108 — a lighter-touch but still real research
+pass), and `placeholder` (246 — real name/city/country/region, with `party_level`/`vibe_tags`/
+price band reasonably inferred from branding and location, everything else explicitly marked
+unresearched rather than fabricated). This tiering exists specifically so a future research pass
+knows exactly which hostels still need real verification, instead of the dataset silently mixing
+verified and inferred data with no way to tell them apart later.
 
 ---
 
@@ -110,13 +122,18 @@ This project exists as much to demonstrate hands-on AI/LLM engineering as to be 
   LLM-generated from structured data) are embedded and compared against query embeddings via
   cosine similarity at search time, the same core mechanism behind RAG-style retrieval systems,
   applied here to solve a real semantic-matching gap in production scoring logic.
+- **Idempotent, resumable data pipelines for LLM-generated content at scale** — both the vibe-
+  profile generator and the embedding job only process records missing their output, saving
+  progress after every item, so a 246-hostel batch (run in two separate passes as the dataset
+  grew) could be interrupted, resumed, or re-run without redoing already-completed work or risking
+  duplicate spend.
 - **An automated LLM-system eval suite** — 16 regression test cases, seeded from real bugs found
   during development, run as automated pass/fail assertions across three tiers (deterministic
   logic / live-LLM / live-LLM-plus-embeddings) so changes to prompts or scoring can be verified
   without manual re-inspection every time — genuine eval-harness discipline, not just "it looked
   right when I tried it."
-- **Cost- and reliability-aware LLM usage** — rate-limit-aware batching for the one-time embedding
-  generation job, silent-exception-swallowing designed deliberately (so an optional AI layer never
+- **Cost- and reliability-aware LLM usage** — rate-limit-aware batching for the embedding
+  generation jobs, silent-exception-swallowing designed deliberately (so an optional AI layer never
   takes down core search), and honest tracking of real, environment-specific failure modes (e.g.
   one deployment environment can reach the reasoning model but not the embeddings provider — see
   the decision log for how that was diagnosed and worked around, not glossed over).
@@ -150,6 +167,11 @@ A few examples of the judgment calls captured there:
   note documenting what was searched and how confident the data is, and several entries were
   corrected after conflicting with my own firsthand experience — the same skepticism I'd apply to
   any third-party data source in a real product.
+- **Scaling a dataset without pretending it's more verified than it is.** As the dataset grew from
+  226 to 472 hostels to give testers real geographic coverage, I introduced a third `research_depth`
+  tier (`placeholder`) specifically so speed-of-growth never quietly eroded data trustworthiness —
+  a real product tradeoff between coverage and verification, made explicit and reversible instead
+  of hidden.
 
 ---
 
@@ -157,11 +179,11 @@ A few examples of the judgment calls captured there:
 
 | Layer | Tech |
 |---|---|
-| Backend | Python, FastAPI |
+| Backend | Python, FastAPI — deployed on Fly.io |
 | AI — reasoning | Claude (Anthropic API) — intent parsing and match explanations, via forced tool-calling for guaranteed structured output |
 | AI — semantic search | Voyage AI (`voyage-4`) — vibe-profile embeddings + query embeddings for semantic similarity matching, independent of Claude |
-| Frontend | React, Vite |
-| Data | Hand-curated JSON dataset (226 hostels, 40+ countries), migration path to PostgreSQL planned |
+| Frontend | React, Vite — deployed on Vercel |
+| Data | Curated JSON dataset (472 hostels, 48 countries; three-tier `research_depth` tracking — see above), migration path to PostgreSQL planned |
 | Validation | Custom, dependency-free: `validate.py` (human-readable inspection) + `eval_suite.py` (automated pass/fail regression suite) |
 
 Hands-on across the full stack was a deliberate choice, not incidental — it's the fastest way I
@@ -171,16 +193,27 @@ know to pressure-test a product idea against reality instead of a slide.
 
 ## Status
 
-The core loop is live and working end-to-end: real query → real intent parsing → real matching
-against 226 hostels → real AI-generated explanations, all connected through an actual frontend,
-not mocked data. Dozens of real bugs were found and fixed through deliberate adversarial testing
-(full list in the decision log), and the most safety/correctness-critical ones are now locked in
-as permanent automated regression tests, not just fixed once and hoped to stay fixed.
+**Live and publicly deployed:** [vibematch-travel.vercel.app](https://vibematch-travel.vercel.app)
+(frontend, Vercel) talking to a FastAPI backend on Fly.io. The core loop is live and working
+end-to-end: real query → real intent parsing → real matching against 472 hostels → real
+AI-generated explanations, all connected through an actual frontend, not mocked data. Dozens of
+real bugs were found and fixed through deliberate adversarial testing (full list in the decision
+log), and the most safety/correctness-critical ones are now locked in as permanent automated
+regression tests, not just fixed once and hoped to stay fixed.
 
 **Recently shipped:**
+- **Public deployment** — backend on Fly.io, frontend on Vercel, connected end-to-end and
+  verified live with real search, real AI explanations, and real semantic matching.
+- **Dataset expanded 226 → 472 hostels**, including 5 "concentrated" destinations (Bali, Goa,
+  Ella, Pokhara, Bangkok) deliberately brought to 20+ hostels each so early testers get a
+  reliable, reproducible set of destinations to search against — plus the `research_depth`
+  tiering described above so this growth stays honestly tracked rather than silently diluting
+  data quality.
 - **Semantic vibe matching** — a second model (Voyage AI) compares query meaning against each
   hostel's AI-written vibe profile via embeddings, so "calm surroundings" correctly matches a
-  hostel tagged "quiet" instead of scoring zero for not sharing literal text.
+  hostel tagged "quiet" instead of scoring zero for not sharing literal text. Validated live
+  against the expanded dataset, including confirming new hostels rank meaningfully on semantic
+  similarity, not just structured fields.
 - **An automated eval suite** (`eval_suite.py`) — 16 regression test cases seeded from real,
   previously-fixed bugs in the decision log, run as automated pass/fail assertions across three
   tiers (no API calls / live Claude / live Claude + Voyage) rather than checked by hand.
@@ -200,16 +233,22 @@ as permanent automated regression tests, not just fixed once and hoped to stay f
   groups, and others) — same pattern: real schema and scoring logic, validated against clearly-
   labeled fake test data, real per-hostel research tracked openly as a backlog rather than rushed.
 
-**Not yet built:** public deployment/hosting, real OTA data integration (live pricing/availability
-from Hostelworld/Booking.com — outreach in progress, both require partner approval rather than a
-self-serve API key), and user accounts (out of scope for this stage) — each scoped and reasoned
-through in the decision log, not left as a bare TODO.
+**Not yet built:** real OTA data integration (live pricing/availability from Hostelworld/
+Booking.com — outreach in progress, both require partner approval rather than a self-serve API
+key) and user accounts (out of scope for this stage) — each scoped and reasoned through in the
+decision log, not left as a bare TODO.
 
 See [`DECISIONS_LOG.md`](./DECISIONS_LOG.md) for the full record.
 
 ---
 
 ## Getting Started
+
+The fastest way to see it working is the live demo:
+[vibematch-travel.vercel.app](https://vibematch-travel.vercel.app) — try a search for Bali, Goa,
+Ella, Pokhara, or Bangkok for the deepest current coverage.
+
+To run it locally instead:
 
 ```bash
 # Backend
