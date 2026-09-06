@@ -164,11 +164,22 @@ INTENT_TOOL = {
 }
 
 
-def parse_intent(query: str) -> dict:
-    prompt = f"""You are an expert travel analyst who understands deep traveler psychology.
-Extract structured information from this hostel search query.
-
-Query: "{query}"
+# Prompt caching (added after a deliberate review of what was still missing
+# from the AI-engineering checklist — see DECISIONS_LOG.md): this
+# instructional block is IDENTICAL on every single call to parse_intent(),
+# regardless of the traveler's actual query — only "Query: {query}" ever
+# changes. Splitting it out of the per-request prompt into `system` (with
+# a cache_control breakpoint) means Anthropic can cache this fixed prefix
+# server-side and charge the much cheaper cache-read rate on every call
+# after the first, instead of re-billing full input-token price for the
+# same ~700 tokens of instructions on every search. Note honestly: caching
+# only activates once a cacheable prefix crosses Anthropic's per-model
+# minimum token threshold (1024 tokens for Sonnet) — this block plus the
+# INTENT_TOOL schema that precedes it in the request should clear that,
+# but it's not guaranteed for every model/version; the code is correct
+# either way; it simply won't get a cache hit below the threshold.
+INTENT_SYSTEM_PROMPT = """You are an expert travel analyst who understands deep traveler psychology.
+Extract structured information from the traveler's hostel search query.
 
 For traveler_profile, go beyond surface labels. Infer deeper traveler types based on context clues:
 - Mentions metro/public transport access → likely "long_term_traveler", "daily_commuter"
@@ -207,15 +218,23 @@ For daytime_vibe_preference and evening_vibe_preference (EXPERIMENTAL, see DECIS
 - Example that should NOT set either: "party hostel with nightlife" — also one overall preference.
 - Default: leave BOTH null unless the query genuinely names two different times of day with two different vibes.
 
-Call the extract_search_intent tool with the extracted fields.
-"""
+Call the extract_search_intent tool with the extracted fields."""
 
+
+def parse_intent(query: str) -> dict:
     message = client.messages.create(
         model="claude-sonnet-5",
         max_tokens=1000,
+        system=[
+            {
+                "type": "text",
+                "text": INTENT_SYSTEM_PROMPT,
+                "cache_control": {"type": "ephemeral"},
+            }
+        ],
         tools=[INTENT_TOOL],
         tool_choice={"type": "tool", "name": "extract_search_intent"},
-        messages=[{"role": "user", "content": prompt}]
+        messages=[{"role": "user", "content": f'Query: "{query}"'}],
     )
 
     return extract_tool_input(message, "extract_search_intent")
@@ -253,6 +272,27 @@ EXPLANATION_TOOL = {
 }
 
 
+# Same prompt-caching reasoning as INTENT_SYSTEM_PROMPT above: this preamble
+# (tone/persona + output-format rules) never changes between calls — only
+# the per-hostel content in the user message does. Splitting it into
+# `system` with a cache_control breakpoint lets it get cached the same way.
+# Honest caveat: this particular block is short (well under the ~1024-token
+# minimum Sonnet needs to actually cache), so on its own it likely won't hit
+# a real cache read yet — it's still the architecturally correct place for
+# it (static instructions belong in `system`, not re-sent inline every call)
+# and the pattern is ready to benefit automatically if this preamble grows,
+# or once combined with the EXPLANATION_TOOL schema that precedes it.
+EXPLANATION_SYSTEM_PROMPT = """You are a fast, honest travel assistant. A backpacker is scanning search results
+quickly — often on their phone, sometimes standing on a street with a bag on their back, not
+sitting down to read a paragraph. Respond with SHORT, SCANNABLE fragments, not full sentences
+joined into prose.
+
+Each highlight and heads_up must be a short scannable fragment (roughly 5-12 words), written like
+a label a tired person can read in half a second — not a grammatically complete sentence.
+
+Call the generate_hostel_explanation tool with the result."""
+
+
 def generate_explanation(intent: dict, hostel: dict, breakdown: list) -> dict:
     reasons_text = "\n".join(f"- {b['reason']}" for b in breakdown)
 
@@ -275,12 +315,7 @@ can be left out. When multiple issues are included, order them most severe first
 SEVERITY, not just frequency — a "serious" issue must be treated with real weight regardless of
 how rare it is; a "minor" issue can be phrased lightly."""
 
-    prompt = f"""You are a fast, honest travel assistant. A backpacker is scanning search results
-quickly — often on their phone, sometimes standing on a street with a bag on their back, not
-sitting down to read a paragraph. Respond with SHORT, SCANNABLE fragments, not full sentences
-joined into prose.
-
-Traveler's search intent:
+    prompt = f"""Traveler's search intent:
 {json.dumps(intent, indent=2)}
 
 Hostel: {hostel.get('name')} in {hostel.get('city')}, {hostel.get('country')}
@@ -290,19 +325,21 @@ Reviews summary: {hostel.get('reviews_summary', 'not available')}
 
 Why the matching engine scored this hostel for this search:
 {reasons_text}
-{flagged_text}
-
-Each highlight and heads_up must be a short scannable fragment (roughly 5-12 words), written like
-a label a tired person can read in half a second — not a grammatically complete sentence.
-
-Call the generate_hostel_explanation tool with the result."""
+{flagged_text}"""
 
     message = client.messages.create(
         model="claude-sonnet-5",
         max_tokens=400,
+        system=[
+            {
+                "type": "text",
+                "text": EXPLANATION_SYSTEM_PROMPT,
+                "cache_control": {"type": "ephemeral"},
+            }
+        ],
         tools=[EXPLANATION_TOOL],
         tool_choice={"type": "tool", "name": "generate_hostel_explanation"},
-        messages=[{"role": "user", "content": prompt}]
+        messages=[{"role": "user", "content": prompt}],
     )
 
     return extract_tool_input(message, "generate_hostel_explanation")

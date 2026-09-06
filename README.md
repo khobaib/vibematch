@@ -133,7 +133,9 @@ This project exists as much to demonstrate hands-on AI/LLM engineering as to be 
   without manual re-inspection every time — genuine eval-harness discipline, not just "it looked
   right when I tried it."
 - **Cost- and reliability-aware LLM usage** — rate-limit-aware batching for the embedding
-  generation jobs, silent-exception-swallowing designed deliberately (so an optional AI layer never
+  generation jobs, prompt caching on both Claude calls (static instructions split into a
+  `system` prompt with a cache-control breakpoint, separate from the per-request variable
+  content), silent-exception-swallowing designed deliberately (so an optional AI layer never
   takes down core search), and honest tracking of real, environment-specific failure modes (e.g.
   one deployment environment can reach the reasoning model but not the embeddings provider — see
   the decision log for how that was diagnosed and worked around, not glossed over).

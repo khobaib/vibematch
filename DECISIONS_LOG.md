@@ -1530,6 +1530,40 @@ Final per-location counts for the 5 concentrated testing locations: **Bali 22, G
 Pokhara 24, Bangkok 20** — all now meet or exceed the "at least 20" requirement for giving testers
 a short, dependable list of destinations to search against.
 
+### 🟢 RESOLVED — Added prompt caching to both Claude calls, closing the last open item from an earlier AI-engineering self-review
+Came out of a deliberate step-back reflection: revisited an earlier discussion of how to make this
+project demonstrate "serious AI work" (semantic search/RAG, eval infrastructure, structured
+outputs, or agentic depth), checked what had actually been built since against what was proposed,
+and found semantic search + evals + structured outputs were all fully shipped and validated — but
+one smaller item from that same discussion, prompt caching, had never actually been implemented
+(confirmed by grepping `main.py` for `cache_control` — zero matches).
+
+Both `parse_intent()` and `generate_explanation()` previously built their entire prompt — static
+instructions and per-request variables together — as one f-string passed as the `user` message,
+with no `system` parameter at all. Refactored both to separate the two: the instructional content
+that's identical on every call (traveler-profile inference rules, budget/party-preference
+classification rules, output-format/tone instructions) now lives in a dedicated `system` prompt
+with an `{"type": "ephemeral"}` `cache_control` breakpoint; only the genuinely per-request content
+(the raw query; the specific hostel/intent/breakdown data) stays in the `user` message. This is
+the architecturally correct split regardless of caching (static instructions belong in `system`,
+not re-sent as part of a per-request string), and it's what actually makes the content eligible
+for Anthropic's prompt caching.
+
+**Honest caveat, not glossed over**: `EXPLANATION_SYSTEM_PROMPT` on its own is short — likely
+under Sonnet's ~1024-token minimum cacheable prefix length on its own, so it may not yet trigger
+an actual cache read in isolation (combined with the `EXPLANATION_TOOL` schema that precedes it
+in the request, it's closer, but not verified to cross the threshold). `INTENT_SYSTEM_PROMPT` is
+substantially longer and, combined with `INTENT_TOOL`, more likely clears it. Either way the code
+is correct and safe: a `cache_control` breakpoint below the minimum threshold is a silent no-op,
+never an error, so this is a strictly-better change with no downside, and it's positioned to pay
+off further as `EXPLANATION_SYSTEM_PROMPT` grows or call volume increases.
+
+Verified by re-running the live-Claude portions of `eval_suite.py` after the refactor (both
+tier-2 daytime/evening-split cases still pass) plus manual live calls to both `parse_intent()`
+and `generate_explanation()` confirming identical, correctly-structured output to before the
+change — the refactor changes request *shape* (system vs. user placement) but not prompt
+*content*, so behavior was expected to be unaffected, and testing confirmed it was.
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data
