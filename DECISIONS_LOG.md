@@ -1618,6 +1618,52 @@ fetch call sites (the main search box and the "Get AI note" button).
 
 ---
 
+### 🟢 RESOLVED — Colloquial place names ("Jogja") silently matched zero hostels, despite correct intent parsing
+Real friend-testing bug, not a hypothetical: the query "jogja, peaceful oasis vibe" returned 0
+results. `parse_intent()` worked correctly — it extracted `location: "Jogja"` and reasonable vibe
+tags — but `match_hostels()`'s location filter is pure bidirectional substring matching against
+`city`/`region`/`country` (see `score_hostel()` and `match_hostels()` in `matching.py`), and
+"jogja" is not a substring of "yogyakarta" or vice versa. A perfectly parsed query silently
+matched nothing, with no error and no obvious symptom short of an empty result screen.
+
+This surfaced during a deliberate round of testing minimal, no-accommodation-noun queries
+("place name + 2-4 vibe words, no 'hostel'/'hotel' anywhere") after a friend's real search
+behavior suggested people type far less text than our existing eval suite's queries assumed.
+Word order (place name first/middle/last in the query) turned out to work fine — Claude handles
+that correctly regardless of position. The colloquial-name gap was the one real failure found
+across a 10-query test pass.
+
+**Fix:** added `LOCATION_ALIASES`, a small hand-curated dict mapping colloquial/alternate place
+names to whatever canonical string already exists in the dataset's `city`/`region` fields, plus
+`resolve_location_alias()` to apply it. Called at both places `intent.get("location")` is read
+(`score_hostel()`'s location-scoring block and `match_hostels()`'s hard location filter), so an
+alias resolves consistently whether it's affecting the initial candidate-pool filter or the
+per-hostel score. Seeded with: `jogja`/`jogjakarta` → `yogyakarta`, `hcmc`/`saigon` → `ho chi
+minh city`, `kl` → `kuala lumpur`.
+
+**Same fix, a second real case it catches:** the Gili Islands (Gili Air, Gili Meno, Gili
+Trawangan) and Kuta Lombok are tagged `region: "West Nusa Tenggara"` in the dataset — the
+accurate Indonesian province name, but not the name travelers actually know that island group
+by. Added `lombok` → `west nusa tenggara` as a **region** alias (not a city alias) — a search for
+"Lombok" now correctly surfaces all four of those hostels, whereas before it matched nothing.
+This is the same underlying class of problem as Jogja: geographically/administratively correct
+data that doesn't match how a real traveler would name the place.
+
+**Explicitly not oversold:** this is a small, hand-maintained list, not a scalable solution — the
+module's existing `KNOWN LIMITATION` docstring about location matching (manually-curated,
+doesn't scale, no real geocoding) still applies. This just patches the specific colloquial names
+we now know real users type, and should grow opportunistically as more are reported through
+testing, not attempt to preempt every possible nickname worldwide up front.
+
+**Verified:** re-ran the original failing query plus 3 new alias-specific queries ("Lombok, chill
+and near the beach", "Saigon, cheap and social", "KL, quiet and central") live against the local
+backend — all now return real, correct results instead of zero. Full `eval_suite.py` re-run:
+15 passed, 0 failed, 1 skipped (same expected Voyage-unreachable skip) — confirms the change is
+additive and didn't disturb existing location-matching behavior (continent search, compound
+"City, Country" strings, and the Bangkok party-hostel case all still pass).
+
+---
+
 ## Chain / Brand Patterns Noticed in the Data
 
 Worth tracking as its own note — several multi-property hostel brands showed up repeatedly

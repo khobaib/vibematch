@@ -75,6 +75,43 @@ def hostel_continents(hostel: dict) -> list:
     return COUNTRY_TO_CONTINENTS.get(country, [])
 
 
+# Colloquial/alternate place names travelers actually type, mapped to
+# whatever canonical city/region string exists in hostels.json. Found via
+# a real friend-testing bug report: "jogja" (an extremely common shorthand
+# for Yogyakarta, arguably used more than the formal name by backpackers)
+# returned zero results, because location matching is pure bidirectional
+# substring matching (see score_hostel/match_hostels below) — and "jogja"
+# is not a substring of "yogyakarta" or vice versa, so a perfectly valid,
+# perfectly parsed query silently matched nothing. This is a small,
+# hand-curated list, not a scalable solution (see the module docstring's
+# KNOWN LIMITATION about location matching generally) — it fixes the
+# specific cases we know backpackers actually use, and should grow as
+# more are reported, not attempt to anticipate every nickname up front.
+#
+# "lombok" is included as a REGION alias, not a city alias: our dataset
+# tags Lombok/the Gili Islands with the (accurate but not colloquially
+# recognized) Indonesian province name "West Nusa Tenggara" rather than
+# "Lombok" — the name travelers actually know the island group by. Since
+# hostel_region is checked against this same resolved string, "lombok"
+# now correctly surfaces Kuta Lombok and all three Gili Islands.
+LOCATION_ALIASES = {
+    "jogja": "yogyakarta",
+    "jogjakarta": "yogyakarta",
+    "hcmc": "ho chi minh city",
+    "saigon": "ho chi minh city",
+    "kl": "kuala lumpur",
+    "lombok": "west nusa tenggara",
+}
+
+
+def resolve_location_alias(location: str) -> str:
+    """Maps a colloquial place name to its canonical dataset string, if
+    one is known. Returns the input unchanged for anything not in the
+    alias list — this is purely additive, never a replacement for the
+    existing substring-matching logic."""
+    return LOCATION_ALIASES.get(location, location)
+
+
 def load_hostels(path="hostels.json"):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -114,7 +151,7 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     # --- 1. Location match (checks city, region, and country) ---
     location = intent.get("location")
     if location:
-        location = location.lower()
+        location = resolve_location_alias(location.lower())
         hostel_city = (hostel.get("city") or "").lower()
         hostel_region = (hostel.get("region") or "").lower()
         hostel_country = (hostel.get("country") or "").lower()
@@ -931,7 +968,7 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
         "results": [...]        # top_n of them, in ranked order
     }
     """
-    location = (intent.get("location") or "").lower()
+    location = resolve_location_alias((intent.get("location") or "").lower())
 
     if location:
         filtered = []
