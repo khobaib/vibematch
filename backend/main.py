@@ -1,11 +1,15 @@
 import os
 import json
+import logging
 from typing import Any, Dict, List
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import anthropic
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
 
 from matching import load_hostels, match_hostels
 from semantic_similarity import load_hostel_embeddings
@@ -13,6 +17,52 @@ from semantic_similarity import load_hostel_embeddings
 load_dotenv()
 
 app = FastAPI()
+
+# Basic abuse/cost protection (added once the live demo started being shared
+# aggressively - see DECISIONS_LOG.md). Both /search and /explain call a
+# paid LLM API on every request, so an unthrottled endpoint is a real
+# billing risk (a script or bot looping the same query costs real money,
+# not just server load). This is a per-IP rate limit, not a full security
+# solution - it stops the realistic case (one bot/one person hammering
+# requests) but not a determined attacker rotating IPs. Good enough for
+# this stage; a more serious defense (API keys, WAF, etc.) would only be
+# worth the complexity once there's an actual paying business to protect.
+#
+# Fly.io terminates TLS at its edge and forwards the real client IP in the
+# "Fly-Client-IP" header - without reading that header explicitly, every
+# request would appear to come from Fly's internal proxy IP, and the limit
+# would (incorrectly) apply globally instead of per real visitor.
+def get_client_ip(request: Request) -> str:
+    fly_client_ip = request.headers.get("Fly-Client-IP")
+    if fly_client_ip:
+        return fly_client_ip
+    return get_remote_address(request)
+
+
+limiter = Limiter(key_func=get_client_ip)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+# Prompt-cache visibility (added alongside the caching change itself):
+# Anthropic's Messages API returns cache_creation_input_tokens (set on the
+# call that first writes the cache) and cache_read_input_tokens (set on any
+# later call that hits it) inside message.usage. Without logging this,
+# there's no way to actually confirm caching is working versus just hoping
+# the code is correct - so every Claude call logs its usage line, visible
+# in `fly logs` in production or the local uvicorn console in dev.
+logger = logging.getLogger("vibematch.cache")
+logging.basicConfig(level=logging.INFO)
+
+
+def log_cache_usage(label: str, usage) -> None:
+    logger.info(
+        "[cache] %s | input=%s cache_creation=%s cache_read=%s output=%s",
+        label,
+        getattr(usage, "input_tokens", None),
+        getattr(usage, "cache_creation_input_tokens", None),
+        getattr(usage, "cache_read_input_tokens", None),
+        getattr(usage, "output_tokens", None),
+    )
 
 # Allow the React dev server (different origin: localhost:5173 vs 127.0.0.1:8000)
 # AND the deployed Vercel frontend to call this API. Without this, the
@@ -237,6 +287,7 @@ def parse_intent(query: str) -> dict:
         messages=[{"role": "user", "content": f'Query: "{query}"'}],
     )
 
+    log_cache_usage("parse_intent", message.usage)
     return extract_tool_input(message, "extract_search_intent")
 
 
@@ -342,15 +393,17 @@ Why the matching engine scored this hostel for this search:
         messages=[{"role": "user", "content": prompt}],
     )
 
+    log_cache_usage("generate_explanation", message.usage)
     return extract_tool_input(message, "generate_hostel_explanation")
 
 
 @app.post("/search")
-def search(request: SearchRequest):
-    intent = parse_intent(request.query)
+@limiter.limit("10/minute")
+def search(request: Request, body: SearchRequest):
+    intent = parse_intent(body.query)
     outcome = match_hostels(
         intent, HOSTELS, top_n=10,
-        raw_query=request.query,
+        raw_query=body.query,
         hostel_embeddings=HOSTEL_EMBEDDINGS,
     )
 
@@ -363,13 +416,14 @@ def search(request: SearchRequest):
 
 
 @app.post("/explain")
-def explain(request: ExplainRequest):
-    hostel = HOSTELS_BY_ID.get(request.hostel_id)
+@limiter.limit("20/minute")
+def explain(request: Request, body: ExplainRequest):
+    hostel = HOSTELS_BY_ID.get(body.hostel_id)
     if hostel is None:
         raise HTTPException(status_code=404, detail="Hostel not found")
 
-    breakdown = [{"points": b.points, "reason": b.reason} for b in request.breakdown]
-    result = generate_explanation(request.intent, hostel, breakdown)
+    breakdown = [{"points": b.points, "reason": b.reason} for b in body.breakdown]
+    result = generate_explanation(body.intent, hostel, breakdown)
 
     # result is already {"verdict": ..., "highlights": [...], "heads_ups": [...]}
     return result

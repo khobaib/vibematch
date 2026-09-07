@@ -1564,6 +1564,58 @@ and `generate_explanation()` confirming identical, correctly-structured output t
 change — the refactor changes request *shape* (system vs. user placement) but not prompt
 *content*, so behavior was expected to be unaffected, and testing confirmed it was.
 
+**Follow-up, same change:** added `log_cache_usage()`, a small logging helper called after both
+Claude calls, printing Anthropic's `usage.cache_creation_input_tokens` / `usage.cache_read_input_tokens`
+fields to the standard logger — visible via `fly logs` in production. Without this there was no
+way to actually confirm caching was working versus just trusting the code was correct. Verified
+live: two identical-shaped calls to `parse_intent()` in the same process showed
+`cache_creation=2366, cache_read=0` on the first call and `cache_creation=0, cache_read=2366` on
+the second — confirming the earlier "may not clear the minimum threshold" caveat above was overly
+cautious for `INTENT_SYSTEM_PROMPT` specifically; it does cache in practice.
+
+---
+
+### 🟢 RESOLVED — No abuse/cost protection on the two LLM-calling endpoints, despite the live demo being shared publicly
+Both `/search` and `/explain` call a paid LLM API (Claude, and `/search` also Voyage indirectly
+via `match_hostels`) on every request, with zero rate limiting. Once the live link started being
+shared aggressively (LinkedIn, friends-testing round), this went from a theoretical gap to a real
+near-term risk — a script or bot looping the same query costs real money per call, not just server
+load, and nothing in the stack would have stopped or even flagged it.
+
+**Decision:** added per-IP rate limiting via `slowapi` (`limits` under the hood) rather than
+building anything bespoke — `10/minute` on `/search`, `20/minute` on `/explain` (looser, since one
+search can fan out into several explain calls as a user clicks through result cards; the root
+health-check endpoint stays unlimited). This is a deliberately proportionate fix: it stops the
+realistic case (one bot or one person hammering requests) but not a determined attacker rotating
+IPs — a full defense (API keys, a WAF) isn't worth the complexity at this stage, with no paying
+business yet to protect.
+
+**A real gotcha caught during implementation:** Fly.io terminates TLS at its edge and proxies
+requests internally, so the default `get_remote_address` key function would have seen every
+visitor as Fly's internal proxy IP — silently turning a *per-visitor* limit into one shared global
+limit for the whole app. Fixed with a custom key function that reads the `Fly-Client-IP` header
+(which Fly sets to the real client IP) before falling back to the default address lookup.
+
+**How the limit actually behaves, for anyone testing it:** it's a rolling window per IP, not
+clock-aligned — the 60-second count resets 60 seconds after that IP's first request in the current
+window, not at a fixed minute boundary. After the 10th `/search` (or 20th `/explain`) call in that
+window, the next request gets back `HTTP 429` with a plain JSON body:
+`{"error": "Rate limit exceeded: 10 per 1 minute"}`.
+
+**Verified, not assumed:** ran 12 rapid `/search` calls against a local instance via FastAPI's
+`TestClient` — requests 1-10 returned `200`, requests 11-12 returned `429` with the expected JSON
+error body, and a follow-up request after that still succeeded (confirms it recovers, not just
+fails closed). Full `eval_suite.py` re-run afterward: 15 passed, 0 failed, 1 skipped (same expected
+Voyage-unreachable skip as always) — confirms the change is additive and didn't disturb existing
+matching/intent-parsing behavior.
+
+**Frontend follow-up, same task:** the React frontend's fetch-error handling previously showed
+`Request failed with status 429` verbatim to a real user on hitting this limit — technically
+accurate, meaningless to a non-developer. Added a small `friendlyErrorMessage()` helper in
+`App.jsx` that maps status 429 specifically to *"You're searching a bit fast — please wait a
+moment and try again."*, leaving every other status code's message unchanged. Applied at both
+fetch call sites (the main search box and the "Get AI note" button).
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data

@@ -14,6 +14,20 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000
 const SEARCH_URL = `${API_BASE_URL}/search`;
 const EXPLAIN_URL = `${API_BASE_URL}/explain`;
 
+// The backend rate-limits /search and /explain per IP (see backend/main.py,
+// DECISIONS_LOG.md) to protect against runaway LLM API costs. A throttled
+// request comes back as HTTP 429 - without this, the UI just showed
+// "Request failed with status 429", which is technically correct but means
+// nothing to someone who isn't a developer. This turns that one case into a
+// message an actual user can act on, while leaving every other error status
+// to fall back to the original generic message.
+function friendlyErrorMessage(status) {
+  if (status === 429) {
+    return "You're searching a bit fast — please wait a moment and try again.";
+  }
+  return `Request failed with status ${status}`;
+}
+
 function ScoreBreakdown({ breakdown }) {
   return (
     <ul className="vm-breakdown">
@@ -53,7 +67,7 @@ function AiExplanation({ intent, hostelId, breakdown }) {
       });
 
       if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
+        throw new Error(friendlyErrorMessage(response.status));
       }
 
       const result = await response.json();
@@ -202,7 +216,7 @@ function App() {
       });
 
       if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
+        throw new Error(friendlyErrorMessage(response.status));
       }
 
       const result = await response.json();
