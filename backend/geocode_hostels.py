@@ -45,9 +45,44 @@ matching the pattern used in embed_vibe_profiles.py:
      printed at the end for manual follow-up (e.g. fixing a typo'd city
      name, or geocoding by hand via Google Maps).
 
+Also geocodes every hostel's nearby_towns entries (added after removing
+the old text-based nearby_towns matching in matching.py - see
+DECISIONS_LOG.md): things like "Ao Nang", "Thamel", "Sukhumvit" are
+neighborhoods/beaches/landmarks, not a hostel's own city, so step 1 above
+never geocoded them on their own. unique_nearby_town_locations() finds
+every such value and geocode_locations() folds it into the SAME cache
+alongside each hostel's own city/region/country. This is deliberately
+geocode-only: apply_coords_to_hostels() only ever writes lat/lng for a
+hostel's OWN city/region/country key - a nearby_towns entry's coordinate
+is never written onto any hostel record. It exists purely so geo.py's
+local place lookup can resolve a search for "Ao Nang" or "Thamel" to real
+coordinates, the same way it already resolves a search for any hostel's
+own city.
+
+IMPORTANT - nearby_towns queries always include the hostel's own CITY,
+not just its region/country. A real bug was found and fixed here: querying
+Nominatim for just "Malioboro, Indonesia" (a famous street, but a common-
+enough name that it's not globally unique) returned a completely wrong
+match in Surabaya instead of Yogyakarta, because the query never included
+the one piece of context that would have disambiguated it - the hostel's
+own city (Yogyakarta). Region alone doesn't fully fix this either (several
+hostels have no region set). City is the most reliable disambiguator
+available (virtually every hostel has one), so build_candidates_for_
+nearby_town() tries "town, city, region, country" and "town, city,
+country" BEFORE ever falling back to the weaker "town, region, country" /
+"town, country" forms that caused the original bug. See DECISIONS_LOG.md
+for the full incident writeup (several real wrong-city matches were found
+and confirmed, not just theorized).
+
+Because of that bug, this version of the script will automatically
+re-resolve (not skip) any previously-cached nearby_towns entry - own
+hostel city/region/country entries are untouched, since those don't need
+city-context and were already separately spot-verified accurate.
+
 Run it with no arguments: `python geocode_hostels.py`
-Safe to re-run any time (e.g. after adding new hostels) - it only makes
-network requests for locations not already in the cache.
+Safe to re-run any time (e.g. after adding new hostels, or new
+nearby_towns values) - it only makes network requests for locations not
+already in the cache (plus the one-time nearby_towns re-resolve above).
 """
 
 import json
@@ -105,6 +140,33 @@ def unique_locations(hostels):
     return seen
 
 
+def unique_nearby_town_locations(hostels):
+    """
+    Every unique nearby_towns value, paired with the CITY (as well as
+    region/country) of the hostel(s) that mention it - city is the key
+    disambiguator (see module docstring's bug writeup on why region/
+    country alone isn't reliable enough for a generic-sounding name).
+    Cache key stays "town|region|country" (no city in the key itself) to
+    match geo.py's expected key format, but the city is carried alongside
+    for query construction. If the same nearby_towns value is mentioned by
+    hostels in different regions (rare, but possible - e.g. a generic name
+    like "Riverside"), each distinct (town, region, country) combo is
+    geocoded separately, same as unique_locations() does for cities - the
+    first hostel's city seen for that combo is used as the query context.
+    """
+    seen = {}
+    for h in hostels:
+        city = h.get("city") or ""
+        region = h.get("region") or ""
+        country = h.get("country") or ""
+        for town in h.get("location", {}).get("nearby_towns", []):
+            if not town:
+                continue
+            key = location_key(town, region, country)
+            seen.setdefault(key, (town, city, region, country))
+    return seen
+
+
 def nominatim_lookup(query: str):
     """Single Nominatim call. Returns (lat, lon, display_name) or None."""
     url = f"{NOMINATIM_URL}?{urllib.parse.urlencode({'q': query, 'format': 'jsonv2', 'limit': 1})}"
@@ -117,14 +179,14 @@ def nominatim_lookup(query: str):
     return float(r["lat"]), float(r["lon"]), r.get("display_name")
 
 
-def geocode_one(city, region, country):
+def build_candidates_for_city(city, region, country):
     """
-    Tries progressively broader queries so a slightly-off region name
-    (e.g. an unusual province spelling) doesn't sink the whole lookup:
+    Progressively broader queries for a hostel's OWN city, so a slightly-
+    off region name (e.g. an unusual province spelling) doesn't sink the
+    whole lookup:
     1. "city, region, country"
     2. "city, country"           (drop region)
     3. "region, country"         (fall back to just the region/province)
-    Returns (lat, lon, display_name, query_used) or None if all fail.
     """
     candidates = []
     if city and region and country:
@@ -133,7 +195,36 @@ def geocode_one(city, region, country):
         candidates.append(f"{city}, {country}")
     if region and country:
         candidates.append(f"{region}, {country}")
+    return candidates
 
+
+def build_candidates_for_nearby_town(town, city, region, country):
+    """
+    Progressively broader queries for a nearby_towns value - CITY-first,
+    unlike build_candidates_for_city() above, because a neighborhood/
+    landmark/beach name is far more likely to exist under the same or a
+    similar name in multiple cities/countries than an actual city name is
+    (see module docstring: "Malioboro, Indonesia" alone matched a wrong
+    city; "Malioboro, Yogyakarta, Indonesia" doesn't have that problem).
+    1. "town, city, region, country"
+    2. "town, city, country"       (drop region, city is the disambiguator)
+    3. "town, region, country"     (city missing - fall back to region)
+    4. "town, country"             (last resort - least reliable tier)
+    """
+    candidates = []
+    if town and city and region and country:
+        candidates.append(f"{town}, {city}, {region}, {country}")
+    if town and city and country:
+        candidates.append(f"{town}, {city}, {country}")
+    if town and region and country:
+        candidates.append(f"{town}, {region}, {country}")
+    if town and country:
+        candidates.append(f"{town}, {country}")
+    return candidates
+
+
+def geocode_with_candidates(candidates):
+    """Tries each query in order, paced, returns (lat, lon, display_name, query_used) or None."""
     for query in candidates:
         try:
             result = nominatim_lookup(query)
@@ -144,30 +235,53 @@ def geocode_one(city, region, country):
         if result:
             lat, lon, display_name = result
             return lat, lon, display_name, query
-
     return None
 
 
 def geocode_locations():
     hostels = load_hostels()
-    locations = unique_locations(hostels)
+
+    own_locations = unique_locations(hostels)              # key -> (city, region, country)
+    nearby_locations = unique_nearby_town_locations(hostels)  # key -> (town, city, region, country)
+
     cache = load_cache()
 
-    to_resolve = {k: v for k, v in locations.items() if k not in cache}
+    # One-time self-heal: force any previously-cached nearby_towns-only
+    # entry to be re-resolved with the improved, city-aware query (see
+    # module docstring for the "Malioboro, Indonesia" wrong-city bug this
+    # fixes). A key that's ALSO a hostel's own city/region/country is left
+    # untouched - those don't need city-context and were built with
+    # build_candidates_for_city() already, which was never the problem.
+    stale_nearby_keys = [k for k in nearby_locations if k in cache and k not in own_locations]
+    for k in stale_nearby_keys:
+        del cache[k]
+    if stale_nearby_keys:
+        print(f"Re-resolving {len(stale_nearby_keys)} previously-cached nearby_towns "
+              f"entries with the improved city-aware query (one-time fix)...\n")
 
-    print(f"{len(locations)} unique locations found in hostels.json.")
-    print(f"{len(cache)} already cached from a previous run.")
+    to_resolve = {}
+    for key, (city, region, country) in own_locations.items():
+        if key not in cache:
+            to_resolve[key] = (build_candidates_for_city(city, region, country), (city, region, country))
+    for key, (town, city, region, country) in nearby_locations.items():
+        if key not in cache:
+            to_resolve[key] = (build_candidates_for_nearby_town(town, city, region, country), (town, city, region, country))
+
+    total_places = len(set(own_locations) | set(nearby_locations))
+    print(f"{total_places} unique places found in hostels.json "
+          f"(own city/region/country + nearby_towns values).")
+    print(f"{len(cache)} already cached and unaffected by this run.")
     print(f"{len(to_resolve)} left to geocode this run.\n")
 
     if not to_resolve:
         print("Nothing left to geocode.")
         return
 
-    for i, (key, (city, region, country)) in enumerate(to_resolve.items(), 1):
-        label = ", ".join(p for p in (city, region, country) if p)
+    for i, (key, (candidates, parts)) in enumerate(to_resolve.items(), 1):
+        label = ", ".join(p for p in parts if p)
         print(f"[{i}/{len(to_resolve)}] {label} ...", end=" ")
 
-        result = geocode_one(city, region, country)
+        result = geocode_with_candidates(candidates)
         if result:
             lat, lon, display_name, query_used = result
             cache[key] = {

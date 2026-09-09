@@ -7,18 +7,86 @@ and scores every hostel in hostels.json against it.
 This file is intentionally standalone — no FastAPI imports — so you can
 test it directly with `python matching.py` before wiring it into main.py.
 
-KNOWN LIMITATION (tracked for Phase 4):
-Location matching uses a manually-curated `nearby_towns` list per hostel
-as a stopgap. This does NOT account for actual distance (a nearby_towns
-match scores the same whether the place is 2km or 18km away) and does
-not scale — it only recognizes place names someone thought to add by hand.
-The correct long-term fix is storing real lat/long coordinates per hostel
-(e.g. via Google Places API) and geocoding search terms on the fly to
-compute real distance. Deferred until Phase 4 data infrastructure work.
+LOCATION MATCHING, current state (see DECISIONS_LOG.md for the full history):
+Every hostel now has a real lat/lng (via geocode_hostels.py, using
+OpenStreetMap Nominatim), and match_hostels() uses real haversine distance
+(see geo.py) to fill in nearby results when an exact text match is thin or
+absent — this replaced the old "manually-curated nearby_towns list, no
+real distance" stopgap entirely. The hostel.location.nearby_towns field
+itself is still present in hostels.json (kept as data - real research went
+into it), but it's no longer used for matching or scoring: real distance
+supersedes it. It used to double as (a) a hard-filter inclusion signal in
+match_hostels() and (b) a 22-point scoring fallback in score_hostel() -
+both removed. Every place name that list used to cover (neighborhoods,
+beaches, landmarks like "Ao Nang", "Thamel", "Sukhumvit") has since been
+geocoded into location_coords_cache.json the same way any hostel's own
+city is, so a search for one of those names now resolves to real
+coordinates via geo.resolve_place_coords() and reaches match_hostels()'s
+STEP 1b distance expansion, same code path as any other "nearby" result -
+no separate text-list mechanism needed. This removed a real inconsistency:
+previously, whichever signal happened to answer "is this hostel near the
+search" first (the hand-typed list, or real distance) won, regardless of
+which was actually more accurate.
+
+Text-based city/region/country matching (below) uses word-boundary
+matching, not raw substring containment — see _place_text_match() — after
+a real false positive was found: "Amed" (a place in Bali) matched a
+Varanasi hostel whose (now-removed-from-matching) nearby_towns included
+"Dashashwamedh Ghat", because "amed" is a literal substring of
+"dashashwamedh". Word boundaries fix that class of bug generally, not
+just this one instance.
 """
 
 
 import json
+import re
+
+import geo
+
+
+def _place_text_match(a: str, b: str) -> bool:
+    """
+    Bidirectional place-name match using word boundaries, not raw
+    substring containment. Both a and b are assumed already lowercased.
+
+    Why not just `a in b or b in a`: that matched "amed" inside
+    "dashashwamedh ghat" (a real false positive — see the module
+    docstring and DECISIONS_LOG.md), because plain substring containment
+    doesn't care whether the match lands on a real word/phrase boundary
+    or in the middle of an unrelated word. `\\b...\\b` only matches at an
+    actual word edge, so "amed" no longer matches inside "dashashwamedh"
+    (there's no word boundary between 'w' and 'a' in the middle of that
+    word), while legitimate cases keep working — e.g. "weligama" still
+    matches inside "weligama, sri lanka", since there IS a real word
+    boundary right after "weligama" (the comma).
+
+    Bidirectional because either side can be the longer string depending
+    on the case: a short hostel_city inside a longer compound intent
+    string ("Weligama" in "Weligama, Sri Lanka"), or a short search term
+    that's a whole word inside a longer nearby_towns phrase.
+    """
+    if not a or not b:
+        return False
+    return bool(
+        re.search(r"\b" + re.escape(a) + r"\b", b)
+        or re.search(r"\b" + re.escape(b) + r"\b", a)
+    )
+
+
+# Minimum number of location-filtered hostels before we consider the
+# result "thin" enough to widen the search — see match_hostels() STEP 1b.
+# 5 was chosen as a simple, human-picked threshold (not derived from any
+# data): fewer than a handful of options isn't much of a "search result"
+# for a traveler comparing hostels.
+MIN_NEARBY_RESULTS = 5
+
+# Cap on how far the distance-based expansion will look, in km, so a
+# search in a genuinely remote/sparse area doesn't end up pulling in
+# hostels an unreasonable travel-distance away just to hit the count
+# threshold. 150km is a rough "still plausibly same trip/region" cut-off,
+# not a precise travel-time model (see geo.py's docstring on straight-line
+# distance not accounting for terrain/water crossings).
+MAX_EXPAND_RADIUS_KM = 150
 
 
 # Static country -> continent lookup, used only at query time so we don't
@@ -117,7 +185,7 @@ def load_hostels(path="hostels.json"):
         return json.load(f)
 
 
-def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, semantic_entry: dict = None, raw_query: str = None) -> dict:
+def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, semantic_entry: dict = None, raw_query: str = None, distance_km: float = None) -> dict:
     """
     Returns a dict: {"score": int, "breakdown": [{"points": int, "reason": str}, ...]}
 
@@ -142,6 +210,14 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
     once per search (not per hostel) in match_hostels() and passed in
     here so this function stays a pure "given the facts, score them"
     step — it doesn't know or care that an API call happened upstream.
+
+    distance_km: optional, set only for hostels added via match_hostels()
+    STEP 1b's distance-based expansion (see geo.py) — real haversine
+    distance in km from the searched location to this hostel. When
+    present, it's used as the location-match signal instead of the usual
+    text substring checks (this hostel didn't match the search text, only
+    real distance), so it still gets a fair, honest location score rather
+    than 0.
     """
     breakdown = []
 
@@ -156,27 +232,37 @@ def score_hostel(hostel: dict, intent: dict, local_price_bounds: tuple = None, s
         hostel_region = (hostel.get("region") or "").lower()
         hostel_country = (hostel.get("country") or "").lower()
 
-        # Bidirectional substring check. The intent parser sometimes returns
-        # compound strings like "Weligama, Sri Lanka" instead of just
-        # "Weligama" — a one-directional check (location in hostel_city)
-        # fails in that case because the search term is LONGER than the
-        # city name, so it can never be "contained within" it. Checking
-        # both directions (same pattern already used for nearby_towns)
-        # catches the city name wherever it sits inside a longer string.
-        if location in hostel_city or (hostel_city and hostel_city in location):
+        # Bidirectional, word-boundary check (see _place_text_match()). The
+        # intent parser sometimes returns compound strings like "Weligama,
+        # Sri Lanka" instead of just "Weligama" — a one-directional check
+        # (location in hostel_city) fails in that case because the search
+        # term is LONGER than the city name, so it can never be "contained
+        # within" it. Checking both directions catches the city name
+        # wherever it sits inside a longer string.
+        if _place_text_match(location, hostel_city):
             add(30, f"located in {hostel['city']}, matching your requested location")
-        elif hostel_region and (location in hostel_region or hostel_region in location):
+        elif hostel_region and _place_text_match(location, hostel_region):
             add(25, f"located in {hostel['region']}, matching your requested region")
-        elif location in hostel_country or (hostel_country and hostel_country in location):
+        elif _place_text_match(location, hostel_country):
             add(15, f"located in {hostel['country']}, matching your requested location")
-        else:
-            nearby_towns = [t.lower() for t in hostel.get("location", {}).get("nearby_towns", [])]
-            matched_nearby = [t for t in nearby_towns if location in t or t in location]
-            if matched_nearby:
-                add(22, f"close to {matched_nearby[0].title()}, near your requested location")
-            elif location in hostel_continents(hostel):
-                # weakest location signal — a continent match, e.g. "Europe"
-                add(10, f"located in {hostel['country']}, within your requested continent ({location.title()})")
+        elif distance_km is not None:
+            # Real distance (from match_hostels()'s STEP 1b expansion) — a
+            # measured distance, not a guess. This is also what now covers
+            # neighborhoods/beaches/landmarks like "Ao Nang" or "Thamel"
+            # that used to rely on the old nearby_towns text list (removed
+            # — see DECISIONS_LOG.md): those names are geocoded into
+            # location_coords_cache.json same as any hostel's own city, so
+            # a search for one resolves to real coordinates and reaches
+            # this branch instead.
+            if distance_km <= 15:
+                add(20, f"~{distance_km:.0f}km from {location.title()} — a short trip from your requested location")
+            elif distance_km <= 50:
+                add(14, f"~{distance_km:.0f}km from {location.title()} — a reasonable distance from your requested location")
+            else:
+                add(8, f"~{distance_km:.0f}km from {location.title()} — the closest option found near your requested location")
+        elif location in hostel_continents(hostel):
+            # weakest location signal — a continent match, e.g. "Europe"
+            add(10, f"located in {hostel['country']}, within your requested continent ({location.title()})")
 
     # --- 2. Budget match ---
     budget_max = intent.get("budget_max")
@@ -970,19 +1056,75 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
     """
     location = resolve_location_alias((intent.get("location") or "").lower())
 
+    # Kept separate from `hostels` (which STEP 1 below narrows down to the
+    # location-filtered candidate pool) so STEP 1b's distance expansion has
+    # the full, unfiltered set of hostels to search across for nearby
+    # options - not just whatever STEP 1 already kept.
+    all_hostels = hostels
+
+    # id -> distance_km, for every hostel added by STEP 1b's expansion.
+    # Looked up again near the end of this function to tag those results
+    # so callers (frontend) can show "results near X" instead of silently
+    # blending distance-based matches in as if they were exact hits.
+    expanded_distance_km = {}
+
     if location:
         filtered = []
         for h in hostels:
             hostel_city = (h.get("city") or "").lower()
             hostel_region = (h.get("region") or "").lower()
             hostel_country = (h.get("country") or "").lower()
-            nearby_towns = [t.lower() for t in h.get("location", {}).get("nearby_towns", [])]
-            if ((location in hostel_city or (hostel_city and hostel_city in location))
-                    or (location in hostel_region or (hostel_region and hostel_region in location))
-                    or (location in hostel_country or (hostel_country and hostel_country in location))
-                    or any(location in nt or nt in location for nt in nearby_towns)
+            if (_place_text_match(location, hostel_city)
+                    or _place_text_match(location, hostel_region)
+                    or _place_text_match(location, hostel_country)
                     or location in hostel_continents(h)):
                 filtered.append(h)
+
+        # STEP 1b — distance-based expansion (see geo.py, DECISIONS_LOG.md).
+        # Triggers in two cases:
+        #   - the traveler explicitly invited a wider net ("Kathmandu or
+        #     nearby") - intent["expand_search_requested"] is set by the
+        #     intent parser for that language, and we go straight to the
+        #     expanded set rather than waiting for a thin result.
+        #   - the exact-location filter above came back thin (< MIN_NEARBY_
+        #     RESULTS) - e.g. a real place with real hostels nearby, but
+        #     none tagged with that exact city/region/country/nearby_towns
+        #     text. This is the original "Lovina returned nothing" bug.
+        # Either way, this never REPLACES the exact matches - it only tops
+        # them up with the closest additional hostels (by real lat/lng
+        # distance) that aren't already in the filtered set, capped at
+        # MAX_EXPAND_RADIUS_KM so a sparse area doesn't reach unreasonably
+        # far just to hit the count.
+        explicit_expand = bool(intent.get("expand_search_requested"))
+        if explicit_expand or len(filtered) < MIN_NEARBY_RESULTS:
+            anchor = geo.resolve_place_coords(location)
+            if anchor is not None:
+                anchor_lat, anchor_lon = anchor
+                already_included = {h["id"] for h in filtered}
+
+                candidates = []
+                for h in all_hostels:
+                    if h["id"] in already_included:
+                        continue
+                    h_loc = h.get("location") or {}
+                    lat, lng = h_loc.get("lat"), h_loc.get("lng")
+                    if lat is None or lng is None:
+                        continue
+                    dist = geo.haversine(anchor_lat, anchor_lon, lat, lng)
+                    if dist <= MAX_EXPAND_RADIUS_KM:
+                        candidates.append((dist, h))
+
+                candidates.sort(key=lambda pair: pair[0])
+
+                if explicit_expand:
+                    to_add = candidates  # "nearby" was explicitly asked for - include everything in range
+                else:
+                    to_add = candidates[: MIN_NEARBY_RESULTS - len(filtered)]  # just top up to the threshold
+
+                for dist, h in to_add:
+                    filtered.append(h)
+                    expanded_distance_km[h["id"]] = round(dist, 1)
+
         hostels = filtered
 
     # Compute the actual price spread of THIS candidate pool (whatever
@@ -1026,12 +1168,15 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
     all_results = []
     genuine_match_count = 0
     for hostel in hostels:
-        result = score_hostel(hostel, intent, local_price_bounds, semantic_entries.get(hostel["id"]), raw_query)
+        result = score_hostel(
+            hostel, intent, local_price_bounds, semantic_entries.get(hostel["id"]), raw_query,
+            distance_km=expanded_distance_km.get(hostel["id"]),
+        )
         if not result["breakdown"]:  # nothing about this hostel was actually evaluated — no signal to show
             continue
         if result["score"] > 0:
             genuine_match_count += 1
-        all_results.append({
+        result_entry = {
             "id": hostel["id"],
             "name": hostel["name"],
             "city": hostel["city"],
@@ -1040,7 +1185,11 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
             "is_recommended": result["score"] > 0,
             "breakdown": result["breakdown"],
             "price_range_usd": hostel.get("price_range_usd"),
-        })
+        }
+        if hostel["id"] in expanded_distance_km:
+            result_entry["expanded_search"] = True
+            result_entry["distance_km"] = expanded_distance_km[hostel["id"]]
+        all_results.append(result_entry)
 
     all_results.sort(key=lambda r: r["score"], reverse=True)
 

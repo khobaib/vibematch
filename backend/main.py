@@ -204,11 +204,15 @@ INTENT_TOOL = {
                 "items": {"type": "string"},
                 "description": "Inferred traveler types based on context, per the inference rules above.",
             },
+            "expand_search_requested": {
+                "type": "boolean",
+                "description": "True only when the query explicitly invites a wider geographic net around the named location — words like 'nearby', 'surrounding', 'around there', 'or close by', 'in the area'. False for a query that names just one specific place with no such language, even if that place turns out to be small.",
+            },
         },
         "required": [
             "location", "budget_max", "budget_flexibility", "stay_duration_signal",
             "party_preference", "daytime_vibe_preference", "evening_vibe_preference",
-            "vibe_tags", "traveler_profile",
+            "vibe_tags", "traveler_profile", "expand_search_requested",
         ],
     },
 }
@@ -267,6 +271,11 @@ For daytime_vibe_preference and evening_vibe_preference (EXPERIMENTAL, see DECIS
 - Example that should NOT set either (leave both null): "chill hostel, not too party" — this is one overall preference, not a day/night split; party_preference alone covers it.
 - Example that should NOT set either: "party hostel with nightlife" — also one overall preference.
 - Default: leave BOTH null unless the query genuinely names two different times of day with two different vibes.
+
+For expand_search_requested, set true ONLY when the query explicitly invites a wider net around the named location, not just because the place sounds small or remote:
+- Set true: "Kathmandu or surrounding", "Lovina and nearby areas", "somewhere around Ubud", "close to Pai, doesn't have to be exact", "in the Amed area"
+- Set false: "Kathmandu" alone, "a quiet hostel in Lovina", "Pai, budget backpacker energy" — these name one specific place with no widening language, even though the matching engine may still widen the search later on its own if too few results exist there. This field is only about what the TRAVELER explicitly asked for, not a prediction of whether their exact location will have enough options.
+- Default to false whenever in doubt.
 
 Call the extract_search_intent tool with the extracted fields."""
 

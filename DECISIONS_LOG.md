@@ -1664,6 +1664,217 @@ additive and didn't disturb existing location-matching behavior (continent searc
 
 ---
 
+### 🟢 RESOLVED — Completed placeholder→light research for the remaining hostels, removed 9 unverifiable entries, added 12 new Bali/Lombok hostels
+Continuation of the earlier priority-location research push (the 78 hostels across Bali, Goa,
+Ella, Pokhara, and Bangkok already fully upgraded to `light`). This round covered the rest of the
+dataset outside those 5 locations: 168 hostels moved from `research_depth: "placeholder"` to
+`"light"` across five parallel-research batches, each dispatched as multiple sub-agents doing
+real web research (Hostelworld, Booking.com, Tripadvisor, Google) and writing honest,
+per-hostel `source_note`s — including specific corrections found along the way (e.g. `party_level`
+flips where a hostel's actual branding contradicted the placeholder default, name/chain
+disambiguation for properties sharing a brand across cities) and explicit call-outs wherever a
+listing couldn't be confidently verified rather than guessing.
+
+**9 hostels removed, not just left as unverified:** across the batches, 9 properties could not
+be confirmed as real, currently-operating listings on any platform after repeated research
+attempts (some checked 2-3 times across different batches) — closed, renamed beyond recognition,
+or simply never found. Rather than leave permanently-stuck `placeholder` rows in the dataset,
+these were deleted outright: `Suytana Hostel` (Huacachina), `Wild Rover San Pedro de Atacama`,
+`Explorer Hostel Bogota`, `Backpackers Sambaqui` (Florianópolis), `Hostel Costao`
+(Florianópolis), `Hostel Casa Club` (São Paulo), `Independiente Hostel` (Sucre), `Hola Ola
+Hostel` and `Native Hostel Montañita`.
+
+**12 new hostels added, filling a real coverage gap:** a friend's search for "Lovina, quiet and
+near the beach" (see the geolocation entry below) surfaced that Lovina (north Bali) had zero
+hostels in the dataset, and Amed (east Bali) had only one. Sourced and light-researched 4 new
+Lovina hostels, 2 new Amed hostels, and 6 new Lombok-mainland hostels (Senggigi, Selong Belanak,
+Kuta Lombok) — each verified as a real, currently-operating, well-reviewed property (checked
+against recent 2024–2026 reviews, not just a listing's existence) before being added, with the
+same honest-uncertainty conventions as the rest of the dataset (e.g. two entries flagged for
+thin review counts, one flagged as a likely recent rebrand under a new listing name).
+
+**Net result:** 475 hostels total (was 472), `research_depth` breakdown: `deep`=118, `light`=357,
+`placeholder`=0. Every hostel in the dataset now has at least light-tier real research behind it.
+
+**Verified:** schema validation (nearby object shape, no duplicate ids, no name+city collisions)
+run after every batch merge before committing to `hostels.json`.
+
+---
+
+### 🟢 RESOLVED — Added real lat/lng coordinates to every hostel (OpenStreetMap Nominatim)
+This closes the long-standing `KNOWN LIMITATION` in `matching.py` (present since the original
+66-hostel MVP) about location matching having no real distance awareness. Added
+`geocode_hostels.py`: geocodes each unique `(city, region, country)` combination in `hostels.json`
+against OpenStreetMap's free Nominatim API (no API key, no billing account — appropriate for this
+phase, which is about validating *functionality*, not production-scale accuracy/volume; Google
+Places API remains the likely upgrade if this becomes a real production data pipeline) and writes
+`location.lat` / `location.lng` onto every hostel sharing that place.
+
+**Why per-place, not per-hostel:** Nominatim's free-text search is unreliable at finding a
+specific small business by name, but reliable for a town/city. ~475 hostels collapse into ~252
+unique places, so geocoding once per place and reusing the coordinate is both cheaper (fewer
+requests against Nominatim's 1 request/second fair-use cap) and more accurate than trying to pin
+an exact building.
+
+**Resumable by design**, same pattern as `embed_vibe_profiles.py`: results cache to
+`location_coords_cache.json` after every single lookup, so re-running the script after adding new
+hostels only geocodes genuinely new places — anything already cached is skipped instantly, no
+repeat network calls.
+
+**This sandbox can't reach Nominatim** (same category of outbound-network restriction hit with
+Voyage earlier — blocked at the proxy level, not a Nominatim-side problem), so the script was
+handed to the user to run locally, where it completed cleanly: 252/252 locations resolved,
+0/475 hostels left without coordinates.
+
+**Verified, not just structurally checked:** spot-checked 5 known places (Lovina, Kathmandu, Kuta
+Lombok, Berlin, Cusco) against their real-world coordinates — all landed within 0.4–3.1km, which
+is town-center-level accuracy, consistent with geocoding at the place level rather than the
+building level.
+
+---
+
+### 🟢 RESOLVED — Real distance-based "nearby" search, replacing an empty-results dead end
+The concrete bug that motivated the geocoding work above: a friend searched "Lovina, quiet and
+near the beach" before any Lovina hostels existed in the dataset, and got an empty result screen
+— even though real hostels existed a short distance away in north Bali. The underlying question
+this raised: for a place with too few (or zero) matching hostels, how should the app find
+genuinely nearby options, rather than just returning nothing?
+
+**Design decision — real coordinates + distance, not a hand-built area/hierarchy graph.** The
+alternative considered was a manually-curated "area" field mapping villages/towns up to a parent
+region/island (Lovina → Bali, Gili → near-Bali, etc.). Rejected in favor of computed distance:
+a hand-maintained hierarchy has the exact same failure mode as the old `nearby_towns` list and
+`LOCATION_ALIASES` dict — it only knows what someone thought to add by hand, and breaks on the
+next unlisted place. Real lat/lng + haversine distance answers "is X near Y" for any two places
+without ever needing to declare the relationship in advance — Gili being ~20-30km from north Bali
+falls out of the coordinates, not out of a maintained fact.
+
+**Implementation (`matching.py`, new `geo.py`):** `match_hostels()`'s location filter now has a
+"STEP 1b" after the existing exact text-match tier — if the filtered result is thin
+(< `MIN_NEARBY_RESULTS`, set to 5 — a judgment call, not derived from data) or the query
+explicitly asked for a wider net, it resolves the searched place to coordinates (via
+`geo.resolve_place_coords()`, a local lookup against `location_coords_cache.json` — deliberately
+**not** a live Nominatim call at search time; see `geo.py`'s docstring on why: Nominatim's
+1 req/sec fair-use cap isn't safe to depend on inside a live request path, and it would add
+unpredictable latency on top of the Claude/Voyage calls already in the critical path), ranks
+every other hostel by real distance, and tops up the result set with the closest ones within
+`MAX_EXPAND_RADIUS_KM` (150km — also a judgment call, meant as a rough "still plausibly the same
+trip" cutoff, not a travel-time model). These are tagged `expanded_search: true` and a real
+`distance_km` in the API response, so the frontend can show "results near X" rather than
+silently blending them in as if they were exact hits. `score_hostel()` gives them an honest
+location score based on that real distance (20/14/8 points by distance bucket) instead of the
+0 they'd have gotten before.
+
+**New intent field — `expand_search_requested`:** added to `INTENT_TOOL`'s schema and
+`INTENT_SYSTEM_PROMPT` in `main.py`, set true only when a query explicitly invites a wider net
+("Kathmandu or surrounding", "nearby", "or around there") — not just because a place sounds
+small. When true, the expansion runs immediately as part of the primary search rather than
+waiting for a thin-result trigger.
+
+**Known simplification, stated honestly:** straight-line (haversine) distance doesn't know about
+water crossings or terrain — 40km by boat is a very different trip than 40km by road, but both
+score identically here. Accepted as a reasonable first version; worth revisiting only if it
+causes a real observed problem (e.g. recommending a hostel across a strait as if it were a quick
+hop), not something to solve upfront.
+
+**A second, unrelated bug found and fixed as a byproduct of testing this:** searching "Amed"
+(a real place in Bali) also matched a Varanasi hostel, because its `nearby_towns` field includes
+"Dashashwamedh Ghat" — which contains the literal substring "amed". This was a pre-existing flaw
+in the old bidirectional *substring* matching used throughout `matching.py` (city/region/country/
+nearby_towns), not something the distance work introduced. Fixed by replacing every such check
+with a shared `_place_text_match()` helper using regex word-boundary matching (`\bword\b`)
+instead of raw containment — "amed" no longer matches inside "dashashwamedh" (no real word
+boundary in the middle of that word), while legitimate cases keep working (confirmed via the
+existing "Weligama, Sri Lanka" compound-string eval test, which still passes).
+
+**Verified against the real dataset (not synthetic fixtures):** "Amed" (only 3 real hostels)
+correctly auto-expanded to 5 results, filling in with 2 genuinely nearby Nusa Lembongan hostels
+at a real measured 43.3km — and, after the word-boundary fix, without the Varanasi false
+positive. An explicit "Kathmandu ... surrounding"-style query correctly pulled in 29 additional
+real Nepal hostels (Nagarkot, Sauraha, Bandipur, Pokhara) with accurate distances from 19.6km to
+141.9km. A nonsense/unrecognized place name failed gracefully to zero results, no crash. Full
+`eval_suite.py` re-run: 15 passed, 0 failed, 1 skipped (same expected Voyage-unreachable skip) —
+confirms the change is additive and didn't disturb existing matching/location behavior.
+
+### 🟢 RESOLVED — `nearby_towns` retired from matching logic (superseded by real geolocation), data kept for later use
+Once the distance-based expansion above shipped, the original reason `nearby_towns` existed in
+`score_hostel()`/`match_hostels()` (a flat +22 bonus for a manually-curated list of nearby place
+names, see the very first 🔴 OPEN entry at the top of this section) was gone — real coordinates
+and haversine distance now answer the same question more accurately for *any* place, not just
+ones someone thought to list by hand. Decision: remove `nearby_towns` from all matching/scoring
+code paths, but keep the field and its data in `hostels.json` untouched — real research time and
+tokens went into compiling those lists, and there's no way to know they won't be useful for some
+other purpose later (e.g. as raw material for a future "landmarks near this hostel" display
+feature). `matching.py`'s STEP 1 location filter and `score_hostel()`'s location-scoring block
+both dropped their `nearby_towns` branch entirely; the module docstring was updated to state
+plainly that the field is now data-only and unused by matching.
+
+**Due-diligence check before removing, not assumed safe:** before cutting the old logic, checked
+whether doing so would silently regress any currently-working search — 205 of 229 unique
+`nearby_towns` place names had no corresponding entry in `location_coords_cache.json` (only
+hostels' own city/region/country had ever been geocoded), meaning a straight removal would have
+made real place names searchable today stop matching anything. Rather than accept that
+regression, the fix was to geocode those 205 place names too, so a search for a neighborhood name
+(e.g. "Malioboro", "Kaleici") still resolves to something useful via the new distance-based path
+even without the old text-list lookup.
+
+**Bug found while doing that geocoding, not by the user — caught before calling this done:**
+`geocode_hostels.py`'s original query-building for `nearby_towns` entries only had access to each
+place's region/country, never its own hostel's city (the disambiguating fact that actually
+matters for a generic name like "Old Market" or "Chowk Bazaar" — dozens of towns in the same
+country can share that name). This produced a first batch (460/462 "resolved") that looked
+successful by its own resolved/unresolved count, but a systematic sanity check (comparing every
+`nearby_towns` coordinate's haversine distance back to its own hostel's city) flagged 48 entries
+sitting hundreds of km from the hostel they supposedly neighbor — real, confidently-wrong data,
+not an unresolved gap. Concrete examples: "Malioboro" (a street in the middle of Yogyakarta)
+resolved 271km away in Surabaya; "Kaleiçi" (Antalya's old town) resolved 511km away near Istanbul;
+"Chowk Bazaar" (Darjeeling) and "Old Market" (Siem Reap) showed similar city-level misses. Root
+cause, confirmed by inspecting each entry's cached `query_used`: every flagged case had fallen
+through to the weakest query tier (`"{name}, {country}"`, no city or region at all), because the
+stronger tiers were never given the city to try in the first place.
+
+**Fix:** rewrote `geocode_hostels.py`'s candidate-building for `nearby_towns` to always try the
+hostel's own city first (`"{town}, {city}, {region}, {country}"` → `"{town}, {city}, {country}"` →
+`"{town}, {region}, {country}"` → `"{town}, {country}"`, in that order), and made the script
+force-purge and re-resolve any previously-cached `nearby_towns`-only entry on the next run
+(leaving the already-verified own-city entries untouched). Re-run by the user: 440/462 resolved
+(down from the previous run's 460/462) — expected and correct, not a new problem: the drop is the
+weakest fallback tier no longer being allowed to silently "succeed" with a wrong city for names
+Nominatim doesn't have indexed under the correct one. Re-verified directly against the corrected
+cache: all 4 originally-flagged examples above now resolve to their correct city (Malioboro →
+Yogyakarta, Kaleiçi → Antalya, Old Market → Siem Reap); re-running the full >30km sanity check
+found only 4 remaining outliers, all real and explicable (e.g. Habarana↔Sigiriya, Kandy↔Nuwara
+Eliya — genuinely-distant real Sri Lankan towns, not mis-geocodes), left as-is since `nearby_towns`
+is data-only now and doesn't feed live search.
+
+**Second, more consequential class of bug found by the same sanity check, this time in hostels'
+own city coordinates (not just `nearby_towns`):** three hostels' *own* `location.lat`/`lng` — the
+values that directly drive live distance-based search, not just the retired text field — had been
+geocoded wrong in the original (Task-level) geocoding pass, and had gone undetected by that pass's
+own spot-check: "Selçuk" (Boomerang Guesthouse, Turkey) resolved ~230km inland in central
+Anatolia instead of the real Aegean-coast town near Ephesus; "Ao Nang, Krabi" (Amazing Backpackers
+Hostel AoNang, Thailand) resolved ~35km south of the real town; "Samosir Island (Tuk Tuk)" (Tabo
+Cottages, Indonesia) fell all the way through to the weakest region-only fallback (its own city
+query never matched at all, likely because the parenthetical `"(Tuk Tuk)"` in the city string
+confused Nominatim's parser), landing on a generic North Sumatra centroid ~50km off. These three
+were caught only because their `nearby_towns` entries' distances looked implausible relative to
+them — a useful, unplanned side benefit of the sanity check. Since this sandbox cannot reach
+Nominatim to re-geocode, all three were corrected by hand using known real-world coordinates
+(Selçuk 37.9500,27.3667; Ao Nang 8.0334,98.8228; Tuk Tuk 2.6304,98.8232 — the last one also cross-
+checked against its own already-correctly-resolved "Tuk Tuk" `nearby_towns` entry, which agreed),
+applied to both `hostels.json`'s `location.lat`/`lng` and the matching cache entries directly.
+Three confirmed-wrong `nearby_towns` entries that Nominatim resolved to a same-named place in the
+wrong part of the country (Chowk Bazaar, Provenza, Sangapur) were left explicitly unresolved
+(`found: false`) rather than kept with a wrong coordinate, since that field isn't used for
+matching and a clean "unknown" beats a confident wrong answer.
+
+**Verified end-to-end after all fixes, live against `matching.py`:** "Malioboro" now correctly
+surfaces Yogyakarta hostels 0.2–1km away (previously would have anchored 271km off, in a different
+city); "Ao Nang" and "Kaleici" searches now return properly-clustered, correctly-distanced results
+too. Full `eval_suite.py` re-run: 15 passed, 0 failed, 1 skipped — no regressions from any of this.
+
+---
+
 ## Chain / Brand Patterns Noticed in the Data
 
 Worth tracking as its own note — several multi-property hostel brands showed up repeatedly
