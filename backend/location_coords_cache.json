@@ -1,0 +1,1766 @@
+{
+  "Phnom Penh||Cambodia": {
+    "lat": 11.5730391,
+    "lon": 104.857807,
+    "display_name": "\u179a\u17b6\u1787\u1792\u17b6\u1793\u17b8\u1797\u17d2\u1793\u17c6\u1796\u17c1\u1789, \u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6",
+    "query_used": "Phnom Penh, Cambodia",
+    "found": true
+  },
+  "Palolem|Goa|India": {
+    "lat": 15.012796,
+    "lon": 74.0219498,
+    "display_name": "Palolem, Canacona, Kushavati, Goa, 403702, India",
+    "query_used": "Palolem, Goa, India",
+    "found": true
+  },
+  "Varkala|Kerala|India": {
+    "lat": 8.7340434,
+    "lon": 76.7252855,
+    "display_name": "Varkala, Thiruvananthapuram, Kerala, 695145, India",
+    "query_used": "Varkala, Kerala, India",
+    "found": true
+  },
+  "Pai|Northern Thailand|Thailand": {
+    "lat": 19.3581061,
+    "lon": 98.4405794,
+    "display_name": "\u0e1b\u0e32\u0e22, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e1b\u0e32\u0e22, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e41\u0e21\u0e48\u0e2e\u0e48\u0e2d\u0e07\u0e2a\u0e2d\u0e19, 58130, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Pai, Thailand",
+    "found": true
+  },
+  "Istanbul||Turkey": {
+    "lat": 41.006381,
+    "lon": 28.9758715,
+    "display_name": "\u0130stanbul, Fatih, \u0130stanbul, Marmara B\u00f6lgesi, 34122, T\u00fcrkiye",
+    "query_used": "Istanbul, Turkey",
+    "found": true
+  },
+  "Canggu|Bali|Indonesia": {
+    "lat": -8.6399025,
+    "lon": 115.1436048,
+    "display_name": "Canggu, Kuta Utara, Badung, Bali, 80363, Indonesia",
+    "query_used": "Canggu, Bali, Indonesia",
+    "found": true
+  },
+  "Delhi|Delhi|India": {
+    "lat": 28.6664535,
+    "lon": 77.2169781,
+    "display_name": "Delhi, Old Delhi, Delhi, India",
+    "query_used": "Delhi, Delhi, India",
+    "found": true
+  },
+  "Kochi|Kerala|India": {
+    "lat": 9.9679032,
+    "lon": 76.2444378,
+    "display_name": "Kochi, Ernakulam, Kerala, 682001, India",
+    "query_used": "Kochi, Kerala, India",
+    "found": true
+  },
+  "Yogyakarta||Indonesia": {
+    "lat": -7.7953473,
+    "lon": 110.3672845,
+    "display_name": "Daerah Istimewa Yogyakarta, Indonesia",
+    "query_used": "Yogyakarta, Indonesia",
+    "found": true
+  },
+  "Jakarta||Indonesia": {
+    "lat": -6.1754049,
+    "lon": 106.827168,
+    "display_name": "Daerah Khusus Ibukota Jakarta, Indonesia",
+    "query_used": "Jakarta, Indonesia",
+    "found": true
+  },
+  "Antalya|Antalya Province|Turkey": {
+    "lat": 36.8865728,
+    "lon": 30.7030242,
+    "display_name": "Antalya, Muratpa\u015fa, Antalya, Akdeniz B\u00f6lgesi, 07050, T\u00fcrkiye",
+    "query_used": "Antalya, Turkey",
+    "found": true
+  },
+  "Izmir||Turkey": {
+    "lat": 38.4192537,
+    "lon": 27.128469,
+    "display_name": "\u0130zmir, Konak, \u0130zmir, Ege B\u00f6lgesi, 35250, T\u00fcrkiye",
+    "query_used": "Izmir, Turkey",
+    "found": true
+  },
+  "Selcuk|Izmir Province|Turkey": {
+    "lat": 38.433365,
+    "lon": 30.301647,
+    "display_name": "Sel\u00e7ik, Sand\u0131kl\u0131, Afyonkarahisar, Ege B\u00f6lgesi, T\u00fcrkiye",
+    "query_used": "Selcuk, Turkey",
+    "found": true
+  },
+  "Chiang Mai|Northern Thailand|Thailand": {
+    "lat": 18.7882778,
+    "lon": 98.9858802,
+    "display_name": "\u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e19\u0e04\u0e23\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e1f\u0e49\u0e32\u0e2e\u0e48\u0e32\u0e21, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Chiang Mai, Thailand",
+    "found": true
+  },
+  "Phuket|Southern Thailand|Thailand": {
+    "lat": 7.9366015,
+    "lon": 98.3529292,
+    "display_name": "\u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Phuket, Thailand",
+    "found": true
+  },
+  "Ubud|Bali|Indonesia": {
+    "lat": -8.5170195,
+    "lon": 115.2550507,
+    "display_name": "Ubud, Gianyar, Bali, Indonesia",
+    "query_used": "Ubud, Bali, Indonesia",
+    "found": true
+  },
+  "Seminyak|Bali|Indonesia": {
+    "lat": -8.6898586,
+    "lon": 115.1667783,
+    "display_name": "Seminyak, Kuta, Badung, Bali, 80361, Indonesia",
+    "query_used": "Seminyak, Bali, Indonesia",
+    "found": true
+  },
+  "Kovalam|Kerala|India": {
+    "lat": 8.3902593,
+    "lon": 76.9785152,
+    "display_name": "Kovalam, Neyyattinkara, Thiruvananthapuram, Kerala, 695527, India",
+    "query_used": "Kovalam, Kerala, India",
+    "found": true
+  },
+  "Barcelona|Catalonia|Spain": {
+    "lat": 41.3825802,
+    "lon": 2.177073,
+    "display_name": "Barcelona, Barcelon\u00e8s, Barcelona, Catalunya, Espa\u00f1a",
+    "query_used": "Barcelona, Catalonia, Spain",
+    "found": true
+  },
+  "Darjeeling|West Bengal|India": {
+    "lat": 27.0377554,
+    "lon": 88.263176,
+    "display_name": "Darjeeling, Darjeeling Pulbazar, Darjeeling, West Bengal, 734101, India",
+    "query_used": "Darjeeling, West Bengal, India",
+    "found": true
+  },
+  "Kasol|Himachal Pradesh|India": {
+    "lat": 32.0104317,
+    "lon": 77.3166036,
+    "display_name": "Kasol, Bhuntar, Kullu, Himachal Pradesh, 175105, India",
+    "query_used": "Kasol, Himachal Pradesh, India",
+    "found": true
+  },
+  "Manali|Himachal Pradesh|India": {
+    "lat": 32.2454608,
+    "lon": 77.1872926,
+    "display_name": "Manali, Kullu, Himachal Pradesh, 175131, India",
+    "query_used": "Manali, Himachal Pradesh, India",
+    "found": true
+  },
+  "Varanasi|Uttar Pradesh|India": {
+    "lat": 25.3356491,
+    "lon": 83.0076292,
+    "display_name": "Varanasi, Sadar, Varanasi, Uttar Pradesh, 221001, India",
+    "query_used": "Varanasi, Uttar Pradesh, India",
+    "found": true
+  },
+  "Jaipur|Rajasthan|India": {
+    "lat": 26.9154576,
+    "lon": 75.8189817,
+    "display_name": "Jaipur, Jaipur Municipal Corporation, Jaipur Tehsil, Jaipur, Rajasthan, 302001, India",
+    "query_used": "Jaipur, Rajasthan, India",
+    "found": true
+  },
+  "Pushkar|Rajasthan|India": {
+    "lat": 26.4876472,
+    "lon": 74.5578484,
+    "display_name": "Pushkar, Pushkar Tehsil, Ajmer, Rajasthan, 305022, India",
+    "query_used": "Pushkar, Rajasthan, India",
+    "found": true
+  },
+  "Bangkok||Thailand": {
+    "lat": 13.7524938,
+    "lon": 100.4935089,
+    "display_name": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Bangkok, Thailand",
+    "found": true
+  },
+  "Ao Nang, Krabi|Southern Thailand|Thailand": {
+    "lat": 7.7211734,
+    "lon": 98.7655426,
+    "display_name": "\u0e15\u0e33\u0e1a\u0e25\u0e2d\u0e48\u0e32\u0e27\u0e19\u0e32\u0e07, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, 81210, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Ao Nang, Krabi, Thailand",
+    "found": true
+  },
+  "Patong, Phuket|Southern Thailand|Thailand": {
+    "lat": 7.8994173,
+    "lon": 98.3087176,
+    "display_name": "\u0e15\u0e33\u0e1a\u0e25\u0e1b\u0e48\u0e32\u0e15\u0e2d\u0e07, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e01\u0e30\u0e17\u0e39\u0e49, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, 83159, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Patong, Phuket, Thailand",
+    "found": true
+  },
+  "Koh Phangan|Southern Thailand|Thailand": {
+    "lat": 9.7349503,
+    "lon": 100.0305711,
+    "display_name": "\u0e40\u0e01\u0e32\u0e30\u0e1e\u0e30\u0e07\u0e31\u0e19, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Koh Phangan, Thailand",
+    "found": true
+  },
+  "Anjuna|Goa|India": {
+    "lat": 15.5850408,
+    "lon": 73.7438151,
+    "display_name": "Anjuna, Bardez, North Goa, Goa, India",
+    "query_used": "Anjuna, Goa, India",
+    "found": true
+  },
+  "Anjuna/Vagator|Goa|India": {
+    "lat": 15.5915905,
+    "lon": 73.7437859,
+    "display_name": "Anjuna - Vagator Main Road, Dehul Vaddo, Anjuna, Bardez, North Goa, Goa, 403509, India",
+    "query_used": "Anjuna/Vagator, Goa, India",
+    "found": true
+  },
+  "Kozhikode (Calicut)|Kerala|India": {
+    "lat": 11.2450558,
+    "lon": 75.7754716,
+    "display_name": "Kozhikode, Kerala, 673001, India",
+    "query_used": "Kozhikode (Calicut), Kerala, India",
+    "found": true
+  },
+  "El Nido, Palawan|Palawan|Philippines": {
+    "lat": 11.1800395,
+    "lon": 119.390496,
+    "display_name": "El Nido, Palawan, Mimaropa, 5313, Philippines",
+    "query_used": "El Nido, Palawan, Palawan, Philippines",
+    "found": true
+  },
+  "Agra|Uttar Pradesh|India": {
+    "lat": 27.1752554,
+    "lon": 78.0098161,
+    "display_name": "Agra, Uttar Pradesh, 280001, India",
+    "query_used": "Agra, Uttar Pradesh, India",
+    "found": true
+  },
+  "Hanoi||Vietnam": {
+    "lat": 21.0283334,
+    "lon": 105.854041,
+    "display_name": "Th\u00e0nh ph\u1ed1 H\u00e0 N\u1ed9i, Vi\u1ec7t Nam",
+    "query_used": "Hanoi, Vietnam",
+    "found": true
+  },
+  "Ella|Uva Province|Sri Lanka": {
+    "lat": 6.8736058,
+    "lon": 81.0489927,
+    "display_name": "Ella, Badulla District, Uva Province, 90090, Sri Lanka",
+    "query_used": "Ella, Uva Province, Sri Lanka",
+    "found": true
+  },
+  "Kathmandu||Nepal": {
+    "lat": 27.708317,
+    "lon": 85.3205817,
+    "display_name": "\u0915\u093e\u0920\u092e\u093e\u0921\u094c\u0901 \u092e\u0939\u093e\u0928\u0917\u0930\u092a\u093e\u0932\u093f\u0915\u093e, \u0915\u093e\u0920\u092e\u093e\u0921\u094c\u0902 \u091c\u093f\u0932\u094d\u0932\u093e, \u092c\u093e\u0917\u092e\u0924\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Kathmandu, Nepal",
+    "found": true
+  },
+  "Cusco|Cusco Region|Peru": {
+    "lat": -13.5170887,
+    "lon": -71.9785356,
+    "display_name": "Cuzco, Distrito de Cusco, Cusco, 08001, Per\u00fa",
+    "query_used": "Cusco, Peru",
+    "found": true
+  },
+  "Medellin|Antioquia|Colombia": {
+    "lat": 6.2697324,
+    "lon": -75.6025597,
+    "display_name": "Medell\u00edn, Valle de Aburr\u00e1, Antioquia, RAP del Agua y la Monta\u00f1a, 0500, Colombia",
+    "query_used": "Medellin, Antioquia, Colombia",
+    "found": true
+  },
+  "Lisbon||Portugal": {
+    "lat": 38.7077507,
+    "lon": -9.1365919,
+    "display_name": "Lisboa, Portugal",
+    "query_used": "Lisbon, Portugal",
+    "found": true
+  },
+  "Marrakech||Morocco": {
+    "lat": 31.6258257,
+    "lon": -7.9891608,
+    "display_name": "Marrakech \u2d4e\u2d55\u2d55\u2d30\u2d3d\u2d6f\u2d5b \u0645\u0631\u0627\u0643\u0634, Pachalik de Marrakech, Pr\u00e9fecture de Marrakech \u0639\u0645\u0627\u0644\u0629 \u0645\u0631\u0627\u0643\u0634, Marrakech-Safi \u2d4e\u2d55\u2d55\u2d30\u2d3d\u2d5b-\u2d30\u2d59\u2d3c\u2d49 \u0645\u0631\u0627\u0643\u0634-\u0623\u0633\u0641\u064a, Maroc \u2d4d\u2d4e\u2d56\u2d54\u2d49\u2d31 \u0627\u0644\u0645\u063a\u0631\u0628",
+    "query_used": "Marrakech, Morocco",
+    "found": true
+  },
+  "Pokhara|Gandaki Province|Nepal": {
+    "lat": 28.209538,
+    "lon": 83.991402,
+    "display_name": "Pokhara, \u0915\u093e\u0938\u094d\u0915\u0940, \u0917\u0923\u094d\u0921\u0915\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Pokhara, Gandaki Province, Nepal",
+    "found": true
+  },
+  "Siem Reap||Cambodia": {
+    "lat": 13.3617562,
+    "lon": 103.8590321,
+    "display_name": "\u1780\u17d2\u179a\u17bb\u1784\u179f\u17c0\u1798\u179a\u17b6\u1794, \u179f\u17c0\u1798\u179a\u17b6\u1794, \u1781\u17c1\u178f\u17d2\u178f\u179f\u17c0\u1798\u179a\u17b6\u1794, 123456, \u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6",
+    "query_used": "Siem Reap, Cambodia",
+    "found": true
+  },
+  "Luang Prabang||Laos": {
+    "lat": 19.8887438,
+    "lon": 102.135898,
+    "display_name": "\u0eab\u0ebc\u0ea7\u0e87\u0e9e\u0eb0\u0e9a\u0eb2\u0e87, \u0ec0\u0ea1\u0eb7\u0ead\u0e87\u0eab\u0ebc\u0ea7\u0e87\u0e9e\u0eb0\u0e9a\u0eb2\u0e87, \u0eab\u0ea5\u0ea7\u0e87\u0e9e\u0eb0\u0e9a\u0eb2\u0e87, 10554, \u0e9b\u0eb0\u0ec0\u0e97\u0e94\u0ea5\u0eb2\u0ea7",
+    "query_used": "Luang Prabang, Laos",
+    "found": true
+  },
+  "Vang Vieng||Laos": {
+    "lat": 18.9538961,
+    "lon": 102.4563909,
+    "display_name": "\u0ea7\u0eb1\u0e87\u0ea7\u0ebd\u0e87 \u4e07\u8363, 13N, Nakkhae, \u0ea7\u0eb1\u0e87\u0ea7\u0ebd\u0e87, \u0ea7\u0ebd\u0e87\u0e88\u0eb1\u0e99, 10030, \u0e9b\u0eb0\u0ec0\u0e97\u0e94\u0ea5\u0eb2\u0ea7",
+    "query_used": "Vang Vieng, Laos",
+    "found": true
+  },
+  "Ho Chi Minh City||Vietnam": {
+    "lat": 10.7737261,
+    "lon": 106.7166008,
+    "display_name": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh, Vi\u1ec7t Nam",
+    "query_used": "Ho Chi Minh City, Vietnam",
+    "found": true
+  },
+  "Hoi An|Quang Nam Province|Vietnam": {
+    "lat": 15.8836771,
+    "lon": 108.3253961,
+    "display_name": "Hoi An Sports Bar, 505, Hai B\u00e0 Tr\u01b0ng, Ph\u01b0\u1eddng H\u1ed9i An, H\u1ed9i An, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, 51309, Vi\u1ec7t Nam",
+    "query_used": "Hoi An, Quang Nam Province, Vietnam",
+    "found": true
+  },
+  "George Town, Penang|Penang|Malaysia": {
+    "lat": 5.4141619,
+    "lon": 100.3287352,
+    "display_name": "George Town, Pulau Pinang, Malaysia",
+    "query_used": "George Town, Penang, Penang, Malaysia",
+    "found": true
+  },
+  "Singapore||Singapore": {
+    "lat": 1.2899175,
+    "lon": 103.8519072,
+    "display_name": "Singapore",
+    "query_used": "Singapore, Singapore",
+    "found": true
+  },
+  "Boracay|Visayas|Philippines": {
+    "lat": 11.9693692,
+    "lon": 121.9227339,
+    "display_name": "Boracay, Caticlan, Malay, Aklan, Western Visayas, 5608, Philippines",
+    "query_used": "Boracay, Visayas, Philippines",
+    "found": true
+  },
+  "Gili Trawangan|West Nusa Tenggara|Indonesia": {
+    "lat": -8.3503396,
+    "lon": 116.0362621,
+    "display_name": "Gili Trawangan, Tanjung, Lombok Utara, Nusa Tenggara Barat, Indonesia",
+    "query_used": "Gili Trawangan, West Nusa Tenggara, Indonesia",
+    "found": true
+  },
+  "Sigiriya|Central Province|Sri Lanka": {
+    "lat": 7.9566634,
+    "lon": 80.7599301,
+    "display_name": "Sigiriya, Ehalagala, Matale District, Central Province, 21121, Sri Lanka",
+    "query_used": "Sigiriya, Central Province, Sri Lanka",
+    "found": true
+  },
+  "Weligama|Southern Province|Sri Lanka": {
+    "lat": 5.9751305,
+    "lon": 80.429139,
+    "display_name": "Weligama, Matara District, Southern Province, Sri Lanka",
+    "query_used": "Weligama, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Mirissa|Southern Province|Sri Lanka": {
+    "lat": 5.9493634,
+    "lon": 80.4558128,
+    "display_name": "Mirissa, Matara District, Southern Province, 81740, Sri Lanka",
+    "query_used": "Mirissa, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Colombo||Sri Lanka": {
+    "lat": 6.9388614,
+    "lon": 79.8542005,
+    "display_name": "Colombo, Colombo District, Western Province, Sri Lanka",
+    "query_used": "Colombo, Sri Lanka",
+    "found": true
+  },
+  "Ahangama|Southern Province|Sri Lanka": {
+    "lat": 5.9735163,
+    "lon": 80.3622999,
+    "display_name": "Ahangama, Galle District, Southern Province, 80650, Sri Lanka",
+    "query_used": "Ahangama, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Sydney|New South Wales|Australia": {
+    "lat": -33.8698439,
+    "lon": 151.2082848,
+    "display_name": "Sydney, New South Wales, Australia",
+    "query_used": "Sydney, New South Wales, Australia",
+    "found": true
+  },
+  "Melbourne|Victoria|Australia": {
+    "lat": -37.8142454,
+    "lon": 144.9631732,
+    "display_name": "Melbourne, Victoria, Australia",
+    "query_used": "Melbourne, Victoria, Australia",
+    "found": true
+  },
+  "Byron Bay|New South Wales|Australia": {
+    "lat": -28.6483333,
+    "lon": 153.6177778,
+    "display_name": "Byron Bay, New South Wales, Australia",
+    "query_used": "Byron Bay, New South Wales, Australia",
+    "found": true
+  },
+  "Cairns|Queensland|Australia": {
+    "lat": -16.9206657,
+    "lon": 145.7721854,
+    "display_name": "Cairns, Queensland, 4870, Australia",
+    "query_used": "Cairns, Queensland, Australia",
+    "found": true
+  },
+  "Airlie Beach|Queensland|Australia": {
+    "lat": -20.272494,
+    "lon": 148.7181466,
+    "display_name": "Airlie Beach, Queensland, Australia",
+    "query_used": "Airlie Beach, Queensland, Australia",
+    "found": true
+  },
+  "Prague||Czech Republic": {
+    "lat": 50.0874654,
+    "lon": 14.4212535,
+    "display_name": "Praha, \u010cesko",
+    "query_used": "Prague, Czech Republic",
+    "found": true
+  },
+  "Berlin||Germany": {
+    "lat": 52.5173885,
+    "lon": 13.3951309,
+    "display_name": "Berlin, Deutschland",
+    "query_used": "Berlin, Germany",
+    "found": true
+  },
+  "Amsterdam||Netherlands": {
+    "lat": 52.3730796,
+    "lon": 4.8924534,
+    "display_name": "Amsterdam, Noord-Holland, Nederland",
+    "query_used": "Amsterdam, Netherlands",
+    "found": true
+  },
+  "Vienna||Austria": {
+    "lat": 48.2083537,
+    "lon": 16.3725042,
+    "display_name": "Wien, \u00d6sterreich",
+    "query_used": "Vienna, Austria",
+    "found": true
+  },
+  "Chitwan||Nepal": {
+    "lat": 27.618086,
+    "lon": 84.4536201,
+    "display_name": "\u091a\u093f\u0924\u0935\u0928 \u091c\u093f\u0932\u094d\u0932\u093e, \u092c\u093e\u0917\u092e\u0924\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Chitwan, Nepal",
+    "found": true
+  },
+  "Bandipur||Nepal": {
+    "lat": 27.9380224,
+    "lon": 84.4066959,
+    "display_name": "Bandipur, \u0924\u0928\u0939\u0941\u0901, \u0917\u0923\u094d\u0921\u0915\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, 33904, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Bandipur, Nepal",
+    "found": true
+  },
+  "Nagarkot||Nepal": {
+    "lat": 27.718508,
+    "lon": 85.51973,
+    "display_name": "\u0928\u0917\u0930\u0915\u094b\u091f, Mandandeupur-02, \u092e\u0923\u094d\u0921\u0928\u0926\u0947\u0909\u092a\u0941\u0930 \u0928\u0917\u0930\u092a\u093e\u0932\u093f\u0915\u093e, \u0915\u093e\u092d\u094d\u0930\u0947\u092a\u0932\u093e\u091e\u094d\u091a\u094b\u0915 \u091c\u093f\u0932\u094d\u0932\u093e, \u092c\u093e\u0917\u092e\u0924\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, 44812, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Nagarkot, Nepal",
+    "found": true
+  },
+  "Chiang Rai||Thailand": {
+    "lat": 19.7589517,
+    "lon": 99.6734592,
+    "display_name": "\u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e23\u0e32\u0e22, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Chiang Rai, Thailand",
+    "found": true
+  },
+  "Da Nang||Vietnam": {
+    "lat": 16.068501,
+    "lon": 108.2240242,
+    "display_name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam",
+    "query_used": "Da Nang, Vietnam",
+    "found": true
+  },
+  "Da Lat||Vietnam": {
+    "lat": 11.9402416,
+    "lon": 108.4375758,
+    "display_name": "\u0110\u00e0 L\u1ea1t, T\u1ec9nh L\u00e2m \u0110\u1ed3ng, 02633, Vi\u1ec7t Nam",
+    "query_used": "Da Lat, Vietnam",
+    "found": true
+  },
+  "Ninh Binh||Vietnam": {
+    "lat": 20.2421142,
+    "lon": 105.9746207,
+    "display_name": "Ninh B\u00ecnh, \u0110\u01b0\u1eddng Ng\u00f4 Gia T\u1ef1, Nam B\u00ecnh, Ph\u01b0\u1eddng Nam Hoa L\u01b0, Ph\u01b0\u1eddng Hoa L\u01b0, T\u1ec9nh Ninh B\u00ecnh, 08000, Vi\u1ec7t Nam",
+    "query_used": "Ninh Binh, Vietnam",
+    "found": true
+  },
+  "Nha Trang||Vietnam": {
+    "lat": 12.2084991,
+    "lon": 109.2871204,
+    "display_name": "Th\u00e0nh ph\u1ed1 Nha Trang, T\u1ec9nh Kh\u00e1nh H\u00f2a, Vi\u1ec7t Nam",
+    "query_used": "Nha Trang, Vietnam",
+    "found": true
+  },
+  "Phong Nha||Vietnam": {
+    "lat": 17.6475454,
+    "lon": 106.2729046,
+    "display_name": "X\u00e3 Phong Nha, T\u1ec9nh Qu\u1ea3ng Tr\u1ecb, 47257, Vi\u1ec7t Nam",
+    "query_used": "Phong Nha, Vietnam",
+    "found": true
+  },
+  "Morjim|Goa|India": {
+    "lat": 15.6294635,
+    "lon": 73.7358315,
+    "display_name": "Morjim, Ashvem, Pernem, North Goa, Goa, 403512, India",
+    "query_used": "Morjim, Goa, India",
+    "found": true
+  },
+  "Candolim|Goa|India": {
+    "lat": 15.5201532,
+    "lon": 73.7659422,
+    "display_name": "Candolim, Calangute, Bardez, North Goa, Goa, 403515, India",
+    "query_used": "Candolim, Goa, India",
+    "found": true
+  },
+  "Arambol|Goa|India": {
+    "lat": 15.6878815,
+    "lon": 73.7055986,
+    "display_name": "Arambol, Pernem, North Goa, Goa, 403524, India",
+    "query_used": "Arambol, Goa, India",
+    "found": true
+  },
+  "Baga/Calangute|Goa|India": {
+    "lat": 15.5521203,
+    "lon": 73.7639167,
+    "display_name": "Tripraja.com - travel and guide, 241A, Aguada - Siolim Road, Agar Vaddo, Baga, Calangute, Bardez, North Goa, Goa, 403516, India",
+    "query_used": "Baga/Calangute, Goa, India",
+    "found": true
+  },
+  "Calangute|Goa|India": {
+    "lat": 15.545594,
+    "lon": 73.7646182,
+    "display_name": "Calangute, Bardez, North Goa, Goa, 403516, India",
+    "query_used": "Calangute, Goa, India",
+    "found": true
+  },
+  "Munnar|Kerala|India": {
+    "lat": 10.0869959,
+    "lon": 77.0600915,
+    "display_name": "Munnar, Devikulam, Idukki, Kerala, 685612, India",
+    "query_used": "Munnar, Kerala, India",
+    "found": true
+  },
+  "Alleppey (Alappuzha)|Kerala|India": {
+    "lat": 9.795994,
+    "lon": 76.3021177,
+    "display_name": "Matt India Medical Centre, XV 292, Valiyathodu Bridge, Kodamthuruth, Cherthala, Alappuzha, Kerala, 688537, India",
+    "query_used": "Alleppey (Alappuzha), Kerala, India",
+    "found": true
+  },
+  "Wayanad|Kerala|India": {
+    "lat": 11.7151291,
+    "lon": 76.1271185,
+    "display_name": "Wayanad, Kerala, India",
+    "query_used": "Wayanad, Kerala, India",
+    "found": true
+  },
+  "Vagamon|Kerala|India": {
+    "lat": 9.6885988,
+    "lon": 76.9068551,
+    "display_name": "Vagamon, Peerumade, Idukki, Kerala, 685503, India",
+    "query_used": "Vagamon, Kerala, India",
+    "found": true
+  },
+  "Melaka||Malaysia": {
+    "lat": 2.3293744,
+    "lon": 102.2880962,
+    "display_name": "Melaka, Malaysia",
+    "query_used": "Melaka, Malaysia",
+    "found": true
+  },
+  "Cameron Highlands||Malaysia": {
+    "lat": 4.4710791,
+    "lon": 101.3751732,
+    "display_name": "Cameron Highlands, Pahang, Malaysia",
+    "query_used": "Cameron Highlands, Malaysia",
+    "found": true
+  },
+  "Kuala Lumpur||Malaysia": {
+    "lat": 3.1516964,
+    "lon": 101.6942371,
+    "display_name": "Kuala Lumpur, Malaysia",
+    "query_used": "Kuala Lumpur, Malaysia",
+    "found": true
+  },
+  "Langkawi (Pantai Cenang)||Malaysia": {
+    "lat": 6.2889305,
+    "lon": 99.7282832,
+    "display_name": "Cabin Langkawi, Jalan Pantai Chenang, Pantai Cenang, Langkawi, Kedah, Malaysia",
+    "query_used": "Langkawi (Pantai Cenang), Malaysia",
+    "found": true
+  },
+  "Perhentian Islands||Malaysia": {
+    "lat": 5.9028873,
+    "lon": 102.7557466,
+    "display_name": "Kepulauan Perhentian, Kampung Pasir Hantu, Besut, Terengganu, Malaysia",
+    "query_used": "Perhentian Islands, Malaysia",
+    "found": true
+  },
+  "Uluwatu (Pecatu)|Bali|Indonesia": {
+    "lat": -8.8351998,
+    "lon": 115.0967885,
+    "display_name": "Uluwatu, Jalan Raya Uluwatu, Pecatu, Kuta Selatan, Badung, Bali, 80362, Indonesia",
+    "query_used": "Uluwatu (Pecatu), Bali, Indonesia",
+    "found": true
+  },
+  "Kuta|Bali|Indonesia": {
+    "lat": -8.7264325,
+    "lon": 115.1778054,
+    "display_name": "Kuta, Badung, Bali, Indonesia",
+    "query_used": "Kuta, Bali, Indonesia",
+    "found": true
+  },
+  "Nusa Lembongan|Bali|Indonesia": {
+    "lat": -8.6789419,
+    "lon": 115.4573313,
+    "display_name": "Nusa Lembongan, Jungutbatu, Nusa Penida, Klungkung, Bali, 80771, Indonesia",
+    "query_used": "Nusa Lembongan, Bali, Indonesia",
+    "found": true
+  },
+  "Nusa Penida|Bali|Indonesia": {
+    "lat": -8.7455877,
+    "lon": 115.5346805,
+    "display_name": "Nusa Penida, Klungkung, Bali, Indonesia",
+    "query_used": "Nusa Penida, Bali, Indonesia",
+    "found": true
+  },
+  "Florence||Italy": {
+    "lat": 43.7697955,
+    "lon": 11.2556404,
+    "display_name": "Firenze, Toscana, Italia",
+    "query_used": "Florence, Italy",
+    "found": true
+  },
+  "Rome||Italy": {
+    "lat": 41.8933203,
+    "lon": 12.4829321,
+    "display_name": "Roma, Roma Capitale, Lazio, Italia",
+    "query_used": "Rome, Italy",
+    "found": true
+  },
+  "Naples||Italy": {
+    "lat": 40.8358846,
+    "lon": 14.2487679,
+    "display_name": "Napoli, Campania, Italia",
+    "query_used": "Naples, Italy",
+    "found": true
+  },
+  "Athens||Greece": {
+    "lat": 37.9755648,
+    "lon": 23.7348324,
+    "display_name": "\u0391\u03b8\u03ae\u03bd\u03b1, \u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03b8\u03b7\u03bd\u03b1\u03af\u03c9\u03bd, \u03a0\u03b5\u03c1\u03b9\u03c6\u03b5\u03c1\u03b5\u03b9\u03b1\u03ba\u03ae \u0395\u03bd\u03cc\u03c4\u03b7\u03c4\u03b1 \u039a\u03b5\u03bd\u03c4\u03c1\u03b9\u03ba\u03bf\u03cd \u03a4\u03bf\u03bc\u03ad\u03b1 \u0391\u03b8\u03b7\u03bd\u03ce\u03bd, \u03a0\u03b5\u03c1\u03b9\u03c6\u03ad\u03c1\u03b5\u03b9\u03b1 \u0391\u03c4\u03c4\u03b9\u03ba\u03ae\u03c2, \u0391\u03c0\u03bf\u03ba\u03b5\u03bd\u03c4\u03c1\u03c9\u03bc\u03ad\u03bd\u03b7 \u0394\u03b9\u03bf\u03af\u03ba\u03b7\u03c3\u03b7 \u0391\u03c4\u03c4\u03b9\u03ba\u03ae\u03c2, 105 57, \u0395\u03bb\u03bb\u03ac\u03c2",
+    "query_used": "Athens, Greece",
+    "found": true
+  },
+  "Dubrovnik||Croatia": {
+    "lat": 42.6491029,
+    "lon": 18.0939501,
+    "display_name": "Grad Dubrovnik, Dubrova\u010dko-neretvanska \u017eupanija, Hrvatska",
+    "query_used": "Dubrovnik, Croatia",
+    "found": true
+  },
+  "Paris||France": {
+    "lat": 48.8588897,
+    "lon": 2.320041,
+    "display_name": "Paris, \u00cele-de-France, France m\u00e9tropolitaine, France",
+    "query_used": "Paris, France",
+    "found": true
+  },
+  "Sofia||Bulgaria": {
+    "lat": 42.6977028,
+    "lon": 23.3217359,
+    "display_name": "\u0421\u043e\u0444\u0438\u044f, \u0421\u0440\u0435\u0434\u0435\u0446, \u0421\u0442\u043e\u043b\u0438\u0447\u043d\u0430, \u0421\u043e\u0444\u0438\u044f-\u0433\u0440\u0430\u0434, \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f",
+    "query_used": "Sofia, Bulgaria",
+    "found": true
+  },
+  "Edinburgh||United Kingdom": {
+    "lat": 55.9533456,
+    "lon": -3.1883749,
+    "display_name": "City of Edinburgh, Alba / Scotland, United Kingdom",
+    "query_used": "Edinburgh, United Kingdom",
+    "found": true
+  },
+  "London||United Kingdom": {
+    "lat": 51.5074456,
+    "lon": -0.1277653,
+    "display_name": "Greater London, England, United Kingdom",
+    "query_used": "London, United Kingdom",
+    "found": true
+  },
+  "Krakow||Poland": {
+    "lat": 50.0469432,
+    "lon": 19.9971534,
+    "display_name": "Krak\u00f3w, wojew\u00f3dztwo ma\u0142opolskie, Polska",
+    "query_used": "Krakow, Poland",
+    "found": true
+  },
+  "Riga||Latvia": {
+    "lat": 56.9493977,
+    "lon": 24.1051846,
+    "display_name": "R\u012bga, Latvija",
+    "query_used": "Riga, Latvia",
+    "found": true
+  },
+  "Belgrade||Serbia": {
+    "lat": 44.8153318,
+    "lon": 20.4456588,
+    "display_name": "\u0411\u0435\u043e\u0433\u0440\u0430\u0434, \u0413\u0440\u0430\u0434 \u0411\u0435\u043e\u0433\u0440\u0430\u0434, \u0426\u0435\u043d\u0442\u0440\u0430\u043b\u043d\u0430 \u0421\u0440\u0431\u0438\u0458\u0430, \u0421\u0440\u0431\u0438\u0458\u0430",
+    "query_used": "Belgrade, Serbia",
+    "found": true
+  },
+  "Copenhagen||Denmark": {
+    "lat": 55.6867243,
+    "lon": 12.5700724,
+    "display_name": "K\u00f8benhavn, K\u00f8benhavns Kommune, Region Hovedstaden, 1357, Danmark",
+    "query_used": "Copenhagen, Denmark",
+    "found": true
+  },
+  "Dublin||Ireland": {
+    "lat": 53.3493795,
+    "lon": -6.2605593,
+    "display_name": "Dublin, County Dublin, Leinster, \u00c9ire / Ireland",
+    "query_used": "Dublin, Ireland",
+    "found": true
+  },
+  "Interlaken||Switzerland": {
+    "lat": 46.6855231,
+    "lon": 7.8585139,
+    "display_name": "Interlaken, Verwaltungskreis Interlaken-Oberhasli, Verwaltungsregion Oberland, Bern/Berne, 3800, Schweiz/Suisse/Svizzera/Svizra",
+    "query_used": "Interlaken, Switzerland",
+    "found": true
+  },
+  "Perth|Western Australia|Australia": {
+    "lat": -31.9558967,
+    "lon": 115.8605784,
+    "display_name": "Perth, Western Australia, 6000, Australia",
+    "query_used": "Perth, Western Australia, Australia",
+    "found": true
+  },
+  "Adelaide|South Australia|Australia": {
+    "lat": -34.9281805,
+    "lon": 138.5999312,
+    "display_name": "Adelaide, South Australia, Australia",
+    "query_used": "Adelaide, South Australia, Australia",
+    "found": true
+  },
+  "Hobart|Tasmania|Australia": {
+    "lat": -42.8825088,
+    "lon": 147.3281233,
+    "display_name": "Hobart, Tasmania, Australia",
+    "query_used": "Hobart, Tasmania, Australia",
+    "found": true
+  },
+  "Brisbane|Queensland|Australia": {
+    "lat": -27.4689623,
+    "lon": 153.0235009,
+    "display_name": "Brisbane, Queensland, Australia",
+    "query_used": "Brisbane, Queensland, Australia",
+    "found": true
+  },
+  "Broome|Western Australia|Australia": {
+    "lat": -17.9566909,
+    "lon": 122.2240181,
+    "display_name": "Broome, Western Australia, 6726, Australia",
+    "query_used": "Broome, Western Australia, Australia",
+    "found": true
+  },
+  "Noosa|Queensland|Australia": {
+    "lat": -26.3182442,
+    "lon": 152.9307975,
+    "display_name": "Noosa Shire, Queensland, Australia",
+    "query_used": "Noosa, Queensland, Australia",
+    "found": true
+  },
+  "Daintree|Queensland|Australia": {
+    "lat": -16.257322,
+    "lon": 145.3320899,
+    "display_name": "Daintree, Daintree Village, Queensland, Australia",
+    "query_used": "Daintree, Queensland, Australia",
+    "found": true
+  },
+  "Bright|Victoria|Australia": {
+    "lat": -36.7285335,
+    "lon": 146.9607724,
+    "display_name": "Bright, Victoria, Australia",
+    "query_used": "Bright, Victoria, Australia",
+    "found": true
+  },
+  "Buenos Aires||Argentina": {
+    "lat": -34.6095579,
+    "lon": -58.3887904,
+    "display_name": "Buenos Aires, Comuna 1, Ciudad Aut\u00f3noma de Buenos Aires, Argentina",
+    "query_used": "Buenos Aires, Argentina",
+    "found": true
+  },
+  "La Paz||Bolivia": {
+    "lat": -16.4955455,
+    "lon": -68.1336229,
+    "display_name": "Municipio Nuestra Se\u00f1ora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+    "query_used": "La Paz, Bolivia",
+    "found": true
+  },
+  "Rio de Janeiro||Brazil": {
+    "lat": -22.9110137,
+    "lon": -43.2093727,
+    "display_name": "Rio de Janeiro, Regi\u00e3o Sudeste, Brasil",
+    "query_used": "Rio de Janeiro, Brazil",
+    "found": true
+  },
+  "Salvador||Brazil": {
+    "lat": -12.9822499,
+    "lon": -38.4812772,
+    "display_name": "Salvador, Bahia, Regi\u00e3o Nordeste, Brasil",
+    "query_used": "Salvador, Brazil",
+    "found": true
+  },
+  "Florianopolis||Brazil": {
+    "lat": -27.5973002,
+    "lon": -48.5496098,
+    "display_name": "Florian\u00f3polis, Santa Catarina, Regi\u00e3o Sul, Brasil",
+    "query_used": "Florianopolis, Brazil",
+    "found": true
+  },
+  "Cotopaxi||Ecuador": {
+    "lat": -0.8268521,
+    "lon": -78.8937757,
+    "display_name": "Cotopaxi, Ecuador",
+    "query_used": "Cotopaxi, Ecuador",
+    "found": true
+  },
+  "Quito||Ecuador": {
+    "lat": -0.2201641,
+    "lon": -78.5123274,
+    "display_name": "Quito, Pichincha, 170130, Ecuador",
+    "query_used": "Quito, Ecuador",
+    "found": true
+  },
+  "Lima||Peru": {
+    "lat": -12.0459808,
+    "lon": -77.0305912,
+    "display_name": "Lima, Lima Metropolitana, Lima, 15001, Per\u00fa",
+    "query_used": "Lima, Peru",
+    "found": true
+  },
+  "Palomino||Colombia": {
+    "lat": 11.2448914,
+    "lon": -73.5598131,
+    "display_name": "Palomino, Dibulla, La Guajira, RAP Caribe, 446009, Colombia",
+    "query_used": "Palomino, Colombia",
+    "found": true
+  },
+  "Bogota||Colombia": {
+    "lat": 4.6533817,
+    "lon": -74.0836331,
+    "display_name": "Bogot\u00e1 ciudad, Bogot\u00e1, Distrito Capital, RAP (Especial) Central, Colombia",
+    "query_used": "Bogota, Colombia",
+    "found": true
+  },
+  "Cartagena||Colombia": {
+    "lat": 10.4265566,
+    "lon": -75.5441671,
+    "display_name": "Cartagena de Indias, Dique, Bol\u00edvar, RAP Caribe, Colombia",
+    "query_used": "Cartagena, Colombia",
+    "found": true
+  },
+  "Santiago||Chile": {
+    "lat": -33.4376995,
+    "lon": -70.6510671,
+    "display_name": "Santiago, Provincia de Santiago, Regi\u00f3n Metropolitana de Santiago, 8320000, Chile",
+    "query_used": "Santiago, Chile",
+    "found": true
+  },
+  "San Pedro de Atacama||Chile": {
+    "lat": -23.3545489,
+    "lon": -67.9026571,
+    "display_name": "San Pedro de Atacama, Provincia de El Loa, Regi\u00f3n de Antofagasta, Chile",
+    "query_used": "San Pedro de Atacama, Chile",
+    "found": true
+  },
+  "Sucre||Bolivia": {
+    "lat": -19.0477251,
+    "lon": -65.2594306,
+    "display_name": "Sucre, Municipio Sucre, Provincia Oropeza, Chuquisaca, Bolivia",
+    "query_used": "Sucre, Bolivia",
+    "found": true
+  },
+  "Montevideo||Uruguay": {
+    "lat": -34.9058916,
+    "lon": -56.1913095,
+    "display_name": "Montevideo, Uruguay",
+    "query_used": "Montevideo, Uruguay",
+    "found": true
+  },
+  "Cusco||Peru": {
+    "lat": -13.5170887,
+    "lon": -71.9785356,
+    "display_name": "Cuzco, Distrito de Cusco, Cusco, 08001, Per\u00fa",
+    "query_used": "Cusco, Peru",
+    "found": true
+  },
+  "Mancora||Peru": {
+    "lat": -4.1551963,
+    "lon": -81.0061242,
+    "display_name": "M\u00e1ncora, Talara, Piura, Per\u00fa",
+    "query_used": "Mancora, Peru",
+    "found": true
+  },
+  "Rishikesh|Uttarakhand|India": {
+    "lat": 30.1086537,
+    "lon": 78.2916193,
+    "display_name": "Rishikesh, Dehradun, Uttarakhand, 249201, India",
+    "query_used": "Rishikesh, Uttarakhand, India",
+    "found": true
+  },
+  "Udaipur|Rajasthan|India": {
+    "lat": 24.578721,
+    "lon": 73.6862571,
+    "display_name": "Udaipur, Girwa Tehsil, Udaipur, Rajasthan, 313001, India",
+    "query_used": "Udaipur, Rajasthan, India",
+    "found": true
+  },
+  "Hampi|Karnataka|India": {
+    "lat": 15.3358,
+    "lon": 76.4610201,
+    "display_name": "Hampi, Hosapete taluk, Vijayanagara, Karnataka, 583239, India",
+    "query_used": "Hampi, Karnataka, India",
+    "found": true
+  },
+  "Mumbai|Maharashtra|India": {
+    "lat": 19.054999,
+    "lon": 72.8692035,
+    "display_name": "Mumbai, Mumbai Suburban District, Maharashtra, 400051, India",
+    "query_used": "Mumbai, Maharashtra, India",
+    "found": true
+  },
+  "Bangalore|Karnataka|India": {
+    "lat": 12.9767936,
+    "lon": 77.590082,
+    "display_name": "Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, India",
+    "query_used": "Bangalore, Karnataka, India",
+    "found": true
+  },
+  "McLeod Ganj|Himachal Pradesh|India": {
+    "lat": 32.2352666,
+    "lon": 76.326238,
+    "display_name": "McLeod Ganj, Dharamshala, Kangra, Himachal Pradesh, 176200, India",
+    "query_used": "McLeod Ganj, Himachal Pradesh, India",
+    "found": true
+  },
+  "Gokarna|Karnataka|India": {
+    "lat": 14.5439629,
+    "lon": 74.3184418,
+    "display_name": "Gokarna, Kumata taluk, Uttara Kannada, Karnataka, 581326, India",
+    "query_used": "Gokarna, Karnataka, India",
+    "found": true
+  },
+  "Leh|Ladakh|India": {
+    "lat": 34.1642029,
+    "lon": 77.5848133,
+    "display_name": "Leh, Leh district, Ladakh, 194101, India, Leh",
+    "query_used": "Leh, Ladakh, India",
+    "found": true
+  },
+  "Pondicherry|Puducherry|India": {
+    "lat": 11.9340568,
+    "lon": 79.8306447,
+    "display_name": "Puducherry, Puducherry Taluk, Puducherry, 605001, India",
+    "query_used": "Pondicherry, Puducherry, India",
+    "found": true
+  },
+  "Amritsar|Punjab|India": {
+    "lat": 31.6356659,
+    "lon": 74.8787496,
+    "display_name": "Amritsar, Amritsar I Tahsil, Amritsar, Punjab, 143001, India",
+    "query_used": "Amritsar, Punjab, India",
+    "found": true
+  },
+  "Kathmandu|Bagmati Province|Nepal": {
+    "lat": 27.708317,
+    "lon": 85.3205817,
+    "display_name": "\u0915\u093e\u0920\u092e\u093e\u0921\u094c\u0901 \u092e\u0939\u093e\u0928\u0917\u0930\u092a\u093e\u0932\u093f\u0915\u093e, \u0915\u093e\u0920\u092e\u093e\u0921\u094c\u0902 \u091c\u093f\u0932\u094d\u0932\u093e, \u092c\u093e\u0917\u092e\u0924\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Kathmandu, Bagmati Province, Nepal",
+    "found": true
+  },
+  "Bhaktapur|Bagmati Province|Nepal": {
+    "lat": 27.6711133,
+    "lon": 85.4261675,
+    "display_name": "\u092d\u0915\u094d\u0924\u092a\u0941\u0930, \u092d\u0915\u094d\u0924\u092a\u0941\u0930 \u0928\u0917\u0930\u092a\u093e\u0932\u093f\u0915\u093e, \u092d\u0915\u094d\u0924\u092a\u0941\u0930 \u091c\u093f\u0932\u094d\u0932\u093e, \u092c\u093e\u0917\u092e\u0924\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, 89130, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Bhaktapur, Bagmati Province, Nepal",
+    "found": true
+  },
+  "Sauraha|Bagmati Province|Nepal": {
+    "lat": 27.5801633,
+    "lon": 84.5023058,
+    "display_name": "\u0938\u094c\u0930\u093e\u0939\u093e, Ratnanagar-06, \u0930\u0924\u094d\u0928\u0928\u0917\u0930 \u0928\u0917\u0930\u092a\u093e\u0932\u093f\u0915\u093e, \u091a\u093f\u0924\u0935\u0928 \u091c\u093f\u0932\u094d\u0932\u093e, \u092c\u093e\u0917\u092e\u0924\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Sauraha, Bagmati Province, Nepal",
+    "found": true
+  },
+  "Arugam Bay|Eastern Province|Sri Lanka": {
+    "lat": 6.8468506,
+    "lon": 81.8306961,
+    "display_name": "Arugam Bay, Ampara District, Eastern Province, 32506, Sri Lanka",
+    "query_used": "Arugam Bay, Eastern Province, Sri Lanka",
+    "found": true
+  },
+  "Hikkaduwa|Southern Province|Sri Lanka": {
+    "lat": 6.140753,
+    "lon": 80.1028181,
+    "display_name": "Hikkaduwa, Galle District, Southern Province, Sri Lanka",
+    "query_used": "Hikkaduwa, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Kandy|Central Province|Sri Lanka": {
+    "lat": 7.2931208,
+    "lon": 80.6350358,
+    "display_name": "Kandy, Kandy District, Central Province, 20000, Sri Lanka",
+    "query_used": "Kandy, Central Province, Sri Lanka",
+    "found": true
+  },
+  "Nuwara Eliya|Central Province|Sri Lanka": {
+    "lat": 7.012402,
+    "lon": 80.7571612,
+    "display_name": "Nuwara Eliya District, Central Province, Sri Lanka",
+    "query_used": "Nuwara Eliya, Central Province, Sri Lanka",
+    "found": true
+  },
+  "Tangalle|Southern Province|Sri Lanka": {
+    "lat": 6.0250847,
+    "lon": 80.7949279,
+    "display_name": "Tangalle, Hambantota District, Southern Province, 82200, Sri Lanka",
+    "query_used": "Tangalle, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Galle|Southern Province|Sri Lanka": {
+    "lat": 6.0328139,
+    "lon": 80.214955,
+    "display_name": "Galle, Galle District, Southern Province, Sri Lanka",
+    "query_used": "Galle, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Trincomalee|Eastern Province|Sri Lanka": {
+    "lat": 8.576425,
+    "lon": 81.2344952,
+    "display_name": "Trincomalee, Trincomalee District, Eastern Province, 32100, Sri Lanka",
+    "query_used": "Trincomalee, Eastern Province, Sri Lanka",
+    "found": true
+  },
+  "Tissamaharama|Southern Province|Sri Lanka": {
+    "lat": 6.2770724,
+    "lon": 81.2892814,
+    "display_name": "Tissamaharama, Hambantota District, Southern Province, 82600, Sri Lanka",
+    "query_used": "Tissamaharama, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Krabi Town|Krabi Province|Thailand": {
+    "lat": 8.0671804,
+    "lon": 98.9149191,
+    "display_name": "Islamic Bank of Thailand, \u0e16\u0e19\u0e19\u0e2b\u0e25\u0e27\u0e07\u0e1e\u0e48\u0e2d, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, 81300, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Krabi Town, Krabi Province, Thailand",
+    "found": true
+  },
+  "Koh Tao|Surat Thani Province|Thailand": {
+    "lat": 10.0921822,
+    "lon": 99.8395362,
+    "display_name": "\u0e40\u0e01\u0e32\u0e30\u0e40\u0e15\u0e48\u0e32, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e01\u0e32\u0e30\u0e1e\u0e30\u0e07\u0e31\u0e19, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Koh Tao, Surat Thani Province, Thailand",
+    "found": true
+  },
+  "Pai|Mae Hong Son Province|Thailand": {
+    "lat": 19.3581061,
+    "lon": 98.4405794,
+    "display_name": "\u0e1b\u0e32\u0e22, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e1b\u0e32\u0e22, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e41\u0e21\u0e48\u0e2e\u0e48\u0e2d\u0e07\u0e2a\u0e2d\u0e19, 58130, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Pai, Mae Hong Son Province, Thailand",
+    "found": true
+  },
+  "Koh Lanta|Krabi Province|Thailand": {
+    "lat": 7.6823683,
+    "lon": 99.0900688,
+    "display_name": "\u0e40\u0e01\u0e32\u0e30\u0e25\u0e31\u0e19\u0e15\u0e32, \u0e01\u0e1a.6022, \u0e28\u0e32\u0e25\u0e32\u0e14\u0e48\u0e32\u0e19, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e01\u0e32\u0e30\u0e25\u0e31\u0e19\u0e15\u0e32, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Koh Lanta, Krabi Province, Thailand",
+    "found": true
+  },
+  "Koh Samui|Surat Thani Province|Thailand": {
+    "lat": 9.5013945,
+    "lon": 99.9956193,
+    "display_name": "\u0e40\u0e01\u0e32\u0e30\u0e2a\u0e21\u0e38\u0e22, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Koh Samui, Surat Thani Province, Thailand",
+    "found": true
+  },
+  "Koh Chang|Trat Province|Thailand": {
+    "lat": 12.0546168,
+    "lon": 102.3373426,
+    "display_name": "\u0e40\u0e01\u0e32\u0e30\u0e0a\u0e49\u0e32\u0e07, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e01\u0e32\u0e30\u0e0a\u0e49\u0e32\u0e07, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e15\u0e23\u0e32\u0e14, 23170, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Koh Chang, Trat Province, Thailand",
+    "found": true
+  },
+  "Sukhothai|Sukhothai Province|Thailand": {
+    "lat": 17.010918,
+    "lon": 99.8203682,
+    "display_name": "\u0e2a\u0e38\u0e42\u0e02\u0e17\u0e31\u0e22, \u0e15\u0e33\u0e1a\u0e25\u0e18\u0e32\u0e19\u0e35, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e2a\u0e38\u0e42\u0e02\u0e17\u0e31\u0e22\u0e18\u0e32\u0e19\u0e35, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e2a\u0e38\u0e42\u0e02\u0e17\u0e31\u0e22, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e42\u0e02\u0e17\u0e31\u0e22, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Sukhothai, Sukhothai Province, Thailand",
+    "found": true
+  },
+  "Ayutthaya|Phra Nakhon Si Ayutthaya Province|Thailand": {
+    "lat": 14.3535427,
+    "lon": 100.5645684,
+    "display_name": "\u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e19\u0e04\u0e23\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23\u0e28\u0e23\u0e35\u0e2d\u0e22\u0e38\u0e18\u0e22\u0e32, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23\u0e28\u0e23\u0e35\u0e2d\u0e22\u0e38\u0e18\u0e22\u0e32, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23\u0e28\u0e23\u0e35\u0e2d\u0e22\u0e38\u0e18\u0e22\u0e32, 13000, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Ayutthaya, Phra Nakhon Si Ayutthaya Province, Thailand",
+    "found": true
+  },
+  "Khao Sok|Surat Thani Province|Thailand": {
+    "lat": 9.0686898,
+    "lon": 98.5738024,
+    "display_name": "\u0e2d\u0e38\u0e17\u0e22\u0e32\u0e19\u0e41\u0e2b\u0e48\u0e07\u0e0a\u0e32\u0e15\u0e34\u0e40\u0e02\u0e32\u0e2a\u0e01, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e1a\u0e49\u0e32\u0e19\u0e15\u0e32\u0e02\u0e38\u0e19, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Khao Sok, Surat Thani Province, Thailand",
+    "found": true
+  },
+  "Gili Air|West Nusa Tenggara|Indonesia": {
+    "lat": -8.3577073,
+    "lon": 116.081162,
+    "display_name": "Gili Air, Tanjung, Lombok Utara, Nusa Tenggara Barat, Indonesia",
+    "query_used": "Gili Air, West Nusa Tenggara, Indonesia",
+    "found": true
+  },
+  "Kuta Lombok|West Nusa Tenggara|Indonesia": {
+    "lat": -8.872667,
+    "lon": 116.279314,
+    "display_name": "Kuta Lombok, Merendeng, Mong, Kuta, Lombok Tengah, Nusa Tenggara Barat, 83573, Indonesia",
+    "query_used": "Kuta Lombok, West Nusa Tenggara, Indonesia",
+    "found": true
+  },
+  "Labuan Bajo|East Nusa Tenggara|Indonesia": {
+    "lat": -8.489935,
+    "lon": 119.876465,
+    "display_name": "Labuan Bajo, Manggarai Barat, Nusa Tenggara Timur, 86554, Indonesia",
+    "query_used": "Labuan Bajo, East Nusa Tenggara, Indonesia",
+    "found": true
+  },
+  "Bukit Lawang|North Sumatra|Indonesia": {
+    "lat": 3.5480322,
+    "lon": 98.1271652,
+    "display_name": "Bukit Lawang, Bahorok, Kabupaten Langkat, Sumatera Utara, 20774, Indonesia",
+    "query_used": "Bukit Lawang, North Sumatra, Indonesia",
+    "found": true
+  },
+  "Samosir Island (Tuk Tuk)|North Sumatra|Indonesia": {
+    "lat": 2.1923519,
+    "lon": 99.3812201,
+    "display_name": "Sumatera Utara, Indonesia",
+    "query_used": "North Sumatra, Indonesia",
+    "found": true
+  },
+  "Amed|Bali|Indonesia": {
+    "lat": -8.334584,
+    "lon": 115.6409359,
+    "display_name": "Amed, Purwa Kerthi, Abang, Karangasem, Bali, 80852, Indonesia",
+    "query_used": "Amed, Bali, Indonesia",
+    "found": true
+  },
+  "Gili Meno|West Nusa Tenggara|Indonesia": {
+    "lat": -8.3505557,
+    "lon": 116.0569626,
+    "display_name": "Gili Meno, Tanjung, Lombok Utara, Nusa Tenggara Barat, 83352, Indonesia",
+    "query_used": "Gili Meno, West Nusa Tenggara, Indonesia",
+    "found": true
+  },
+  "Bandung|West Java|Indonesia": {
+    "lat": -6.9218457,
+    "lon": 107.6070833,
+    "display_name": "Kota Bandung, Jawa Barat, Indonesia",
+    "query_used": "Bandung, West Java, Indonesia",
+    "found": true
+  },
+  "Munduk|Bali|Indonesia": {
+    "lat": -8.2683683,
+    "lon": 115.0777059,
+    "display_name": "Munduk, Banjar, Buleleng, Bali, 81152, Indonesia",
+    "query_used": "Munduk, Bali, Indonesia",
+    "found": true
+  },
+  "Uluwatu (Ungasan)|Bali|Indonesia": {
+    "lat": -8.7972159,
+    "lon": 115.1615348,
+    "display_name": "BNI, Jalan Uluwatu, Jimbaran, Kuta Selatan, Badung, Bali, 80362, Indonesia",
+    "query_used": "Uluwatu (Ungasan), Bali, Indonesia",
+    "found": true
+  },
+  "Bangkok|Bangkok|Thailand": {
+    "lat": 13.7393113,
+    "lon": 100.5166499,
+    "display_name": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e, 1, \u0e16\u0e19\u0e19\u0e23\u0e2d\u0e07\u0e40\u0e21\u0e37\u0e2d\u0e07, \u0e2b\u0e31\u0e27\u0e25\u0e33\u0e42\u0e1e\u0e07, \u0e41\u0e02\u0e27\u0e07\u0e23\u0e2d\u0e07\u0e40\u0e21\u0e37\u0e2d\u0e07, \u0e40\u0e02\u0e15\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19, \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23, 10330, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Bangkok, Bangkok, Thailand",
+    "found": true
+  },
+  "Chiang Mai|Chiang Mai Province|Thailand": {
+    "lat": 18.7882778,
+    "lon": 98.9858802,
+    "display_name": "\u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e19\u0e04\u0e23\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e1f\u0e49\u0e32\u0e2e\u0e48\u0e32\u0e21, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Chiang Mai, Chiang Mai Province, Thailand",
+    "found": true
+  },
+  "Krabi|Krabi Province|Thailand": {
+    "lat": 8.0634637,
+    "lon": 98.9162345,
+    "display_name": "\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e16\u0e19\u0e19\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a \u0e0b\u0e2d\u0e22 6, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, 81300, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Krabi, Krabi Province, Thailand",
+    "found": true
+  },
+  "Phuket|Phuket Province|Thailand": {
+    "lat": 7.8847901,
+    "lon": 98.3891503,
+    "display_name": "\u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e19\u0e04\u0e23\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, 83000, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Phuket, Phuket Province, Thailand",
+    "found": true
+  },
+  "Koh Phangan|Surat Thani Province|Thailand": {
+    "lat": 9.7349503,
+    "lon": 100.0305711,
+    "display_name": "\u0e40\u0e01\u0e32\u0e30\u0e1e\u0e30\u0e07\u0e31\u0e19, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+    "query_used": "Koh Phangan, Surat Thani Province, Thailand",
+    "found": true
+  },
+  "Alappuzha|Kerala|India": {
+    "lat": 9.5003416,
+    "lon": 76.4123364,
+    "display_name": "Alappuzha, Kerala, India",
+    "query_used": "Alappuzha, Kerala, India",
+    "found": true
+  },
+  "New Delhi|Delhi|India": {
+    "lat": 28.6138954,
+    "lon": 77.2090057,
+    "display_name": "New Delhi, Delhi, India",
+    "query_used": "New Delhi, Delhi, India",
+    "found": true
+  },
+  "Jaisalmer|Rajasthan|India": {
+    "lat": 27.0264162,
+    "lon": 70.777512,
+    "display_name": "Jaisalmer, Rajasthan, India",
+    "query_used": "Jaisalmer, Rajasthan, India",
+    "found": true
+  },
+  "Chitwan|Bagmati Province|Nepal": {
+    "lat": 27.618086,
+    "lon": 84.4536201,
+    "display_name": "\u091a\u093f\u0924\u0935\u0928 \u091c\u093f\u0932\u094d\u0932\u093e, \u092c\u093e\u0917\u092e\u0924\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Chitwan, Bagmati Province, Nepal",
+    "found": true
+  },
+  "Bandipur|Gandaki Province|Nepal": {
+    "lat": 27.9380224,
+    "lon": 84.4066959,
+    "display_name": "Bandipur, \u0924\u0928\u0939\u0941\u0901, \u0917\u0923\u094d\u0921\u0915\u0940 \u092a\u094d\u0930\u0926\u0947\u0936, 33904, \u0928\u0947\u092a\u093e\u0932",
+    "query_used": "Bandipur, Gandaki Province, Nepal",
+    "found": true
+  },
+  "Uluwatu|Bali|Indonesia": {
+    "lat": -8.8016023,
+    "lon": 115.2312006,
+    "display_name": "Uluwatu, 1, Benoa, Kuta Selatan, Badung, Bali, 80363, Indonesia",
+    "query_used": "Uluwatu, Bali, Indonesia",
+    "found": true
+  },
+  "Samosir Island|North Sumatra|Indonesia": {
+    "lat": 2.5936293,
+    "lon": 98.8010823,
+    "display_name": "Pulau Samosir, Samosir, Sumatera Utara, Indonesia",
+    "query_used": "Samosir Island, North Sumatra, Indonesia",
+    "found": true
+  },
+  "Bukittinggi|West Sumatra|Indonesia": {
+    "lat": -0.3051954,
+    "lon": 100.3694921,
+    "display_name": "Bukittinggi, Sumatera Barat, Indonesia",
+    "query_used": "Bukittinggi, West Sumatra, Indonesia",
+    "found": true
+  },
+  "Yogyakarta|Special Region of Yogyakarta|Indonesia": {
+    "lat": -7.801349,
+    "lon": 110.3647351,
+    "display_name": "Kota Yogyakarta, Depok, Daerah Istimewa Yogyakarta, Indonesia",
+    "query_used": "Yogyakarta, Special Region of Yogyakarta, Indonesia",
+    "found": true
+  },
+  "Yogyakarta|Yogyakarta Region|Indonesia": {
+    "lat": -7.801349,
+    "lon": 110.3647351,
+    "display_name": "Kota Yogyakarta, Depok, Daerah Istimewa Yogyakarta, Indonesia",
+    "query_used": "Yogyakarta, Yogyakarta Region, Indonesia",
+    "found": true
+  },
+  "Unawatuna|Southern Province|Sri Lanka": {
+    "lat": 6.0201774,
+    "lon": 80.2474836,
+    "display_name": "Unawatuna, Rumassala, Galle District, Southern Province, 80600, Sri Lanka",
+    "query_used": "Unawatuna, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Colombo|Western Province|Sri Lanka": {
+    "lat": 6.9388614,
+    "lon": 79.8542005,
+    "display_name": "Colombo, Colombo District, Western Province, Sri Lanka",
+    "query_used": "Colombo, Western Province, Sri Lanka",
+    "found": true
+  },
+  "Midigama|Southern Province|Sri Lanka": {
+    "lat": 5.9652216,
+    "lon": 80.3909468,
+    "display_name": "Midigama, Matara District, Southern Province, 87100, Sri Lanka",
+    "query_used": "Midigama, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Matara|Southern Province|Sri Lanka": {
+    "lat": 5.947822,
+    "lon": 80.5482919,
+    "display_name": "Matara, Matara District, Southern Province, 81000, Sri Lanka",
+    "query_used": "Matara, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Yala National Park|Southern Province|Sri Lanka": {
+    "lat": 6.2798842,
+    "lon": 81.4015115,
+    "display_name": "Yala National Park, Kirinde-Palatupana-Yala Road, Palatupana, Hambantota District, Southern Province, 95000, Sri Lanka",
+    "query_used": "Yala National Park, Southern Province, Sri Lanka",
+    "found": true
+  },
+  "Paris|\u00cele-de-France|France": {
+    "lat": 48.8534951,
+    "lon": 2.3483915,
+    "display_name": "Paris, \u00cele-de-France, France m\u00e9tropolitaine, France",
+    "query_used": "Paris, \u00cele-de-France, France",
+    "found": true
+  },
+  "Berlin|Berlin (Mitte)|Germany": {
+    "lat": 52.5185793,
+    "lon": 13.3935975,
+    "display_name": "Humboldt-Universit\u00e4t zu Berlin - Campus Mitte, Charlottenstra\u00dfe, Dorotheenstadt, Mitte, Berlin, 10117, Deutschland",
+    "query_used": "Berlin, Berlin (Mitte), Germany",
+    "found": true
+  },
+  "Munich||Germany": {
+    "lat": 48.1371079,
+    "lon": 11.5753822,
+    "display_name": "M\u00fcnchen, Bayern, Deutschland",
+    "query_used": "Munich, Germany",
+    "found": true
+  },
+  "Brussels||Belgium": {
+    "lat": 50.8467372,
+    "lon": 4.352493,
+    "display_name": "Bruxelles - Brussel, Brussel-Hoofdstad - Bruxelles-Capitale, R\u00e9gion de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, Belgi\u00eb / Belgique / Belgien",
+    "query_used": "Brussels, Belgium",
+    "found": true
+  },
+  "Bruges||Belgium": {
+    "lat": 51.2085526,
+    "lon": 3.226772,
+    "display_name": "Brugge, West-Vlaanderen, Vlaanderen, Belgi\u00eb / Belgique / Belgien",
+    "query_used": "Bruges, Belgium",
+    "found": true
+  },
+  "Barcelona||Spain": {
+    "lat": 41.3825802,
+    "lon": 2.177073,
+    "display_name": "Barcelona, Barcelon\u00e8s, Barcelona, Catalunya, Espa\u00f1a",
+    "query_used": "Barcelona, Spain",
+    "found": true
+  },
+  "Barcelona|Gr\u00e0cia, Barcelona|Spain": {
+    "lat": 41.4104479,
+    "lon": 2.1584852,
+    "display_name": "Barcelona, 168, Carrer de l'Escorial, el Camp d'en Grassot i Gr\u00e0cia Nova, Gr\u00e0cia, Barcelona, Barcelon\u00e8s, Barcelona, Catalunya, 08024, Espa\u00f1a",
+    "query_used": "Barcelona, Gr\u00e0cia, Barcelona, Spain",
+    "found": true
+  },
+  "Madrid||Spain": {
+    "lat": 40.416782,
+    "lon": -3.703507,
+    "display_name": "Madrid, Comunidad de Madrid, Espa\u00f1a",
+    "query_used": "Madrid, Spain",
+    "found": true
+  },
+  "Seville||Spain": {
+    "lat": 37.3886303,
+    "lon": -5.9953403,
+    "display_name": "Sevilla, Andaluc\u00eda, Espa\u00f1a",
+    "query_used": "Seville, Spain",
+    "found": true
+  },
+  "Granada|Andalusia|Spain": {
+    "lat": 37.1734995,
+    "lon": -3.5995337,
+    "display_name": "Granada, Comarca de la Vega de Granada, Granada, Andaluc\u00eda, Espa\u00f1a",
+    "query_used": "Granada, Andalusia, Spain",
+    "found": true
+  },
+  "Porto|Porto District, Northern Portugal|Portugal": {
+    "lat": 41.1502195,
+    "lon": -8.6103497,
+    "display_name": "Porto, Portugal",
+    "query_used": "Porto, Portugal",
+    "found": true
+  },
+  "Milan|Navigli, Milan|Italy": {
+    "lat": 45.4676041,
+    "lon": 9.1891136,
+    "display_name": "Teatro alla Scala, Via Filodrammatici, Cinque Vie, Brera, Municipio 1, Milano, Rodano, Milano, Lombardia, 20121, Italia",
+    "query_used": "Milan, Navigli, Milan, Italy",
+    "found": true
+  },
+  "Venice||Italy": {
+    "lat": 45.4371908,
+    "lon": 12.3345898,
+    "display_name": "Venezia, Veneto, 30121-30176, Italia",
+    "query_used": "Venice, Italy",
+    "found": true
+  },
+  "Zagreb||Croatia": {
+    "lat": 45.8130967,
+    "lon": 15.9772795,
+    "display_name": "Grad Zagreb, Hrvatska",
+    "query_used": "Zagreb, Croatia",
+    "found": true
+  },
+  "Budapest||Hungary": {
+    "lat": 47.4978789,
+    "lon": 19.0402383,
+    "display_name": "Budapest, K\u00f6z\u00e9p-Magyarorsz\u00e1g, Magyarorsz\u00e1g",
+    "query_used": "Budapest, Hungary",
+    "found": true
+  },
+  "Budapest|Central Hungary (Soho district, Budapest)|Hungary": {
+    "lat": 47.4978789,
+    "lon": 19.0402383,
+    "display_name": "Budapest, K\u00f6z\u00e9p-Magyarorsz\u00e1g, Magyarorsz\u00e1g",
+    "query_used": "Budapest, Hungary",
+    "found": true
+  },
+  "Warsaw||Poland": {
+    "lat": 52.2333742,
+    "lon": 21.0711489,
+    "display_name": "Warszawa, wojew\u00f3dztwo mazowieckie, Polska",
+    "query_used": "Warsaw, Poland",
+    "found": true
+  },
+  "Bratislava||Slovakia": {
+    "lat": 48.1516988,
+    "lon": 17.1093063,
+    "display_name": "Bratislava, Bratislavsk\u00fd kraj, Slovensko",
+    "query_used": "Bratislava, Slovakia",
+    "found": true
+  },
+  "Stockholm||Sweden": {
+    "lat": 59.3251172,
+    "lon": 18.0710935,
+    "display_name": "Stockholm, Stockholms kommun, Stockholms l\u00e4n, 111 29, Sverige",
+    "query_used": "Stockholm, Sweden",
+    "found": true
+  },
+  "Riga|Riga Region|Latvia": {
+    "lat": 56.9493977,
+    "lon": 24.1051846,
+    "display_name": "R\u012bga, Latvija",
+    "query_used": "Riga, Latvia",
+    "found": true
+  },
+  "Ljubljana|Upper Carniola|Slovenia": {
+    "lat": 46.0500268,
+    "lon": 14.5069289,
+    "display_name": "Ljubljana, Upravna Enota Ljubljana, 1000, Slovenija",
+    "query_used": "Ljubljana, Slovenia",
+    "found": true
+  },
+  "Galway||Ireland": {
+    "lat": 53.2744122,
+    "lon": -9.0490601,
+    "display_name": "Cathair na Gaillimhe, County Galway, Connacht, \u00c9ire / Ireland",
+    "query_used": "Galway, Ireland",
+    "found": true
+  },
+  "Reykjavik||Iceland": {
+    "lat": 64.145981,
+    "lon": -21.9422367,
+    "display_name": "Reykjav\u00edkurborg, H\u00f6fu\u00f0borgarsv\u00e6\u00f0i\u00f0, \u00cdsland",
+    "query_used": "Reykjavik, Iceland",
+    "found": true
+  },
+  "Split||Croatia": {
+    "lat": 43.5116383,
+    "lon": 16.4399659,
+    "display_name": "Split, Grad Split, Splitsko-dalmatinska \u017eupanija, Hrvatska",
+    "query_used": "Split, Croatia",
+    "found": true
+  },
+  "Helsinki||Finland": {
+    "lat": 60.1666204,
+    "lon": 24.9435408,
+    "display_name": "Helsinki, Helsingin seutukunta, Uusimaa, Manner-Suomi, Suomi / Finland",
+    "query_used": "Helsinki, Finland",
+    "found": true
+  },
+  "Vilnius||Lithuania": {
+    "lat": 54.6870458,
+    "lon": 25.2829111,
+    "display_name": "Vilnius, Vilniaus miesto savivaldyb\u0117, Vilniaus apskritis, Lietuva",
+    "query_used": "Vilnius, Lithuania",
+    "found": true
+  },
+  "Lucerne|Canton of Lucerne|Switzerland": {
+    "lat": 47.052144,
+    "lon": 8.3058123,
+    "display_name": "Luzern, Schweiz/Suisse/Svizzera/Svizra",
+    "query_used": "Lucerne, Canton of Lucerne, Switzerland",
+    "found": true
+  },
+  "Valencia||Spain": {
+    "lat": 39.4697065,
+    "lon": -0.3763353,
+    "display_name": "Val\u00e8ncia, Comarca de Val\u00e8ncia, Val\u00e8ncia / Valencia, Comunitat Valenciana, Espa\u00f1a",
+    "query_used": "Valencia, Spain",
+    "found": true
+  },
+  "Ghent|East Flanders Province|Belgium": {
+    "lat": 51.0538286,
+    "lon": 3.7250121,
+    "display_name": "Gent, Oost-Vlaanderen, Vlaanderen, Belgi\u00eb / Belgique / Belgien",
+    "query_used": "Ghent, Belgium",
+    "found": true
+  },
+  "Split|Split-Dalmatia County, Dalmatia|Croatia": {
+    "lat": 43.5116383,
+    "lon": 16.4399659,
+    "display_name": "Split, Grad Split, Splitsko-dalmatinska \u017eupanija, Hrvatska",
+    "query_used": "Split, Split-Dalmatia County, Dalmatia, Croatia",
+    "found": true
+  },
+  "Arequipa||Peru": {
+    "lat": -16.3988667,
+    "lon": -71.5369607,
+    "display_name": "Arequipa, 04001, Per\u00fa",
+    "query_used": "Arequipa, Peru",
+    "found": true
+  },
+  "Huacachina||Peru": {
+    "lat": -14.0875914,
+    "lon": -75.7630553,
+    "display_name": "Huacachina, Comatrana, Huacachina, Ica, Per\u00fa",
+    "query_used": "Huacachina, Peru",
+    "found": true
+  },
+  "Mancora|Piura Region|Peru": {
+    "lat": -4.1551963,
+    "lon": -81.0061242,
+    "display_name": "M\u00e1ncora, Talara, Piura, Per\u00fa",
+    "query_used": "Mancora, Piura Region, Peru",
+    "found": true
+  },
+  "Buenos Aires|Ciudad Aut\u00f3noma de Buenos Aires|Argentina": {
+    "lat": -34.6095579,
+    "lon": -58.3887904,
+    "display_name": "Buenos Aires, Comuna 1, Ciudad Aut\u00f3noma de Buenos Aires, Argentina",
+    "query_used": "Buenos Aires, Ciudad Aut\u00f3noma de Buenos Aires, Argentina",
+    "found": true
+  },
+  "Mendoza|Mendoza Province|Argentina": {
+    "lat": -34.7044648,
+    "lon": -58.4318562,
+    "display_name": "Mendoza y Magallanes, Mendoza, Villa Caraza, Lan\u00fas Oeste, Partido de Lan\u00fas, Buenos Aires, 1827, Argentina",
+    "query_used": "Mendoza, Mendoza Province, Argentina",
+    "found": true
+  },
+  "Bariloche|Rio Negro Province, Patagonia|Argentina": {
+    "lat": -41.1334781,
+    "lon": -71.3101474,
+    "display_name": "San Carlos de Bariloche, Municipio de San Carlos de Bariloche, Departamento Bariloche, R\u00edo Negro, 8400, Argentina",
+    "query_used": "Bariloche, Argentina",
+    "found": true
+  },
+  "Bariloche||Argentina": {
+    "lat": -41.1334781,
+    "lon": -71.3101474,
+    "display_name": "San Carlos de Bariloche, Municipio de San Carlos de Bariloche, Departamento Bariloche, R\u00edo Negro, 8400, Argentina",
+    "query_used": "Bariloche, Argentina",
+    "found": true
+  },
+  "Salta||Argentina": {
+    "lat": -25.2269908,
+    "lon": -64.5911956,
+    "display_name": "Salta, Argentina",
+    "query_used": "Salta, Argentina",
+    "found": true
+  },
+  "Salta|Salta Province|Argentina": {
+    "lat": -31.7281737,
+    "lon": -60.5230802,
+    "display_name": "Villegas Salta, 543, Salta, Barrio Leandro N. Alem, Paran\u00e1, Municipio de Paran\u00e1, Distrito Sauce, Departamento Paran\u00e1, Entre R\u00edos, 3100, Argentina",
+    "query_used": "Salta, Salta Province, Argentina",
+    "found": true
+  },
+  "Valparaiso|Valpara\u00edso Region|Chile": {
+    "lat": -33.0458456,
+    "lon": -71.6196749,
+    "display_name": "Valpara\u00edso, Provincia de Valpara\u00edso, Regi\u00f3n de Valpara\u00edso, Chile",
+    "query_used": "Valparaiso, Valpara\u00edso Region, Chile",
+    "found": true
+  },
+  "Valparaiso|Valparaiso Region|Chile": {
+    "lat": -33.0458456,
+    "lon": -71.6196749,
+    "display_name": "Valpara\u00edso, Provincia de Valpara\u00edso, Regi\u00f3n de Valpara\u00edso, Chile",
+    "query_used": "Valparaiso, Valparaiso Region, Chile",
+    "found": true
+  },
+  "San Pedro de Atacama|Antofagasta Region|Chile": {
+    "lat": -23.3545489,
+    "lon": -67.9026571,
+    "display_name": "San Pedro de Atacama, Provincia de El Loa, Regi\u00f3n de Antofagasta, Chile",
+    "query_used": "San Pedro de Atacama, Antofagasta Region, Chile",
+    "found": true
+  },
+  "Medellin|Antioquia Department|Colombia": {
+    "lat": 6.2697324,
+    "lon": -75.6025597,
+    "display_name": "Medell\u00edn, Valle de Aburr\u00e1, Antioquia, RAP del Agua y la Monta\u00f1a, 0500, Colombia",
+    "query_used": "Medellin, Colombia",
+    "found": true
+  },
+  "Medellin||Colombia": {
+    "lat": 6.2697324,
+    "lon": -75.6025597,
+    "display_name": "Medell\u00edn, Valle de Aburr\u00e1, Antioquia, RAP del Agua y la Monta\u00f1a, 0500, Colombia",
+    "query_used": "Medellin, Colombia",
+    "found": true
+  },
+  "Cartagena|Bolivar Department|Colombia": {
+    "lat": 10.4265566,
+    "lon": -75.5441671,
+    "display_name": "Cartagena de Indias, Dique, Bol\u00edvar, RAP Caribe, Colombia",
+    "query_used": "Cartagena, Colombia",
+    "found": true
+  },
+  "Salento||Colombia": {
+    "lat": 4.6373012,
+    "lon": -75.569799,
+    "display_name": "Salento, Fr\u00eda, Quind\u00edo, RAP Eje Cafetero, Colombia",
+    "query_used": "Salento, Colombia",
+    "found": true
+  },
+  "Rio de Janeiro|State of Rio de Janeiro|Brazil": {
+    "lat": -22.9110137,
+    "lon": -43.2093727,
+    "display_name": "Rio de Janeiro, Regi\u00e3o Sudeste, Brasil",
+    "query_used": "Rio de Janeiro, Brazil",
+    "found": true
+  },
+  "Sao Paulo||Brazil": {
+    "lat": -23.5506507,
+    "lon": -46.6333824,
+    "display_name": "S\u00e3o Paulo, Regi\u00e3o Sudeste, Brasil",
+    "query_used": "Sao Paulo, Brazil",
+    "found": true
+  },
+  "La Paz|La Paz Department|Bolivia": {
+    "lat": -17.7956473,
+    "lon": -63.1967342,
+    "display_name": "Paloma de la Paz, Rotonda Paloma de la Paz, Urbar\u00ed, El Pari, Municipio Santa Cruz de la Sierra, Provincia Andr\u00e9s Ib\u00e1\u00f1ez, Santa Cruz, Bolivia",
+    "query_used": "La Paz, La Paz Department, Bolivia",
+    "found": true
+  },
+  "Quito|Pichincha Province|Ecuador": {
+    "lat": -0.2201641,
+    "lon": -78.5123274,
+    "display_name": "Quito, Pichincha, 170130, Ecuador",
+    "query_used": "Quito, Ecuador",
+    "found": true
+  },
+  "Banos||Ecuador": {
+    "lat": -1.3319157,
+    "lon": -78.2625285,
+    "display_name": "Ba\u00f1os, Tungurahua, Ecuador",
+    "query_used": "Banos, Ecuador",
+    "found": true
+  },
+  "Banos|Tungurahua Province|Ecuador": {
+    "lat": -1.3319157,
+    "lon": -78.2625285,
+    "display_name": "Ba\u00f1os, Tungurahua, Ecuador",
+    "query_used": "Banos, Ecuador",
+    "found": true
+  },
+  "Vagator|Goa|India": {
+    "lat": 15.5985735,
+    "lon": 73.7408126,
+    "display_name": "Vagator, Bardez, North Goa, Goa, 403519, India",
+    "query_used": "Vagator, Goa, India",
+    "found": true
+  },
+  "Agonda|Goa|India": {
+    "lat": 15.0411042,
+    "lon": 73.9882421,
+    "display_name": "Agonda, Canacona, Kushavati, Goa, 503702, India",
+    "query_used": "Agonda, Goa, India",
+    "found": true
+  },
+  "Kahatamaditta (Ella area)|Uva Province|Sri Lanka": {
+    "lat": 6.9609465,
+    "lon": 81.2394711,
+    "display_name": "Uva Province, Sri Lanka",
+    "query_used": "Uva Province, Sri Lanka",
+    "found": true
+  },
+  "Yahalewela (Ella area)|Uva Province|Sri Lanka": {
+    "lat": 6.9609465,
+    "lon": 81.2394711,
+    "display_name": "Uva Province, Sri Lanka",
+    "query_used": "Uva Province, Sri Lanka",
+    "found": true
+  },
+  "Ella (Goussagama area)|Uva Province|Sri Lanka": {
+    "lat": 6.9609465,
+    "lon": 81.2394711,
+    "display_name": "Uva Province, Sri Lanka",
+    "query_used": "Uva Province, Sri Lanka",
+    "found": true
+  },
+  "Lovina|Bali|Indonesia": {
+    "lat": -8.1609242,
+    "lon": 115.0245321,
+    "display_name": "Pantai Lovina, Kalibukbuk, Buleleng, Bali, 81119, Indonesia",
+    "query_used": "Lovina, Bali, Indonesia",
+    "found": true
+  },
+  "Senggigi|West Nusa Tenggara|Indonesia": {
+    "lat": -8.4951706,
+    "lon": 116.0447453,
+    "display_name": "Senggigi, Lombok Barat, Nusa Tenggara Barat, 83355, Indonesia",
+    "query_used": "Senggigi, West Nusa Tenggara, Indonesia",
+    "found": true
+  },
+  "Selong Belanak|West Nusa Tenggara|Indonesia": {
+    "lat": -8.8832436,
+    "lon": 116.1662714,
+    "display_name": "batas Dusun Selong Belanak, Selongbelanak, Lombok Tengah, Nusa Tenggara Barat, Indonesia",
+    "query_used": "Selong Belanak, West Nusa Tenggara, Indonesia",
+    "found": true
+  }
+}

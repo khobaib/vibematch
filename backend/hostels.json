@@ -180,7 +180,9 @@
         "Independence Monument",
         "Tuol Sleng Genocide Museum",
         "riverside"
-      ]
+      ],
+      "lat": 11.5730391,
+      "lng": 104.857807
     },
     "staff": {
       "friendliness": "excellent, frequently praised by name in reviews",
@@ -413,7 +415,9 @@
         "Rajbaga Beach",
         "Bombay Coffee Roasters",
         "Tattwa Resto-bar"
-      ]
+      ],
+      "lat": 15.012796,
+      "lng": 74.0219498
     },
     "staff": {
       "friendliness": "excellent, owners (Deep and Stiven) personally praised by guests",
@@ -655,7 +659,9 @@
         "Edava Beach (<1km)",
         "Varkala Beach (1.9km)",
         "Varkala Aquarium"
-      ]
+      ],
+      "lat": 8.7340434,
+      "lng": 76.7252855
     },
     "staff": {
       "friendliness": "inconsistent across reviews - some guests praise hosts by name, others report disappointing service",
@@ -899,7 +905,9 @@
         "Pai Night Market (400yd)",
         "Pai Walking Street (4 min walk)",
         "Jikko Bar"
-      ]
+      ],
+      "lat": 19.3581061,
+      "lng": 98.4405794
     },
     "staff": {
       "friendliness": "highly praised in reviews, host described as going above and beyond (e.g. personal bike ride to hidden location)",
@@ -1145,7 +1153,9 @@
         "Taksim Metro Station (800m)",
         "Galata",
         "Beyoglu"
-      ]
+      ],
+      "lat": 41.006381,
+      "lng": 28.9758715
     },
     "staff": {
       "friendliness": "excellent, consistently praised, staff member Talha specifically called out often",
@@ -1343,7 +1353,9 @@
         "Canggu Shortcut Road",
         "coffee shops and restaurants",
         "padel and volleyball court"
-      ]
+      ],
+      "lat": -8.6399025,
+      "lng": 115.1436048
     },
     "staff": {
       "friendliness": null,
@@ -1557,7 +1569,9 @@
         "Talpona Beach (7.5km)",
         "Agonda Beach (7.7km)",
         "Avocado Garden Restaurant & Bar"
-      ]
+      ],
+      "lat": 15.012796,
+      "lng": 74.0219498
     },
     "staff": {
       "friendliness": "generally praised, though mixed with some complaints about pricing/refund honesty",
@@ -1768,7 +1782,9 @@
         "Qutub Minar (1.5-2.6km)",
         "Chhattarpur Village bus station (650m)",
         "Chhatarpur Temple"
-      ]
+      ],
+      "lat": 28.6664535,
+      "lng": 77.2169781
     },
     "staff": {
       "friendliness": "exceptionally friendly and helpful per most reviews, feels like home/family",
@@ -2003,7 +2019,9 @@
         "Fort Kochi bus stand (5 min walk)",
         "St. Francis Church",
         "spice markets"
-      ]
+      ],
+      "lat": 9.9679032,
+      "lng": 76.2444378
     },
     "staff": {
       "friendliness": null,
@@ -2232,7 +2250,9 @@
         "Malioboro Street (10 min drive)",
         "traditional market",
         "massage & spa"
-      ]
+      ],
+      "lat": -7.7953473,
+      "lng": 110.3672845
     },
     "staff": {
       "friendliness": "exceptional, warm and family-like atmosphere consistently praised",
@@ -2438,7 +2458,9 @@
         "Senayan City Mall",
         "Kemang",
         "Gelora Bung Karno Stadium"
-      ]
+      ],
+      "lat": -6.1754049,
+      "lng": 106.827168
     },
     "staff": {
       "friendliness": "friendly and helpful per most reviews",
@@ -2626,7 +2648,9 @@
         "Hadrian's Gate (9 min walk)",
         "Karaalioglu Park",
         "Antalya Kaleici"
-      ]
+      ],
+      "lat": 36.8865728,
+      "lng": 30.7030242
     },
     "staff": {
       "friendliness": "excellent, staff and event coordinators repeatedly praised by name (Gav, Urvi)",
@@ -2854,7 +2878,9 @@
         "Agora ruins (5 min)",
         "Kemeralti Grand Bazaar (10 min)",
         "Ataturk Museum"
-      ]
+      ],
+      "lat": 38.4192537,
+      "lng": 27.128469
     },
     "staff": {
       "friendliness": "very kind and helpful, owner Ahmet personally praised for craftsmanship and hospitality",
@@ -3077,7 +3103,9 @@
         "bus station (200m)",
         "St. John's Basilica (0.4km)",
         "Temple of Hadrian"
-      ]
+      ],
+      "lat": 38.433365,
+      "lng": 30.301647
     },
     "staff": {
       "friendliness": "exceptional, family-run by Candy and Huseyin, repeatedly described as making guests feel part of the family",
@@ -3296,7 +3324,9 @@
         "Taksim Square (6-7 min walk)",
         "Galataport",
         "Galata Tower (800m)"
-      ]
+      ],
+      "lat": 41.006381,
+      "lng": 28.9758715
     },
     "staff": {
       "friendliness": "warm and welcoming per most reviews",
@@ -3510,7 +3540,9 @@
         "Chang Puak Market",
         "Wat Phra Singh (1.4km)",
         "Chedi Luang Temple (1.3km)"
-      ]
+      ],
+      "lat": 18.7882778,
+      "lng": 98.9858802
     },
     "staff": {
       "friendliness": "very friendly and helpful, owner personally praised for kindness",
@@ -3711,7 +3743,9 @@
         "Thai Hua Museum (13 min walk)",
         "Old Phuket Town (0.7km)",
         "Chinpracha House"
-      ]
+      ],
+      "lat": 7.9366015,
+      "lng": 98.3529292
     },
     "staff": {
       "friendliness": "very helpful per reviews",
@@ -3932,7 +3966,9 @@
         "Saraswati Temple",
         "rice field walk (5 min)",
         "Campuhan Ridge Walk"
-      ]
+      ],
+      "lat": -8.5170195,
+      "lng": 115.2550507
     },
     "staff": {
       "friendliness": "exceptional, family-run and repeatedly described as making guests feel like family",
@@ -4157,7 +4193,9 @@
         "Kuta Beach (6 min drive)",
         "Seminyak Beach (2.4km)",
         "Double Six Beach"
-      ]
+      ],
+      "lat": -8.6898586,
+      "lng": 115.1667783
     },
     "staff": {
       "friendliness": "consistently praised across reviews as friendly, professional, attentive",
@@ -4356,7 +4394,9 @@
         "Samudra Beach",
         "Grove Beach",
         "Taste of Kerala restaurant (400m)"
-      ]
+      ],
+      "lat": 8.3902593,
+      "lng": 76.9785152
     },
     "staff": {
       "friendliness": "exceptional, hosts personally and repeatedly praised by name across reviews",
@@ -4571,7 +4611,9 @@
         "Aliyarakkam Beach (6 min walk)",
         "Varkala Cliff (0.44-1.2km)",
         "Janardhanaswamy Temple (0.45-0.7km)"
-      ]
+      ],
+      "lat": 8.7340434,
+      "lng": 76.7252855
     },
     "staff": {
       "friendliness": "exceptional - traveler confirms young owner Molly is personally, actively involved in day-to-day management and consistently around the property",
@@ -4791,7 +4833,9 @@
         "Camp Nou (5 min drive)",
         "Placa d'Espanya (0.6mi)",
         "Barcelona train station (5 min walk)"
-      ]
+      ],
+      "lat": 41.3825802,
+      "lng": 2.177073
     },
     "staff": {
       "friendliness": "very friendly, strict but fair noise policy for guest rest",
@@ -5001,7 +5045,9 @@
         "Mahakal Temple (6.8km)",
         "Himalayan Mountaineering Institute (7.1km)",
         "shared cab stand (close)"
-      ]
+      ],
+      "lat": 27.0377554,
+      "lng": 88.263176
     },
     "staff": {
       "friendliness": "exceptional, staff Rozar and Vivek specifically and repeatedly named and praised",
@@ -5232,7 +5278,9 @@
         "Kasol Hot Water Spring (25 min walk)",
         "Chalal Trek Trail (1.9km)",
         "Manikaran Sahib Temple (2.2km)"
-      ]
+      ],
+      "lat": 32.0104317,
+      "lng": 77.3166036
     },
     "staff": {
       "friendliness": "very positive across most recent reviews, though staff/manager names vary significantly by review year",
@@ -5462,7 +5510,9 @@
         "Hidimba Devi Temple",
         "Manu Temple",
         "Clubhouse Manali (300m)"
-      ]
+      ],
+      "lat": 32.2454608,
+      "lng": 77.1872926
     },
     "staff": {
       "friendliness": "exceptional and consistently praised across nearly all reviews",
@@ -5692,7 +5742,9 @@
         "Dasaswamedh Ghat (1.1 mi)",
         "Manikarnika Ghat (1.2 mi)",
         "Assi Ghat"
-      ]
+      ],
+      "lat": 25.3356491,
+      "lng": 83.0076292
     },
     "staff": {
       "friendliness": "exceptional, staff (esp. Nitin and Sonu) repeatedly praised by name",
@@ -5919,7 +5971,9 @@
         "Amber Fort (7.5mi)",
         "Jantar Mantar (25 min walk)",
         "Hawa Mahal (30 min walk)"
-      ]
+      ],
+      "lat": 26.9154576,
+      "lng": 75.8189817
     },
     "staff": {
       "friendliness": "exceptional and consistently the top-praised feature across nearly every review",
@@ -6118,7 +6172,9 @@
         "Pushkar Lake (300-800m)",
         "Varaha Temple (700m)",
         "Pushkar Stand bus station (0.3mi)"
-      ]
+      ],
+      "lat": 26.4876472,
+      "lng": 74.5578484
     },
     "staff": {
       "friendliness": "consistently described as a key strength, warm and welcoming",
@@ -6324,7 +6380,9 @@
         "Pratunam Market (1.5mi)",
         "Siam Paragon Mall (5 min drive)",
         "BTS station nearby"
-      ]
+      ],
+      "lat": 13.7524938,
+      "lng": 100.4935089
     },
     "staff": {
       "friendliness": null,
@@ -6538,7 +6596,9 @@
         "Bangchak BTS station (90-100m)",
         "7-Eleven next door",
         "street food nearby"
-      ]
+      ],
+      "lat": 13.7524938,
+      "lng": 100.4935089
     },
     "staff": {
       "friendliness": "mostly friendly and helpful; isolated report of a hostile front-desk interaction",
@@ -6748,7 +6808,9 @@
         "Ao Nang Beach (1.2mi)",
         "Ao Nang Krabi Boxing Stadium (2.7mi)",
         "Noppharat Thara Beach (25 min walk)"
-      ]
+      ],
+      "lat": 7.7211734,
+      "lng": 98.7655426
     },
     "staff": {
       "friendliness": "very social and helpful, staff actively involve guests in activities",
@@ -6934,7 +6996,9 @@
         "Bangla Road (close)",
         "Patong Beach (10 min walk)",
         "Jungceylon Shopping Center (5 min walk)"
-      ]
+      ],
+      "lat": 7.8994173,
+      "lng": 98.3087176
     },
     "staff": {
       "friendliness": "consistently praised as excellent and amazing for the price point",
@@ -7118,7 +7182,9 @@
         "Thong Sala Pier (10 min drive)",
         "Haad Rin Beach/Full Moon Party site (15 min drive)",
         "Wat Khao Tham (1.4mi)"
-      ]
+      ],
+      "lat": 9.7349503,
+      "lng": 100.0305711
     },
     "staff": {
       "friendliness": "exceptional, described as feeling like family, staff/owners/volunteers all specifically praised",
@@ -7347,7 +7413,9 @@
         "Patnem Beach (walking distance)",
         "Colomb village",
         "Cabo De Rama Fort (15mi)"
-      ]
+      ],
+      "lat": 15.012796,
+      "lng": 74.0219498
     },
     "staff": {
       "friendliness": "warm and welcoming, multiple staff repeatedly praised by name across years of reviews",
@@ -7574,7 +7642,9 @@
         "Ozran Beach (25 min walk)",
         "Club Cubana (3km)",
         "Anjuna bus station (650m)"
-      ]
+      ],
+      "lat": 15.5850408,
+      "lng": 73.7438151
     },
     "staff": {
       "friendliness": "warm, described as a 'family', volunteers add to the vibe",
@@ -7762,7 +7832,9 @@
         "Vagator Beach (1.8mi)",
         "Ozran Beach (1.9mi)",
         "Chapora Fort (2.6km)"
-      ]
+      ],
+      "lat": 15.5915905,
+      "lng": 73.7437859
     },
     "staff": {
       "friendliness": "exceptional, manager Raj is the single most repeated praise point across nearly every review",
@@ -7990,7 +8062,9 @@
         "Calicut Railway Station (0.6mi)",
         "Mishkal Mosque (7 min walk)",
         "spice market"
-      ]
+      ],
+      "lat": 11.2450558,
+      "lng": 75.7754716
     },
     "staff": {
       "friendliness": "exceptional, consistently one of the top-praised elements",
@@ -8210,7 +8284,9 @@
         "Varkala Beach (steps away)",
         "Varkala Cliff (0.16km)",
         "Varkala Sivagiri Railway Station (3km)"
-      ]
+      ],
+      "lat": 8.7340434,
+      "lng": 76.7252855
     },
     "staff": {
       "friendliness": "STRONGLY MIXED - see communication_quality note",
@@ -8430,7 +8506,9 @@
         "Varkala Aquarium (5 min walk)",
         "Varkala Cliff sunset (18 min walk)",
         "Edava Beach (25 min walk)"
-      ]
+      ],
+      "lat": 8.7340434,
+      "lng": 76.7252855
     },
     "staff": {
       "friendliness": "excellent per most aggregator summaries, though this conflicts with the low Travelocity score",
@@ -8641,7 +8719,9 @@
       "nearby_raw_text": [
         "Nacpan Beach (on-site, 4km beach)",
         "El Nido town center (remote, tuktuk needed)"
-      ]
+      ],
+      "lat": 11.1800395,
+      "lng": 119.390496
     },
     "staff": {
       "friendliness": "consistently praised, staff (esp. Jase) frequently mentioned by name for going beyond expectations",
@@ -8872,7 +8952,9 @@
         "Museum Sonobudoyo (2.8km)",
         "Taman Sari Water Castle (walking distance)",
         "Pasar Beringharjo Market (2.4km)"
-      ]
+      ],
+      "lat": -7.7953473,
+      "lng": 110.3672845
     },
     "staff": {
       "friendliness": "very friendly, calm, and peaceful atmosphere consistently noted",
@@ -9090,7 +9172,9 @@
         "Taj Mahal (200m / 4-8 min walk)",
         "Agra Fort (2.4mi)",
         "TDI Mall (1.7mi)"
-      ]
+      ],
+      "lat": 27.1752554,
+      "lng": 78.0098161
     },
     "staff": {
       "friendliness": "exceptional and consistently the top-praised element, staff member Rajeev singled out repeatedly",
@@ -9303,7 +9387,9 @@
       "nearby_raw_text": [
         "Hanoi Old Quarter",
         "Tay Ho area"
-      ]
+      ],
+      "lat": 21.0283334,
+      "lng": 105.854041
     },
     "staff": {
       "friendliness": "very friendly, described as knowing 'their stuff' about the city",
@@ -9493,7 +9579,9 @@
         "Ella town center (5 min walk)",
         "railway line (adjacent)",
         "tea plantations"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "exceptional and the single most repeated praise point across nearly all reviews",
@@ -9669,7 +9757,9 @@
       ],
       "nearby_raw_text": [
         "Thamel district (walking distance)"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "genuinely warm, owner personally engaged with every guest and review",
@@ -9846,7 +9936,9 @@
       "nearby_raw_text": [
         "Cusco historic center",
         "Velasco Astete International Airport (4km)"
-      ]
+      ],
+      "lat": -13.5170887,
+      "lng": -71.9785356
     },
     "staff": {
       "friendliness": "professional, hotel-quality service level",
@@ -10014,7 +10106,9 @@
       ],
       "nearby_raw_text": [
         "El Poblado neighborhood (backpacker hub)"
-      ]
+      ],
+      "lat": 6.2697324,
+      "lng": -75.6025597
     },
     "staff": {
       "friendliness": null,
@@ -10223,7 +10317,9 @@
         "Pra\u00e7a do Com\u00e9rcio (5 min walk)",
         "Alfama district",
         "historic center landmarks"
-      ]
+      ],
+      "lat": 38.7077507,
+      "lng": -9.1365919
     },
     "staff": {
       "friendliness": "exceptional, described repeatedly as making guests feel at home",
@@ -10406,7 +10502,9 @@
       "nearby_raw_text": [
         "Medina (heart of Marrakech's old city)",
         "traditional souks nearby"
-      ]
+      ],
+      "lat": 31.6258257,
+      "lng": -7.9891608
     },
     "staff": {
       "friendliness": "welcoming, described as an absolute trip highlight in a detailed review",
@@ -10632,7 +10730,9 @@
         "Swayambhunath Temple (25 min walk)",
         "Garden of Dreams (20 min walk)",
         "Boudhanath Stupa (15 min drive)"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "exceptional and one of the most consistently repeated praise points in the entire dataset, guests return 4-5 times specifically because of it",
@@ -10847,7 +10947,9 @@
       "nearby_raw_text": [
         "Brahma Sagar and ghats (short walk)",
         "Pushkar market (5-10 min walk)"
-      ]
+      ],
+      "lat": 26.4876472,
+      "lng": 74.5578484
     },
     "staff": {
       "friendliness": "consistently praised as very helpful and professional",
@@ -11065,7 +11167,9 @@
         "Thamel (267m)",
         "Kathmandu Durbar Square (1.12km)",
         "Swayambhunath Stupa (1.97km)"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "mostly warm and helpful per majority of reviews; management responds constructively to negative feedback",
@@ -11273,7 +11377,9 @@
       "nearby_raw_text": [
         "Pushkar Lake (10 min walk)",
         "Zostel Pushkar (neighboring property)"
-      ]
+      ],
+      "lat": 26.4876472,
+      "lng": 74.5578484
     },
     "staff": {
       "friendliness": "mostly warm per most reviews, staff Arbaz and Nitish specifically named favorably",
@@ -11514,7 +11620,9 @@
         "Fewa Lake (1.2km)",
         "south end of Lakeside district",
         "trekking gear shops, bike rentals, cafes nearby"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "exceptionally warm and welcoming, both staff and fellow guests consistently praised for kindness",
@@ -11702,7 +11810,9 @@
       "nearby_raw_text": [
         "Angkor temples (shuttle available)",
         "central Siem Reap"
-      ]
+      ],
+      "lat": 13.3617562,
+      "lng": 103.8590321
     },
     "staff": {
       "friendliness": "kind and professional, consistently described as the best customer service found in Cambodia by one reviewer",
@@ -11879,7 +11989,9 @@
       "nearby_raw_text": [
         "Luang Prabang center",
         "night market"
-      ]
+      ],
+      "lat": 19.8887438,
+      "lng": 102.135898
     },
     "staff": {
       "friendliness": "extraordinary, owner Mr Shampoo personally housed stranded guests in his own home during Lao New Year",
@@ -12049,7 +12161,9 @@
       ],
       "nearby_raw_text": [
         "Vang Vieng center"
-      ]
+      ],
+      "lat": 18.9538961,
+      "lng": 102.4563909
     },
     "staff": {
       "friendliness": "amazing and helpful, staff member Mr. Mohammad at the pool bar specifically named and praised",
@@ -12253,7 +12367,9 @@
         "Bui Vien Street (short walk)",
         "Ben Thanh Market (short walk)",
         "lush park adjacent"
-      ]
+      ],
+      "lat": 10.7737261,
+      "lng": 106.7166008
     },
     "staff": {
       "friendliness": "very friendly, several staff repeatedly named and praised across years of reviews",
@@ -12461,7 +12577,9 @@
       "nearby_raw_text": [
         "Hoi An historic old town",
         "Hoi An beaches"
-      ]
+      ],
+      "lat": 15.8836771,
+      "lng": 108.3253961
     },
     "staff": {
       "friendliness": "exceptional and specifically named across many detailed reviews - Dan, Andy, Ruby all individually praised",
@@ -12645,7 +12763,9 @@
       "nearby_raw_text": [
         "central George Town",
         "easy access to most attractions"
-      ]
+      ],
+      "lat": 5.4141619,
+      "lng": 100.3287352
     },
     "staff": {
       "friendliness": "warm and genuinely helpful per reviews",
@@ -12809,7 +12929,9 @@
       ],
       "nearby_raw_text": [
         "3 MRT stations within walking distance including Chinatown MRT"
-      ]
+      ],
+      "lat": 1.2899175,
+      "lng": 103.8519072
     },
     "staff": {
       "friendliness": null,
@@ -12970,7 +13092,9 @@
       ],
       "nearby_raw_text": [
         "Boracay beach"
-      ]
+      ],
+      "lat": 11.9693692,
+      "lng": 121.9227339
     },
     "staff": {
       "friendliness": null,
@@ -13131,7 +13255,9 @@
       "nearby_raw_text": [
         "Gili Trawangan beach (walking distance)",
         "close but set back from the noisy party strip"
-      ]
+      ],
+      "lat": -8.3503396,
+      "lng": 116.0362621
     },
     "staff": {
       "friendliness": "exceptional, described by name repeatedly as the standout reason guests extend their stay",
@@ -13304,7 +13430,9 @@
       "nearby_raw_text": [
         "East side of Chiang Mai Old City",
         "minutes from Thapae Gate"
-      ]
+      ],
+      "lat": 18.7882778,
+      "lng": 98.9858802
     },
     "staff": {
       "friendliness": "exceptional, multiple staff individually named and praised across many reviews",
@@ -13519,7 +13647,9 @@
         "Sisowath Quay riverfront",
         "night market (around the corner)",
         "Killing Fields and museum (tour organized by hostel)"
-      ]
+      ],
+      "lat": 11.5730391,
+      "lng": 104.857807
     },
     "staff": {
       "friendliness": "exceptionally helpful and enthusiastic, described across many reviews with staff member Lin specifically named",
@@ -13768,7 +13898,9 @@
         "Angkor Night Market",
         "Old Market Area",
         "Siem Reap Market (5 min walk)"
-      ]
+      ],
+      "lat": 13.3617562,
+      "lng": 103.8590321
     },
     "staff": {
       "friendliness": "exceptionally sweet and helpful, one of the most consistently repeated praise points across every source searched",
@@ -13934,7 +14066,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 7.9566634,
+      "lng": 80.7599301
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -14114,7 +14248,9 @@
       "nearby_towns": [
         "Mirissa",
         "Ahangama"
-      ]
+      ],
+      "lat": 5.9751305,
+      "lng": 80.429139
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -14270,7 +14406,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 5.9493634,
+      "lng": 80.4558128
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -14452,7 +14590,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 6.9388614,
+      "lng": 79.8542005
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -14630,7 +14770,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 5.9735163,
+      "lng": 80.3622999
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -14808,7 +14950,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -33.8698439,
+      "lng": 151.2082848
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -14992,7 +15136,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -37.8142454,
+      "lng": 144.9631732
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -15161,7 +15307,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -28.6483333,
+      "lng": 153.6177778
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -15336,7 +15484,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -16.9206657,
+      "lng": 145.7721854
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -15510,7 +15660,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -20.272494,
+      "lng": 148.7181466
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -15686,7 +15838,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 50.0874654,
+      "lng": 14.4212535
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -15866,7 +16020,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 52.5173885,
+      "lng": 13.3951309
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -16039,7 +16195,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 52.3730796,
+      "lng": 4.8924534
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -16212,7 +16370,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 48.2083537,
+      "lng": 16.3725042
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -16392,7 +16552,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -16571,7 +16733,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 27.618086,
+      "lng": 84.4536201
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -16756,7 +16920,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 27.9380224,
+      "lng": 84.4066959
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -16928,7 +17094,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 27.718508,
+      "lng": 85.51973
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -17109,7 +17277,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -17290,7 +17460,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 18.7882778,
+      "lng": 98.9858802
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -17453,7 +17625,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 18.7882778,
+      "lng": 98.9858802
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -17627,7 +17801,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 19.7589517,
+      "lng": 99.6734592
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -17825,7 +18001,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 19.7589517,
+      "lng": 99.6734592
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -18009,7 +18187,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 19.7589517,
+      "lng": 99.6734592
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -18187,7 +18367,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 16.068501,
+      "lng": 108.2240242
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -18382,7 +18564,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 11.9402416,
+      "lng": 108.4375758
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -18558,7 +18742,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 20.2421142,
+      "lng": 105.9746207
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -18732,7 +18918,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 12.2084991,
+      "lng": 109.2871204
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -18913,7 +19101,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 17.6475454,
+      "lng": 106.2729046
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -19115,7 +19305,9 @@
       "nearby_towns": [
         "Ashwem",
         "Mandrem"
-      ]
+      ],
+      "lat": 15.6294635,
+      "lng": 73.7358315
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -19312,7 +19504,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 15.5201532,
+      "lng": 73.7659422
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -19492,7 +19686,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 15.6878815,
+      "lng": 73.7055986
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -19676,7 +19872,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 15.5521203,
+      "lng": 73.7639167
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -19857,7 +20055,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 15.545594,
+      "lng": 73.7646182
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -20048,7 +20248,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 10.0869959,
+      "lng": 77.0600915
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -20227,7 +20429,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 9.795994,
+      "lng": 76.3021177
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -20419,7 +20623,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 11.7151291,
+      "lng": 76.1271185
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -20592,7 +20798,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 9.795994,
+      "lng": 76.3021177
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -20793,7 +21001,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 9.6885988,
+      "lng": 76.9068551
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -20961,7 +21171,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 2.3293744,
+      "lng": 102.2880962
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -21140,7 +21352,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 4.4710791,
+      "lng": 101.3751732
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -21315,7 +21529,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 3.1516964,
+      "lng": 101.6942371
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -21497,7 +21713,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 6.2889305,
+      "lng": 99.7282832
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -21678,7 +21896,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 5.9028873,
+      "lng": 102.7557466
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -21877,7 +22097,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -8.8351998,
+      "lng": 115.0967885
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -22055,7 +22277,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -8.7264325,
+      "lng": 115.1778054
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -22232,7 +22456,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -8.6789419,
+      "lng": 115.4573313
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -22410,7 +22636,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -8.7455877,
+      "lng": 115.5346805
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -22589,7 +22817,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -8.7455877,
+      "lng": 115.5346805
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -22785,7 +23015,9 @@
         "Khao San Road (on/immediately adjacent)",
         "Rattanakosin Old City",
         "Chao Phraya River"
-      ]
+      ],
+      "lat": 13.7524938,
+      "lng": 100.4935089
     },
     "staff": {
       "friendliness": "incredibly friendly and helpful, individual staff repeatedly named and praised",
@@ -22982,7 +23214,9 @@
       "nearby_raw_text": [
         "Khao San Road (immediately adjacent)",
         "Rattanakosin Old City"
-      ]
+      ],
+      "lat": 13.7524938,
+      "lng": 100.4935089
     },
     "staff": {
       "friendliness": "self-described as experienced and hospitality-focused, run by former backpackers",
@@ -23193,7 +23427,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 43.7697955,
+      "lng": 11.2556404
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -23395,7 +23631,9 @@
       "easy_to_find": true,
       "near_metro": true,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 41.8933203,
+      "lng": 12.4829321
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -23583,7 +23821,9 @@
       "easy_to_find": true,
       "near_metro": true,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 41.8933203,
+      "lng": 12.4829321
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -23779,7 +24019,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 40.8358846,
+      "lng": 14.2487679
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -23957,7 +24199,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 37.9755648,
+      "lng": 23.7348324
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -24133,7 +24377,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 42.6491029,
+      "lng": 18.0939501
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -24306,7 +24552,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 48.8588897,
+      "lng": 2.320041
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -24464,7 +24712,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 48.8588897,
+      "lng": 2.320041
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -24650,7 +24900,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 42.6977028,
+      "lng": 23.3217359
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -24816,7 +25068,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 55.9533456,
+      "lng": -3.1883749
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -25002,7 +25256,9 @@
       "easy_to_find": true,
       "near_metro": true,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 51.5074456,
+      "lng": -0.1277653
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -25151,7 +25407,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 50.0469432,
+      "lng": 19.9971534
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -25337,7 +25595,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 56.9493977,
+      "lng": 24.1051846
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -25497,7 +25757,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 44.8153318,
+      "lng": 20.4456588
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -25674,7 +25936,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 55.6867243,
+      "lng": 12.5700724
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -25865,7 +26129,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 53.3493795,
+      "lng": -6.2605593
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -26037,7 +26303,9 @@
       "easy_to_find": true,
       "near_metro": true,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 52.5173885,
+      "lng": 13.3951309
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -26191,7 +26459,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 52.3730796,
+      "lng": 4.8924534
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -26365,7 +26635,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 46.6855231,
+      "lng": 7.8585139
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -26549,7 +26821,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 50.0469432,
+      "lng": 19.9971534
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -26727,7 +27001,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -31.9558967,
+      "lng": 115.8605784
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -26916,7 +27192,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -31.9558967,
+      "lng": 115.8605784
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -27094,7 +27372,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -31.9558967,
+      "lng": 115.8605784
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -27271,7 +27551,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -34.9281805,
+      "lng": 138.5999312
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -27448,7 +27730,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -34.9281805,
+      "lng": 138.5999312
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -27594,7 +27878,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -42.8825088,
+      "lng": 147.3281233
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -27772,7 +28058,9 @@
       "easy_to_find": true,
       "near_metro": true,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -27.4689623,
+      "lng": 153.0235009
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -27951,7 +28239,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -27.4689623,
+      "lng": 153.0235009
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -28136,7 +28426,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -42.8825088,
+      "lng": 147.3281233
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -28320,7 +28612,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -16.9206657,
+      "lng": 145.7721854
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -28498,7 +28792,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -16.9206657,
+      "lng": 145.7721854
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -28670,7 +28966,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -17.9566909,
+      "lng": 122.2240181
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -28838,7 +29136,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -17.9566909,
+      "lng": 122.2240181
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -29014,7 +29314,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -26.3182442,
+      "lng": 152.9307975
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -29191,7 +29493,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -33.8698439,
+      "lng": 151.2082848
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -29363,7 +29667,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -20.272494,
+      "lng": 148.7181466
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -29542,7 +29848,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -34.9281805,
+      "lng": 138.5999312
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -29713,7 +30021,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -16.257322,
+      "lng": 145.3320899
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -29892,7 +30202,9 @@
       "easy_to_find": true,
       "near_metro": true,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -27.4689623,
+      "lng": 153.0235009
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -30068,7 +30380,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -36.7285335,
+      "lng": 146.9607724
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -30254,7 +30568,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -34.6095579,
+      "lng": -58.3887904
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -30432,7 +30748,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -34.6095579,
+      "lng": -58.3887904
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -30605,7 +30923,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -16.4955455,
+      "lng": -68.1336229
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -30775,7 +31095,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -22.9110137,
+      "lng": -43.2093727
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -30949,7 +31271,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -12.9822499,
+      "lng": -38.4812772
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -31119,7 +31443,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -27.5973002,
+      "lng": -48.5496098
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -31284,7 +31610,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -0.8268521,
+      "lng": -78.8937757
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -31461,7 +31789,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -0.2201641,
+      "lng": -78.5123274
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -31625,7 +31955,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -12.0459808,
+      "lng": -77.0305912
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -31804,7 +32136,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 11.2448914,
+      "lng": -73.5598131
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -31978,7 +32312,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 4.6533817,
+      "lng": -74.0836331
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -32150,7 +32486,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": 10.4265566,
+      "lng": -75.5441671
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -32327,7 +32665,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -33.4376995,
+      "lng": -70.6510671
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -32503,7 +32843,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -23.3545489,
+      "lng": -67.9026571
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -32668,7 +33010,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -19.0477251,
+      "lng": -65.2594306
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -32815,7 +33159,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -34.9058916,
+      "lng": -56.1913095
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -32987,7 +33333,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -13.5170887,
+      "lng": -71.9785356
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -33153,7 +33501,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -13.5170887,
+      "lng": -71.9785356
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -33306,7 +33656,9 @@
       "easy_to_find": true,
       "near_metro": false,
       "near_airport": false,
-      "nearby_towns": []
+      "nearby_towns": [],
+      "lat": -4.1551963,
+      "lng": -81.0061242
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -33489,7 +33841,9 @@
       ],
       "nearby_raw_text": [
         "Tapovan area, Rishikesh (walking distance to Laxman Jhula)"
-      ]
+      ],
+      "lat": 30.1086537,
+      "lng": 78.2916193
     },
     "staff": {
       "friendliness": "praised as friendly and helpful; staff rated 10.0/10 on Hostelworld",
@@ -33700,7 +34054,9 @@
       "nearby_raw_text": [
         "Jagdish Chowk (short walk)",
         "Lake Pichola area"
-      ]
+      ],
+      "lat": 24.578721,
+      "lng": 73.6862571
     },
     "staff": {
       "friendliness": "described as friendly and helpful by most guests",
@@ -33910,7 +34266,9 @@
       ],
       "nearby_raw_text": [
         "Hampi ruins area (across river, several km away)"
-      ]
+      ],
+      "lat": 15.3358,
+      "lng": 76.4610201
     },
     "staff": {
       "friendliness": "praised as friendly and warm, food and hospitality frequently highlighted",
@@ -34131,7 +34489,9 @@
       "nearby_raw_text": [
         "Gateway of India (~6 min walk)",
         "Colaba Causeway"
-      ]
+      ],
+      "lat": 19.054999,
+      "lng": 72.8692035
     },
     "staff": {
       "friendliness": "described as very friendly and helpful by most reviewers",
@@ -34318,7 +34678,9 @@
       ],
       "nearby_raw_text": [
         "Koramangala nightlife and restaurant district"
-      ]
+      ],
+      "lat": 12.9767936,
+      "lng": 77.590082
     },
     "staff": {
       "friendliness": "generally described as friendly and helpful",
@@ -34540,7 +34902,9 @@
       "nearby_raw_text": [
         "McLeod Ganj town center (via ~100-200 step climb)",
         "Yongling School"
-      ]
+      ],
+      "lat": 32.2352666,
+      "lng": 76.326238
     },
     "staff": {
       "friendliness": "mixed reports \u2014 some guests describe staff as warm and helpful, others report rudeness",
@@ -34773,7 +35137,9 @@
       "nearby_raw_text": [
         "Kudle Beach (walking distance)",
         "Gokarna Main Beach (cliffside views)"
-      ]
+      ],
+      "lat": 14.5439629,
+      "lng": 74.3184418
     },
     "staff": {
       "friendliness": "praised as part of the 'great vibe' repeatedly cited in reviews",
@@ -34997,7 +35363,9 @@
         "Leh Palace",
         "Leh Market",
         "Buddhist monasteries"
-      ]
+      ],
+      "lat": 34.1642029,
+      "lng": 77.5848133
     },
     "staff": {
       "friendliness": "consistently described positively in review titles ('Great Experience', 'One of the best stay in Leh')",
@@ -35205,7 +35573,9 @@
       "nearby_raw_text": [
         "French Quarter heritage district",
         "Rock Beach"
-      ]
+      ],
+      "lat": 11.9340568,
+      "lng": 79.8306447
     },
     "staff": {
       "friendliness": "exceptionally friendly and helpful, frequently praised",
@@ -35432,7 +35802,9 @@
       ],
       "nearby_raw_text": [
         "Golden Temple (approx. 20-minute walk)"
-      ]
+      ],
+      "lat": 31.6356659,
+      "lng": 74.8787496
     },
     "staff": {
       "friendliness": "predominantly praised as friendly, helpful and warm; one isolated complaint about unprofessional reception",
@@ -35637,7 +36009,9 @@
       ],
       "nearby_raw_text": [
         "Kathmandu Durbar Square (15 min walk)"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent, repeatedly singled out in reviews",
@@ -35835,7 +36209,9 @@
       ],
       "nearby_raw_text": [
         "Paknajol Marg, Thamel"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent, consistently rated 9.5-10 by guests",
@@ -36010,7 +36386,9 @@
       ],
       "nearby_raw_text": [
         "101 Kaldhara Marg, Thamel-16"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "good, praised alongside food and location",
@@ -36203,7 +36581,9 @@
       ],
       "nearby_raw_text": [
         "Thamel core, 257 restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent, repeatedly singled out as a highlight",
@@ -36408,7 +36788,9 @@
       "nearby_raw_text": [
         "5th Ammat Street, Lakeside",
         "Phewa Lake (few minutes' walk)"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "excellent, rated 9.8/10 in reviews",
@@ -36598,7 +36980,9 @@
       "nearby_raw_text": [
         "Baidam Road, Lakeside",
         "Phewa Lake"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "helpful, praised for value and service",
@@ -36778,7 +37162,9 @@
       "nearby_raw_text": [
         "Bangladi, north end of Lakeside",
         "Phewa Lake shoreline"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "excellent, praised across reviews",
@@ -36953,7 +37339,9 @@
       ],
       "nearby_raw_text": [
         "Bhaktapur Durbar Square / World Heritage Site core"
-      ]
+      ],
+      "lat": 27.6711133,
+      "lng": 85.4261675
     },
     "staff": {
       "friendliness": "excellent, rated 10/10 by guests, described as inclusive and social",
@@ -37130,7 +37518,9 @@
       "nearby_raw_text": [
         "Laukhani Road, Ratnanagar",
         "Chitwan National Park buffer zone"
-      ]
+      ],
+      "lat": 27.5801633,
+      "lng": 84.5023058
     },
     "staff": {
       "friendliness": "exceptional, owners and staff personally praised as feeling like family",
@@ -37322,7 +37712,9 @@
       ],
       "nearby_raw_text": [
         "Narshing Chowk, Thamel"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "generally described as helpful, though overall experience ratings are mixed",
@@ -37529,7 +37921,9 @@
       ],
       "nearby_raw_text": [
         "Arugam Bay beach (beachfront property)"
-      ]
+      ],
+      "lat": 6.8468506,
+      "lng": 81.8306961
     },
     "staff": {
       "friendliness": "excellent, owner personally praised across reviews",
@@ -37734,7 +38128,9 @@
       ],
       "nearby_raw_text": [
         "Narigama Beach (directly across)"
-      ]
+      ],
+      "lat": 6.140753,
+      "lng": 80.1028181
     },
     "staff": {
       "friendliness": "generally friendly and helpful, praised by most reviewers",
@@ -37995,7 +38391,9 @@
       "nearby_raw_text": [
         "Kandy railway station",
         "Kandy bus station"
-      ]
+      ],
+      "lat": 7.2931208,
+      "lng": 80.6350358
     },
     "staff": {
       "friendliness": "described as nicest and helpful, aids with tour planning",
@@ -38217,7 +38615,9 @@
         "Sigiriya Rock Fortress (1.2 km)",
         "Minneriya National Park (9 km)",
         "Kaudulla National Park (23 km)"
-      ]
+      ],
+      "lat": 7.9566634,
+      "lng": 80.7599301
     },
     "staff": {
       "friendliness": "exceptional, family-run hospitality repeatedly singled out by guests",
@@ -38403,7 +38803,9 @@
       ],
       "nearby_raw_text": [
         "Nuwara Eliya-Uda Pussellawa Road, mountainous terrain"
-      ]
+      ],
+      "lat": 7.012402,
+      "lng": 80.7571612
     },
     "staff": {
       "friendliness": "generally friendly, community-oriented",
@@ -38596,7 +38998,9 @@
       ],
       "nearby_raw_text": [
         "quiet lagoon and beach access within walking distance"
-      ]
+      ],
+      "lat": 6.0250847,
+      "lng": 80.7949279
     },
     "staff": {
       "friendliness": "mixed reports; some guests found the owner attentive, others reported conflict over services",
@@ -38787,7 +39191,9 @@
       "nearby_raw_text": [
         "Galle Fort (UNESCO site)",
         "Unawatuna Beach (walking distance)"
-      ]
+      ],
+      "lat": 6.0328139,
+      "lng": 80.214955
     },
     "staff": {
       "friendliness": "excellent, host Pinidu repeatedly singled out by name in reviews",
@@ -39008,7 +39414,9 @@
       ],
       "nearby_raw_text": [
         "Bonavista Surfing Beach (2 min walk)"
-      ]
+      ],
+      "lat": 6.0328139,
+      "lng": 80.214955
     },
     "staff": {
       "friendliness": "friendly, helpful with cooking facilities and general assistance",
@@ -39222,7 +39630,9 @@
       ],
       "nearby_raw_text": [
         "Uppuveli Beach (walking distance)"
-      ]
+      ],
+      "lat": 8.576425,
+      "lng": 81.2344952
     },
     "staff": {
       "friendliness": "incredibly friendly and helpful, per reviews",
@@ -39451,7 +39861,9 @@
       "nearby_raw_text": [
         "gateway to Yala National Park",
         "restaurants, supermarkets, ATMs, bus station"
-      ]
+      ],
+      "lat": 6.2770724,
+      "lng": 81.2892814
     },
     "staff": {
       "friendliness": "excellent, staff rated 9.7/10, especially helpful with safari bookings",
@@ -39672,7 +40084,9 @@
       "nearby_raw_text": [
         "Krabi Town night market",
         "Utarakit Road"
-      ]
+      ],
+      "lat": 8.0671804,
+      "lng": 98.9149191
     },
     "staff": {
       "friendliness": "highly rated (8.4/10), described as vibrant and welcoming",
@@ -39898,7 +40312,9 @@
       "nearby_raw_text": [
         "Sairee Beach",
         "shops and restaurants"
-      ]
+      ],
+      "lat": 10.0921822,
+      "lng": 99.8395362
     },
     "staff": {
       "friendliness": "highly rated, described as friendly and helpful",
@@ -40121,7 +40537,9 @@
       ],
       "nearby_raw_text": [
         "Pai Walking Street (700m)"
-      ]
+      ],
+      "lat": 19.3581061,
+      "lng": 98.4405794
     },
     "staff": {
       "friendliness": "generally praised (9.4/10), though a few recent reviews mention inconsistency",
@@ -40345,7 +40763,9 @@
       "nearby_raw_text": [
         "beach (5 min walk)",
         "restaurants and cafes (1 min walk)"
-      ]
+      ],
+      "lat": 7.6823683,
+      "lng": 99.0900688
     },
     "staff": {
       "friendliness": "exceptional (9.8/10), a standout in guest reviews",
@@ -40550,7 +40970,9 @@
       ],
       "nearby_raw_text": [
         "Chaweng Beach (directly opposite)"
-      ]
+      ],
+      "lat": 9.5013945,
+      "lng": 99.9956193
     },
     "staff": {
       "friendliness": "good but mixed; some reviews wanted more staff-led social energy",
@@ -40763,7 +41185,9 @@
         "Wat Phrakaew/Grand Palace area (10 min)",
         "Khao San Road (10 min)",
         "Sao Ching Cha (Giant Swing)"
-      ]
+      ],
+      "lat": 13.7524938,
+      "lng": 100.4935089
     },
     "staff": {
       "friendliness": "highly rated (9.4/10)",
@@ -40938,7 +41362,9 @@
       "nearby_raw_text": [
         "beach (5-10 min walk)",
         "supermarkets and restaurants"
-      ]
+      ],
+      "lat": 12.0546168,
+      "lng": 102.3373426
     },
     "staff": {
       "friendliness": "described as friendly in positive reviews",
@@ -41141,7 +41567,9 @@
       "nearby_raw_text": [
         "Sukhothai bus station",
         "Old Town / Sukhothai Historical Park"
-      ]
+      ],
+      "lat": 17.010918,
+      "lng": 99.8203682
     },
     "staff": {
       "friendliness": "owner consistently praised for hospitality",
@@ -41315,7 +41743,9 @@
       ],
       "nearby_raw_text": [
         "Ayutthaya Historical Park (short bike/tuk-tuk ride)"
-      ]
+      ],
+      "lat": 14.3535427,
+      "lng": 100.5645684
     },
     "staff": {
       "friendliness": "exceptional and consistently praised as the hostel's biggest strength",
@@ -41483,7 +41913,9 @@
       ],
       "nearby_raw_text": [
         "Khao Sok National Park entrance (750m)"
-      ]
+      ],
+      "lat": 9.0686898,
+      "lng": 98.5738024
     },
     "staff": {
       "friendliness": "highly rated (9.0/10), especially for tour arrangement help",
@@ -41693,7 +42125,9 @@
       "nearby_raw_text": [
         "PJ's Bar & Grill (beach bar, same block)",
         "Gili Air east coast beach (walking distance)"
-      ]
+      ],
+      "lat": -8.3577073,
+      "lng": 116.081162
     },
     "staff": {
       "friendliness": "excellent, frequently praised (9.6/10 staff score)",
@@ -41925,7 +42359,9 @@
       "nearby_raw_text": [
         "Kuta Lombok beach and surf breaks",
         "cafes, restaurants, and local markets"
-      ]
+      ],
+      "lat": -8.872667,
+      "lng": 116.279314
     },
     "staff": {
       "friendliness": "excellent, part of Mad Monkey's established Southeast Asia hostel chain reputation",
@@ -42164,7 +42600,9 @@
       "nearby_raw_text": [
         "Labuan Bajo harbor and Komodo National Park boat tours",
         "town center restaurants and dive shops"
-      ]
+      ],
+      "lat": -8.489935,
+      "lng": 119.876465
     },
     "staff": {
       "friendliness": "excellent, professional and attentive",
@@ -42378,7 +42816,9 @@
       "nearby_raw_text": [
         "Bohorok River (riverside private waterfall views)",
         "Gunung Leuser National Park entrance for orangutan trekking"
-      ]
+      ],
+      "lat": 3.5480322,
+      "lng": 98.1271652
     },
     "staff": {
       "friendliness": "excellent, consistently praised hospitality (4.3/5 service)",
@@ -42586,7 +43026,9 @@
       "nearby_raw_text": [
         "Lake Toba shoreline and private beach access",
         "German Bakery onsite"
-      ]
+      ],
+      "lat": 2.1923519,
+      "lng": 99.3812201
     },
     "staff": {
       "friendliness": "excellent, warmly reviewed",
@@ -42826,7 +43268,9 @@
         "Amed diving and snorkeling sites",
         "USAT Liberty wreck dive site (Tulamben, nearby)",
         "budget local restaurants within walking distance"
-      ]
+      ],
+      "lat": -8.334584,
+      "lng": 115.6409359
     },
     "staff": {
       "friendliness": "dive instructors specifically praised as professional and friendly",
@@ -43030,7 +43474,9 @@
       ],
       "nearby_raw_text": [
         "Gili Meno beach (short walk)"
-      ]
+      ],
+      "lat": -8.3505557,
+      "lng": 116.0569626
     },
     "staff": {
       "friendliness": "good, rated 8.0/10",
@@ -43214,7 +43660,9 @@
       "nearby_raw_text": [
         "on-site bakery shop and mini market",
         "ATM machines within walking distance"
-      ]
+      ],
+      "lat": -6.9218457,
+      "lng": 107.6070833
     },
     "staff": {
       "friendliness": null,
@@ -43407,7 +43855,9 @@
       "nearby_raw_text": [
         "Munduk waterfall trekking routes",
         "rice terraces and clove farms"
-      ]
+      ],
+      "lat": -8.2683683,
+      "lng": 115.0777059
     },
     "staff": {
       "friendliness": "excellent, rated 10.0/10 by guests",
@@ -43608,7 +44058,9 @@
         "Green Bowl Beach (8 min)",
         "Gunung Payung Beach (6 min)",
         "GWK Cultural Park (10 min)"
-      ]
+      ],
+      "lat": -8.7972159,
+      "lng": 115.1615348
     },
     "staff": {
       "friendliness": "excellent, rated 8.8/10",
@@ -43810,7 +44262,9 @@
         "next to BTS Phrom Phong Station",
         "close to EM District shopping mall",
         "348 restaurants within 0.3 miles per Tripadvisor"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -43995,7 +44449,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "54/4, 54/2 Singharat Road, Tumbon Sripoom, Chiang Mai - about 0.66-0.7km from city centre"
-      ]
+      ],
+      "lat": 18.7882778,
+      "lng": 98.9858802
     },
     "staff": {
       "friendliness": "excellent",
@@ -44182,7 +44638,9 @@
       "nearby_raw_text": [
         "a stone's throw from Ao Nang beach",
         "approximately 10.25km from Krabi Town centre"
-      ]
+      ],
+      "lat": 8.0634637,
+      "lng": 98.9162345
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -44373,7 +44831,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "5-10 minute walk from BTS Ploen Chit and BTS Nana stations"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -44563,7 +45023,9 @@
       "nearby_raw_text": [
         "0.8km from Bangkok city centre",
         "above a chic Indian cafe/bar that turns into a bar at night, just off Khao San Road"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -44761,7 +45223,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Approx. 1km from the Old City / Tamarind Village area of Chiang Mai"
-      ]
+      ],
+      "lat": 18.7882778,
+      "lng": 98.9858802
     },
     "staff": {
       "friendliness": "good",
@@ -44961,7 +45425,9 @@
       ],
       "nearby_raw_text": [
         "1.65 km from Pai city centre, ~5-minute bike ride to town, address 234 Moo 5 Mae Hi, Pai District"
-      ]
+      ],
+      "lat": 19.3581061,
+      "lng": 98.4405794
     },
     "staff": {
       "friendliness": "excellent",
@@ -45167,7 +45633,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located at 116 Moo 3, T.Wiang Tai, Pai city centre; about a 1-minute walk from Pai bus station and ~50m from Walking Street"
-      ]
+      ],
+      "lat": 19.3581061,
+      "lng": 98.4405794
     },
     "staff": {
       "friendliness": "excellent",
@@ -45371,7 +45839,9 @@
         "sunset views out toward the Phi Phi islands",
         "roughly 34 miles (55km) from Krabi Airport",
         "address: 627 Moo 3, Saladan, Ko Lanta"
-      ]
+      ],
+      "lat": 7.6823683,
+      "lng": 99.0900688
     },
     "staff": {
       "friendliness": "generally positive per reviews, though not unanimous",
@@ -45569,7 +46039,9 @@
       "nearby_raw_text": [
         "approximately 150 meters from Patong Beach",
         "500 meters from Bangla Walking Street"
-      ]
+      ],
+      "lat": 7.8847901,
+      "lng": 98.3891503
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -45766,7 +46238,9 @@
       "nearby_raw_text": [
         "located directly on Sairee Beach",
         "96/100 walkability score with 166 restaurants within 0.5km and 34 attractions within 0.5km, including dive shops and bars"
-      ]
+      ],
+      "lat": 10.0921822,
+      "lng": 99.8395362
     },
     "staff": {
       "friendliness": null,
@@ -45959,7 +46433,9 @@
       "nearby_raw_text": [
         "situated centrally on Sairee Beach with direct beach access",
         "excellent walkability to 74+ nearby restaurants and attractions"
-      ]
+      ],
+      "lat": 10.0921822,
+      "lng": 99.8395362
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -46148,7 +46624,9 @@
       ],
       "nearby_raw_text": [
         "2.86 km from Koh Phangan city centre; property located in the Ban Tai / Thong Sala area"
-      ]
+      ],
+      "lat": 9.7349503,
+      "lng": 100.0305711
     },
     "staff": {
       "friendliness": "excellent",
@@ -46337,7 +46815,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Situated in Baan Tai, about 2.85-2.9km from Koh Phangan city centre"
-      ]
+      ],
+      "lat": 9.7349503,
+      "lng": 100.0305711
     },
     "staff": {
       "friendliness": "average",
@@ -46534,7 +47014,9 @@
         "about 5 minutes from Thong Sala Pier by taxi",
         "Full Moon Party is roughly 15 minutes away by taxi",
         "sources disagree slightly on distance to town centre (1.6km per Hostelworld vs 6.36km per Hostelz)"
-      ]
+      ],
+      "lat": 9.7349503,
+      "lng": 100.0305711
     },
     "staff": {
       "friendliness": "very positive per reviews (top-scoring category)",
@@ -46725,7 +47207,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "2.1 km from Koh Phangan city centre; roughly a 5-minute walk to the beach"
-      ]
+      ],
+      "lat": 9.7349503,
+      "lng": 100.0305711
     },
     "staff": {
       "friendliness": "excellent",
@@ -46908,7 +47392,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 18.7882778,
+      "lng": 98.9858802
     },
     "staff": {
       "friendliness": null,
@@ -47083,7 +47569,9 @@
         "about a 10-minute walk from Khao San Road",
         "121 restaurants and 23 attractions within 0.3 miles per Tripadvisor",
         "~17.8 miles to Bangkok International Airport"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -47283,7 +47771,9 @@
       "nearby_raw_text": [
         "two streets from Khao San Road",
         "walking distance to Grand Palace, Wat Pho, Wat Arun, and National Museum"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -47497,7 +47987,9 @@
         "10-minute walk to Chong Nonsi Skytrain station",
         "Close to Patpong Market and Lumpini Park",
         "Surasak BTS ~8 min, Saphan Taksin ~12 min"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -47694,7 +48186,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "On the left bank of the Ganges near Laxman Jhula, above Babylon Bakery on Rani Mandir Road, ~1.4km from Rishikesh city centre"
-      ]
+      ],
+      "lat": 30.1086537,
+      "lng": 78.2916193
     },
     "staff": {
       "friendliness": "excellent",
@@ -47882,7 +48376,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Upper Dharamkot, a short stroll from Dharamkot Market and about 2.5km from McLeodGanj Main Square, ~3.4km from city centre"
-      ]
+      ],
+      "lat": 32.2352666,
+      "lng": 76.326238
     },
     "staff": {
       "friendliness": "excellent",
@@ -48077,7 +48573,9 @@
       "nearby_raw_text": [
         "sun-drenched gardens and rooftop views",
         "2.45km from Pushkar city centre"
-      ]
+      ],
+      "lat": 26.4876472,
+      "lng": 74.5578484
     },
     "staff": {
       "friendliness": "very positive per reviews (9.7/10 staff rating, guests call staff exceptionally friendly and helpful)",
@@ -48271,7 +48769,9 @@
       "nearby_raw_text": [
         "22 restaurants within 0.3 miles",
         "quiet spot between the beach and town"
-      ]
+      ],
+      "lat": 9.5003416,
+      "lng": 76.4123364
     },
     "staff": {
       "friendliness": "very positive per reviews \u2014 owner Shibu described as 'really nice and helpful', can help arrange everything including backwater tours",
@@ -48447,7 +48947,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Roughly 2km from Jaipur city centre"
-      ]
+      ],
+      "lat": 26.9154576,
+      "lng": 75.8189817
     },
     "staff": {
       "friendliness": null,
@@ -48648,7 +49150,9 @@
       "nearby_raw_text": [
         "located near Jaipur Railway Station and Bus Station in a calm residential colony",
         "\"the location is a bit far away from everything, but the hostel itself is amazing\""
-      ]
+      ],
+      "lat": 26.9154576,
+      "lng": 75.8189817
     },
     "staff": {
       "friendliness": "very positive per reviews (9.7/10 staff score); owner personally praised as helpful",
@@ -48840,7 +49344,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Purohit ji ka Khurra, Chandpole, overlooking Swaroop Sagar Lake, walkable to Jagdish Chowk, ~2.4km from city centre"
-      ]
+      ],
+      "lat": 24.578721,
+      "lng": 73.6862571
     },
     "staff": {
       "friendliness": "excellent",
@@ -49032,7 +49538,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located at Lal Ghat near Lake Pichola, in a 200-year-old Haveli"
-      ]
+      ],
+      "lat": 24.578721,
+      "lng": 73.6862571
     },
     "staff": {
       "friendliness": "excellent",
@@ -49238,7 +49746,9 @@
         "just 3 minutes from City Palace on City Palace Road",
         "rooftop views of Lake Pichola",
         "early morning yoga sessions mentioned near Gangaur Ghat"
-      ]
+      ],
+      "lat": 24.578721,
+      "lng": 73.6862571
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -49437,7 +49947,9 @@
         "just a short stroll from the sacred Ganges River and iconic ghats",
         "narrow, winding streets nearby",
         "ancient temples and bustling markets within walking distance"
-      ]
+      ],
+      "lat": 25.3356491,
+      "lng": 83.0076292
     },
     "staff": {
       "friendliness": null,
@@ -49633,7 +50145,9 @@
       ],
       "nearby_raw_text": [
         "Manu Temple Rd, Old Manali, Manali, Himachal Pradesh, amidst apple orchards with Himalayan views"
-      ]
+      ],
+      "lat": 32.2454608,
+      "lng": 77.1872926
     },
     "staff": {
       "friendliness": "good",
@@ -49829,7 +50343,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "some guests find it 'a bit challenging to reach' despite being close to the centre"
-      ]
+      ],
+      "lat": 32.2454608,
+      "lng": 77.1872926
     },
     "staff": {
       "friendliness": "excellent per reviews (10.0/10 staff score)",
@@ -50033,7 +50549,9 @@
       "nearby_raw_text": [
         "on Jogiwara Road, McLeod Ganj",
         "about a 10-minute walk to the Tibetan Market and Buddhist sites"
-      ]
+      ],
+      "lat": 32.2352666,
+      "lng": 76.326238
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -50214,7 +50732,9 @@
       "nearby_raw_text": [
         "staff assist with booking canoe/kayaking/houseboat trips in the backwaters",
         "pet-friendly property"
-      ]
+      ],
+      "lat": 9.5003416,
+      "lng": 76.4123364
     },
     "staff": {
       "friendliness": "positive per reviews \u2014 hostel manager and staff called 'incredibly welcoming'",
@@ -50420,7 +50940,9 @@
       "nearby_raw_text": [
         "46 Rawal House, P D Mello Road, opposite Pujara Petrol Pump, South Mumbai (Port Trust/Fort area)",
         "approximately 900 meters from Bombay dockyard"
-      ]
+      ],
+      "lat": 19.054999,
+      "lng": 72.8692035
     },
     "staff": {
       "friendliness": "mixed per reviews",
@@ -50622,7 +51144,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "A-10, Mathura Rd, near Ashram Chowk, Friends Colony East / New Friends Colony, ~10 minutes from Ashram Metro Station"
-      ]
+      ],
+      "lat": 28.6138954,
+      "lng": 77.2090057
     },
     "staff": {
       "friendliness": "excellent",
@@ -50830,7 +51354,9 @@
       "nearby_raw_text": [
         "\"Right next to metro. Super professional and responsive staff\"",
         "close to Old Delhi sites including Red Fort, Jama Masjid and Chandni Chowk"
-      ]
+      ],
+      "lat": 28.6138954,
+      "lng": 77.2090057
     },
     "staff": {
       "friendliness": "very positive per reviews (10.0/10 staff score)",
@@ -51021,7 +51547,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Just outside the fort walls on Fort Ring Road near Amar Sagar Pol, in the heart of Jaisalmer's historic district"
-      ]
+      ],
+      "lat": 27.0264162,
+      "lng": 70.777512
     },
     "staff": {
       "friendliness": "good",
@@ -51221,7 +51749,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "on the banks of the Ganges with 'a spectacular view of the Ganga'"
-      ]
+      ],
+      "lat": 30.1086537,
+      "lng": 78.2916193
     },
     "staff": {
       "friendliness": "positive per reviews (8.0/10 staff score)",
@@ -51412,7 +51942,9 @@
       ],
       "nearby_raw_text": [
         "Located at Virupapur Gaddi, moderately walkable area with restaurants and attractions nearby"
-      ]
+      ],
+      "lat": 15.3358,
+      "lng": 76.4610201
     },
     "staff": {
       "friendliness": null,
@@ -51597,7 +52129,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Market Mall, Amrit Marg, Thamel, Kathmandu - ~1.3km from city centre"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent",
@@ -51784,7 +52318,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Paknajol, Kaldhara, Ward No-16, Peepalbot, Thamel, Kathmandu"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "generally positive per reviews, though a few note it feels less social than expected",
@@ -51970,7 +52506,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Center of Thamel district, close to shops/restaurants/tourist attractions, ~1.1km from city centre"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent",
@@ -52154,7 +52692,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Ratopul/Gaushala area of Kathmandu valley, address Paneku Marga; about 3km / 8-10 min drive from Thamel"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent",
@@ -52351,7 +52891,9 @@
         "10-15 min walk to Phewa Lake and Lakeside Main Street",
         "1.5 miles / 1.9 miles from Pokhara Airport (varies by source)",
         "74 restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -52558,7 +53100,9 @@
         "breathtaking views of the Annapurna range, proximity to Phewa Lake",
         "quiet at night yet central to attractions",
         "2.5 miles from Pokhara Airport; 43 restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -52761,7 +53305,9 @@
         "1.9 miles from Pokhara Airport, 134 restaurants within 0.3 miles",
         "walkability grade 100/100",
         "popular nearby: Poon Hill, Barahi temple, The Mountain House hiking trails"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": null,
@@ -52955,7 +53501,9 @@
       "nearby_raw_text": [
         "Durbar Marg Lane, Gaurighat, ~6.5-6.8km from city centre",
         "situated near Phewa Tal lake in Pokhara's central area"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "generally positive per reviews (staff rated 9.6/10)",
@@ -53136,7 +53684,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located in Thamel, ~2.2 km from Kathmandu city centre"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": null,
@@ -53318,7 +53868,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located in Thamel, Kathmandu (postcode 44600), about 3.4 miles from Tribhuvan International Airport, with 161+ restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": null,
@@ -53516,7 +54068,9 @@
       "nearby_raw_text": [
         "Thamel Marg, Kathmandu; just in front of View Tower",
         "about a 30-minute walk from the tourist bus station"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "generally positive per available info (\"homestay-style\" family atmosphere)",
@@ -53695,7 +54249,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located on Thamel Marg, ~2.3 km from Kathmandu city centre; 6 private rooms and 48 hostel beds, rooms named after Nepali cities"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": null,
@@ -53880,7 +54436,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located in Thamel district, central Kathmandu, ranked among the more walkable specialty lodging options in the area; adjacent nightclub creates evening street noise"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent",
@@ -54063,7 +54621,9 @@
       "nearby_raw_text": [
         "Devisthan Marga, Pokhara, with Fewa Lake within touching distance",
         "in the heart of Pokhara, ~6km from city center"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "generally positive per reviews (staff rated 10.0/10)",
@@ -54245,7 +54805,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Sauraha, ~0.14 miles (0.2km) from village centre, noted by reviewers as convenient for accessing Chitwan National Park"
-      ]
+      ],
+      "lat": 27.618086,
+      "lng": 84.4536201
     },
     "staff": {
       "friendliness": "good",
@@ -54424,7 +54986,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "On Bandipur's historic car-free main street"
-      ]
+      ],
+      "lat": 27.9380224,
+      "lng": 84.4066959
     },
     "staff": {
       "friendliness": null,
@@ -54606,7 +55170,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Keshar Mahal, Thamel - described as 'the quieter part of Thamel', ~1.44km from city centre"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": "excellent",
@@ -54795,7 +55361,9 @@
       "nearby_raw_text": [
         "absolutely central, 150+ restaurants and 39 attractions within 0.3 miles",
         "2.1 mi from Pokhara Airport"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "generally positive per reviews - owner praised for trekking advice and activity bookings",
@@ -55020,7 +55588,9 @@
         "Pokhara Disneyland 9-minute walk",
         "Pokhara International Mountain Museum 6-minute drive",
         "airport approximately 21 minutes"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": null,
@@ -55211,7 +55781,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "situated in Thamel, Kathmandu's main backpacker/tourist district, dense with budget guesthouses, trekking outfitters, and gear shops"
-      ]
+      ],
+      "lat": 27.708317,
+      "lng": 85.3205817
     },
     "staff": {
       "friendliness": null,
@@ -55387,7 +55959,9 @@
       "nearby_raw_text": [
         "situated just behind the Monkey Forest Sanctuary",
         "hidden in a very peaceful and quiet street"
-      ]
+      ],
+      "lat": -8.5170195,
+      "lng": 115.2550507
     },
     "staff": {
       "friendliness": "very positive per reviews (staff rated 9.9/10 on Hostelworld)",
@@ -55575,7 +56149,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Jl. Yudistira No.21 Peliatan, approximately 3.1km from city centre"
-      ]
+      ],
+      "lat": -8.5170195,
+      "lng": 115.2550507
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -55762,7 +56338,9 @@
         "central Ubud on Jl. Raya Pengosekan",
         "114 restaurants within 0.3 miles",
         "17.1 miles from Bali Ngurah Rai Airport"
-      ]
+      ],
+      "lat": -8.5170195,
+      "lng": 115.2550507
     },
     "staff": {
       "friendliness": "described as friendly per reviews",
@@ -55949,7 +56527,9 @@
       "nearby_raw_text": [
         "1.1km from city center",
         "close to Seminyak Beach and nearby nightlife venues"
-      ]
+      ],
+      "lat": -8.6898586,
+      "lng": 115.1667783
     },
     "staff": {
       "friendliness": "very positive per reviews (staff rated 9.6/10)",
@@ -56145,7 +56725,9 @@
         "quiet leafy suburbs of Seminyak, minutes from beach",
         "shopping street less than five minutes' drive",
         "9km from Bali airport"
-      ]
+      ],
+      "lat": -8.6898586,
+      "lng": 115.1667783
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -56324,7 +56906,9 @@
       ],
       "nearby_raw_text": [
         "located in Ungasan/Pecatu on the Bukit Peninsula, described as 'between Nusa Dua and Uluwatu'"
-      ]
+      ],
+      "lat": -8.8016023,
+      "lng": 115.2312006
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -56509,7 +57093,9 @@
       "nearby_raw_text": [
         "2.7km from city centre",
         "within easy reach of Padang Padang Beach, surf breaks, and Uluwatu Temple"
-      ]
+      ],
+      "lat": -8.8016023,
+      "lng": 115.2312006
     },
     "staff": {
       "friendliness": "excellent per reviews (staff rated 9.9/10)",
@@ -56698,7 +57284,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "0.86-0.9km from Kuta city centre"
-      ]
+      ],
+      "lat": -8.7264325,
+      "lng": 115.1778054
     },
     "staff": {
       "friendliness": "positive per reviews (staff rated 8.8/10)",
@@ -56871,7 +57459,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "0.7km from Canggu centre on Jl. Pantai Batu Bolong"
-      ]
+      ],
+      "lat": -8.6399025,
+      "lng": 115.1436048
     },
     "staff": {
       "friendliness": "excellent per reviews",
@@ -57065,7 +57655,9 @@
       "nearby_raw_text": [
         "1.7km from Canggu centre",
         "10 mins walk to Echo Beach"
-      ]
+      ],
+      "lat": -8.6399025,
+      "lng": 115.1436048
     },
     "staff": {
       "friendliness": "excellent per reviews",
@@ -57254,7 +57846,9 @@
       "nearby_raw_text": [
         "1.35km from city centre",
         "beachfront position on the quieter side of the island"
-      ]
+      ],
+      "lat": -8.3503396,
+      "lng": 116.0362621
     },
     "staff": {
       "friendliness": "excellent per reviews",
@@ -57446,7 +58040,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "on Sunset Boulevard, ~0.02km from city centre, a short walk to the beachfront PJ's Bar & Grill"
-      ]
+      ],
+      "lat": -8.3577073,
+      "lng": 116.081162
     },
     "staff": {
       "friendliness": "excellent per reviews",
@@ -57630,7 +58226,9 @@
       ],
       "nearby_raw_text": [
         "0.78km from city centre in the Jungut Batu area"
-      ]
+      ],
+      "lat": -8.6789419,
+      "lng": 115.4573313
     },
     "staff": {
       "friendliness": "excellent per reviews; individual staff members specifically praised",
@@ -57821,7 +58419,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "On Jl. Raya Kuta, main street of Kuta Lombok, walkability grade 91/100; about a 12-minute trip to Kuta Beach"
-      ]
+      ],
+      "lat": -8.872667,
+      "lng": 116.279314
     },
     "staff": {
       "friendliness": "good",
@@ -58006,7 +58606,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Tuk Tuk area of Samosir Island, directly on Lake Toba's waterfront; ferry pickup available from Parapat"
-      ]
+      ],
+      "lat": 2.5936293,
+      "lng": 98.8010823
     },
     "staff": {
       "friendliness": "excellent",
@@ -58187,7 +58789,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Jl. Bonjol Baru No.2A, Tarok Dipo, Bukittinggi 26138, Indonesia; about 1.9km from the Jam Gadang clock tower"
-      ]
+      ],
+      "lat": -0.3051954,
+      "lng": 100.3694921
     },
     "staff": {
       "friendliness": null,
@@ -58383,7 +58987,9 @@
       "nearby_raw_text": [
         "Jalan Mangunnegaran Kulon No.9, Kraton district",
         "5-minute walk to the Sultan's Palace area"
-      ]
+      ],
+      "lat": -7.801349,
+      "lng": 110.3647351
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -58578,7 +59184,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Downtown Yogyakarta's culinary/fashion district, less than 2km to Museum Benteng Vredeburg and Malioboro, near KM0 and Taman Sari Water Castle"
-      ]
+      ],
+      "lat": -7.801349,
+      "lng": 110.3647351
     },
     "staff": {
       "friendliness": null,
@@ -58751,7 +59359,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "0.56km from city centre"
-      ]
+      ],
+      "lat": -8.3503396,
+      "lng": 116.0362621
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -58936,7 +59546,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "0.91km from city centre; beachfront bungalows with direct beach access"
-      ]
+      ],
+      "lat": -8.3577073,
+      "lng": 116.081162
     },
     "staff": {
       "friendliness": "excellent per reviews",
@@ -59125,7 +59737,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "133 Galle Rd, Mirissa - 100m from beach, walkability grade 91/100, 39 restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 5.9493634,
+      "lng": 80.4558128
     },
     "staff": {
       "friendliness": "average",
@@ -59310,7 +59924,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Lower Dickson Road, Galle - close to centre but away from the noise; 0.4km from city centre, 1.5km from Galle Fort Beach"
-      ]
+      ],
+      "lat": 6.0328139,
+      "lng": 80.214955
     },
     "staff": {
       "friendliness": "excellent",
@@ -59494,7 +60110,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "About 1.3km from Sigiriya centre, an eight-minute walk from the bus stop, near Sigiriya Lion Rock"
-      ]
+      ],
+      "lat": 7.9566634,
+      "lng": 80.7599301
     },
     "staff": {
       "friendliness": "excellent",
@@ -59703,7 +60321,9 @@
         "3.5km from city centre; 15 minutes from Ella town strip",
         "complimentary excursions to Little Adams Peak, Nine Arches Bridge, Zip Line, and Ravana Pool Club",
         "accessible by Bus No. 318 (~15 min, ~Rs.70) or tuk-tuk (~Rs.1200)"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews (staff score 9.4/10, praised as 'exceptionally friendly and helpful')",
@@ -59905,7 +60525,9 @@
       "nearby_raw_text": [
         "within a couple of minutes from the Ella railway station and town centre",
         "approximately a 10-minute walk to downtown, walkability grade 87/100"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews, described as friendly and helpful",
@@ -60117,7 +60739,9 @@
         "at the foothills of Ella Rock and Ravana's Cave",
         "situated within a 120-acre private estate",
         "get off at Kithal Ella Station (5-minute walk); or 3km walk along railway tracks from Ella town; or 5km via Kithal Ella Road"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews (staff score 9.8/10, described as friendly and helpful)",
@@ -60327,7 +60951,9 @@
         "1.4km from city centre",
         "convenient location for accessing Nine Arch Bridge and Little Adam's Peak",
         "some guests note it's a bit removed from the town centre"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews, described as friendly and helpful",
@@ -60529,7 +61155,9 @@
       "nearby_raw_text": [
         "No. 7, Wehergalla Temple Road, Mirissa \u2014 direct beach access, described as the only beachfront hostel in Mirissa",
         "whale watching season runs November to March; also known for turtle spotting and nearby surf breaks"
-      ]
+      ],
+      "lat": 5.9493634,
+      "lng": 80.4558128
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -60748,7 +61376,9 @@
       "nearby_raw_text": [
         "about a 5-minute walk from the beach",
         "roughly two hours from Colombo (Bandaranaike International Airport)"
-      ]
+      ],
+      "lat": 5.9493634,
+      "lng": 80.4558128
     },
     "staff": {
       "friendliness": "generally positive per reviews; owner James frequently singled out by name for hospitality and local tips",
@@ -60964,7 +61594,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "right on the famous Narigama beach"
-      ]
+      ],
+      "lat": 6.140753,
+      "lng": 80.1028181
     },
     "staff": {
       "friendliness": null,
@@ -61162,7 +61794,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Main Street, Pottuvil, ~3.9km from Arugam Bay centre; beginner surf breaks Peanut Farm and Elephant Rock are about a 20-minute drive south"
-      ]
+      ],
+      "lat": 6.8468506,
+      "lng": 81.8306961
     },
     "staff": {
       "friendliness": null,
@@ -61347,7 +61981,9 @@
       ],
       "nearby_raw_text": [
         "around a 3 minute tuk tuk or 15 minutes walking to town"
-      ]
+      ],
+      "lat": 6.8468506,
+      "lng": 81.8306961
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -61557,7 +62193,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located in the jungle, surrounded by four beaches - Dewata, Jungle, Unawatuna and Dalawella; about an 8-minute walk to Unawatuna beach"
-      ]
+      ],
+      "lat": 6.0201774,
+      "lng": 80.2474836
     },
     "staff": {
       "friendliness": "excellent",
@@ -61749,7 +62387,9 @@
       ],
       "nearby_raw_text": [
         "Heenatigala Road, Unawatuna, adjacent to Unawatuna train station; 1.5km to Unawatuna Beach, 5km to Galle centre"
-      ]
+      ],
+      "lat": 6.0201774,
+      "lng": 80.2474836
     },
     "staff": {
       "friendliness": "good",
@@ -61948,7 +62588,9 @@
       "nearby_raw_text": [
         "a short stroll from the beach",
         "5 minutes by tuk-tuk to Mount Lavinia Railway Station"
-      ]
+      ],
+      "lat": 6.9388614,
+      "lng": 79.8542005
     },
     "staff": {
       "friendliness": null,
@@ -62150,7 +62792,9 @@
       ],
       "nearby_raw_text": [
         "About 10 minutes from Mount Lavinia beach and nightlife, and roughly 20 minutes from Colombo city centre"
-      ]
+      ],
+      "lat": 6.9388614,
+      "lng": 79.8542005
     },
     "staff": {
       "friendliness": "excellent",
@@ -62348,7 +62992,9 @@
         "1-minute walk to Lazy Left surf break in Midigama Bay",
         "5 different surf breaks within walking/short tuk-tuk distance",
         "2 minutes from the beach, just off the main street"
-      ]
+      ],
+      "lat": 5.9652216,
+      "lng": 80.3909468
     },
     "staff": {
       "friendliness": "excellent per reviews (perfect 10/10 staff score on Hostelworld)",
@@ -62552,7 +63198,9 @@
       ],
       "nearby_raw_text": [
         "Wellawaya Road, Ahangama, Galle District \u2014 directly across from Kabalana Beach, a popular surf break near Weligama"
-      ]
+      ],
+      "lat": 5.9735163,
+      "lng": 80.3622999
     },
     "staff": {
       "friendliness": "good",
@@ -62758,7 +63406,9 @@
       "nearby_raw_text": [
         "a short wander or pedal from Madiha's surf breaks and hidden beaches",
         "roughly 2.22km from Matara town centre"
-      ]
+      ],
+      "lat": 5.947822,
+      "lng": 80.5482919
     },
     "staff": {
       "friendliness": "positive per reviews",
@@ -62959,7 +63609,9 @@
       ],
       "nearby_raw_text": [
         "Sithulpauwa Road, Kataragama, bordering Yala National Park; described by guests as 'a bit of a secluded spot' with free 4WD lifts provided in and out"
-      ]
+      ],
+      "lat": 6.2798842,
+      "lng": 81.4015115
     },
     "staff": {
       "friendliness": "excellent",
@@ -63146,7 +63798,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 52.3730796,
+      "lng": 4.8924534
     },
     "staff": {
       "friendliness": "good",
@@ -63337,7 +63991,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 52.3730796,
+      "lng": 4.8924534
     },
     "staff": {
       "friendliness": "very good",
@@ -63530,7 +64186,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "2 minutes from Gare du Nord train station with direct airport transfers available"
-      ]
+      ],
+      "lat": 48.8534951,
+      "lng": 2.3483915
     },
     "staff": {
       "friendliness": "generally positive per reviews (staff score 8.2/10)",
@@ -63732,7 +64390,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "93 restaurants and 47 attractions within 0.3 miles"
-      ]
+      ],
+      "lat": 48.8534951,
+      "lng": 2.3483915
     },
     "staff": {
       "friendliness": "generally positive per reviews, though service described as inconsistent by some",
@@ -63930,7 +64590,9 @@
       "nearby_raw_text": [
         "10th Arrondissement, near Canal Saint-Martin",
         "Rooftop bar with Montmartre views"
-      ]
+      ],
+      "lat": 48.8588897,
+      "lng": 2.320041
     },
     "staff": {
       "friendliness": "good",
@@ -64122,7 +64784,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "central Berlin location with convenient metro and tram access directly outside the hostel"
-      ]
+      ],
+      "lat": 52.5185793,
+      "lng": 13.3935975
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -64326,7 +64990,9 @@
       "near_metro": true,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 52.5173885,
+      "lng": 13.3951309
     },
     "staff": {
       "friendliness": "very good",
@@ -64526,7 +65192,9 @@
       "nearby_raw_text": [
         "Right next to Munich Hauptbahnhof",
         "Short walk to Oktoberfest grounds and Old Town"
-      ]
+      ],
+      "lat": 48.1371079,
+      "lng": 11.5753822
     },
     "staff": {
       "friendliness": "good",
@@ -64728,7 +65396,9 @@
       "near_metro": true,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 51.5074456,
+      "lng": -0.1277653
     },
     "staff": {
       "friendliness": null,
@@ -64923,7 +65593,9 @@
       "nearby_raw_text": [
         "3 minutes' walk to Russell Square station",
         "6 minutes' walk to King's Cross"
-      ]
+      ],
+      "lat": 51.5074456,
+      "lng": -0.1277653
     },
     "staff": {
       "friendliness": "good",
@@ -65119,7 +65791,9 @@
       "nearby_raw_text": [
         "10 minute walk from King's Cross station",
         "75+ restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 51.5074456,
+      "lng": -0.1277653
     },
     "staff": {
       "friendliness": "generally positive, though some reports of unresponsive management on booking disputes",
@@ -65310,7 +65984,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 50.8467372,
+      "lng": 4.352493
     },
     "staff": {
       "friendliness": "excellent",
@@ -65491,7 +66167,9 @@
       "nearby_raw_text": [
         "135-137 Langestraat, ~1km from Markt square",
         "Housed in a World Heritage listed building"
-      ]
+      ],
+      "lat": 51.2085526,
+      "lng": 3.226772
     },
     "staff": {
       "friendliness": "good",
@@ -65697,7 +66375,9 @@
       "nearby_raw_text": [
         "0.75-0.8 km from city centre",
         "near Urquinaona and Arc de Triomf metro stations"
-      ]
+      ],
+      "lat": 41.3825802,
+      "lng": 2.177073
     },
     "staff": {
       "friendliness": null,
@@ -65899,7 +66579,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 41.3825802,
+      "lng": 2.177073
     },
     "staff": {
       "friendliness": "good",
@@ -66096,7 +66778,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "artsy, laid-back Gr\u00e0cia neighbourhood with caf\u00e9s and independent shops"
-      ]
+      ],
+      "lat": 41.4104479,
+      "lng": 2.1584852
     },
     "staff": {
       "friendliness": "generally positive per reviews; multilingual",
@@ -66286,7 +66970,9 @@
       "nearby_raw_text": [
         "Calle Sagasta 22, next to Alonso Mart\u00ednez square",
         "Adjacent to a metro stop"
-      ]
+      ],
+      "lat": 40.416782,
+      "lng": -3.703507
     },
     "staff": {
       "friendliness": "good",
@@ -66483,7 +67169,9 @@
       "nearby_raw_text": [
         "3-minute walk from Puerta del Sol and Gran V\u00eda",
         "Near Plaza Mayor"
-      ]
+      ],
+      "lat": 40.416782,
+      "lng": -3.703507
     },
     "staff": {
       "friendliness": "excellent",
@@ -66685,7 +67373,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "1.3km from city centre"
-      ]
+      ],
+      "lat": 37.3886303,
+      "lng": -5.9953403
     },
     "staff": {
       "friendliness": null,
@@ -66887,7 +67577,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "walking distance to Cathedral, Albaic\u00edn, and Alhambra"
-      ]
+      ],
+      "lat": 37.1734995,
+      "lng": -3.5995337
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -67105,7 +67797,9 @@
       ],
       "nearby_raw_text": [
         "Sintra (UNESCO World Heritage Site) accessible directly by train from Rossio station"
-      ]
+      ],
+      "lat": 38.7077507,
+      "lng": -9.1365919
     },
     "staff": {
       "friendliness": "excellent",
@@ -67311,7 +68005,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "literally inside the gorgeous main train station, S\u00e3o Bento, featuring twenty thousand painted azulejo tiles"
-      ]
+      ],
+      "lat": 41.1502195,
+      "lng": -8.6103497
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -67525,7 +68221,9 @@
         "0.97km from city centre",
         "Via Torino n. 45",
         "7-minute walk to Roma Termini"
-      ]
+      ],
+      "lat": 41.8933203,
+      "lng": 12.4829321
     },
     "staff": {
       "friendliness": "9.9/10 per Hostelworld staff score - exceptionally praised",
@@ -67722,7 +68420,9 @@
         "1.9 km from city centre",
         "Via Principe Amedeo 251",
         "close to Colosseum and Termini Station"
-      ]
+      ],
+      "lat": 41.8933203,
+      "lng": 12.4829321
     },
     "staff": {
       "friendliness": "praised as incredibly friendly and helpful in reviews",
@@ -67908,7 +68608,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "one of the most lively and dynamic areas of Milan"
-      ]
+      ],
+      "lat": 45.4676041,
+      "lng": 9.1891136
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -68098,7 +68800,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 45.4371908,
+      "lng": 12.3345898
     },
     "staff": {
       "friendliness": "good",
@@ -68290,7 +68994,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 37.9755648,
+      "lng": 23.7348324
     },
     "staff": {
       "friendliness": "excellent",
@@ -68478,7 +69184,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "on Ilica street, Zagreb's main street, ~5-10 min walk from main train station"
-      ]
+      ],
+      "lat": 45.8130967,
+      "lng": 15.9772795
     },
     "staff": {
       "friendliness": "excellent",
@@ -68670,7 +69378,9 @@
       "nearby_raw_text": [
         "0.6km from city center",
         "Spalena 39, Old Town"
-      ]
+      ],
+      "lat": 50.0874654,
+      "lng": 14.4212535
     },
     "staff": {
       "friendliness": "9.7/10 per Hostelworld staff score",
@@ -68862,7 +69572,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 47.4978789,
+      "lng": 19.0402383
     },
     "staff": {
       "friendliness": "excellent",
@@ -69052,7 +69764,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "the heart of Budapest close to plenty of restaurants, caf\u00e9s and monuments"
-      ]
+      ],
+      "lat": 47.4978789,
+      "lng": 19.0402383
     },
     "staff": {
       "friendliness": "generally positive per reviews, especially with solo female travelers",
@@ -69268,7 +69982,9 @@
       "nearby_raw_text": [
         "0.55-0.6km from city center",
         "Rechte Wienzeile 35, adjacent to the Naschmarkt"
-      ]
+      ],
+      "lat": 48.2083537,
+      "lng": 16.3725042
     },
     "staff": {
       "friendliness": null,
@@ -69452,7 +70168,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 52.2333742,
+      "lng": 21.0711489
     },
     "staff": {
       "friendliness": "excellent",
@@ -69652,7 +70370,9 @@
         "0.7 km from city centre",
         "Krakowskie Przedmiescie 55, Old Town",
         "Palace of Culture 25 minutes walk"
-      ]
+      ],
+      "lat": 52.2333742,
+      "lng": 21.0711489
     },
     "staff": {
       "friendliness": null,
@@ -69830,7 +70550,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Obchodn\u00e1 43, ~0.6km from city centre"
-      ]
+      ],
+      "lat": 48.1516988,
+      "lng": 17.1093063
     },
     "staff": {
       "friendliness": "good",
@@ -70023,7 +70745,9 @@
       "nearby_raw_text": [
         "Upplandsgatan 2a, 500m from central station",
         "Walking distance to Gamla Stan and Drottninggatan"
-      ]
+      ],
+      "lat": 59.3251172,
+      "lng": 18.0710935
     },
     "staff": {
       "friendliness": "excellent",
@@ -70210,7 +70934,9 @@
         "1.2 km from center",
         "Torsgatan 10",
         "10-minute walk to Central Station"
-      ]
+      ],
+      "lat": 59.3251172,
+      "lng": 18.0710935
     },
     "staff": {
       "friendliness": null,
@@ -70392,7 +71118,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 55.6867243,
+      "lng": 12.5700724
     },
     "staff": {
       "friendliness": "good",
@@ -70580,7 +71308,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Adelgade 7, a stone's throw from Kongens Nytorv square"
-      ]
+      ],
+      "lat": 55.6867243,
+      "lng": 12.5700724
     },
     "staff": {
       "friendliness": "good",
@@ -70764,7 +71494,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "located in the heart of Riga's Old Town at Kaleju iela 50, walking access to monuments, museums, restaurants, and entertainment venues"
-      ]
+      ],
+      "lat": 56.9493977,
+      "lng": 24.1051846
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -70961,7 +71693,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "adjacent to Metelkova, a hip alternative neighborhood featuring galleries, street art, and cultural venues"
-      ]
+      ],
+      "lat": 46.0500268,
+      "lng": 14.5069289
     },
     "staff": {
       "friendliness": "mostly positive per reviews, a few reviews note standoffish service",
@@ -71173,7 +71907,9 @@
       "nearby_raw_text": [
         "0.15km from city centre, on Eyre Square",
         "2-minute walk from Coach and Train Station"
-      ]
+      ],
+      "lat": 53.2744122,
+      "lng": -9.0490601
     },
     "staff": {
       "friendliness": "praised in reviews as friendly and social; hostel scored 9.6/10 overall on Hostelworld",
@@ -71375,7 +72111,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 64.145981,
+      "lng": -21.9422367
     },
     "staff": {
       "friendliness": "good",
@@ -71569,7 +72307,9 @@
       "nearby_raw_text": [
         "Istarska 3, 3 minutes' walk to Diocletian's Palace",
         "10 minutes from ferry, bus and train stations"
-      ]
+      ],
+      "lat": 43.5116383,
+      "lng": 16.4399659
     },
     "staff": {
       "friendliness": null,
@@ -71768,7 +72508,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 60.1666204,
+      "lng": 24.9435408
     },
     "staff": {
       "friendliness": "excellent",
@@ -71968,7 +72710,9 @@
         "0.9 km from center",
         "Paupio str. 31a",
         "adjacent to Republic of Uzupis"
-      ]
+      ],
+      "lat": 54.6870458,
+      "lng": 25.2829111
     },
     "staff": {
       "friendliness": "praised as friendly in reviews",
@@ -72164,7 +72908,9 @@
       "nearby_raw_text": [
         "Lake Lucerne sits directly in front of the property",
         "a fair walk to the city centre per some reviewers"
-      ]
+      ],
+      "lat": 47.052144,
+      "lng": 8.3058123
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -72360,7 +73106,9 @@
         "10-minute walk to Plaza de la Virgen and Plaza de la Reina",
         "5 minutes to two metro stations",
         "30 minutes to City of Arts and Sciences"
-      ]
+      ],
+      "lat": 39.4697065,
+      "lng": -0.3763353
     },
     "staff": {
       "friendliness": null,
@@ -72536,7 +73284,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "located roughly 1.4km from Ghent city centre"
-      ]
+      ],
+      "lat": 51.0538286,
+      "lng": 3.7250121
     },
     "staff": {
       "friendliness": null,
@@ -72725,7 +73475,9 @@
       "nearby_raw_text": [
         "everything that Split has to offer is right next door, including the UNESCO protected World Heritage zone",
         "prime island-hopping location"
-      ]
+      ],
+      "lat": 43.5116383,
+      "lng": 16.4399659
     },
     "staff": {
       "friendliness": "exceptionally positive per reviews; staff member \"Boris\" frequently mentioned by name",
@@ -72964,7 +73716,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Saqsaywaman about 30 minutes away"
-      ]
+      ],
+      "lat": -13.5170887,
+      "lng": -71.9785356
     },
     "staff": {
       "friendliness": "rated 9.0/10 by guests, described as friendly",
@@ -73158,7 +73912,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "San Andres 260, Cusco, near Plaza de Armas"
-      ]
+      ],
+      "lat": -13.5170887,
+      "lng": -71.9785356
     },
     "staff": {
       "friendliness": "good",
@@ -73358,7 +74114,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Located at Av. Larco 189, Miraflores, one of Lima's safest and most vibrant districts, about 8.1km from Lima's historic centre."
-      ]
+      ],
+      "lat": -12.0459808,
+      "lng": -77.0305912
     },
     "staff": {
       "friendliness": "friendly",
@@ -73554,7 +74312,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Calle Lima N\u00b0457, Miraflores, Lima \u2014 directly facing Kennedy Park, about 8.3km from Lima's historic centre."
-      ]
+      ],
+      "lat": -12.0459808,
+      "lng": -77.0305912
     },
     "staff": {
       "friendliness": "friendly",
@@ -73733,7 +74493,9 @@
       "near_metro": null,
       "near_airport": false,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -16.3988667,
+      "lng": -71.5369607
     },
     "staff": {
       "friendliness": null,
@@ -73923,7 +74685,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Calle Jerusalen 606, Arequipa 04001, Peru, in the Centro Historico, within walking distance of churches, restaurants and cafes."
-      ]
+      ],
+      "lat": -16.3988667,
+      "lng": -71.5369607
     },
     "staff": {
       "friendliness": null,
@@ -74114,7 +74878,9 @@
       "nearby_towns": [
         "Ica"
       ],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -14.0875914,
+      "lng": -75.7630553
     },
     "staff": {
       "friendliness": null,
@@ -74312,7 +75078,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Calle Angela de Perotti s/n, Huacachina, Peru \u2014 right at the edge of the lagoon and dunes."
-      ]
+      ],
+      "lat": -14.0875914,
+      "lng": -75.7630553
     },
     "staff": {
       "friendliness": "friendly",
@@ -74516,7 +75284,9 @@
       "nearby_raw_text": [
         "El Nuro about 30 minutes away",
         "Cabo Blanco about 45 minutes away"
-      ]
+      ],
+      "lat": -4.1551963,
+      "lng": -81.0061242
     },
     "staff": {
       "friendliness": "rated 10.0/10, described as very friendly",
@@ -74714,7 +75484,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Viamonte 887, Buenos Aires 1053, Microcentro/San Nicolas/Downtown"
-      ]
+      ],
+      "lat": -34.6095579,
+      "lng": -58.3887904
     },
     "staff": {
       "friendliness": "good",
@@ -74898,7 +75670,9 @@
       "nearby_raw_text": [
         "Chacabuco 1020, San Telmo, Buenos Aires",
         "1.8km from city centre"
-      ]
+      ],
+      "lat": -34.6095579,
+      "lng": -58.3887904
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -75087,7 +75861,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Calle Guatemala 4931, Buenos Aires C1425BUQ, Palermo"
-      ]
+      ],
+      "lat": -34.6095579,
+      "lng": -58.3887904
     },
     "staff": {
       "friendliness": null,
@@ -75308,7 +76084,9 @@
       "near_metro": false,
       "near_airport": false,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -34.7044648,
+      "lng": -58.4318562
     },
     "staff": {
       "friendliness": null,
@@ -75532,7 +76310,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Parque San Martin about a 30-minute walk"
-      ]
+      ],
+      "lat": -34.7044648,
+      "lng": -58.4318562
     },
     "staff": {
       "friendliness": "rated 9.0/10, described as exceptionally friendly and helpful",
@@ -75729,7 +76509,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "panoramic lake and mountain views from common areas"
-      ]
+      ],
+      "lat": -41.1334781,
+      "lng": -71.3101474
     },
     "staff": {
       "friendliness": "rated 10.0/10, called incredibly friendly and helpful by guests",
@@ -75915,7 +76697,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Calle Gdor Leon Quaglia 726, San Carlos de Bariloche"
-      ]
+      ],
+      "lat": -41.1334781,
+      "lng": -71.3101474
     },
     "staff": {
       "friendliness": "excellent",
@@ -76100,7 +76884,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Balcarce 460, A4400 Salta, Salta Province, Argentina \u2014 on one of Salta's main streets for activities and dining."
-      ]
+      ],
+      "lat": -25.2269908,
+      "lng": -64.5911956
     },
     "staff": {
       "friendliness": "friendly",
@@ -76283,7 +77069,9 @@
       "near_metro": false,
       "near_airport": false,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -31.7281737,
+      "lng": -60.5230802
     },
     "staff": {
       "friendliness": null,
@@ -76457,7 +77245,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Moneda 2350, Barrio Brasil, Santiago, Chile"
-      ]
+      ],
+      "lat": -33.4376995,
+      "lng": -70.6510671
     },
     "staff": {
       "friendliness": "excellent",
@@ -76651,7 +77441,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Barrio Lastarial, 1.2km from Santiago city centre"
-      ]
+      ],
+      "lat": -33.4376995,
+      "lng": -70.6510671
     },
     "staff": {
       "friendliness": "good",
@@ -76818,7 +77610,9 @@
       "nearby_raw_text": [
         "Cerro Artiller\u00eda neighborhood, Capit\u00e1n Mu\u00f1oz Gamero 91",
         "hillside location with 'twisty streets'; some noise from the port/nightlife noted in reviews"
-      ]
+      ],
+      "lat": -33.0458456,
+      "lng": -71.6196749
     },
     "staff": {
       "friendliness": "generally positive per reviews, owner Ana and family praised for hospitality",
@@ -77003,7 +77797,9 @@
       "near_metro": false,
       "near_airport": false,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -33.0458456,
+      "lng": -71.6196749
     },
     "staff": {
       "friendliness": null,
@@ -77189,7 +77985,9 @@
       "near_metro": false,
       "near_airport": false,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -23.3545489,
+      "lng": -67.9026571
     },
     "staff": {
       "friendliness": null,
@@ -77373,7 +78171,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "El Poblado (Manila neighborhood), 4.8km from city centre"
-      ]
+      ],
+      "lat": 6.2697324,
+      "lng": -75.6025597
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -77578,7 +78378,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Calle 44 68 76, Laureles, Medellin 050031"
-      ]
+      ],
+      "lat": 6.2697324,
+      "lng": -75.6025597
     },
     "staff": {
       "friendliness": "very good",
@@ -77768,7 +78570,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Cl. 30 #10-47, Getsema\u00ed, Cartagena de Indias, Bol\u00edvar, Colombia"
-      ]
+      ],
+      "lat": 10.4265566,
+      "lng": -75.5441671
     },
     "staff": {
       "friendliness": null,
@@ -77961,7 +78765,9 @@
       "nearby_raw_text": [
         "~10 minutes from the walled city",
         "273 restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 10.4265566,
+      "lng": -75.5441671
     },
     "staff": {
       "friendliness": null,
@@ -78160,7 +78966,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Carrera 2 no 12-48, Candelaria, Centro Bogota, Colombia."
-      ]
+      ],
+      "lat": 4.6533817,
+      "lng": -74.0836331
     },
     "staff": {
       "friendliness": "friendly",
@@ -78351,7 +79159,9 @@
       ],
       "nearby_raw_text": [
         "Address: Via Palestina KM 1.5, Finca La Serrana, Salento, Colombia \u2014 about a 15-20 minute walk from the town centre, on a hilltop farm with valley views."
-      ]
+      ],
+      "lat": 4.6373012,
+      "lng": -75.569799
     },
     "staff": {
       "friendliness": "friendly",
@@ -78535,7 +79345,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Carrera 7 6-45, Salento, Colombia \u2014 just a step from the main square."
-      ]
+      ],
+      "lat": 4.6373012,
+      "lng": -75.569799
     },
     "staff": {
       "friendliness": "friendly",
@@ -78728,7 +79540,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "2 blocks from Copacabana beach, 1 block from Cardeal Arcoverde metro station"
-      ]
+      ],
+      "lat": -22.9110137,
+      "lng": -43.2093727
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -78929,7 +79743,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Rua Francisco Muratori, 10, Santa Teresa, Rio de Janeiro \u2014 near Lapa's nightlife and the Santa Teresa tram, about 1.6km from the city centre."
-      ]
+      ],
+      "lat": -22.9110137,
+      "lng": -43.2093727
     },
     "staff": {
       "friendliness": "friendly",
@@ -79137,7 +79953,9 @@
       "near_metro": true,
       "near_airport": true,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -22.9110137,
+      "lng": -43.2093727
     },
     "staff": {
       "friendliness": "described as very friendly and helpful per reviews",
@@ -79316,7 +80134,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": -23.5506507,
+      "lng": -46.6333824
     },
     "staff": {
       "friendliness": null,
@@ -79490,7 +80310,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Av. Montes 503, La Paz, Bolivia \u2014 1.5km from city centre"
-      ]
+      ],
+      "lat": -16.4955455,
+      "lng": -68.1336229
     },
     "staff": {
       "friendliness": null,
@@ -79672,7 +80494,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Las Am\u00e9ricas #120, La Paz; centrally located"
-      ]
+      ],
+      "lat": -17.7956473,
+      "lng": -63.1967342
     },
     "staff": {
       "friendliness": "mixed per reviews \u2014 some reviewers praise staff, others report inconsistent behavior",
@@ -79863,7 +80687,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Calle Avaroa 326, Sucre, Bolivia \u2014 2 minutes' walk from the main plaza, in a central historic building."
-      ]
+      ],
+      "lat": -19.0477251,
+      "lng": -65.2594306
     },
     "staff": {
       "friendliness": "friendly",
@@ -80047,7 +80873,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Joaquin Pinto E8-24 y Diego de Almagro, Quito, Ecuador \u2014 in the La Mariscal tourist district, about 3.3km from Quito's historic centre."
-      ]
+      ],
+      "lat": -0.2201641,
+      "lng": -78.5123274
     },
     "staff": {
       "friendliness": "mixed",
@@ -80229,7 +81057,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "San Blas neighborhood, ~4 minutes' walk from Quito's historic center"
-      ]
+      ],
+      "lat": -0.2201641,
+      "lng": -78.5123274
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -80424,7 +81254,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Address: Luis A. Martinez y 12 de Noviembre, Banos, Ecuador \u2014 right in the town centre."
-      ]
+      ],
+      "lat": -1.3319157,
+      "lng": -78.2625285
     },
     "staff": {
       "friendliness": "friendly",
@@ -80624,7 +81456,9 @@
       "nearby_raw_text": [
         "2-3 minutes' walk to the cathedral/town center",
         "waterfall views from balconies"
-      ]
+      ],
+      "lat": -1.3319157,
+      "lng": -78.2625285
     },
     "staff": {
       "friendliness": "generally positive per reviews, described as friendly",
@@ -80818,7 +81652,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Anjuna Beach area"
-      ]
+      ],
+      "lat": 15.5850408,
+      "lng": 73.7438151
     },
     "staff": {
       "friendliness": "mixed per reviews (some staff-attitude complaints alongside positive mentions)",
@@ -81014,7 +81850,9 @@
       "nearby_raw_text": [
         "Anjuna Beach",
         "Salt Restaurant (adjacent)"
-      ]
+      ],
+      "lat": 15.5850408,
+      "lng": 73.7438151
     },
     "staff": {
       "friendliness": "generally positive per reviews (staff score 8.7/10)",
@@ -81198,7 +82036,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "beaches ~5-minute scooter ride away"
-      ]
+      ],
+      "lat": 15.5985735,
+      "lng": 73.7408126
     },
     "staff": {
       "friendliness": "very positive per reviews (staff score 9.7/10)",
@@ -81397,7 +82237,9 @@
         "Vagator Beach (~5 min)",
         "Chapora Fort (~5 min)",
         "Anjuna Beach (~10 min)"
-      ]
+      ],
+      "lat": 15.5985735,
+      "lng": 73.7408126
     },
     "staff": {
       "friendliness": "generally positive per reviews (staff score 7.5/10)",
@@ -81583,7 +82425,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Arambol Beach (~200m)"
-      ]
+      ],
+      "lat": 15.6878815,
+      "lng": 73.7055986
     },
     "staff": {
       "friendliness": "generally positive per reviews (welcoming, family-like atmosphere praised)",
@@ -81803,7 +82647,9 @@
         "Sweet Water Lake",
         "surf spots",
         "vegan restaurants"
-      ]
+      ],
+      "lat": 15.6878815,
+      "lng": 73.7055986
     },
     "staff": {
       "friendliness": "excellent per reviews (near-perfect 9.9/10 rating, praised as friendly and home-like)",
@@ -82001,7 +82847,9 @@
       "nearby_raw_text": [
         "Palolem Beach (~5 min walk)",
         "116+ nearby restaurants"
-      ]
+      ],
+      "lat": 15.012796,
+      "lng": 74.0219498
     },
     "staff": {
       "friendliness": "very positive per reviews (praised as friendly and helpful)",
@@ -82188,7 +83036,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Palolem Beach (~10 min walk)"
-      ]
+      ],
+      "lat": 15.012796,
+      "lng": 74.0219498
     },
     "staff": {
       "friendliness": "very positive per reviews (great hospitality noted)",
@@ -82382,7 +83232,9 @@
       "nearby_raw_text": [
         "Palolem Beach (~1km, 5-minute walk)",
         "Patnem Beach (~2-3km)"
-      ]
+      ],
+      "lat": 15.012796,
+      "lng": 74.0219498
     },
     "staff": {
       "friendliness": "positive per reviews (praised for friendliness)",
@@ -82556,7 +83408,9 @@
       "near_metro": null,
       "near_airport": null,
       "nearby_towns": [],
-      "nearby_raw_text": []
+      "nearby_raw_text": [],
+      "lat": 15.0411042,
+      "lng": 73.9882421
     },
     "staff": {
       "friendliness": null,
@@ -82733,7 +83587,9 @@
       "nearby_raw_text": [
         "hillside location, quiet but accessible area",
         "nearest airports Mattala Rajapaksa (39.8 mi) and Weerawila (41.1 mi)"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews, described as giving a 'welcoming family feel'",
@@ -82950,7 +83806,9 @@
         "10 minutes walk from the train station",
         "5 minutes walk to downtown",
         "Nine Arch Bridge and Little Adam's Peak each ~30-minute walk"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews - owner 'Aka' and staff frequently praised as friendly and helpful",
@@ -83144,7 +84002,9 @@
       "nearby_raw_text": [
         "Located 9th Miles Post, Uva, Karanda, Ella - about 6.7km from Ella city centre",
         "somewhat remote but accessible by regular bus service"
-      ]
+      ],
+      "lat": 6.9609465,
+      "lng": 81.2394711
     },
     "staff": {
       "friendliness": "generally positive per reviews - friendly staff noted",
@@ -83359,7 +84219,9 @@
         "Rawana Waterfall within a 10-minute drive",
         "Passara bus stop a 5-minute walk",
         "Cafe Chill accessible by a 20-minute drive"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": null,
@@ -83554,7 +84416,9 @@
         "Situated 3.6km from Ella's city centre",
         "all rooms have balconies with mountain views",
         "free train station pickup"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "staff receive a perfect 10.0 rating for hospitality per Hostelworld reviews",
@@ -83736,7 +84600,9 @@
         "4th Miles Post, Passara Road, Ella 90090",
         "walkability grade 42/100 - car recommended",
         "cabin-style accommodations"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": null,
@@ -83921,7 +84787,9 @@
         "approximately 1km from the city centre on 17th Police Station Road",
         "300m from Ella Railway Station",
         "right in the centre of Ella"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews - staff described as lovely and friendly",
@@ -84122,7 +84990,9 @@
       "nearby_raw_text": [
         "located 0.98-1km from Ella's city centre on Passara Road",
         "within walking distance of the railway station"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews - 'friendly staff, excellent location'",
@@ -84323,7 +85193,9 @@
         "located in Yahalewela, Passara Road 4th Mile Post",
         "approximately 2km outside central Ella",
         "Nine Arch Bridge 1 mile, Little Adam's Peak 1.8 miles, Ella Spice Garden 1.9 miles, Ella Rock 3.8 miles"
-      ]
+      ],
+      "lat": 6.9609465,
+      "lng": 81.2394711
     },
     "staff": {
       "friendliness": "strongly positive per reviews - owner Mr. Gamini singled out as friendly, caring, and helpful",
@@ -84509,7 +85381,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "7.7km from Ella city centre, near Visari Waterfall"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "strongly positive per reviews - host Ajith praised repeatedly as kind, helpful, and accommodating",
@@ -84698,7 +85572,9 @@
       "nearby_raw_text": [
         "Passara Road, roughly a 6-10 minute walk from Ella's main area on a quiet side street",
         "one guest flagged safety concerns about the dark, winding road access at night"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "generally positive per reviews, though a small sample - 'incredibly friendly' cited",
@@ -84892,7 +85768,9 @@
       "nearby_raw_text": [
         "Passara Road, central Ella, walkability grade 99/100",
         "within walking distance of cafes, restaurants, and shops"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "strongly positive per reviews - staff described as incredibly helpful and welcoming, family-like atmosphere",
@@ -85101,7 +85979,9 @@
       "nearby_raw_text": [
         "4.3km from Ella city centre",
         "final 500m access via a challenging/rough road; shuttle service provided with advance notice"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "strongly positive per reviews - staff often described as friendly, welcoming, and like family",
@@ -85312,7 +86192,9 @@
         "14 restaurants within 0.75 miles",
         "Nine Arches Bridge ~8 minutes and Honey Bee Garden ~11 minutes by vehicle",
         "positioned as a refueling stop for trekkers between Little Adam's Peak and Nine Arches Bridge"
-      ]
+      ],
+      "lat": 6.9609465,
+      "lng": 81.2394711
     },
     "staff": {
       "friendliness": "generally positive per reviews - owners described as clean, nice, and humble",
@@ -85496,7 +86378,9 @@
       "nearby_raw_text": [
         "Wellawaya Road, Ella - about 0.6km from city centre / roughly 300m from Ella town",
         "on the edge of town, away from noise"
-      ]
+      ],
+      "lat": 6.8736058,
+      "lng": 81.0489927
     },
     "staff": {
       "friendliness": "strongly positive per reviews - staff rated 9.9/10 on Hostelworld",
@@ -85680,7 +86564,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "quiet side street in central lakeside area, approximately 5-10 minutes' walk from the lake, near numerous restaurants and shops"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per reviews - 'very friendly family' running the property",
@@ -85865,7 +86751,9 @@
       "nearby_raw_text": [
         "Lakeside district, 17th Street; Phewa Lake and tourist center approximately 4 minutes' walk",
         "walkability score 100/100"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per reviews - family-run, owner speaks fluent Japanese and assists Japanese guests specially",
@@ -86050,7 +86938,9 @@
       "nearby_raw_text": [
         "Lakeside district, 5.7km from city center",
         "'located in a quiet area while only few minutes walk away from the central area and the lake'"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per reviews - staff category score 10.0/10, described as incredibly friendly and helpful",
@@ -86246,7 +87136,9 @@
       "nearby_raw_text": [
         "Lakeside area, approximately 6.6km from city center",
         "proximity to Phewa Lake, World Peace Pagoda, and Sarangkot Hill"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "mixed-to-positive per reviews (staff category 7.0/10) - 'friendly and helpful staff'",
@@ -86435,7 +87327,9 @@
       "nearby_raw_text": [
         "a quiet section of Lakeside, walkable to shops/cafes/restaurants",
         "approximately 1.9 miles from Pokhara Airport, 5-minute walk to Phewa Lake"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per reviews - consistently praised as friendly and helpful",
@@ -86622,7 +87516,9 @@
       "nearby_raw_text": [
         "lakeside tourist area, approximately 10 minutes from the airport, 'calm area' close to main streets",
         "walkability score 100/100"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per reviews - 'very friendly family' management, staff go out of their way to help",
@@ -86807,7 +87703,9 @@
       "nearby_raw_text": [
         "House no. 79, Barahi Path, Ward 6, Pokhara 33700; minutes from Phewa Lake with good connectivity to the airport and bus stops",
         "walkability score 100/100"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per reviews - hospitable, responsive owner and team",
@@ -86995,7 +87893,9 @@
       "nearby_raw_text": [
         "Nadipur Road, approximately 3km from Pokhara Airport",
         "50 restaurants within 0.3 miles, walkability score 77/100"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": null,
@@ -87168,7 +88068,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Lalupate Marga, walkability score 100/100, approximately 1.8 miles from Pokhara Airport, 154 restaurants within 0.3 miles"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per review - 'super kind and helpful' ownership described stay as 'a bliss'",
@@ -87342,7 +88244,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Lakeside Street No 9, Pokhara 33700, Nepal"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": null,
@@ -87509,7 +88413,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Lakeside area of Pokhara, 6.6 km from city center"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": null,
@@ -87696,7 +88602,9 @@
       "nearby_raw_text": [
         "15th Street, Lakeside Road Pahadi Marg, 'very centrally in Lake Side', about 3.1km from Pokhara Airport",
         "walkability score 100/100"
-      ]
+      ],
+      "lat": 28.209538,
+      "lng": 83.991402
     },
     "staff": {
       "friendliness": "very positive per reviews - family-run business, staff 'very helpful and nice'",
@@ -87884,7 +88792,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "55 Phra Sumen Road, approximately 1.2km from the city center, near the famous Khao San Road backpacker district"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -88077,7 +88987,9 @@
       "nearby_raw_text": [
         "Just five minutes' walk from Khao San Road but far enough away to not be noisy at night",
         "Approximately 0.8km from the city center"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "very positive per reviews, highly praised",
@@ -88277,7 +89189,9 @@
       "nearby_raw_text": [
         "925/9 Rama 1 Rd., Wangmai, Patumwan, Bangkok - 3km from city center",
         "Steps from BTS National Stadium Skytrain and directly opposite MBK Center shopping mall"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "excellent per reviews (10.0/10 staff score)",
@@ -88477,7 +89391,9 @@
       "nearby_raw_text": [
         "3.2km from city center, adjacent to BTS Skytrain, 5 mins walk from Airport Rail Link",
         "Accessible to Khao San Road by taxi"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "positive per reviews (staff score 8.7/10)",
@@ -88667,7 +89583,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "22 Soi Samran Rat, Mahachai Road, Phra Nakhon - within walking distance of Wat Saket (7 min) and Khao San Road (10 min)"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "positive per reviews",
@@ -88857,7 +89775,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Situated in a quiet alley (Soi Silom 14) near Chong Nonsi BTS station (7 min walk)"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "generally positive per reviews",
@@ -89042,7 +89962,9 @@
       "nearby_raw_text": [
         "51, Soi Phahonyothin 5, Phahonyothin Road, Samsen Nai, Phaya Thai, Bangkok - 5km from city center",
         "Described as peaceful, friendly, creative, and full of local life rather than tourist-centric"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -89239,7 +90161,9 @@
       "nearby_raw_text": [
         "23 Sukhumvit 38 Road - a short walk away from the Thong Lo BTS station",
         "Adjacent street food market (Soi 38)"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "generally positive per reviews, though a minority of reviews cite inconsistent service",
@@ -89434,7 +90358,9 @@
       "nearby_raw_text": [
         "5/3-4 Silom Road, right in the centre on Silom Road, 100/100 walkability grade",
         "Proximity to restaurants, Patpong Night Market, Lumphini Park, and BTS Skytrain access"
-      ]
+      ],
+      "lat": 13.7393113,
+      "lng": 100.5166499
     },
     "staff": {
       "friendliness": "very positive per reviews",
@@ -89583,7 +90509,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Jalan Binaria, Anturan, Lovina - 50 m to Dolphin Statue and central Lovina Beach, 10 m from restaurants, bars, shops"
-      ]
+      ],
+      "lat": -8.1609242,
+      "lng": 115.0245321
     },
     "staff": {
       "friendliness": "high",
@@ -89729,7 +90657,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "North Bali, just 3 minutes from the beach"
-      ]
+      ],
+      "lat": -8.1609242,
+      "lng": 115.0245321
     },
     "staff": {
       "friendliness": "high",
@@ -89872,7 +90802,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Just steps from the central beach of Lovina, northern Bali"
-      ]
+      ],
+      "lat": -8.1609242,
+      "lng": 115.0245321
     },
     "staff": {
       "friendliness": "high",
@@ -90022,7 +90954,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "Jl. Ratna, Kaliasem, Lovina, North Bali - a short walk from Lovina's famous black sand beaches and dolphin-watching area"
-      ]
+      ],
+      "lat": -8.1609242,
+      "lng": 115.0245321
     },
     "staff": {
       "friendliness": null,
@@ -90185,7 +91119,9 @@
       "nearby_raw_text": [
         "Jl. I Ketut Natih, Jemeluk bay, Abang, Bali",
         "direct beach access, good for snorkeling and diving"
-      ]
+      ],
+      "lat": -8.334584,
+      "lng": 115.6409359
     },
     "staff": {
       "friendliness": "friendly and helpful",
@@ -90337,7 +91273,9 @@
       "nearby_raw_text": [
         "Jalan Raya Amed, Purwakerti, Karangasem, Bali",
         "21 restaurants within 0.3 miles per Tripadvisor"
-      ]
+      ],
+      "lat": -8.334584,
+      "lng": 115.6409359
     },
     "staff": {
       "friendliness": "friendly, described as 'super kind'",
@@ -90493,7 +91431,9 @@
       "nearby_raw_text": [
         "2.2km from Senggigi town centre",
         "2 minute walk from the beach"
-      ]
+      ],
+      "lat": -8.4951706,
+      "lng": 116.0447453
     },
     "staff": {
       "friendliness": "friendly",
@@ -90633,7 +91573,9 @@
       ],
       "nearby_raw_text": [
         "about 10 minutes from the beach and surf spots"
-      ]
+      ],
+      "lat": -8.8832436,
+      "lng": 116.1662714
     },
     "staff": {
       "friendliness": "incredibly friendly and helpful",
@@ -90773,7 +91715,9 @@
       "nearby_towns": [],
       "nearby_raw_text": [
         "~17.7 km from Lombok International Airport (Praya/Zainuddin Abdul Madjid)"
-      ]
+      ],
+      "lat": -8.8832436,
+      "lng": 116.1662714
     },
     "staff": {
       "friendliness": null,
@@ -90918,7 +91862,9 @@
         "3.9 km from Kuta Lombok centre",
         "1.4 km from Kuta Beach",
         "surf breaks and island/waterfall trips accessible nearby"
-      ]
+      ],
+      "lat": -8.872667,
+      "lng": 116.279314
     },
     "staff": {
       "friendliness": "excellent",
@@ -91106,7 +92052,9 @@
         "Kuta Beach ~7-minute walk",
         "Mawun Beach ~10 minutes by scooter",
         "Mawi Beach and Selong Belanak accessible for surfing"
-      ]
+      ],
+      "lat": -8.872667,
+      "lng": 116.279314
     },
     "staff": {
       "friendliness": null,
@@ -91257,7 +92205,9 @@
         "Address: Jl. Raya Kuta No.5, Kuta Lombok",
         "4.3 km from Kuta Lombok centre",
         "accessible to Selong Belanak"
-      ]
+      ],
+      "lat": -8.872667,
+      "lng": 116.279314
     },
     "staff": {
       "friendliness": "excellent",
