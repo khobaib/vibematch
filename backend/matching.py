@@ -1026,7 +1026,8 @@ def compute_semantic_entries(hostels: list, raw_query: str, hostel_embeddings: d
     return entries
 
 
-def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str = None, hostel_embeddings: dict = None) -> dict:
+def match_hostels(intent: dict, hostels: list, top_n: int = None, raw_query: str = None,
+                   hostel_embeddings: dict = None, force_expand: bool = False) -> dict:
     """
     STEP 1 — Hard filter: if a location was specified, only consider
     hostels that are actually in that city/region/country. Location is
@@ -1049,9 +1050,21 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
     avoid re-reading hostel_embeddings.json from disk on every request.
     If omitted, it's loaded lazily on first use.
 
+    force_expand: set True when the CALLER (not the traveler's query text)
+    wants the distance-based expansion to run — i.e. the user clicked a
+    "not enough listings, expand my search" button after seeing a thin
+    result set on a prior call. See STEP 1b below for how this differs
+    from `intent["expand_search_requested"]` (the traveler's own wording).
+    Product decision (see DECISIONS_LOG.md): a thin result set no longer
+    auto-expands silently — it surfaces `expansion_available: True` instead,
+    and the caller decides whether to re-call with force_expand=True.
+
     Returns a dict: {
-        "total_matches": int,   # how many hostels scored > 0, before truncation
-        "results": [...]        # top_n of them, in ranked order
+        "total_matches": int,          # how many hostels scored > 0
+        "results": [...],              # ranked results (top_n of them, or all if top_n is None)
+        "expansion_available": bool,   # true when results are thin and distance-expansion
+                                        # COULD help, but wasn't run this call (see force_expand)
+        "expansion_triggered_by": str or None,  # "explicit_query_text" | "user_requested" | None
     }
     """
     location = resolve_location_alias((intent.get("location") or "").lower())
@@ -1068,6 +1081,12 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
     # blending distance-based matches in as if they were exact hits.
     expanded_distance_km = {}
 
+    # Set below, inside the `if location:` block, when applicable. Declared
+    # here so the function always has a defined value to return even when
+    # no location was searched at all (expansion is meaningless without one).
+    expansion_available = False
+    expansion_triggered_by = None
+
     if location:
         filtered = []
         for h in hostels:
@@ -1081,22 +1100,34 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
                 filtered.append(h)
 
         # STEP 1b — distance-based expansion (see geo.py, DECISIONS_LOG.md).
-        # Triggers in two cases:
-        #   - the traveler explicitly invited a wider net ("Kathmandu or
-        #     nearby") - intent["expand_search_requested"] is set by the
-        #     intent parser for that language, and we go straight to the
-        #     expanded set rather than waiting for a thin result.
-        #   - the exact-location filter above came back thin (< MIN_NEARBY_
-        #     RESULTS) - e.g. a real place with real hostels nearby, but
-        #     none tagged with that exact city/region/country/nearby_towns
-        #     text. This is the original "Lovina returned nothing" bug.
+        # Two different reasons this can run, tracked separately so the
+        # caller (frontend) can tell them apart and show the right copy:
+        #   - "explicit_query_text" - the traveler's own wording explicitly
+        #     invited a wider net ("Kathmandu or nearby") -
+        #     intent["expand_search_requested"] is set by the intent parser
+        #     for that language. This ALWAYS runs immediately, even if the
+        #     exact-location results aren't thin at all (e.g. "Kathmandu or
+        #     surrounding" still widens the net even though plain
+        #     "Kathmandu" already has plenty on its own).
+        #   - "user_requested" - the caller passed force_expand=True, meaning
+        #     a person explicitly clicked something like "not enough
+        #     listings, expand my search" after seeing a thin result set on
+        #     a PRIOR call. This is a deliberate product decision (see
+        #     DECISIONS_LOG.md): a thin result set (< MIN_NEARBY_RESULTS)
+        #     no longer silently auto-expands the way it originally did -
+        #     it instead reports `expansion_available: True` below and waits
+        #     for the caller to opt in, so the traveler always knows when
+        #     they're looking at exact matches vs. a widened search.
         # Either way, this never REPLACES the exact matches - it only tops
         # them up with the closest additional hostels (by real lat/lng
         # distance) that aren't already in the filtered set, capped at
         # MAX_EXPAND_RADIUS_KM so a sparse area doesn't reach unreasonably
         # far just to hit the count.
         explicit_expand = bool(intent.get("expand_search_requested"))
-        if explicit_expand or len(filtered) < MIN_NEARBY_RESULTS:
+        is_thin = len(filtered) < MIN_NEARBY_RESULTS
+        should_expand = explicit_expand or (force_expand and is_thin)
+
+        if should_expand or is_thin:
             anchor = geo.resolve_place_coords(location)
             if anchor is not None:
                 anchor_lat, anchor_lon = anchor
@@ -1116,14 +1147,22 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
 
                 candidates.sort(key=lambda pair: pair[0])
 
-                if explicit_expand:
-                    to_add = candidates  # "nearby" was explicitly asked for - include everything in range
-                else:
-                    to_add = candidates[: MIN_NEARBY_RESULTS - len(filtered)]  # just top up to the threshold
-
-                for dist, h in to_add:
-                    filtered.append(h)
-                    expanded_distance_km[h["id"]] = round(dist, 1)
+                if should_expand:
+                    # Either kind of "yes, widen it" - once the net is being
+                    # cast, include everything in range rather than an
+                    # arbitrary top-up count. explicit_query_text runs this
+                    # unconditionally; user_requested only reaches here
+                    # because is_thin was already true.
+                    for dist, h in candidates:
+                        filtered.append(h)
+                        expanded_distance_km[h["id"]] = round(dist, 1)
+                    expansion_triggered_by = "explicit_query_text" if explicit_expand else "user_requested"
+                elif is_thin and candidates:
+                    # Thin results, nobody asked to expand yet (no explicit
+                    # wording, no force_expand) - flag that expansion WOULD
+                    # help so the caller can offer it, but don't silently
+                    # add anything to this response.
+                    expansion_available = True
 
         hostels = filtered
 
@@ -1199,8 +1238,14 @@ def match_hostels(intent: dict, hostels: list, top_n: int = 10, raw_query: str =
         # real hits were there" aren't silently redefined. "results" below
         # can still include more than this many entries (up to top_n),
         # since it now also surfaces the closest available non-matches.
+        # top_n=None (the new default) returns everything — pagination is
+        # left to the caller (see main.py /search, which hands the frontend
+        # the full ranked list to page through client-side, rather than
+        # re-running intent parsing + scoring on every page turn).
         "total_matches": genuine_match_count,
         "results": all_results[:top_n],
+        "expansion_available": expansion_available,
+        "expansion_triggered_by": expansion_triggered_by,
     }
 
 

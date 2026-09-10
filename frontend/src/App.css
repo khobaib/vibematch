@@ -194,6 +194,55 @@ body {
   font-style: normal;
 }
 
+/* ---------- Search expansion: banner + opt-in offer ---------- */
+
+.vm-expansion-banner {
+  font-family: var(--body);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--petrol);
+  background: rgba(0, 90, 90, 0.06);
+  border: 1px dashed var(--petrol);
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.vm-expansion-offer {
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--ink-soft);
+  background: rgba(43, 38, 32, 0.04);
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.vm-expansion-offer p {
+  margin: 0 0 10px;
+}
+
+/* ---------- Pagination ---------- */
+
+.vm-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+}
+
+.vm-pagination-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: var(--ink-soft);
+}
+
 /* ---------- Hostel card: boarding pass ---------- */
 
 .vm-card {

@@ -153,6 +153,39 @@ function HostelCard({ hostel, intent }) {
   );
 }
 
+// Client-side pagination page size. Pagination happens entirely in the
+// browser against the full ranked list /search already returns — a page
+// turn is just re-slicing an array already in memory, not another network
+// call. This keeps it free of the rate limit (10/min, real LLM cost per
+// call) that governs the actual /search and /explain endpoints.
+const RESULTS_PER_PAGE = 10;
+
+function Pagination({ page, totalPages, onPageChange }) {
+  if (totalPages <= 1) return null;
+
+  return (
+    <div className="vm-pagination">
+      <button
+        onClick={() => onPageChange(page - 1)}
+        disabled={page <= 1}
+        className="vm-btn-ghost"
+      >
+        ← Prev
+      </button>
+      <span className="vm-pagination-label">
+        Page {page} of {totalPages}
+      </span>
+      <button
+        onClick={() => onPageChange(page + 1)}
+        disabled={page >= totalPages}
+        className="vm-btn-ghost"
+      >
+        Next →
+      </button>
+    </div>
+  );
+}
+
 function SearchBox({ onSearch, loading }) {
   const [query, setQuery] = useState('');
 
@@ -178,54 +211,109 @@ function SearchBox({ onSearch, loading }) {
   );
 }
 
-function Results({ loading, error, data }) {
+function Results({ loading, error, data, page, onPageChange, onExpandSearch, expanding }) {
   if (loading) return <p className="vm-status">Searching real hostels…</p>;
   if (error) return <p className="vm-status vm-error">Error: {error}</p>;
   if (!data) return <p className="vm-status">Type a vibe above and hit Search.</p>;
 
-  if (data.total_matches === 0) {
+  if (data.total_matches === 0 && !data.expansion_available) {
     return <p className="vm-status">No hostels matched that search. Try a different location or vibe.</p>;
   }
 
+  const totalResults = data.results.length;
+  const totalPages = Math.max(1, Math.ceil(totalResults / RESULTS_PER_PAGE));
+  const pageResults = data.results.slice((page - 1) * RESULTS_PER_PAGE, page * RESULTS_PER_PAGE);
+
   return (
     <div>
+      {/* Explicit-wording case ("Kathmandu or surrounding") — the traveler
+          asked for a wider net directly, so say so plainly rather than
+          leaving them to notice individual "expanded_search" tags. */}
+      {data.expansion_message && (
+        <p className="vm-expansion-banner">{data.expansion_message}</p>
+      )}
+
       <p className="vm-summary">
-        {data.total_matches} total matches — showing top {data.results_returned}
+        {data.total_matches} total matches — showing {pageResults.length ? `${(page - 1) * RESULTS_PER_PAGE + 1}-${(page - 1) * RESULTS_PER_PAGE + pageResults.length}` : '0'} of {totalResults}
       </p>
-      {data.results.map((hostel) => (
+
+      {pageResults.map((hostel) => (
         <HostelCard key={hostel.id} hostel={hostel} intent={data.parsed_intent} />
       ))}
+
+      <Pagination page={page} totalPages={totalPages} onPageChange={onPageChange} />
+
+      {/* Thin-results case — nobody asked for a wider net, so nothing was
+          silently added. Offer it as an explicit choice instead. Placed at
+          the END of the list deliberately (UX decision, see
+          DECISIONS_LOG.md): a traveler only wants this offer once they've
+          actually seen what's here and decided it's not enough — putting it
+          above the list means asking before they've even looked. */}
+      {data.expansion_available && (
+        <div className="vm-expansion-offer">
+          <p>Not enough listings here — want to expand your search to nearby areas?</p>
+          <button onClick={onExpandSearch} disabled={expanding} className="vm-btn-ghost">
+            {expanding ? 'Expanding…' : 'Expand my search'}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [expanding, setExpanding] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
+  const [page, setPage] = useState(1);
+  // Kept so "Expand my search" can re-send the same original query text —
+  // the backend is stateless per-request, so widening the search means
+  // calling /search again with the same query plus expand: true, not
+  // continuing some server-side session.
+  const [lastQuery, setLastQuery] = useState(null);
 
-  async function handleSearch(query) {
-    setLoading(true);
-    setError(null);
-
+  async function runSearch(query, { expand = false } = {}) {
     try {
       const response = await fetch(SEARCH_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query, expand }),
       });
 
       if (!response.ok) {
         throw new Error(friendlyErrorMessage(response.status));
       }
 
-      const result = await response.json();
-      setData(result);
+      return await response.json();
     } catch (err) {
       setError(err.message);
-    } finally {
-      setLoading(false);
+      return null;
     }
+  }
+
+  async function handleSearch(query) {
+    setLoading(true);
+    setError(null);
+    setPage(1);
+    setLastQuery(query);
+
+    const result = await runSearch(query);
+    if (result) setData(result);
+    setLoading(false);
+  }
+
+  async function handleExpandSearch() {
+    if (!lastQuery) return;
+    setExpanding(true);
+    setError(null);
+
+    const result = await runSearch(lastQuery, { expand: true });
+    if (result) {
+      setData(result);
+      setPage(1);
+    }
+    setExpanding(false);
   }
 
   return (
@@ -236,7 +324,15 @@ function App() {
       </header>
 
       <SearchBox onSearch={handleSearch} loading={loading} />
-      <Results loading={loading} error={error} data={data} />
+      <Results
+        loading={loading}
+        error={error}
+        data={data}
+        page={page}
+        onPageChange={setPage}
+        onExpandSearch={handleExpandSearch}
+        expanding={expanding}
+      />
     </div>
   );
 }

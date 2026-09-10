@@ -1873,6 +1873,101 @@ surfaces Yogyakarta hostels 0.2–1km away (previously would have anchored 271km
 city); "Ao Nang" and "Kaleici" searches now return properly-clustered, correctly-distanced results
 too. Full `eval_suite.py` re-run: 15 passed, 0 failed, 1 skipped — no regressions from any of this.
 
+### 🟢 RESOLVED — Distance expansion made opt-in (not silent), its trigger surfaced to the traveler, and results paginated
+Found via live testing of the geolocation feature above (not a separate bug report): the thin-
+results auto-expansion silently blended distance-based results into an exact-location search with
+no visible signal beyond a per-card `expanded_search` tag a traveler would have to notice
+themselves, and `/search` capped results at 10 with no way to see the rest of a larger match set
+(e.g. Kathmandu's 50 matches after an explicit "or surrounding" search only ever showed 10).
+Three related product decisions, made together since they touch the same code path:
+
+**1. Thin-result auto-expansion is no longer silent — it's an explicit choice.** Previously, a
+location with fewer than `MIN_NEARBY_RESULTS` (5) exact matches would automatically top itself up
+with nearby hostels by real distance, with nothing telling the traveler this happened beyond the
+`expanded_search` tag on the added cards. Changed so a thin result set instead returns
+`expansion_available: true` and stops there — the exact matches only, nothing silently added. The
+frontend shows this as a direct choice ("Not enough listings here — want to expand your search to
+nearby areas?" + a button), and only widens the search if the traveler clicks it. **Why:** silently
+mixing exact and distance-based results, distinguishable only by reading fine print on individual
+cards, risks a traveler not realizing some of what they're looking at isn't actually in the place
+they searched for. An explicit opt-in respects that distinction without losing the underlying
+capability — it's now a choice, not an assumption made on the traveler's behalf. This does NOT
+apply to the OTHER expansion trigger (the traveler's own "nearby/surrounding" wording,
+`intent["expand_search_requested"]`) — that one still runs immediately, since the traveler already
+explicitly asked for it in the query itself; opt-in would mean asking them to confirm something
+they already said.
+
+**2. The explicit-wording trigger now shows a plain-language banner.** When `expand_search_requested`
+fires (the traveler wrote "Kathmandu or surrounding", "Lovina and nearby areas", etc.), `/search`
+now returns an `expansion_message` string (e.g. `Expanding search results since you wanted to check
+"Kathmandu" and surroundings`), which the frontend renders as a banner above the results. **Why:**
+previously the only way to know *why* a result set was wider than the exact-location count was to
+already know what you'd typed, or to count `expanded_search` tags yourself — nothing in the
+response actually said so. Implemented by having `match_hostels()` distinguish and return WHICH of
+the two triggers fired this call — `expansion_triggered_by: "explicit_query_text" | "user_requested"
+| None` — rather than a single boolean, so the caller can react differently to each (banner text vs.
+no text needed, since a user-clicked button is already self-explanatory).
+
+**3. Results are now paginated, client-side, against a full ranked list.** `/search` previously
+hard-capped `match_hostels()` at 10 results (`top_n=10`) with no way to see anything past that —
+real, sizeable data loss for broad queries (a "Kathmandu or surrounding" search generates 50 genuine
+matches; only 10 were ever visible). Fixed by changing `match_hostels()`'s default to return the
+FULL ranked list (`top_n: int = None` now means "no truncation" — existing test call sites that pass
+an explicit `top_n` are unaffected), and having the frontend paginate that array locally (10 per
+page, Prev/Next controls) instead of re-calling the API per page. **Why client-side, not a
+`page`/`page_size` query param on `/search`:** `/search` already makes a real, rate-limited (10/min
+per IP) Claude API call — turning "see more results" into another billed LLM call per page would be
+real, avoidable cost and latency for something that's just re-slicing data already computed server-
+side. The full result set for this dataset's scale (475 hostels) is small enough to return in one
+response and page through in memory.
+
+**Implementation split, backend vs. frontend:**
+- `matching.py`: `match_hostels()` gained `force_expand: bool` (set true only when the caller,
+  not the query text, wants to widen the net) and now returns `expansion_available` and
+  `expansion_triggered_by` alongside the existing `total_matches`/`results`.
+- `main.py`: `SearchRequest` gained `expand: bool = False` (what the frontend's button click sends
+  back on a second `/search` call), passed straight through to `force_expand`; `/search` builds
+  the human-readable `expansion_message` from the parsed intent's location when
+  `expansion_triggered_by == "explicit_query_text"`.
+- `App.jsx`: new `Pagination` component (Prev/Next + "Page X of Y"), an `vm-expansion-banner`
+  (explicit-wording case) and `vm-expansion-offer` block with a button (thin-results case) in
+  `Results`, and `App` now tracks `page` and the last-submitted query string (needed to re-issue
+  the same search with `expand: true` when the button is clicked, since the backend is stateless
+  per-request — there's no server-side search session to just "continue").
+
+**Verified:** all four `match_hostels()` trigger combinations tested directly (thin+no-request →
+`expansion_available: true`, nothing added; thin+`force_expand` → widens, `user_requested`;
+explicit wording → widens regardless of thinness, `explicit_query_text`; neither → no expansion,
+no flag) — all behaved as designed. Full `/search`-shaped simulation run for Lovina (initial call,
+then simulating the button click) and "Kathmandu or surrounding" confirmed the right
+`expansion_message` text and flag combinations end-to-end. `App.jsx` syntax-checked with `esbuild`
+(no full Vite scaffold in this sandbox — needs a real `npm run dev`/`npm run build` check from the
+user's machine before this is considered fully verified on the frontend side). `eval_suite.py`
+re-run: 15 passed, 0 failed, 1 skipped — no regressions from the `matching.py`/`main.py` changes.
+
+**Verified live, from the user's own local dev setup** (`npm run dev` against a local `uvicorn`
+backend — required installing `slowapi` and every other `requirements.txt` dependency into the
+local Python environment first, since it hadn't been set up before): all three pieces confirmed
+working as designed — the Lovina thin-results case correctly shows only the 4 exact matches with
+no silent additions, the expand button correctly widens to the full 38-result set on click, the
+Kathmandu explicit-wording case correctly shows the banner text with no button, and pagination
+correctly reads "1-10 of 38" / "1-10 of 51" and pages through in batches of 10. One transient
+false alarm along the way, not a real bug: right after the pagination fix, the browser briefly
+showed a stale "1-18 of 38" label from an old cached JS bundle (the local dev server had been
+restarted, not hot-reloaded) — resolved by a hard refresh, confirming the underlying code was
+correct all along.
+
+**UX follow-up, raised by the user after using it locally:** the thin-results "expand my search"
+offer originally rendered ABOVE the result list (right under the summary line), the same visual
+position as the explicit-wording banner. Feedback: a traveler only wants to be offered a wider
+search once they've actually looked at what's there and decided it's not enough for them — putting
+the offer before they've seen anything means asking too early. The explicit-wording banner stays at
+the top deliberately (it's explaining why the list already got wider, which is naturally something
+the traveler needs to know before they start reading, not a decision point) — this only moves the
+opt-in offer. Fixed by moving the `vm-expansion-offer` block (and its CSS from `margin-bottom` to
+`margin-top`) to after both the result cards AND the `Pagination` control, so it now appears once a
+traveler has scrolled/paged through everything currently on offer.
+
 ---
 
 ## Chain / Brand Patterns Noticed in the Data

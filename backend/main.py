@@ -134,6 +134,12 @@ def extract_tool_input(message, tool_name: str) -> dict:
 
 class SearchRequest(BaseModel):
     query: str
+    # Set True by the frontend when the traveler explicitly clicked a
+    # "not enough listings, expand my search" button after a prior /search
+    # call came back with expansion_available: True. See matching.py's
+    # force_expand param and DECISIONS_LOG.md — a thin result set no longer
+    # silently widens itself; it's an opt-in the caller has to ask for.
+    expand: bool = False
 
 
 class BreakdownEntry(BaseModel):
@@ -411,16 +417,35 @@ Why the matching engine scored this hostel for this search:
 def search(request: Request, body: SearchRequest):
     intent = parse_intent(body.query)
     outcome = match_hostels(
-        intent, HOSTELS, top_n=10,
+        intent, HOSTELS,
         raw_query=body.query,
         hostel_embeddings=HOSTEL_EMBEDDINGS,
+        force_expand=body.expand,
     )
+
+    # Human-readable banner text for the "explicit_query_text" case only —
+    # the frontend shows this at the top of results so the traveler knows
+    # WHY they're seeing more than an exact match, without having to notice
+    # individual `expanded_search` tags on cards. No text needed for
+    # "user_requested" — that one's self-explanatory since the traveler just
+    # clicked the button themselves.
+    expansion_message = None
+    if outcome["expansion_triggered_by"] == "explicit_query_text":
+        location_text = intent.get("location") or body.query
+        expansion_message = f'Expanding search results since you wanted to check "{location_text}" and surroundings'
 
     return {
         "parsed_intent": intent,
         "total_matches": outcome["total_matches"],
         "results_returned": len(outcome["results"]),
         "results": outcome["results"],
+        # Pagination is handled client-side (see App.jsx) against this full
+        # ranked list, rather than re-calling Claude per page — /search
+        # already costs a real LLM call, and the dataset is small enough
+        # that returning everything in one response is cheap.
+        "expansion_available": outcome["expansion_available"],
+        "expansion_triggered_by": outcome["expansion_triggered_by"],
+        "expansion_message": expansion_message,
     }
 
 
